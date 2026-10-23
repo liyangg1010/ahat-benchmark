@@ -16,16 +16,17 @@ records source provenance and all local data/manifest hashes.
 
 ## Reference-plan compatibility
 
-The pinned dataset and audited evaluation domain are separate snapshots.
-Nine reference plans use actions absent from the audited domain: eight use
-`light_on`, one uses `clean_item_with_faucet`. They span easy 2, medium 2 and
-open 5. [Affected records](validation/reference_plan_val_failures.json) retain
-the original failure evidence.
+This release uses the `ahat_domain.pddl` snapshot shipped with the pinned HF
+dataset. It includes `light_on` and `clean_item_with_faucet`, and fixes the
+missing `holding` deletions in `place_in_receptacle` and
+`hand_over_to_person`. All 348 bundled reference plans validate with this
+domain: easy 146, medium 94 and open 108. Reference plans are not supplied to
+the LLM reviewer.
 
-The audited original reviewer also reports these nine as invalid; the remaining
-339 reference plans validate. Reference plans are not supplied to the LLM
-reviewer. A new upstream domain or repaired data revision requires an explicit
-protocol update and fresh evaluation.
+`validation/reference_plan_val_failures.json` is retained as historical evidence
+from the previous `ahat-v1` domain and is not a failure report for this release.
+Changing the domain remains a protocol change; published results must record
+the domain hash and use a new output directory after an upgrade.
 
 ## Custom dataset registry
 

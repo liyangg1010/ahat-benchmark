@@ -125,8 +125,8 @@ Data are pinned to HF revision
 [`44de8a66c58cfd4cea03923bed9dbb8bd69d8f85`](https://huggingface.co/datasets/SII-liyang2024/AHAT-dataset/tree/44de8a66c58cfd4cea03923bed9dbb8bd69d8f85).
 The original `benchmarks/ahat_eval_set.jsonl` retains reference plans; runtime
 split files expose only IDs, instructions and scenes. Hashes and source
-provenance are bundled. [Dataset notes](docs/datasets.md) explain the nine
-reference plans incompatible with this audited domain and custom registries.
+provenance are bundled. [Dataset notes](docs/datasets.md) record the domain
+snapshot used by this release and explain custom registries.
 
 | Dimension | Weight |
 | --- | ---: |

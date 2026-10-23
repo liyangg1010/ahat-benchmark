@@ -3,10 +3,21 @@ import unittest
 
 from ahat_benchmark.pddl import full_problem, simulate
 from ahat_benchmark.val.validator import build_problem
+from ahat_benchmark.vendor.scene_graph import PDDLDomainParser
 from helpers import DOMAIN, PLAN, scene
 
 
 class PDDLTests(unittest.TestCase):
+    def test_synced_domain_has_complete_hand_release_effects(self):
+        actions = PDDLDomainParser(DOMAIN.read_text(encoding='utf-8')).actions
+        self.assertIn('light_on', actions)
+        self.assertIn('clean_item_with_faucet', actions)
+        for action in ('place_in_receptacle', 'hand_over_to_person'):
+            effects = str(actions[action]['effect'])
+            self.assertIn('holding', effects)
+            self.assertIn('not', effects)
+            self.assertIn('handempty', effects)
+
     def test_full_scene_is_plan_independent_and_does_not_mutate_inputs(self):
         graph = scene(blocked=True)
         original = copy.deepcopy(graph)

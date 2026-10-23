@@ -1,9 +1,9 @@
 {
   "name": "ahat-medium",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "case_count": 94,
   "schema_version": "1.0",
-  "domain": "ahat-v1",
+  "domain": "ahat-v2-hf-domain",
   "data_file": "cases.json",
   "data_sha256": "4a47d71d4b2af577730b056bcdeb8795cd346faee2b845dfea303e5ed973ca1b",
   "source": {

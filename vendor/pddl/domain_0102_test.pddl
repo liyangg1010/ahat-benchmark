@@ -1,5 +1,5 @@
 (define (domain habitat_world_domain_final)
-  (:requirements :strips :typing :equality 
+  (:requirements :strips :typing :equality
     :disjunctive-preconditions
     :existential-preconditions
     :conditional-effects
@@ -28,7 +28,7 @@
 
     ; -- 智能体状态 --
     (agent_at ?a - agent ?loc - location)
-    (holding ?a - agent ?i - physobj) 
+    (holding ?a - agent ?i - physobj)
     (handempty ?a - agent)
 
     ; -- 位置与空间关系 --
@@ -45,6 +45,7 @@
     (is_open ?c - physobj)
     (is_cleaning_tool ?o - physobj)
     (is_clean ?p - physobj)
+    (requires_water_to_clean ?o - physobj) ; 需要使用水龙头/水进行清洁
     (require_floor_cleaner ?r - room) ; 描述一个房间是否需要地板清洁器来清洁（如地毯、地板等）
     (is_floor_cleaner ?f - physobj) ; 描述一个物理对象是否是地板清洁器（吸尘器等）
 
@@ -54,9 +55,13 @@
 
     (is_powerable ?p - physobj)
     (is_powered_on ?p - physobj)
-      
+
+    ; 点亮能力与灯光状态
+    (can_be_lighted ?c - physobj)
+    (is_light_on ?c - object)
+
     ; heating相关谓词
-    (is_heating_device ?p - physobj) ; 描述一个物理对象是否是加热设备（如微波炉、烤箱等）     
+    (is_heating_device ?p - physobj) ; 描述一个物理对象是否是加热设备（如微波炉、烤箱等）
 
     ; 食物/物体处理状态
     (cooked ?o - physobj)
@@ -84,34 +89,35 @@
   ; Action: pick_from_surface
   (:action pick_from_surface
     :parameters (?ag - agent ?obj - physobj ?surface - physobj)
-    :precondition (and 
-      (agent_at ?ag ?obj) 
-      (item_on_surface ?obj ?surface) 
+    :precondition (and
+      (agent_at ?ag ?obj)
+      (item_on_surface ?obj ?surface)
       (handempty ?ag)
       (not (exists (?other_obj - physobj) (item_on_surface ?other_obj ?obj)))
     )
-    :effect (and 
-      (not (item_on_surface ?obj ?surface)) 
-      (holding ?ag ?obj) 
+    :effect (and
+      (not (item_on_surface ?obj ?surface))
+      (holding ?ag ?obj)
       (not (handempty ?ag))
     )
   )
-  
+
   ; Action: place_on_surface
   (:action place_on_surface
     :parameters (?ag - agent ?obj - physobj ?surface - physobj)
-    :precondition (and 
-        (agent_at ?ag ?surface) 
-        (holding ?ag ?obj) 
-        (not (= ?obj ?surface))     
-        (not (item_on_surface ?surface ?obj))   
+    :precondition (and
+        (agent_at ?ag ?surface)
+        (holding ?ag ?obj)
+        (not (handempty ?ag))
+        (not (= ?obj ?surface))
+        (not (item_on_surface ?surface ?obj))
         (imply (can_only_place_one_object ?surface)
                (not (exists (?any_obj - physobj) (item_on_surface ?any_obj ?surface)))
         )
     )
-    :effect (and 
-        (item_on_surface ?obj ?surface) 
-        (handempty ?ag) 
+    :effect (and
+        (item_on_surface ?obj ?surface)
+        (handempty ?ag)
         (not (holding ?ag ?obj))
     )
 )
@@ -126,11 +132,15 @@
   ; Action: place_in_receptacle
   (:action place_in_receptacle
     :parameters (?ag - agent ?obj - physobj ?r - physobj)
-    :precondition (and (agent_at ?ag ?r) (holding ?ag ?obj)  (is_open ?r) (not (= ?obj ?r))
+    :precondition (and (agent_at ?ag ?r) (holding ?ag ?obj) (not (handempty ?ag)) (is_open ?r) (not (= ?obj ?r))
     )
-    :effect (and (item_in_receptacle ?obj ?r) (handempty ?ag) )
+    :effect (and
+      (item_in_receptacle ?obj ?r)
+      (not (holding ?ag ?obj))
+      (handempty ?ag)
+    )
   )
-  
+
   ; Action: open
   (:action open
     :parameters (?ag - agent ?r - physobj)
@@ -165,11 +175,11 @@
     :precondition (and (agent_at ?ag ?p) (is_powerable ?p) (is_powered_on ?p) (handempty ?ag))
     :effect (not (is_powered_on ?p))
   )
-  
+
   ; Action: fill_from_faucet
   (:action fill_from_faucet
     :parameters (?ag - agent ?c - physobj ?faucet_loc - physobj)
-    :precondition (and (agent_at ?ag ?faucet_loc) (holding ?ag ?c) (has_faucet ?faucet_loc) (not (is_filled ?c)))
+    :precondition (and (agent_at ?ag ?faucet_loc) (holding ?ag ?c) (not (handempty ?ag)) (has_faucet ?faucet_loc) (not (is_filled ?c)))
     :effect (is_filled ?c)
   )
 
@@ -193,10 +203,10 @@
   ; Action: pour_into
   (:action pour_into
     :parameters (?ag - agent ?c - physobj ?target - physobj)
-    :precondition (and (holding ?ag ?c) (is_filled ?c) (agent_at ?ag ?target) 
+    :precondition (and (holding ?ag ?c) (not (handempty ?ag)) (is_filled ?c) (agent_at ?ag ?target)
       (not (is_filled ?target)))
-    :effect (and 
-              (not (is_filled ?c)) 
+    :effect (and
+              (not (is_filled ?c))
               (is_filled ?target)
             )
   )
@@ -237,6 +247,7 @@
       (agent_at ?ag ?surface)
       (item_on_surface ?o ?surface)
       (holding ?ag ?slicer)
+      (not (handempty ?ag))
       (is_slicer ?slicer)
       (not (= ?o ?slicer))
       (not (sliced ?o))
@@ -251,18 +262,20 @@
     :precondition (and
       (agent_at ?ag ?faucet_loc)
       (holding ?ag ?o)
+      (not (handempty ?ag))
       (has_faucet ?faucet_loc)
       (not (soaked ?o))
     )
     :effect (soaked ?o)
   )
-  
+
   ; ... 其他动作保持不变 ...
   (:action place_next_to_surface
     :parameters (?ag - agent ?obj_to_place - physobj ?obj_reference - physobj ?surface - furniture)
     :precondition (and
       (agent_at ?ag ?surface)
       (holding ?ag ?obj_to_place)
+      (not (handempty ?ag))
       (item_on_surface ?obj_reference ?surface)
       (not (= ?obj_to_place ?obj_reference))
       (not (= ?obj_to_place ?surface))
@@ -281,6 +294,7 @@
     :precondition (and
       (agent_at ?ag ?receptacle)
       (holding ?ag ?obj_to_place)
+      (not (handempty ?ag))
       (item_in_receptacle ?obj_reference ?receptacle)
       (is_open ?receptacle)
       (not (= ?obj_to_place ?obj_reference))
@@ -295,22 +309,52 @@
       (not (holding ?ag ?obj_to_place))
     )
   )
+  ; Action: clean_item_with_faucet
+  ; 描述: 对必须用水清洁的物体，在有水龙头的位置进行清洁
+  (:action clean_item_with_faucet
+    :parameters (?ag - agent ?obj - physobj ?faucet_loc - physobj)
+    :precondition (and
+      (agent_at ?ag ?faucet_loc)
+      (holding ?ag ?obj)
+      (not (handempty ?ag))
+      (has_faucet ?faucet_loc)
+      (not (is_clean ?obj))
+      (not (is_filled ?obj))
+      (requires_water_to_clean ?obj)
+    )
+    :effect (is_clean ?obj)
+  )
+
   (:action clean_item
     :parameters (?ag - agent ?obj - physobj ?target - object)
-    :precondition (and (holding ?ag ?obj) (not (is_clean ?target)) (is_cleaning_tool ?obj) (not (= ?obj ?target))
+    :precondition (and
+      (holding ?ag ?obj)
+      (not (handempty ?ag))
+      (not (is_clean ?target))
+      (is_cleaning_tool ?obj)
+      (not (= ?obj ?target))
+      (not (requires_water_to_clean ?target))
+      (agent_at ?ag ?target)
+      (not (exists (?other_obj - physobj) (item_in_receptacle ?target ?other_obj)))
     )
     :effect (is_clean ?target)
   )
   (:action clean_furniture
     :parameters (?ag - agent ?obj - physobj ?f - furniture )
-    :precondition (and (agent_at ?ag ?f) (not (is_clean ?f)) (holding ?ag ?obj) (not (= ?obj ?f))
+    :precondition (and
+      (agent_at ?ag ?f)
+      (not (is_clean ?f))
+      (holding ?ag ?obj)
+      (not (handempty ?ag))
+      (not (= ?obj ?f))
       (is_cleaning_tool ?obj)
+      (not (requires_water_to_clean ?f))
     )
     :effect (is_clean ?f)
   )
   (:action clean_room_floor
     :parameters (?ag - agent ?obj - physobj ?r - room)
-    :precondition (and (agent_at ?ag ?r) (not (is_clean ?r)) (holding ?ag ?obj) (not (= ?obj ?r))
+    :precondition (and (agent_at ?ag ?r) (not (is_clean ?r)) (holding ?ag ?obj) (not (handempty ?ag)) (not (= ?obj ?r))
       (is_floor_cleaner ?obj) (require_floor_cleaner ?r))
     :effect (is_clean ?r)
   )
@@ -326,28 +370,40 @@
   )
   (:action pour
     :parameters (?ag - agent ?c - physobj ?furn_with_faucet - furniture)
-    :precondition (and (holding ?ag ?c) (is_filled ?c) (agent_at ?ag ?furn_with_faucet) 
+    :precondition (and (holding ?ag ?c) (not (handempty ?ag)) (is_filled ?c) (agent_at ?ag ?furn_with_faucet)
       (has_faucet ?furn_with_faucet))
-    :effect (and 
+    :effect (and
               (not (is_filled ?c))
             )
   )
+  ; Action: light_on
+  ; 描述: 智能体到达灯具/可点亮对象的位置后打开灯
+  (:action light_on
+    :parameters (?ag - agent ?obj - object)
+    :precondition (and
+      (agent_at ?ag ?obj)
+      (can_be_lighted ?obj)
+      (not (is_light_on ?obj))
+    )
+    :effect (is_light_on ?obj)
+  )
+
   (:action move_furniture_to_room
     :parameters (?ag - agent ?f - furniture ?from - room ?to - room)
-    :precondition (and 
+    :precondition (and
         (can_be_moved ?f)
-        (agent_at ?ag ?f) 
-        (furniture_in_room ?f ?from) 
-        (not (= ?from ?to)) 
+        (agent_at ?ag ?f)
+        (furniture_in_room ?f ?from)
+        (not (= ?from ?to))
         (handempty ?ag)
         (not (exists (?other_obj - physobj) (item_on_surface ?other_obj ?f)))
         (not (exists (?other_obj - physobj) (item_in_receptacle ?other_obj ?f)))
     )
-    
-    :effect (and 
-        (not (furniture_in_room ?f ?from)) 
-        (furniture_in_room ?f ?to) 
-        (agent_at ?ag ?to) 
+
+    :effect (and
+        (not (furniture_in_room ?f ?from))
+        (furniture_in_room ?f ?to)
+        (agent_at ?ag ?to)
     )
 )
   (:action move_device_to_room
@@ -357,9 +413,10 @@
   )
   (:action hand_over_to_person
     :parameters (?ag - agent ?p - person ?obj - physobj)
-    :precondition (and (agent_at ?ag ?p) (holding ?ag ?obj)  (not (= ?ag ?p)))
-    :effect (and 
-      (p_holding ?p ?obj) ; 假设有一个谓词表示物品在人的手中
+    :precondition (and (agent_at ?ag ?p) (holding ?ag ?obj) (not (handempty ?ag)) (not (= ?ag ?p)))
+    :effect (and
+      (p_holding ?p ?obj) ; 物品转移到人的手中
+      (not (holding ?ag ?obj))
       (handempty ?ag)
     )
   )

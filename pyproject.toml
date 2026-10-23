@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ahat-benchmark"
-version = "2.1.0"
+version = "2.2.0"
 description = "Versioned, self-contained AHAT benchmark with VAL and LLM rubric evaluation"
 readme = "README.md"
 license = "MIT AND BSD-3-Clause AND CC-BY-4.0 AND CC-BY-NC-4.0"

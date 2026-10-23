@@ -12,7 +12,7 @@ scene-graph adapter. Component licenses are in
 | `src/ahat_benchmark/val/validator.py` | AHAT audited reviewer and `baseline/llm/review_luna_benchmark.py` | Standalone wrapper; pre-VAL action/arity checks |
 | `src/ahat_benchmark/judge/scene_summary.py` | Audited adapter's `sum_sg_content` | Port of the D2 inventory/location format |
 | `src/ahat_benchmark/judge/paper_rubric/*.txt` | AHAT: `baseline/llm/prompts/paper_rubric/` | Four byte-exact original prompts, including placeholder examples |
-| `vendor/pddl/domain_0102_test.pddl` | AHAT: `baseline/sayplan/pddl/domain_0102_test.pddl` | Audited domain snapshot |
+| `vendor/pddl/domain_0102_test.pddl` | HF `SII-liyang2024/AHAT-dataset/ahat_domain.pddl`, revision `44de8a66c58cfd4cea03923bed9dbb8bd69d8f85` | Domain snapshot with holding-state and lighting/water-cleaning fixes |
 | `vendor/val/Validate`, `vendor/val/libVAL.so` | Runtime selected by AHAT's audited reviewer | Byte-exact Linux x86-64 binary snapshot |
 
 The audited reviewer source SHA-256 is
@@ -28,6 +28,5 @@ assets into `ahat_benchmark/resources` during wheel construction.
 Source/editable installs use the top-level copies. This keeps a single source
 copy of the data and excludes local outputs, credentials and audit tools.
 
-The HF dataset is pinned independently of the audited domain. In this snapshot,
-nine reference plans use actions absent from that domain. See
-[dataset notes](docs/datasets.md); a different domain is a different protocol.
+The domain is synchronized with the pinned HF dataset revision. See [dataset
+notes](docs/datasets.md); a different domain is a different protocol.

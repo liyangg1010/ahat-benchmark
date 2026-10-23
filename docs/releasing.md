@@ -1,5 +1,7 @@
 # Preparing a release
 
+The 2.2.0 release synchronizes the PDDL domain with the pinned HF dataset.
+
 The 2.1.0 preparation passed 36 offline tests, the 348-case audited comparison,
 1,250 scoring combinations, and an isolated installed-wheel end-to-end check.
 The [validation record](validation/release_check_summary.json) identifies the

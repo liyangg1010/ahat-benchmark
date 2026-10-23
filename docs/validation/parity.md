@@ -1,4 +1,9 @@
-# Validation against AHAT
+# Historical validation against AHAT
+
+This file records validation of the previous `ahat-v1` domain before the HF
+domain synchronization in 2.2.0. Its historical scores and hashes are not
+claims about the current domain; run the current regression suite and `doctor`
+for the active protocol.
 
 The 2026-10-14 comparison verified the 2.0.0 evaluation implementation against
 AHAT's reviewer for saved `gpt-6-luna` and `gpt-6.1-sol` plans. Version 2.1.0

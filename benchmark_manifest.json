@@ -1,11 +1,11 @@
 {
   "project": "ahat-benchmark",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "schema_version": "2.0",
   "domain": {
-    "name": "ahat-v1",
+    "name": "ahat-v2-hf-domain",
     "path": "vendor/pddl/domain_0102_test.pddl",
-    "sha256": "3648966f5c0b46d53a3add4cf604e62e9eef1376f735fc480fe95f6ae2fe62b4"
+    "sha256": "6b40184d40c858569ca318777982bcaf4ed53755b828a1672bfa4acd2fffdd01"
   },
   "validator": {
     "name": "VAL",

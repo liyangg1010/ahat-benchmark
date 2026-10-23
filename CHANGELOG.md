@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.2.0 — 2026-10-23
+
+- Synchronize the bundled PDDL domain with `ahat_domain.pddl` from the pinned
+  HF dataset revision.
+- Remove stale `holding` facts when placing an object in a receptacle or
+  handing it to a person, and require a nonempty hand for hand-dependent
+  actions.
+- Add the upstream `light_on` and `clean_item_with_faucet` actions and their
+  predicates. All 348 bundled reference plans now validate.
+
 ## 2.1.0 — 2026-10-14
 
 - Package all registered datasets, configuration, domain, prompts and VAL assets

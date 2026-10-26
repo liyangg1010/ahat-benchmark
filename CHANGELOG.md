@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Introduce the `ahat-v3-physobj-floor-cleaning` domain protocol: widen
+  `require_floor_cleaner` and the `clean_room_floor` target from `room` to
+  `physobj`, preserving carpet and mat attributes and allowing floor-cleaner
+  actions on those objects. Existing tool and state preconditions still apply.
+- Update the domain fingerprint and validation tests. Use a new evaluation
+  output directory; retained attributes change the final-state judge input.
+
 ## 2.2.0 — 2026-10-23
 
 - Synchronize the bundled PDDL domain with `ahat_domain.pddl` from the pinned

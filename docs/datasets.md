@@ -16,12 +16,23 @@ records source provenance and all local data/manifest hashes.
 
 ## Reference-plan compatibility
 
-This release uses the `ahat_domain.pddl` snapshot shipped with the pinned HF
-dataset. It includes `light_on` and `clean_item_with_faucet`, and fixes the
+The bundled domain is based on the `ahat_domain.pddl` snapshot shipped with the
+pinned HF dataset. It includes `light_on` and `clean_item_with_faucet`, and fixes the
 missing `holding` deletions in `place_in_receptacle` and
 `hand_over_to_person`. All 348 bundled reference plans validate with this
 domain: easy 146, medium 94 and open 108. Reference plans are not supplied to
 the LLM reviewer.
+
+The local `ahat-v3-physobj-floor-cleaning` protocol widens the `?r` parameter of
+`require_floor_cleaner` and `clean_room_floor` from `room` to `physobj`. This
+preserves the attribute on carpets and mats and allows them to be cleaned with
+a floor cleaner when all existing action preconditions hold. Other cleaning
+actions do not enforce this attribute as an exclusive tool requirement.
+The upstream source fingerprint remains in `benchmarks/hf_sync.json`; the
+modified domain fingerprint is recorded in `benchmark_manifest.json`.
+All 348 reference plans remain valid, but 115 cases retain additional facts in
+their final state, changing the D1 judge input. Re-evaluate with a new output
+directory when adopting this protocol.
 
 `validation/reference_plan_val_failures.json` is retained as historical evidence
 from the previous `ahat-v1` domain and is not a failure report for this release.

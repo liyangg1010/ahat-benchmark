@@ -46,7 +46,7 @@
     (is_cleaning_tool ?o - physobj)
     (is_clean ?p - physobj)
     (requires_water_to_clean ?o - physobj) ; 需要使用水龙头/水进行清洁
-    (require_floor_cleaner ?r - room) ; 描述一个房间是否需要地板清洁器来清洁（如地毯、地板等）
+    (require_floor_cleaner ?r - physobj) ; 描述一个物理对象是否需要地板清洁器来清洁（如房间地板、地毯等）
     (is_floor_cleaner ?f - physobj) ; 描述一个物理对象是否是地板清洁器（吸尘器等）
 
     (has_faucet ?f - physobj)
@@ -353,7 +353,7 @@
     :effect (is_clean ?f)
   )
   (:action clean_room_floor
-    :parameters (?ag - agent ?obj - physobj ?r - room)
+    :parameters (?ag - agent ?obj - physobj ?r - physobj)
     :precondition (and (agent_at ?ag ?r) (not (is_clean ?r)) (holding ?ag ?obj) (not (handempty ?ag)) (not (= ?obj ?r))
       (is_floor_cleaner ?obj) (require_floor_cleaner ?r))
     :effect (is_clean ?r)

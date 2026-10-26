@@ -1,10 +1,11 @@
 # Evaluation protocol
 
-The protocol matches AHAT's `baseline/llm/run_eval_rubric.py` reviewer used for
+The evaluation pipeline follows AHAT's `baseline/llm/run_eval_rubric.py` reviewer used for
 saved GPT results, with the action/arity guard from `review_luna_benchmark.py`.
-The four original paper prompts, domain and VAL snapshots are fingerprinted in
-`benchmark_manifest.json`. [Parity evidence](validation/parity.md) records the
-implementation comparison.
+The four original paper prompts, current domain and VAL runtime are fingerprinted
+in `benchmark_manifest.json`. The domain includes the local floor-cleaning type
+extension described in [dataset notes](datasets.md). [Parity evidence](validation/parity.md)
+records the historical implementation comparison.
 
 ## Deterministic validation
 

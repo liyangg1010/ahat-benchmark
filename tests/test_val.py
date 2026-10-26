@@ -35,6 +35,28 @@ class ValTests(unittest.TestCase):
             result = self.validate(scene(), PLAN)
         self.assertEqual(result["status"], "val_error")
 
+    def test_floor_cleaning_supports_objects_and_rooms_with_existing_constraints(self):
+        for target, category in [('rug_1', 'objects'), ('room_1', 'rooms')]:
+            for variant in ('valid', 'wrong_tool', 'missing_requirement', 'already_clean'):
+                with self.subTest(target=target, variant=variant):
+                    graph = {
+                        'rooms': [{'name': 'room_1', 'states': {}}],
+                        'objects': [{'name': 'vacuum_1', 'states': {'is_floor_cleaner': variant != 'wrong_tool'}}],
+                        'agent': [{'name': 'agent_0', 'location': target, 'holding': 'vacuum_1'}],
+                        'furnitures': [], 'person': [], 'links': [],
+                    }
+                    target_node = {
+                        'name': target,
+                        'states': {'require_floor_cleaner': variant != 'missing_requirement',
+                                   'is_clean': variant == 'already_clean'},
+                    }
+                    if category == 'rooms':
+                        graph['rooms'][0] = target_node
+                    else:
+                        graph['objects'].append(target_node)
+                    result = self.validate(graph, [f'(clean_room_floor agent_0 vacuum_1 {target})'])
+                    self.assertEqual(result['status'], 'valid' if variant == 'valid' else 'invalid')
+
     def test_wrong_arity_and_unknown_actions_are_rejected_before_native_val(self):
         plans = [
             (["(navigate agent_0 room_1)"], "Wrong action argument count"),

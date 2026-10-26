@@ -3,9 +3,9 @@
   "version": "2.2.0",
   "schema_version": "2.0",
   "domain": {
-    "name": "ahat-v2-hf-domain",
+    "name": "ahat-v3-physobj-floor-cleaning",
     "path": "vendor/pddl/domain_0102_test.pddl",
-    "sha256": "6b40184d40c858569ca318777982bcaf4ed53755b828a1672bfa4acd2fffdd01"
+    "sha256": "65cf0f5503763acecbb728f598cee9b6baf7ae7f950087a597f8c99db2d4ff89"
   },
   "validator": {
     "name": "VAL",

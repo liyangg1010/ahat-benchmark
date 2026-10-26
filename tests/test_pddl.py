@@ -29,11 +29,19 @@ class PDDLTests(unittest.TestCase):
 
     def test_incompatible_initial_fact_is_dropped_and_recorded(self):
         graph = scene()
+        graph['agent'][0]['states'] = {'require_floor_cleaner': True}
+        dropped = []
+        problem = full_problem(graph, DOMAIN, dropped)
+        self.assertNotIn('(require_floor_cleaner agent_0)', problem)
+        self.assertIn(['require_floor_cleaner', 'agent_0'], dropped)
+
+    def test_floor_cleaner_attribute_is_preserved_for_nonroom_objects(self):
+        graph = scene()
         graph['objects'][0]['states']['require_floor_cleaner'] = True
         dropped = []
         problem = full_problem(graph, DOMAIN, dropped)
-        self.assertNotIn('(require_floor_cleaner cup_1)', problem)
-        self.assertIn(['require_floor_cleaner', 'cup_1'], dropped)
+        self.assertIn('(require_floor_cleaner cup_1)', problem)
+        self.assertNotIn(['require_floor_cleaner', 'cup_1'], dropped)
 
     def test_exact_effects_preserve_domain_omissions(self):
         actions = {'place': {

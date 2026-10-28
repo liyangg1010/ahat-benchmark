@@ -10,7 +10,10 @@ Data license: [CC BY-NC 4.0](../licenses/CC-BY-NC-4.0).
 `ahat_eval_set.jsonl` is retained verbatim, including reference plans.
 Runtime `ahat-{easy,medium,open}/cases.json` files split by source `type`,
 preserve source order, and project to `id`, `instruction` and `scene_graph`.
-Each split manifest records count, file hash, source revision and license.
+Each split manifest records the active runtime domain name and hash, case count,
+file hash, source revision and license. The `source_domain` field records the
+upstream HF domain label; it is retained for provenance and is not the runtime
+evaluation protocol.
 `ahat-benchmark doctor` checks these snapshots. `benchmarks/hf_sync.json`
 records source provenance and all local data/manifest hashes.
 
@@ -28,8 +31,10 @@ The local `ahat-v3-physobj-floor-cleaning` protocol widens the `?r` parameter of
 preserves the attribute on carpets and mats and allows them to be cleaned with
 a floor cleaner when all existing action preconditions hold. Other cleaning
 actions do not enforce this attribute as an exclusive tool requirement.
-The upstream source fingerprint remains in `benchmarks/hf_sync.json`; the
-modified domain fingerprint is recorded in `benchmark_manifest.json`.
+The evaluation cases remain pinned to the source revision recorded in each
+split manifest, while the domain is synced independently from the current HF
+domain revision recorded in `benchmarks/hf_sync.json`. The modified domain
+fingerprint is recorded in `benchmark_manifest.json`.
 All 348 reference plans remain valid, but 115 cases retain additional facts in
 their final state, changing the D1 judge input. Re-evaluate with a new output
 directory when adopting this protocol.

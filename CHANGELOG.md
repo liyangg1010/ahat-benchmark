@@ -8,6 +8,10 @@
   actions on those objects. Existing tool and state preconditions still apply.
 - Update the domain fingerprint and validation tests. Use a new evaluation
   output directory; retained attributes change the final-state judge input.
+- Align all bundled split manifests with the active domain name and fingerprint;
+  retain the upstream HF domain label separately for provenance.
+- Sync the domain provenance to the current HF dataset revision while keeping
+  the evaluation case snapshot pinned to its original revision.
 
 ## 2.2.0 — 2026-10-23
 

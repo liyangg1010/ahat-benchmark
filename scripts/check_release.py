@@ -78,6 +78,7 @@ def check_assets(files: dict[str, bytes], wheel: bool = False) -> list[str]:
     if raw is None:
         return errors
     manifest = json.loads(raw)
+    active_domain = manifest.get("domain", {})
     expected = [(manifest["domain"]["path"], manifest["domain"]["sha256"]),
                 (manifest["validator"]["path"], manifest["validator"]["sha256"]),
                 (manifest["validator"]["library_path"], manifest["validator"]["library_sha256"])]
@@ -99,6 +100,10 @@ def check_assets(files: dict[str, bytes], wheel: bool = False) -> list[str]:
             count += len(json.loads(data))
             if hashlib.sha256(data).hexdigest() != split["data_sha256"] or len(json.loads(data)) != split["case_count"]:
                 errors.append(f"data manifest mismatch: {dataset}")
+            if split.get("domain") != active_domain.get("name"):
+                errors.append(f"domain manifest mismatch: {dataset}")
+            if split.get("domain_sha256") != active_domain.get("sha256"):
+                errors.append(f"domain hash manifest mismatch: {dataset}")
     if count != 348:
         errors.append("public dataset count must be 348")
     provenance = get("benchmarks/hf_sync.json")

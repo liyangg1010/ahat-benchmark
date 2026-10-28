@@ -9,12 +9,13 @@
   "domain": {
     "repository": "SII-liyang2024/AHAT-dataset",
     "file": "ahat_domain.pddl",
-    "revision": "44de8a66c58cfd4cea03923bed9dbb8bd69d8f85",
-    "url": "https://huggingface.co/datasets/SII-liyang2024/AHAT-dataset/resolve/44de8a66c58cfd4cea03923bed9dbb8bd69d8f85/ahat_domain.pddl",
-    "sha256": "6b40184d40c858569ca318777982bcaf4ed53755b828a1672bfa4acd2fffdd01"
+    "revision": "326134730ce9a57e78c366cf2c1488f9f539c24c",
+    "url": "https://huggingface.co/datasets/SII-liyang2024/AHAT-dataset/resolve/326134730ce9a57e78c366cf2c1488f9f539c24c/ahat_domain.pddl",
+    "sha256": "65cf0f5503763acecbb728f598cee9b6baf7ae7f950087a597f8c99db2d4ff89",
+    "name": "ahat-v3-physobj-floor-cleaning"
   },
   "license": "CC-BY-NC-4.0",
-  "synced_at": "2026-10-14T02:23:15.308457+00:00",
+  "synced_at": "2026-10-28T09:21:10+00:00",
   "case_count": 348,
   "split_counts": {
     "easy": 146,
@@ -33,7 +34,7 @@
     },
     {
       "path": "ahat-easy/manifest.json",
-      "sha256": "e321ae0c2065c08752486b60385201f7276c77ead0a53d85dd84f17543f3a81c"
+      "sha256": "4f937bcbf3a9dc7e6aa77dee562bf1ab68d27adda557265f3e400e57e321070c"
     },
     {
       "path": "ahat-medium/cases.json",
@@ -41,7 +42,7 @@
     },
     {
       "path": "ahat-medium/manifest.json",
-      "sha256": "958523f34f20d53d8a068dbc47c0eee84261a1d009b09e7b8a60b03812aaffbb"
+      "sha256": "40d13e408523cd723b38e1ce3545c0ddcbaba493b1321a9c0408dc90d094d0e0"
     },
     {
       "path": "ahat-open/cases.json",
@@ -49,7 +50,7 @@
     },
     {
       "path": "ahat-open/manifest.json",
-      "sha256": "94a92b2f0a069daf7f97f7e1098622edf35991523a22bb88f0b7d2bb244d7340"
+      "sha256": "23a0f5d5089d16ab3a2dee70ddcb7e7a07912910e472ad16771afb819ad85911"
     }
   ]
 }

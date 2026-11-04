@@ -401,7 +401,7 @@ class SceneGraphManager:
         if 'person' in self.scene_graph and self.scene_graph['person'] is not None:
             for person_info in self.scene_graph['person']:
                 person_name = person_info['name']
-                if 'loaction' in person_info:
+                if 'location' in person_info:
                     location_name = person_info['location']
                     if location_name in self.object_map:
                         self.object_map[location_name]['data']['predicates'].append(['person_at', person_name, location_name])

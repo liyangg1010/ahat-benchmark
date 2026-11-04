@@ -35,6 +35,19 @@ class PDDLTests(unittest.TestCase):
         self.assertNotIn('(require_floor_cleaner agent_0)', problem)
         self.assertIn(['require_floor_cleaner', 'agent_0'], dropped)
 
+    def test_person_location_is_in_initial_and_simulated_states(self):
+        graph = scene()
+        graph['person'] = [{'name': 'person_1', 'location': 'room_1'}]
+        problem = build_problem(graph, PLAN, DOMAIN)
+        self.assertIn('(person_at person_1 room_1)', problem)
+        actions = PDDLDomainParser(DOMAIN.read_text(encoding='utf-8')).actions
+        self.assertIn(['person_at', 'person_1', 'room_1'], simulate(problem, PLAN, actions))
+
+    def test_person_without_location_has_no_initial_location_fact(self):
+        graph = scene()
+        graph['person'] = [{'name': 'person_1'}]
+        self.assertNotIn('(person_at ', build_problem(graph, PLAN, DOMAIN))
+
     def test_floor_cleaner_attribute_is_preserved_for_nonroom_objects(self):
         graph = scene()
         graph['objects'][0]['states']['require_floor_cleaner'] = True

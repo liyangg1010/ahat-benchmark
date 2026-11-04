@@ -8,7 +8,24 @@ original paper prompts and a pinned Linux VAL runtime.
 [Paper](https://arxiv.org/html/2602.12244v2) ·
 [Dataset](https://huggingface.co/datasets/SII-liyang2024/AHAT-dataset) ·
 [Evaluation protocol](docs/evaluation.md) ·
-[Validation evidence](docs/validation/parity.md)
+[Validation evidence](docs/validation/parity.md) ·
+[TGPO paper version lock](docs/reproducibility/tgpo-paper.md)
+
+## TGPO paper reproduction
+
+The results reported in the TGPO paper use the immutable
+`paper-tgpo-v1` snapshot at commit
+`fafa4624cf4e99c4af10d1738d51fc9cd97e91fb`. Reproduce those results from a
+clean checkout with:
+
+```bash
+git checkout paper-tgpo-v1
+```
+
+The `main` branch remains the active development branch for
+`ahat-benchmark`; later changes do not change the paper snapshot. See the
+[version lock](docs/reproducibility/tgpo-paper.md) for the dataset revision,
+domain, validator, prompts and evaluation protocol used by this snapshot.
 
 ## Install
 

@@ -1,6 +1,11 @@
 # Preparing a release
 
-The 2.2.0 release synchronizes the PDDL domain with the pinned HF dataset.
+The 2.3.0 preparation adds adjacency consistency, unified appliance-specific
+thermal processing with one heated result, explicit heatability/cookware
+capabilities, the D3 meal/setup distinction and instruction-based judging,
+with 296 bundled tasks after semantic meal and liquid coverage pruning. Domain, rubric and
+task-set revisions require fresh
+evaluation outputs; older scores are historical snapshots.
 
 The 2.1.0 preparation passed 36 offline tests, the 348-case audited comparison,
 1,250 scoring combinations, and an isolated installed-wheel end-to-end check.
@@ -13,6 +18,7 @@ Run the offline checks and build from a source checkout:
 python -m pip install -e '.[dev]'
 python -m unittest discover -s tests -v
 ahat-benchmark doctor
+python scripts/check_reference_plans.py
 python examples/offline_demo.py
 python scripts/check_release.py
 python -m build

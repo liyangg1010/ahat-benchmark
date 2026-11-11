@@ -6,24 +6,67 @@ You will receive:
   Common predicates: item_on_surface(obj, surface), item_in_receptacle(obj, container),
   furniture_in_room(furniture, room), is_clean(obj), is_open(obj), is_powered_on(device),
   holding(agent, obj), handempty(agent), agent_at(agent, location), next_to(obj1, obj2, surface),
-  p_holding(person, obj)
+  p_holding(person, obj), serves_two(food), serves_group(food)
 - Instruction: the user task.
 
 Evaluate whether the final state satisfies the goals implied by the Instruction.
+
+For explicitly represented food/object processing targets, heated is the ONLY
+thermal result. It represents completed cooking, warming or reheating under this
+benchmark's abstraction, for food and other explicitly heatable objects. There is
+no separate doneness or initially cooked state. Check heated when the instruction
+requires thermal processing; do not demand cooked or distinguish degrees of heating.
+can_be_heated and is_food describe capabilities/identity, not completion evidence.
+Merely powering a device does not establish heated. Fetching food, setting a table
+or preparing an atmosphere alone does not require thermal processing. Packaging
+such as egg cartons is not the food itself; processing packaging does not establish
+that the food was processed. Liquid contents in fill/pour and self-heating kettle
+tasks use container/device states; do not demand a separate liquid object or an
+unrepresented temperature fact. This does not add a liquid-temperature model.
+
+serves_two(food) is an explicit, static declaration that the whole food object
+contains enough food for two diners. For a meal "for two", a relevant food object
+with serves_two can satisfy the quantity requirement when its requested processing
+and serving/location conditions are also met. A shared dish is allowed: do not
+require two separate food nodes, two plates or a splitting action unless requested.
+serves_two alone does not establish that food was prepared, heated or served.
+This is not a completion bonus on instructions without a diner-count requirement.
+Its absence means two-serving capacity was not declared; it does not prove that
+the object feeds only one person. Do not infer exact amounts, larger capacities,
+or quantities inside packaging from object names or tableware counts.
+
+serves_group(food) explicitly declares that this whole food portion is enough
+for the intended family or guest group in THIS scenario. The group size is
+unspecified: do not invent a numeric count or infer capacity for arbitrary groups.
+Use it for the scenario's family/guest quantity requirement, alongside actual
+meal preparation and serving. It does not prove a complete menu, heating or
+serving, and it does not supply an exact numeric capacity. Absence is undeclared
+capacity, not evidence of insufficiency. Both portion predicates are static.
 
 Focus on:
 - Are required objects in their target locations (check spatial predicates)?
 - Are required state attributes satisfied (clean, open, filled, powered, etc.)?
 - ON ≠ IN ≠ NEXT TO — spatial relations must match exactly.
-- **Arrangement quality**: For tasks that require setting up spaces (dinner, movie night, guests),
-  check whether items are properly grouped together. Multiple `next_to` predicates on the same surface
-  indicate a cohesive arrangement — this is stronger evidence of goal achievement than items
-  merely placed on a surface without spatial relation to each other.
+- **Required adjacency**: If the instruction explicitly requires items to be next to/beside
+  each other, check the specified objects AND support location. Merely sharing a surface
+  or receptacle is insufficient. Missing required adjacency prevents full goal achievement;
+  assess partial credit using the other satisfied goals. Adjacency is symmetric, not transitive.
+- **Optional adjacency**: When adjacency is not required, its absence is not a failure and
+  adding a valid, relevant next_to relation is not an error. Do not award extra credit solely
+  for next_to, and do not let it substitute for the actual requested object states/locations.
+  Judge any conflicting relocation against the instruction, not against the mere use of next_to.
 
-For abstract instructions (e.g., "prepare breakfast"), infer reasonable goals
-and check if the state reflects them. A state that shows deliberate arrangement of related items
-(e.g., plate next_to napkin next_to cutlery on dining_table) demonstrates better goal achievement
-than scattered placements.
+For abstract instructions (e.g., "prepare breakfast"), infer reasonable core goals
+and check if the state reflects them. Do not invent adjacency requirements for dinner,
+movie-night or guest-preparation tasks. Extra arrangement cannot replace cooking, serving,
+cleaning or any other required goal. If the instruction requests a temporary arrangement
+followed by cleanup, do not require that arrangement to remain in the final state; intermediate
+steps are evaluated from the plan by the other dimensions.
+The final state alone does not prove that a requested earlier event occurred:
+a clean table cannot prove a dinner was prepared or served before cleanup.
+Evaluate observable final outcomes without claiming unsupported history. D3
+assesses required-stage coverage and D4 assesses requested temporal order from
+the plan. Do not demand an unmodeled eating, waiting or event-history predicate.
 
 **Critical failure**: Set critical_failure=true ONLY if:
 - A core object explicitly named in the instruction is in a clearly wrong state

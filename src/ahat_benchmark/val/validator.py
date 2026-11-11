@@ -9,11 +9,12 @@ from pathlib import Path
 from typing import Any
 
 from ..pddl import full_problem, sexpr
+from ..pddl_effects import compatible_type, typed_symbols
 from ..provenance import digest, file_digest
 from ..vendor.scene_graph import PDDLDomainParser
 
 
-VALIDATOR_VERSION = "full-scene-val-audited-v1"
+VALIDATOR_VERSION = "full-scene-val-typed-arguments-v3"
 
 
 def validator_protocol(val_executable: Path, timeout_seconds: float, allow_missing: bool = False) -> dict[str, Any]:
@@ -75,9 +76,19 @@ def validate_plan(
         }
     try:
         domain_text = domain_path.read_text(encoding="utf-8")
-        action_specs = PDDLDomainParser(domain_text).actions
+        domain = PDDLDomainParser(domain_text)
+        action_specs = domain.actions
         dropped: list[list[str]] = []
         problem_text = full_problem(scene_graph, domain_path, dropped)
+        problem = sexpr(problem_text)
+        object_types = typed_symbols(next(
+            (section[1:] for section in problem
+             if isinstance(section, list) and section and section[0] == ":objects"), []
+        ))
+        object_types.update(typed_symbols(next(
+            (section[1:] for section in domain.parsed_structure
+             if isinstance(section, list) and section and section[0] == ":constants"), []
+        )))
     except Exception as exc:
         return {
             "status": "val_error",
@@ -93,19 +104,44 @@ def validate_plan(
         "problem_sha256": digest(problem_text.encode()),
         "excluded_ill_typed_initial_facts": dropped,
     }
-    # Native VAL can segfault on wrong-arity actions. AHAT's saved Luna
-    # evaluator checks these domain constraints before calling the process.
+    # Native VAL can crash or hang on invalid arguments. Check declarations
+    # from the emitted problem and domain constants, including subtype ancestry,
+    # before invoking it. Process failures remain infrastructure errors.
     for text in normalized:
         action = sexpr(text)
         failure = None
+        argument_error = None
         if action[0] not in action_specs:
             failure = "Unknown domain action"
         elif len(action) - 1 != len(action_specs[action[0]]["parameters"]):
             failure = "Wrong action argument count"
+        else:
+            parameters = action_specs[action[0]]["parameters"]
+            for position, (argument, (parameter, expected)) in enumerate(
+                zip(action[1:], parameters.items()), start=1
+            ):
+                actual = object_types.get(argument)
+                if actual is None:
+                    failure = f"Undeclared action object: {argument} (argument {position}, {parameter})"
+                    kind = "unknown_object"
+                elif not compatible_type(actual, expected, domain.types):
+                    failure = (
+                        f"Wrong action argument type: {argument} has type {actual}, "
+                        f"expected {expected} (argument {position}, {parameter})"
+                    )
+                    kind = "type_mismatch"
+                else:
+                    continue
+                argument_error = {
+                    "kind": kind, "position": position, "parameter": parameter,
+                    "argument": argument, "expected_type": expected, "actual_type": actual,
+                }
+                break
         if failure:
             return {
                 "status": "invalid", "validate_result": False, "fail_reason": failure,
                 "invalid_action": text, "plan_repair_advice": None, **prepared,
+                **({"argument_error": argument_error} if argument_error else {}),
                 "duration_seconds": round(time.monotonic() - started, 6),
             }
     with tempfile.TemporaryDirectory(prefix="ahat-val-") as temp_dir:

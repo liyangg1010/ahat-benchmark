@@ -192,10 +192,10 @@ def run_doctor(config: dict, registry_path: Path | None = None) -> int:
             failures += 1
             print(f"[FAIL] {label}: snapshot has changed", file=sys.stderr)
     if {key: digest(value.encode()) for key, value in PROMPTS.items()} == manifest["judge"]["prompt_hashes"]:
-        print("[OK] four verbatim paper rubric prompt hashes")
+        print("[OK] four versioned rubric prompt hashes")
     else:
         failures += 1
-        print("[FAIL] paper rubric prompt hashes", file=sys.stderr)
+        print("[FAIL] versioned rubric prompt hashes", file=sys.stderr)
     print("Doctor passed" if failures == 0 else f"Doctor found {failures} problem(s)")
     return 0 if failures == 0 else 1
 

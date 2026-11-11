@@ -64,7 +64,8 @@ class RubricEvaluator:
             "judge_kwargs": {}, "weights": self.weights, "critical_failure_cap": self.critical_failure_cap,
             "good_threshold": self.good_threshold, "normal_threshold": self.normal_threshold,
             "prompt_hashes": {key: digest(prompt.encode()) for key, prompt in PROMPTS.items()},
-            "state_method": "Full-scene initial facts plus simultaneous STRIPS delete/add effects",
+            "state_method": "Full-scene initial facts plus simultaneous delete/add and typed forall effects",
+            "adjacency_policy": "Required only by instruction; valid optional adjacency is neither an error nor an automatic bonus",
             "initial_fact_policy": "Drop and record facts incompatible with predicate types or PDDL identifiers",
         }
 

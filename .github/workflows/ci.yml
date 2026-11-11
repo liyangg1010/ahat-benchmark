@@ -24,6 +24,7 @@ jobs:
         run: |
           python -m unittest discover -s tests -v
           ahat-benchmark doctor
+          python scripts/check_reference_plans.py
           python examples/offline_demo.py
           python scripts/check_release.py
           python scripts/export_public.py --output-dir outputs/ci-public-export

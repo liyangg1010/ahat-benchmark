@@ -63,8 +63,19 @@
     ; heating相关谓词
     (is_heating_device ?p - physobj) ; 描述一个物理对象是否是加热设备（如微波炉、烤箱等）
 
-    ; 食物/物体处理状态
-    (cooked ?o - physobj)
+    ; Device capabilities are explicit; an openable object is not necessarily an oven.
+    (is_microwave ?d - physobj)
+    (is_oven ?d - physobj)
+    (is_cooking_surface ?d - physobj) ; stove, induction hob or grill
+    (is_food ?o - physobj)
+    ; Static portion capacity: this whole food object is enough for two diners.
+    (serves_two ?o - physobj)
+    ; Enough for the intended dining group in this scenario; no numeric size implied.
+    (serves_group ?o - physobj)
+    (can_be_heated ?o - physobj)
+
+    ; Single processing result; no raw/pre-cooked or temperature distinction.
+    (heated ?o - physobj)
     (sliced ?o - physobj)
     (soaked ?o - physobj)
 
@@ -97,6 +108,9 @@
     )
     :effect (and
       (not (item_on_surface ?obj ?surface))
+      (forall (?other - physobj)
+        (and (not (next_to ?obj ?other ?surface))
+             (not (next_to ?other ?obj ?surface))))
       (holding ?ag ?obj)
       (not (handempty ?ag))
     )
@@ -126,7 +140,12 @@
   (:action pick_from_receptacle
     :parameters (?ag - agent ?obj - physobj ?r - physobj)
     :precondition (and (agent_at ?ag ?obj) (item_in_receptacle ?obj ?r)  (is_open ?r) (handempty ?ag))
-    :effect (and (not (item_in_receptacle ?obj ?r)) (holding ?ag ?obj) (not (handempty ?ag)))
+    :effect (and
+      (not (item_in_receptacle ?obj ?r))
+      (forall (?other - physobj)
+        (and (not (next_to ?obj ?other ?r))
+             (not (next_to ?other ?obj ?r))))
+      (holding ?ag ?obj) (not (handempty ?ag)))
   )
 
   ; Action: place_in_receptacle
@@ -211,32 +230,61 @@
             )
   )
 
-  ; Action: cook_on_heating_device
-  ; 描述: 将放在加热设备上的物体“烹饪/加热完成”
-  (:action cook_on_heating_device
-    ; 注意：不引入新的类别/type，这里的“盛放容器”仅用现有关系谓词 item_in_receptacle 来表达
+  ; Unified thermal processing for food and other explicitly heatable objects.
+  (:action heat_with_microwave
+    :parameters (?ag - agent ?o - physobj ?d - physobj)
+    :precondition (and
+      (agent_at ?ag ?d)
+      (handempty ?ag)
+      (is_microwave ?d)
+      (is_heating_device ?d)
+      (is_powered_on ?d)
+      (can_be_heated ?o)
+      (not (heated ?o))
+      (not (= ?o ?d))
+      (can_be_opened ?d)
+      (not (is_open ?d))
+      (item_in_receptacle ?o ?d)
+    )
+    :effect (heated ?o)
+  )
+
+  (:action heat_with_oven
+    :parameters (?ag - agent ?o - physobj ?d - physobj)
+    :precondition (and
+      (agent_at ?ag ?d)
+      (handempty ?ag)
+      (is_oven ?d)
+      (is_heating_device ?d)
+      (is_powered_on ?d)
+      (can_be_heated ?o)
+      (not (heated ?o))
+      (not (= ?o ?d))
+      (can_be_opened ?d)
+      (not (is_open ?d))
+      (item_in_receptacle ?o ?d)
+    )
+    :effect (heated ?o)
+  )
+
+  (:action heat_on_heating_device
     :parameters (?ag - agent ?o - physobj ?container - physobj ?d - physobj)
     :precondition (and
       (agent_at ?ag ?d)
-      (or
-        ; 若设备可打开，则需要将物体放入设备内部，并且设备处于打开状态
-        (and (can_be_opened ?d) (is_open ?d) (item_in_receptacle ?o ?d))
-        ; 若设备不可打开（如电炉台），则物体放在设备表面即可
-        ; 约束：食物需要先放入一个容器中，并将容器放到加热设备上（例如：stove + 任意 cookware/container）
-        (and
-          (not (can_be_opened ?d))
-          (is_heating_container ?container)
-          (item_on_surface ?o ?container)
-          (item_on_surface ?container ?d)
-          (not (= ?o ?container))
-          (not (= ?container ?d))
-        )
-      )
+      (handempty ?ag)
+      (is_cooking_surface ?d)
       (is_heating_device ?d)
       (is_powered_on ?d)
-      (not (cooked ?o))
+      (can_be_heated ?o)
+      (not (heated ?o))
+      (not (= ?o ?d))
+      (is_heating_container ?container)
+      (item_on_surface ?o ?container)
+      (item_on_surface ?container ?d)
+      (not (= ?o ?container))
+      (not (= ?container ?d))
     )
-    :effect (cooked ?o)
+    :effect (heated ?o)
   )
 
   ; Action: slice_on_surface

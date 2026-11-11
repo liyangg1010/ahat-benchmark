@@ -16,7 +16,7 @@ class JudgeTests(unittest.TestCase):
         self.assertIn(["holding", "agent_0", "cup_1"], state)
         self.assertNotIn(["item_on_surface", "cup_1", "table_1"], state)
 
-    def test_four_verbatim_prompts_and_default_api_parameters(self):
+    def test_four_versioned_prompts_and_default_api_parameters(self):
         client = FakeClient()
         result = self.evaluator(client).evaluate("Pick up the cup.", scene(), PLAN)
         self.assertEqual(result["score"], 1)

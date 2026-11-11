@@ -1,0 +1,500 @@
+{
+  "status": "user_approved_semantic_coverage_pruning",
+  "date": "2026-11-11",
+  "source_sha256": "6f4c5b75033599f7c59f4e1bbf68714f4871c714eef1c106ca3d7fb990c5eec6",
+  "counts": {
+    "remaining_meal_candidates": 23,
+    "two_diner_subset": 7,
+    "proposal_retain": 7,
+    "proposal_remove": 16,
+    "all_meal_candidates_before": 27,
+    "all_meal_candidates_after": 11,
+    "benchmark_before": 355,
+    "benchmark_after": 339,
+    "open_before": 108,
+    "open_after": 92
+  },
+  "policy": "Manual semantic coverage reduction, not exact-equivalence deduplication; retain explicit processing and temporal constraints. Retention does not certify existing references correct. Node/link Jaccard are exact set overlaps, not semantic embedding scores. Stable names and all node attributes are preserved in node comparison. Different scenes can test the same skill.",
+  "records": [
+    {
+      "source_index_at_audit": 238,
+      "id": "7b007eb0-dfe0-4bcd-8697-8926d4572585",
+      "split": "open",
+      "instruction": "Prepare a cozy dinner tonight",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "a55dd1af-59ee-4e0c-8139-208e2134ed49",
+      "scene_node_count": 224,
+      "explicit_food_nodes": [
+        "butter_54"
+      ],
+      "record_sha256": "65abf660efb35db103d2d85222b739d639150a3fbeaf18d5fbc67fb795bf1ec0"
+    },
+    {
+      "source_index_at_audit": 240,
+      "id": "cb22d87c-0879-4709-9985-4f367772bf44",
+      "split": "open",
+      "instruction": "Host an elegant dinner this evening",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+      "scene_node_count": 328,
+      "explicit_food_nodes": [],
+      "record_sha256": "557e51072893b65d82d6353338f21b2acbac217e5ed29597b9a042b7b4ccc02d"
+    },
+    {
+      "source_index_at_audit": 243,
+      "id": "a55dd1af-59ee-4e0c-8139-208e2134ed49",
+      "split": "open",
+      "instruction": "Plan and serve a complete evening meal",
+      "explicit_two_diners": false,
+      "proposal": "retain",
+      "retain_for": "普通完整供餐",
+      "coverage_representative_id": null,
+      "scene_node_count": 241,
+      "explicit_food_nodes": [
+        "apple_160",
+        "grapes_161"
+      ],
+      "record_sha256": "a4ede02d7a859b19dfef078b84cefe4149ceeb24057d7939b73f21a500f910d7"
+    },
+    {
+      "source_index_at_audit": 246,
+      "id": "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+      "split": "open",
+      "instruction": "Prepare an elegant dinner and ambiance",
+      "explicit_two_diners": false,
+      "proposal": "retain",
+      "retain_for": "餐食与氛围组合",
+      "coverage_representative_id": null,
+      "scene_node_count": 329,
+      "explicit_food_nodes": [
+        "carrots_218",
+        "cucumber_219"
+      ],
+      "record_sha256": "f71ecb5fea7fa3a9ba16b3c14b051d2b6d236d8f60930bcb3d23f5317fce23f8"
+    },
+    {
+      "source_index_at_audit": 249,
+      "id": "5e8f884f-03be-4d9d-aa32-14003a8aaf52",
+      "split": "open",
+      "instruction": "Prepare a comforting breakfast and serve it",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "scene_node_count": 60,
+      "explicit_food_nodes": [
+        "butter_27"
+      ],
+      "record_sha256": "dc9c1b6783fc9fb5894af42b81192da993e2a30f25beb2a9dad524887eddc9a0"
+    },
+    {
+      "source_index_at_audit": 254,
+      "id": "590bda12-228f-4784-9caa-404aa7340332",
+      "split": "open",
+      "instruction": "Prepare an inviting meal for family tonight.",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+      "scene_node_count": 163,
+      "explicit_food_nodes": [],
+      "record_sha256": "f02b8be356f313316acfa7ea48636ca0d009106a63da323927eef19121612843"
+    },
+    {
+      "source_index_at_audit": 255,
+      "id": "861111df-3fbf-4569-9df9-2d3a9da81415",
+      "split": "open",
+      "instruction": "Host an elegant evening meal",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "dec162ab-e453-419f-971a-2e32987350f2",
+      "scene_node_count": 158,
+      "explicit_food_nodes": [],
+      "record_sha256": "7bcee7944fde83ee5e8ddd6cf910c339c064b68edb90b6d9386ffd81ff4cc631"
+    },
+    {
+      "source_index_at_audit": 260,
+      "id": "7853d8d5-fccc-42e1-8540-cfe67325b42d",
+      "split": "open",
+      "instruction": "Prepare a complete breakfast for two.",
+      "explicit_two_diners": true,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+      "scene_node_count": 173,
+      "explicit_food_nodes": [
+        "eggs_90",
+        "butter_92"
+      ],
+      "record_sha256": "c8b47c9638679cbba1afa35ea27cc9c352629b266047123b8c7889a5464c5266"
+    },
+    {
+      "source_index_at_audit": 261,
+      "id": "f3ee3e87-d782-4870-8ed3-2bc92f344010",
+      "split": "open",
+      "instruction": "Host a cozy dinner for two tonight.",
+      "explicit_two_diners": true,
+      "proposal": "retain",
+      "retain_for": "明确两人晚餐",
+      "coverage_representative_id": null,
+      "scene_node_count": 171,
+      "explicit_food_nodes": [
+        "milk_114",
+        "eggs_116"
+      ],
+      "record_sha256": "f0e1199a36cff54f34a7f1626f60aebf2e0932a096aea593da2bebe45c6df91f"
+    },
+    {
+      "source_index_at_audit": 268,
+      "id": "21d63cf0-3045-4d01-a88a-fe6f7d3e3499",
+      "split": "open",
+      "instruction": "Prepare a cozy family dinner tonight",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+      "scene_node_count": 131,
+      "explicit_food_nodes": [],
+      "record_sha256": "b02606ca11ded124c6c82f850c864574bdd05f54217f959c003465f0d09e9203"
+    },
+    {
+      "source_index_at_audit": 269,
+      "id": "ff25ff1c-035a-474b-a42a-e16c6ea1965f",
+      "split": "open",
+      "instruction": "Make tonight's dinner special for everyone",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+      "scene_node_count": 272,
+      "explicit_food_nodes": [],
+      "record_sha256": "05f5fb8b534c02f2a5357013968bbc02838ffce85eb1b87e56f593e80d25ed1f"
+    },
+    {
+      "source_index_at_audit": 270,
+      "id": "b2ac8958-c1dc-42d9-a41a-b6e0d8b8dd39",
+      "split": "open",
+      "instruction": "Prepare a relaxed family breakfast",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+      "scene_node_count": 133,
+      "explicit_food_nodes": [],
+      "record_sha256": "d0b2e0db5b6c915bca51f57546bd93f834eaaa438c29773fc7475eb3b2a8e75b"
+    },
+    {
+      "source_index_at_audit": 273,
+      "id": "bc56e4a3-3772-456f-9ae6-8c3396f52880",
+      "split": "open",
+      "instruction": "Prepare breakfast for two",
+      "explicit_two_diners": true,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "scene_node_count": 182,
+      "explicit_food_nodes": [
+        "yak_butter_122"
+      ],
+      "record_sha256": "73119ef18769cb6c837f4fe4d5673b71125251706320431228885b83d6ccb078"
+    },
+    {
+      "source_index_at_audit": 279,
+      "id": "f623e258-d97b-4a07-9121-0337a5fd3277",
+      "split": "open",
+      "instruction": "Prepare a hearty breakfast for two guests",
+      "explicit_two_diners": true,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "scene_node_count": 111,
+      "explicit_food_nodes": [],
+      "record_sha256": "f32d96f3c6c5cfcfd4f0feb4d67aa0ad54dc3df8aea469906f96403a52a0d326"
+    },
+    {
+      "source_index_at_audit": 284,
+      "id": "7bc96205-5b58-4310-b056-8768d2c9ca7a",
+      "split": "open",
+      "instruction": "Host a cozy dinner for guests",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "dec162ab-e453-419f-971a-2e32987350f2",
+      "scene_node_count": 174,
+      "explicit_food_nodes": [],
+      "record_sha256": "a5bb05724701403a91d2e244bd41db6807afe9ebbbbfff3ecf4790f5ed44ff9f"
+    },
+    {
+      "source_index_at_audit": 292,
+      "id": "e2d7a48c-0bc8-4a23-a932-83b4cbee492a",
+      "split": "open",
+      "instruction": "Make breakfast for two and serve",
+      "explicit_two_diners": true,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "scene_node_count": 61,
+      "explicit_food_nodes": [
+        "butter_27"
+      ],
+      "record_sha256": "9953dc8c7ed52f87c00212584d6724c17483576982aba3f492c9c30b02ffd5a6"
+    },
+    {
+      "source_index_at_audit": 300,
+      "id": "43f14fb2-001a-495e-b9f6-ae11b67c964b",
+      "split": "open",
+      "instruction": "Prepare an elaborate breakfast and serve it",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "scene_node_count": 164,
+      "explicit_food_nodes": [],
+      "record_sha256": "ac23309f38e33c6f32aa40c21351c1db1bf8bf8d0e2fea5fbb5fee93fe877da9"
+    },
+    {
+      "source_index_at_audit": 301,
+      "id": "dec162ab-e453-419f-971a-2e32987350f2",
+      "split": "open",
+      "instruction": "Prepare an elegant dinner for guests",
+      "explicit_two_diners": false,
+      "proposal": "retain",
+      "retain_for": "客人晚餐",
+      "coverage_representative_id": null,
+      "scene_node_count": 159,
+      "explicit_food_nodes": [
+        "apple_105"
+      ],
+      "record_sha256": "24c85a5b71672230bfcaacdf1c9ceace9d3c13cdf134ad381e823ea93e3df500"
+    },
+    {
+      "source_index_at_audit": 303,
+      "id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+      "split": "open",
+      "instruction": "Host a cozy brunch for two.",
+      "explicit_two_diners": true,
+      "proposal": "retain",
+      "retain_for": "未要求加热的两人早午餐",
+      "coverage_representative_id": null,
+      "scene_node_count": 267,
+      "explicit_food_nodes": [
+        "milk_65",
+        "eggs_66",
+        "apple_180"
+      ],
+      "record_sha256": "c87a196d483db7bf5287d73646687d10e2cb7bb472fe441516dc4b1560ba2c8d"
+    },
+    {
+      "source_index_at_audit": 308,
+      "id": "4a3dc074-3cd6-4241-a4a5-2c37f31c99a1",
+      "split": "open",
+      "instruction": "Host a formal dinner and cleanup",
+      "explicit_two_diners": false,
+      "proposal": "retain",
+      "retain_for": "举办用餐后清理的过程约束",
+      "coverage_representative_id": null,
+      "scene_node_count": 148,
+      "explicit_food_nodes": [],
+      "record_sha256": "a8a351776b32442938cd27c19c4a08c343c1a2841d7b6c961428bdef7174fdc7"
+    },
+    {
+      "source_index_at_audit": 327,
+      "id": "2608e618-305d-46d2-b563-2ca9bc351c7b",
+      "split": "open",
+      "instruction": "Prepare a full weekend brunch.",
+      "explicit_two_diners": false,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+      "scene_node_count": 180,
+      "explicit_food_nodes": [],
+      "record_sha256": "7b1979ff0c4a3f5f43d3a248beb87490b0f6a14c1ddb3783bc21e68883b6670e"
+    },
+    {
+      "source_index_at_audit": 330,
+      "id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+      "split": "open",
+      "instruction": "Prepare a full family breakfast service",
+      "explicit_two_diners": false,
+      "proposal": "retain",
+      "retain_for": "未指定确切人数的家庭早餐",
+      "coverage_representative_id": null,
+      "scene_node_count": 173,
+      "explicit_food_nodes": [
+        "eggs_90",
+        "butter_92"
+      ],
+      "record_sha256": "dc902c81e3b835e5b7f3e808503faa8670d94bf8bda87ee2dcc7ac74427a9f68"
+    },
+    {
+      "source_index_at_audit": 338,
+      "id": "e8f12ff2-1929-497a-9d87-103ff77d2110",
+      "split": "open",
+      "instruction": "Prepare a comforting weekend breakfast for two",
+      "explicit_two_diners": true,
+      "proposal": "remove",
+      "retain_for": null,
+      "coverage_representative_id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+      "scene_node_count": 267,
+      "explicit_food_nodes": [
+        "milk_65",
+        "eggs_66",
+        "cucumber_180"
+      ],
+      "record_sha256": "c8f7e75662ebbb212e5ee7746163aa44a5753019126e3b8727bd7488654551b3"
+    }
+  ],
+  "scene_pair_checks": [
+    {
+      "indices": [
+        240,
+        246
+      ],
+      "ids": [
+        "cb22d87c-0879-4709-9985-4f367772bf44",
+        "3cf1736a-3b96-4913-b9c5-df4688ee9053"
+      ],
+      "node_intersection": 326,
+      "node_union": 331,
+      "node_jaccard": 0.9848942598187311,
+      "link_intersection": 290,
+      "link_union": 295,
+      "link_jaccard": 0.9830508474576272
+    },
+    {
+      "indices": [
+        249,
+        292
+      ],
+      "ids": [
+        "5e8f884f-03be-4d9d-aa32-14003a8aaf52",
+        "e2d7a48c-0bc8-4a23-a932-83b4cbee492a"
+      ],
+      "node_intersection": 60,
+      "node_union": 61,
+      "node_jaccard": 0.9836065573770492,
+      "link_intersection": 55,
+      "link_union": 56,
+      "link_jaccard": 0.9821428571428571
+    },
+    {
+      "indices": [
+        255,
+        301
+      ],
+      "ids": [
+        "861111df-3fbf-4569-9df9-2d3a9da81415",
+        "dec162ab-e453-419f-971a-2e32987350f2"
+      ],
+      "node_intersection": 157,
+      "node_union": 160,
+      "node_jaccard": 0.98125,
+      "link_intersection": 140,
+      "link_union": 143,
+      "link_jaccard": 0.9790209790209791
+    },
+    {
+      "indices": [
+        260,
+        330
+      ],
+      "ids": [
+        "7853d8d5-fccc-42e1-8540-cfe67325b42d",
+        "198fd035-6f65-4740-8b01-0643a215ccb4"
+      ],
+      "node_intersection": 173,
+      "node_union": 173,
+      "node_jaccard": 1.0,
+      "link_intersection": 154,
+      "link_union": 154,
+      "link_jaccard": 1.0
+    },
+    {
+      "indices": [
+        261,
+        319
+      ],
+      "ids": [
+        "f3ee3e87-d782-4870-8ed3-2bc92f344010",
+        "4bddb476-f1ae-44e1-9558-add1571dd936"
+      ],
+      "node_intersection": 169,
+      "node_union": 173,
+      "node_jaccard": 0.976878612716763,
+      "link_intersection": 154,
+      "link_union": 156,
+      "link_jaccard": 0.9871794871794872
+    },
+    {
+      "indices": [
+        273,
+        327
+      ],
+      "ids": [
+        "bc56e4a3-3772-456f-9ae6-8c3396f52880",
+        "2608e618-305d-46d2-b563-2ca9bc351c7b"
+      ],
+      "node_intersection": 180,
+      "node_union": 182,
+      "node_jaccard": 0.989010989010989,
+      "link_intersection": 161,
+      "link_union": 163,
+      "link_jaccard": 0.9877300613496932
+    },
+    {
+      "indices": [
+        303,
+        338
+      ],
+      "ids": [
+        "0cf41a97-9f6a-4e13-8542-1def6889483d",
+        "e8f12ff2-1929-497a-9d87-103ff77d2110"
+      ],
+      "node_intersection": 266,
+      "node_union": 268,
+      "node_jaccard": 0.9925373134328358,
+      "link_intersection": 238,
+      "link_union": 240,
+      "link_jaccard": 0.9916666666666667
+    },
+    {
+      "indices": [
+        238,
+        293
+      ],
+      "ids": [
+        "7b007eb0-dfe0-4bcd-8697-8926d4572585",
+        "9027ed1b-fcf9-4f17-8b39-c397d4db7563"
+      ],
+      "node_intersection": 222,
+      "node_union": 226,
+      "node_jaccard": 0.9823008849557522,
+      "link_intersection": 198,
+      "link_union": 202,
+      "link_jaccard": 0.9801980198019802
+    },
+    {
+      "indices": [
+        260,
+        319
+      ],
+      "ids": [
+        "7853d8d5-fccc-42e1-8540-cfe67325b42d",
+        "4bddb476-f1ae-44e1-9558-add1571dd936"
+      ],
+      "node_intersection": 11,
+      "node_union": 333,
+      "node_jaccard": 0.03303303303303303,
+      "link_intersection": 6,
+      "link_union": 303,
+      "link_jaccard": 0.019801980198019802
+    }
+  ],
+  "revision": "meal-pruning-v1",
+  "scope": "Remove exactly 16 approved open meal variants; keep the other records byte-for-byte and preserve all four processing and eleven explicit-adjacency references."
+}

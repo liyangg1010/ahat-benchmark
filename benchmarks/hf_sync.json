@@ -16,41 +16,4990 @@
   },
   "license": "CC-BY-NC-4.0",
   "synced_at": "2026-10-28T09:21:10+00:00",
-  "case_count": 348,
+  "case_count": 296,
   "split_counts": {
-    "easy": 146,
-    "medium": 94,
-    "open": 108
+    "easy": 130,
+    "medium": 74,
+    "open": 92
   },
-  "transformation": "Split by source type; retain id, instruction and scene_graph verbatim in source order. Reference plans remain only in the unchanged source JSONL.",
+  "transformation": "Apply documented local sink-cleaning corrections, repeated-instruction pruning, explicit-adjacency annotations and locally authored next-to tasks. Runtime splits project id, instruction and scene_graph in bundled JSONL order; plan and optional reference_goal annotations stay in the source JSONL. Annotate explicit cooking capabilities and repair four cooking/heating references (cooking-v1). Audit meal candidates; strengthen two confirmed sufficient reference goals and simplify the oven reheating witness (cooking-goals-v1). Unify thermal processing to heated only, remove initial cooked flags, normalize legacy is_heated flags and migrate references (heated-v2). Declare two-serving egg portions in two scenes, add reference capacity goals and expose the static predicate to D1 (serves-two-v1). Remove 16 approved open meal variants while retaining seven representatives and four processing tasks; preserve surviving records unchanged (meal-pruning-v1). Annotate food capacity in the remaining two-person and family/guest meals without inventing numeric group size; clarify required plan stages and temporal order (group-portions-v1). Remove 43 liquid-task variants from four overrepresented categories, retaining six representatives per category and preserving all surviving records (liquid-pruning-v1).",
   "artifacts": [
     {
       "path": "ahat_eval_set.jsonl",
-      "sha256": "05cb4e725b5a8a93feb8c8609c768dc7a93371fb00c076f09ddaa104bdf8fc94"
+      "sha256": "0df84da9ed81615e0e8d06e364a0e45be08bca44ddfb6407341db489ddc91cef"
     },
     {
       "path": "ahat-easy/cases.json",
-      "sha256": "8af2931a1a20194ffa7efd09c2e88e2e8073d29f5374fa125c2d9570a773e404"
+      "sha256": "630253937604f7b7e88b235c153a2431866bc3b38f1a7b1d9d4da6f681a766a0"
     },
     {
       "path": "ahat-easy/manifest.json",
-      "sha256": "4f937bcbf3a9dc7e6aa77dee562bf1ab68d27adda557265f3e400e57e321070c"
+      "sha256": "e31c5dbca1010352002cca4a02deed5b88fb4543d3f219715e0e5599be04df43"
     },
     {
       "path": "ahat-medium/cases.json",
-      "sha256": "4a47d71d4b2af577730b056bcdeb8795cd346faee2b845dfea303e5ed973ca1b"
+      "sha256": "eb6cef4371e9c5ba4a74b10125757f211c610d0c8632881c200b6a272efeb39f"
     },
     {
       "path": "ahat-medium/manifest.json",
-      "sha256": "40d13e408523cd723b38e1ce3545c0ddcbaba493b1321a9c0408dc90d094d0e0"
+      "sha256": "661f43278366af24e7795a604d0ca573cd0df80b216751339fd1fffc23781d47"
     },
     {
       "path": "ahat-open/cases.json",
-      "sha256": "3f2446129e169337959c1e95051cbea3fc8524184e5a277375a75229c78d4ae1"
+      "sha256": "2b84c26b2b5e9ada660ff880fc147244131e29a0aabda147b7aea8727245b83a"
     },
     {
       "path": "ahat-open/manifest.json",
-      "sha256": "23a0f5d5089d16ab3a2dee70ddcb7e7a07912910e472ad16771afb819ad85911"
+      "sha256": "19e4c7d0553ec6745eb027b7ade8c418525cc5494957ccc55da3dffcb8ec7161"
     }
-  ]
+  ],
+  "local_corrections": {
+    "version": "sink-cleaning-v2",
+    "cases": [
+      {
+        "id": "913ca94e-5eb2-44ec-8c82-867844780d57",
+        "source_index": 39,
+        "initial_is_clean_false": [
+          "sink_6"
+        ],
+        "reference_goal": [
+          "(is_clean sink_6)"
+        ],
+        "reference_plan_field": "plan"
+      },
+      {
+        "id": "fa3376d5-18a6-41e1-9a80-42bdb5349c75",
+        "source_index": 70,
+        "initial_is_clean_false": [
+          "sink_4",
+          "sink_5"
+        ],
+        "reference_goal": [
+          "(is_clean sink_4)",
+          "(is_clean sink_5)"
+        ],
+        "reference_plan_field": "plan",
+        "instruction": "Clean all the sinks in the bathroom."
+      },
+      {
+        "id": "8c934a7d-48a8-4069-b6cf-3e9fb9451316",
+        "source_index": 54,
+        "instruction": "Clean all the sinks in the bathrooms.",
+        "reference_goal": [
+          "(is_clean sink_51)",
+          "(is_clean sink_53)",
+          "(is_clean sink_54)",
+          "(is_clean sink_56)"
+        ],
+        "reference_plan_field": "plan"
+      }
+    ]
+  },
+  "local_pruning": {
+    "version": "repeated-instruction-pruning-v1",
+    "date": "2026-11-04",
+    "index_basis": "Zero-based indices in the pinned upstream 348-record source, before pruning. Use IDs to locate current records.",
+    "cases": [
+      {
+        "task": "cookie",
+        "instruction": "Go to the kitchen and pick up a cookie from the kitchen cabinet.",
+        "removed_id": "921cf3ea-7615-4272-b50a-700cd2a39230",
+        "removed_source_index": 45,
+        "retained_id": "b87dc669-7852-4267-8d4e-7dd2fd167f4a",
+        "retained_source_index": 115,
+        "reason": "Retain the cabinet-opening variant with more furniture candidates (93 versus 72)."
+      },
+      {
+        "task": "water",
+        "instruction": "Could you bring me a glass of water, please?",
+        "removed_id": "f496da5a-81d0-4c4a-a1d0-04d61aee0e1d",
+        "removed_source_index": 142,
+        "retained_id": "78caec8e-5332-4cd0-82f1-0550a430df58",
+        "retained_source_index": 80,
+        "reason": "Retain the variant where the glass and faucet are on separate surfaces in different rooms."
+      },
+      {
+        "task": "instant_noodles",
+        "instruction": "Can you grab me some instant noodles from the kitchen?",
+        "removed_id": "1e347a4c-ab36-4e80-9008-1d3e3ecaaeee",
+        "removed_source_index": 114,
+        "retained_id": "8f039a4c-e583-4152-82be-bce9d2112dfc",
+        "retained_source_index": 124,
+        "reason": "Retain the variant requiring opening the cabinet and picking from a receptacle before delivery."
+      }
+    ]
+  },
+  "local_domain": {
+    "name": "ahat-v8-group-portions",
+    "sha256": "80f559c2786897313e6af5b55e290faa7b3c1856275b2805d02c3bfe8d743746",
+    "base_sha256": "65cf0f5503763acecbb728f598cee9b6baf7ae7f950087a597f8c99db2d4ff89",
+    "changes": "Preserve heated-only processing, serves_two and adjacency guards; add static serves_group capacity for the scenario intended dining group."
+  },
+  "local_annotations": {
+    "version": "explicit-next-to-goals-v1",
+    "cases": [
+      {
+        "id": "ab270610-f68d-4ccf-8ced-455a237f8dc5",
+        "reference_goal": [
+          "(next_to glass_1 laptop_1 table_81)",
+          "(next_to bottle_ice_1 laptop_1 table_81)",
+          "(next_to bottle_8 laptop_1 table_81)"
+        ],
+        "changes": "Add goals for each explicitly requested item beside laptop_1; scene, instruction and plan unchanged."
+      }
+    ]
+  },
+  "local_additions": {
+    "version": "next-to-v1",
+    "date": "2026-11-10",
+    "kind": "local_authored",
+    "generator": "scripts/next_to_cases.py",
+    "license": "CC-BY-NC-4.0",
+    "case_count": 10,
+    "split_counts": {
+      "easy": 6,
+      "medium": 4
+    },
+    "cases": [
+      {
+        "id": "ce1d381a-2c02-5720-bd6f-bb4cbec0bc7e",
+        "type": "easy",
+        "scenario": "cup-and-plate"
+      },
+      {
+        "id": "66405407-b3f4-549d-bec3-dc68b8fa5813",
+        "type": "easy",
+        "scenario": "book-and-lamp"
+      },
+      {
+        "id": "cc6ac010-2c28-55cb-8a12-5c5b0aa07b75",
+        "type": "easy",
+        "scenario": "towel-and-soap"
+      },
+      {
+        "id": "101df926-f674-57ac-96b1-ffc6111e6e21",
+        "type": "easy",
+        "scenario": "pen-in-drawer"
+      },
+      {
+        "id": "1277c042-3a66-5c9d-b6b4-7e201d28b62f",
+        "type": "easy",
+        "scenario": "preserve-existing-pair"
+      },
+      {
+        "id": "01cf3cd4-5412-5d0c-ab92-c92faf724386",
+        "type": "easy",
+        "scenario": "replace-old-neighbor"
+      },
+      {
+        "id": "6eb04295-170f-5fe1-b4ef-b80b5c493c66",
+        "type": "medium",
+        "scenario": "two-required-neighbors"
+      },
+      {
+        "id": "815eae12-96e6-51a7-a056-34cd118ace9b",
+        "type": "medium",
+        "scenario": "reestablish-pair-on-new-support"
+      },
+      {
+        "id": "507931f2-3566-57de-a6f3-6b8e00363df0",
+        "type": "medium",
+        "scenario": "change-receptacle-and-neighbor"
+      },
+      {
+        "id": "3af07561-c24f-5819-9671-5b552fbdbe22",
+        "type": "medium",
+        "scenario": "surface-and-receptacle-goals"
+      }
+    ],
+    "generator_sha256": "45db95e8d7aef4b17638d8244ca9deda9b17b78b5b4bc71240f9733e85b61a64"
+  },
+  "local_cooking": {
+    "version": "cooking-v1",
+    "date": "2026-11-11",
+    "script": "scripts/repair_cooking.py",
+    "base_data_sha256": "bc9a574b0620e8090dec16421dd1535c220cba97d0abe9e656d5fa5528f11a65",
+    "cases": [
+      {
+        "id": "b217891c-9036-4098-b6f2-6898cdc14c9d",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_83"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "3d08e8f9-f491-424b-aec0-9ef2949ee266",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_139"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "c3a63689-9ed7-44a7-a314-892d7e1ec291",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_98",
+          "oven_99"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_61",
+          "oven_62",
+          "oven_63",
+          "oven_64"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d8397dc8-800d-46b1-88ff-a7031e41ce44",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_76",
+          "oven_77"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "da7dda12-673f-45ac-bad9-0d20078ebbf1",
+        "type": "easy",
+        "changed_nodes": [
+          "bundt_pan_15",
+          "cake_pan_24"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "6a900e62-09e5-4d4b-a15e-a2cc487c7f1a",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_67",
+          "oven_68",
+          "oven_69",
+          "pot_41",
+          "pan_42",
+          "pot_65"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e9fed962-33e0-43ce-a5f0-ed603c0fe7d6",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_74",
+          "oven_75",
+          "banana_19",
+          "orange_21",
+          "orange_22"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d5e8b167-4f7e-4aed-8960-570a455c9267",
+        "type": "easy",
+        "changed_nodes": [
+          "apple_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "9104baaa-79d5-4f34-8fea-23172be534d6",
+        "type": "easy",
+        "changed_nodes": [
+          "bundt_pan_15",
+          "cake_pan_24"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "4b7617ea-d7bd-4da7-8a03-96f5501fabc0",
+        "type": "easy",
+        "changed_nodes": [
+          "fresh_vegetables_99",
+          "cooking_pot_119",
+          "pot_127",
+          "pan_128"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "b6a3a03a-3909-4092-88d6-1e524beb6d41",
+        "type": "easy",
+        "changed_nodes": [
+          "potato_19"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "3b49cc0c-0f25-45b2-8c9a-dbc4f957f693",
+        "type": "easy",
+        "changed_nodes": [
+          "pot_58",
+          "pan_59"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "47b1ca5e-7111-4b41-ac24-c053d45ee620",
+        "type": "easy",
+        "changed_nodes": [
+          "apple_0",
+          "apple_1",
+          "bread_2",
+          "potato_6",
+          "cake_pan_23",
+          "apple_24"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "eb91424f-f1cb-4d9c-91bf-c2f319fe9c84",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_39",
+          "microwave_40",
+          "microwave_41",
+          "oven_42",
+          "oven_43",
+          "microwaveable_meal_33"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "359c9091-abba-4695-aeb4-6ff68340f9dd",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_74",
+          "oven_75",
+          "banana_19",
+          "orange_21",
+          "orange_22"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "96963d36-afe5-4868-9e4d-3b2dfcb7d6a3",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_12"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "33e6f455-684e-476b-9351-bbb7a6e485cf",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_30",
+          "apple_3",
+          "egg_17",
+          "bundt_pan_26"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "adb0fda4-53b4-418f-9154-39dd81aeaf78",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_133",
+          "bread_loaf_61"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7de7655d-b0c6-40e9-b578-70914cdae455",
+        "type": "easy",
+        "changed_nodes": [
+          "pot_40",
+          "pan_41",
+          "pan_73"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "57113a26-952d-4dc6-9617-3ca5bea35246",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_80"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "687c1289-5efb-4a9b-bd39-550fa4ca8a56",
+        "type": "easy",
+        "changed_nodes": [
+          "egg_25"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "5fe9b777-57c3-496c-a0e7-f04cb12a6475",
+        "type": "easy",
+        "changed_nodes": [
+          "pot_102",
+          "pan_103"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "131f0114-0163-435e-8285-e1d60f9ecb1f",
+        "type": "easy",
+        "changed_nodes": [
+          "carrots_21",
+          "tomatoes_22",
+          "pot_28",
+          "pan_29",
+          "pot_37",
+          "pot_52",
+          "pan_53"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e0c280c8-f798-4670-bdcc-43340b52b2dd",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_2",
+          "oven_3",
+          "oven_4",
+          "pan_51"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "84a5a8b4-b786-4531-a35f-a405e7847972",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_85",
+          "oven_86"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "c48dc423-23d1-438f-8068-07dbafd9553b",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_107"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "619dd563-92d9-4588-b836-e983eaaaa6b7",
+        "type": "easy",
+        "changed_nodes": [
+          "cake_pan_16",
+          "pan_18"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "4e3c9c53-c82c-4796-ad6c-28b4c74f8bf3",
+        "type": "easy",
+        "changed_nodes": [
+          "cooking_pot_110",
+          "pot_129",
+          "pan_130"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7ddc76ad-b172-40cf-8392-156f4e2cd5f1",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_12",
+          "pan_44",
+          "pot_45",
+          "pot_52",
+          "pan_61"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "910d8e7a-fb88-49d7-a9cd-edf1b895556b",
+        "type": "easy",
+        "changed_nodes": [
+          "bundt_pan_24"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "f611a984-31d5-4a50-8ec9-ea9450e5419c",
+        "type": "easy",
+        "changed_nodes": [
+          "bread_20"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "913ca94e-5eb2-44ec-8c82-867844780d57",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_1",
+          "oven_2",
+          "pot_58",
+          "pan_61",
+          "vegetables_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "17993063-481f-4f51-913a-4556ad002ff2",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_83",
+          "oven_84",
+          "oven_85"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "90dd2cec-deb5-4f64-ae2e-a263685d9c2d",
+        "type": "easy",
+        "changed_nodes": [
+          "bundt_pan_12",
+          "cake_pan_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "0d47f9f7-4b1e-42d7-b061-d7958b0dec87",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_122",
+          "microwave_123",
+          "oven_124",
+          "orange_27",
+          "pot_72",
+          "pan_73"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "b2e2c3e0-35ac-4dba-82b3-f305e7646b3d",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_17",
+          "casserole_118",
+          "fresh_vegetables_35",
+          "pot_39",
+          "pan_40"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "14ca4494-b0ed-4b6b-8ab0-f663f85ebd18",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_108"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "692dc934-b4c6-460f-9369-cf1a5e9875c7",
+        "type": "easy",
+        "changed_nodes": [
+          "pot_43",
+          "pan_44",
+          "pan_59"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "95a77dd6-751f-4ee2-bd1c-d82485892d90",
+        "type": "easy",
+        "changed_nodes": [
+          "egg_4",
+          "pan_21",
+          "cake_pan_22"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d96cb594-897e-4b47-83f3-e8b16bd34998",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_55",
+          "oven_56"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "b6ae2148-fe0f-429a-b252-f09a54138cab",
+        "type": "easy",
+        "changed_nodes": [
+          "carrots_35",
+          "pot_39",
+          "saucepan_46",
+          "pot_56",
+          "pan_57",
+          "pot_74",
+          "pan_75"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "5478132c-e9e6-4aaf-8f41-d76472a3c04e",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_2",
+          "oven_3"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d6e3d05d-410c-4c8e-87a9-27be573b76f7",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_80"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8c934a7d-48a8-4069-b6cf-3e9fb9451316",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_47",
+          "oven_48",
+          "oven_49",
+          "pot_48",
+          "pan_49",
+          "pot_57",
+          "pan_58"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "40cfb817-07f2-4415-a5c2-4542f4a38eb0",
+        "type": "easy",
+        "changed_nodes": [
+          "potato_4",
+          "cake_pan_20",
+          "apple_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "49b3d45f-5c9b-4d1d-9e01-0d454fcb688a",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_141",
+          "frying_pan_78",
+          "pot_86",
+          "pan_87"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d29c9b5f-356d-48b2-8ade-8952ddafac0f",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e8c9fd3c-a5a6-40ae-95c8-7e354503651a",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_86",
+          "pot_61",
+          "pan_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8e46ecde-e1c3-4c78-8e8a-45ee4a5bbc99",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_57",
+          "oven_58",
+          "oven_59",
+          "orange_13",
+          "pot_42",
+          "pan_43",
+          "pot_51",
+          "pan_52"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "dec17c7a-1040-4292-ac78-576911c92793",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_51",
+          "oven_52",
+          "cooking_pot_68"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "096a106b-ed8b-42ec-84e9-d0738ba355db",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_28",
+          "oven_29",
+          "oven_30"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "b0c83c5e-b2fe-4cc0-897e-c3b26d45903f",
+        "type": "easy",
+        "changed_nodes": [
+          "eggs_25",
+          "bread_26"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "49d3a7f5-d089-4f5b-a8be-c34a70aecc35",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_59"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "293389a4-e7ee-4fb0-9fc4-62b772e943fd",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_42",
+          "oven_43",
+          "oven_44",
+          "banana_11",
+          "banana_12"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "0b0da0a5-38b2-4bdd-b2c2-6d4c331e1cd1",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_39",
+          "microwave_40",
+          "microwave_41",
+          "oven_42",
+          "oven_43"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "fa3376d5-18a6-41e1-9a80-42bdb5349c75",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_1",
+          "oven_2"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "db78f3ec-8e6d-4a74-8520-1ceddbab954c",
+        "type": "easy",
+        "changed_nodes": [
+          "pot_85"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "da7b09cd-9be9-443b-9d30-5818df18a3ed",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_1",
+          "microwave_2",
+          "oven_3",
+          "oven_4"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "010b3761-72e6-444f-bbc8-0bf4c55c077c",
+        "type": "easy",
+        "changed_nodes": [
+          "saucepan_44",
+          "casserole_78",
+          "loaf_of_bread_83"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "fa727bbc-9c09-420b-a616-66e6e4a6246c",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_3",
+          "sandwich_35"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "cae29172-36cb-492e-b5a5-432e1a0b5555",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_36",
+          "oven_37"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "554b6b8e-2c51-4e3b-8d8c-64242567e427",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_32",
+          "butter_18",
+          "pot_52",
+          "pan_53"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "fcb0d03e-e412-42dd-9091-8bbeb19e2947",
+        "type": "easy",
+        "changed_nodes": [
+          "sandwich_19"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "78caec8e-5332-4cd0-82f1-0550a430df58",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_4",
+          "oven_5"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "645b5311-11d9-4511-bfd5-5b933fe2b482",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_36",
+          "oven_37"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "115f6b16-ddcf-41e9-b507-31503416a844",
+        "type": "easy",
+        "changed_nodes": [
+          "carrots_36",
+          "pot_40",
+          "pan_41"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "6cd2dba6-1f1e-4003-b231-13001bc37ec1",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_141"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "f8b2055f-df01-4e78-a676-790572bff4ce",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_107",
+          "pot_73",
+          "pan_74"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "45c7ef7c-cbbe-46a5-b464-d161cb6da953",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_1",
+          "oven_2"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "083e4388-e7f3-4ae0-9a8c-8844da45dbc7",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_87",
+          "oven_88",
+          "pot_60",
+          "pan_61"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "ff0fca04-35ef-4845-a34f-810644993f1d",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_4",
+          "oven_5",
+          "banana_22"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "513debb7-60be-4349-a2df-608bf00c9f35",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e7983d84-bb92-466b-a07b-5c91f1ccccc1",
+        "type": "easy",
+        "changed_nodes": [
+          "potato_7",
+          "pan_16",
+          "bread_18",
+          "egg_24"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "90130cca-38f5-4bbf-96c2-83b6cb51650a",
+        "type": "easy",
+        "changed_nodes": [
+          "bundt_pan_25"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "4fb0ae1a-0ac3-4e33-9afd-c3dc2e621a22",
+        "type": "easy",
+        "changed_nodes": [
+          "tomatoes_45"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "a502dd4d-6f7e-43a9-8eb6-1157d760a621",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_5",
+          "oven_120"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "ebbf8478-e748-47b1-bcbf-b650b2735ee7",
+        "type": "easy",
+        "changed_nodes": [
+          "bundt_pan_12",
+          "cake_pan_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "9c18484f-ced1-4879-a08b-74a8504c4d7f",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_107",
+          "pot_66",
+          "butter_81",
+          "fruit_85"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "f6a37c9b-a198-4b28-847e-18a4a39966ae",
+        "type": "easy",
+        "changed_nodes": [
+          "fresh_vegetables_75"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e8edbb58-55ca-4427-a53b-be2cb48a4f9d",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_2",
+          "oven_3",
+          "fresh_vegetables_25"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "78ee9f5a-6dc0-4dda-b658-8fae383266d0",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_60",
+          "oven_61",
+          "banana_17"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "2809dc32-76cc-4540-b2a8-7fd687408173",
+        "type": "easy",
+        "changed_nodes": [
+          "fresh_vegetables_22",
+          "cooking_pot_50"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "b256d9cb-97b1-4f60-804c-b822c8f4c458",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_71",
+          "oven_72"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "177ac7f6-d696-4581-9f68-9d075052f1cf",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_52",
+          "oven_53",
+          "oven_54",
+          "banana_9"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "a325bbc0-2d39-42c6-afce-16b7ffc4f310",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_12",
+          "banana_22",
+          "pot_42",
+          "pan_46"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "26718328-d90a-4935-8b72-3b9b8ebff499",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_2",
+          "oven_3"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "775ef1c6-7571-442f-8ae6-b9a80e363a21",
+        "type": "easy",
+        "changed_nodes": [
+          "seafood_31",
+          "frying_pan_38",
+          "cooking_pot_53"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "39a0ddf2-fdba-4f63-baf6-b5b9ebc729db",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_29",
+          "apple_23"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "b87dc669-7852-4267-8d4e-7dd2fd167f4a",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_141",
+          "pot_78",
+          "pan_79"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "0c60c61b-a37b-4b23-9435-a335552b7702",
+        "type": "easy",
+        "changed_nodes": [
+          "potato_7",
+          "cake_pan_24",
+          "apple_25"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "410962c9-1740-4e74-8cf3-08030c874108",
+        "type": "easy",
+        "changed_nodes": [
+          "bundt_pan_20"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "79414f0b-947f-4614-ae40-1bee070410bc",
+        "type": "easy",
+        "changed_nodes": [
+          "bundt_pan_19"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_51",
+          "oven_52",
+          "banana_8",
+          "bread_loaf_63"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e5fed8d6-2d6b-4070-9467-bdcdd0c850aa",
+        "type": "easy",
+        "changed_nodes": [
+          "loaf_of_bread_69"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "5e2ac144-4a4f-47cb-ad75-5e92d971f67c",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_53",
+          "bread_loaf_47",
+          "frying_pan_79"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8f039a4c-e583-4152-82be-bce9d2112dfc",
+        "type": "easy",
+        "changed_nodes": [
+          "cooking_pot_63"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_5",
+          "oven_120"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "5d58f3f9-6e8d-4e5c-b121-b0331d8182fe",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_59",
+          "oven_60",
+          "oven_61",
+          "oven_62",
+          "oven_63"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "0d2e119f-60e3-4c55-a9c9-b743cc0ffd74",
+        "type": "easy",
+        "changed_nodes": [
+          "oven_1",
+          "oven_2"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e004c5e5-0b81-4a46-b27a-325af94f67ef",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_68",
+          "oven_69",
+          "pan_78"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "47936146-2cab-492f-a3a2-ff248c594f58",
+        "type": "easy",
+        "changed_nodes": [
+          "saucepan_15"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8756ae1c-de95-40a5-a176-49ce1a1e88e1",
+        "type": "easy",
+        "changed_nodes": [
+          "casserole_83",
+          "casserole_89",
+          "saucepan_92"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "1760a721-3982-4e25-9035-c03f1b1a0e19",
+        "type": "easy",
+        "changed_nodes": [
+          "casserole_43"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "a9f01a35-f905-499e-ac54-007822d408c3",
+        "type": "easy",
+        "changed_nodes": [
+          "bundt_pan_20"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "612273ba-8701-4933-881c-8dadfc5357dc",
+        "type": "easy",
+        "changed_nodes": [
+          "egg_4",
+          "pan_21",
+          "cake_pan_22"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "967aaf96-c1b0-458d-9b06-b0148e8f5f1a",
+        "type": "easy",
+        "changed_nodes": [
+          "apple_0",
+          "bundt_pan_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "0a8d35fb-024e-47f4-8037-5da266753968",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_123",
+          "pan_107"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "6f54c6ff-8beb-47a3-95cf-e0196c946960",
+        "type": "easy",
+        "changed_nodes": [
+          "bread_0",
+          "cake_pan_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "1dcff0b2-7295-4b92-9962-06e3e9167701",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_59"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "ab270610-f68d-4ccf-8ced-455a237f8dc5",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_108"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "54704d51-cfcd-4cb5-a333-8917f0718bff",
+        "type": "easy",
+        "changed_nodes": [
+          "potato_3",
+          "egg_14",
+          "bundt_pan_23"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "5b85cddd-7ee9-481b-8c5a-20c9cd3fb166",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_2",
+          "oven_3"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "119e0c10-84c7-4337-8cf4-a6dc833bf3bd",
+        "type": "easy",
+        "changed_nodes": [
+          "microwave_1",
+          "microwave_2",
+          "oven_3",
+          "oven_4"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "864fcabb-2a56-4efb-9f4b-1d7cb84136c1",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_1",
+          "oven_2"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "b5839f9a-eb34-4d4d-ad2b-5665e8b9c5ef",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8708a9fe-8ed0-49a8-9339-36f8d2a11611",
+        "type": "medium",
+        "changed_nodes": [
+          "apple_0",
+          "bundt_pan_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d3e7a640-74c8-4c97-a936-41682c7b59c6",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_57",
+          "oven_58",
+          "oven_59",
+          "orange_13",
+          "loaf_of_bread_34"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d0340668-e518-4aa5-b935-b1a877b25952",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_41",
+          "oven_42",
+          "oven_43",
+          "frying_pan_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "fccd6938-4f5d-4bfe-a8de-087e895319dd",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "3bc23367-bbd0-479e-be4b-c16413664743",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_53",
+          "oven_54",
+          "oven_55",
+          "oven_56"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_1",
+          "oven_2"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8141f80a-b786-4dea-af34-d4db59ed0c68",
+        "type": "medium",
+        "changed_nodes": [
+          "bread_0",
+          "cake_pan_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "08fefdd7-7df6-488d-bafe-c71dea3b4b2e",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_1",
+          "oven_2"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "95268a02-bced-4de2-9963-2261ccf2851e",
+        "type": "medium",
+        "changed_nodes": [
+          "bundt_pan_21",
+          "cake_pan_30"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "679dc145-55cf-4f32-9000-dad6d9a16d60",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_55",
+          "oven_56",
+          "oven_57",
+          "loaf_of_bread_22"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "5ae5b97c-620f-400b-b14a-3ad0fa6fcae9",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_1",
+          "loaf_of_bread_53"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "175a4f28-3023-4e88-8af4-d73c19a16be0",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_49",
+          "oven_50"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "63771138-ea77-46d7-98ef-730f7fc06a7d",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_64",
+          "oven_65"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "c4eaedfe-58a6-4535-8817-5e6c30ef5ba0",
+        "type": "medium",
+        "changed_nodes": [
+          "frying_pan_62",
+          "pot_75",
+          "pan_76"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "75fa2d06-2278-45fa-a9d1-fa3cdb6e3da8",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_42",
+          "oven_43",
+          "oven_44",
+          "banana_11",
+          "banana_12"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "0127af55-e737-4be4-8fda-ea2efaf69461",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_2",
+          "oven_3"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7ca9b7af-487b-4dde-8c11-3dbc7c7af671",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_105",
+          "oven_106",
+          "bread_loaf_119"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "5804e2c6-9308-4d09-92e8-dbefd7553fec",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_53"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d167567d-7887-4626-9cd7-33ba43257944",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_1",
+          "oven_2"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "451288d0-761d-4576-bf3b-556307ddb7ae",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_85",
+          "oven_86"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e066d3a7-c73c-464d-b0a5-a28ce4b7939d",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_4",
+          "oven_5",
+          "loaf_of_bread_26"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+        "type": "medium",
+        "changed_nodes": [
+          "egg_25"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "48ecb29b-1d2a-4960-96e0-60a94036540e",
+        "type": "medium",
+        "changed_nodes": [
+          "bundt_pan_25"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_65"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "184f5333-3807-406c-bec5-124adc3cd227",
+        "type": "medium",
+        "changed_nodes": [
+          "portable_induction_stove_25",
+          "hot_pot_saucepan_26"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "3add086d-6d85-470a-a351-bdab3456e295",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_2",
+          "oven_3"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8eaf1794-e3f0-4f38-aa7e-d6b77872d7a8",
+        "type": "medium",
+        "changed_nodes": [
+          "bundt_pan_19"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "99c7a3e4-033a-4142-8cb9-9d2bd63c5748",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8a288187-e7a6-47a9-bfad-2543976de82e",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_61",
+          "oven_62",
+          "oven_63",
+          "oven_64"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "63613b83-4e00-48e3-812f-e4dd3e98014a",
+        "type": "medium",
+        "changed_nodes": [
+          "bundt_pan_15",
+          "cake_pan_24"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "acba2bf0-ad1e-452e-b3f7-43af06ebfc81",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_113",
+          "oven_117"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d4e3362f-60d3-46cd-8638-8954f5a9602b",
+        "type": "medium",
+        "changed_nodes": [
+          "vegetables_16",
+          "meat_17",
+          "saucepan_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "9a7a00d3-22dd-41c1-8df4-098e2f03e2e3",
+        "type": "medium",
+        "changed_nodes": [
+          "tomato_24"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "539c1078-27f9-4389-943f-18914bda27b1",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_141",
+          "seafood_55",
+          "frying_pan_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "6e6d0994-0bfe-4bd9-aab7-d5d85e41ca7c",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_1",
+          "microwave_2",
+          "oven_3"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "83b97e81-d8a2-4ae9-97d4-fddb4c0cdf89",
+        "type": "medium",
+        "changed_nodes": [
+          "potato_3",
+          "egg_14",
+          "bundt_pan_23"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "9f4c4952-9d53-4f4f-b512-c49d9f2b7102",
+        "type": "medium",
+        "changed_nodes": [
+          "apple_26"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "cea31743-32c3-4f59-b07e-b12a71e840de",
+        "type": "medium",
+        "changed_nodes": [
+          "pot_49",
+          "pan_50",
+          "pot_57",
+          "pan_58"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "23178c37-3b65-4dff-9eb5-3c5d1e985232",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "3bc29099-3549-4cbe-8009-9a21718bf60e",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_1",
+          "microwave_2",
+          "oven_3"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "4716c0d9-8084-4646-b242-ae40c032829b",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_31",
+          "pan_18"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "f2c44280-76ff-449b-895e-2d78cdfc6b28",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_86"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "2a7392d8-6703-45db-914f-705ca6b4d6cc",
+        "type": "medium",
+        "changed_nodes": [
+          "banana_20",
+          "strawberry_21",
+          "spinach_22",
+          "pan_32"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "5430d117-1d16-4e1a-8573-169cc437c5ff",
+        "type": "medium",
+        "changed_nodes": [
+          "bread_0",
+          "cake_pan_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "6d1fc47f-358b-4bf5-b8ce-eb61f66d8fa0",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_1",
+          "oven_2",
+          "butter_block_15"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "a6858c23-0cee-461d-bbf3-c9951bfbbda3",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_2",
+          "oven_3"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "2b60f5c9-31ae-435f-85a2-dbd81109a14b",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_80"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7f0a1344-6ce2-4860-8b0d-1d6de7219fdd",
+        "type": "medium",
+        "changed_nodes": [
+          "egg_5",
+          "pan_23",
+          "cake_pan_24"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "3596c678-c745-4c78-9179-b390471b4f25",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_86",
+          "seafood_41",
+          "pot_45",
+          "pan_46"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "41eef001-7744-4656-bb14-84c8920b2fde",
+        "type": "medium",
+        "changed_nodes": [
+          "potato_7",
+          "cake_pan_24",
+          "apple_25"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e78432e1-25fd-4476-8711-7da0d50bc88c",
+        "type": "medium",
+        "changed_nodes": [
+          "cast_iron_pan_44"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "02a5f844-c663-4336-b6c9-fad5540b7cd5",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_30",
+          "apple_3",
+          "egg_17",
+          "casserole_21",
+          "bundt_pan_26"
+        ],
+        "reference_changed": true
+      },
+      {
+        "id": "ca238890-0c28-4074-b323-27cf9f92cebe",
+        "type": "medium",
+        "changed_nodes": [
+          "potato_3",
+          "egg_14",
+          "bundt_pan_23"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "3f1f4f25-6ff1-4879-a3df-e7b28790de75",
+        "type": "medium",
+        "changed_nodes": [
+          "bundt_pan_19",
+          "potato_24",
+          "bread_25"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e2589b66-026b-4075-9525-3acdbf38e1f0",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_55",
+          "oven_56"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "adb234ae-ab86-431b-a699-25339daea983",
+        "type": "medium",
+        "changed_nodes": [
+          "apple_26"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "c77c47ae-9d7a-4369-abbd-c305498e2aad",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_71",
+          "oven_72"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "fac6321b-b35f-4b4c-a91c-3ea5f96f6ddc",
+        "type": "medium",
+        "changed_nodes": [
+          "bread_0",
+          "cake_pan_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "3a12822b-f774-4834-b9af-b741f2592c5e",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_1",
+          "loaf_of_bread_66"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "bd621dea-7022-4f49-ae0f-3018da6b2f12",
+        "type": "medium",
+        "changed_nodes": [
+          "pot_63",
+          "pan_64",
+          "pan_72"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "079da0e5-422a-4fe4-afc5-e885f4e98453",
+        "type": "medium",
+        "changed_nodes": [
+          "egg_4",
+          "pan_21",
+          "cake_pan_22"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "1dd415b3-92af-4363-bae9-c7dbe54883a4",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_1",
+          "oven_2"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7728b3b9-4cd2-4586-8dd0-6f70bdea8e22",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_1",
+          "oven_2",
+          "clay_pot_81"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "efee78f0-4ae2-415b-bfb7-dbc84b3e9307",
+        "type": "medium",
+        "changed_nodes": [
+          "apple_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "9c120c15-b00a-4544-bafa-ffeece47d701",
+        "type": "medium",
+        "changed_nodes": [
+          "bundt_pan_12",
+          "cake_pan_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "bc46d239-8b46-4705-a7d1-77b58382db10",
+        "type": "medium",
+        "changed_nodes": [
+          "bundt_pan_25"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e49293f2-dedc-49bd-bc31-c07a3f279870",
+        "type": "medium",
+        "changed_nodes": [
+          "pot_110",
+          "pan_111"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "4a58251b-b8bf-4f05-ad45-7947bf665031",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_39",
+          "oven_40",
+          "oven_41"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "f740c053-35da-470a-8628-e9291a9738cb",
+        "type": "medium",
+        "changed_nodes": [
+          "oven_4",
+          "oven_5"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "05f9fb16-de68-4fb8-8cc7-4ad1714f7f72",
+        "type": "medium",
+        "changed_nodes": [
+          "microwave_102",
+          "banana_69"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "13f1ed27-3fef-48ca-9b6f-806b944e57b2",
+        "type": "medium",
+        "changed_nodes": [
+          "apple_21"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "ca93f23c-c8c5-426f-81f5-4f7e51811dfc",
+        "type": "medium",
+        "changed_nodes": [
+          "casserole_116"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8296e9b3-dfdc-4e3b-81f4-6b9fc1ef3715",
+        "type": "open",
+        "changed_nodes": [
+          "butter_30"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7b007eb0-dfe0-4bcd-8697-8926d4572585",
+        "type": "open",
+        "changed_nodes": [
+          "stove_16",
+          "stove_18",
+          "stove_46",
+          "cooking_pot_52",
+          "frying_pan_53",
+          "butter_54",
+          "frying_pan_138",
+          "saucepan_140"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "36bdd71c-6e6d-4bfd-8c4d-4b319c289c4d",
+        "type": "open",
+        "changed_nodes": [
+          "grill_24",
+          "stove_oven_27",
+          "microwave_29",
+          "microwave_dish_82"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "cb22d87c-0879-4709-9985-4f367772bf44",
+        "type": "open",
+        "changed_nodes": [
+          "stove_33",
+          "stove_69",
+          "microwave_33",
+          "pot_63",
+          "pot_141",
+          "cooking_pan_176"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "34d192ce-adb7-4811-ba66-c5f6d46bdd22",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "frying_pan_24",
+          "cooking_pot_93"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "2f24c47d-4f6f-4a50-ba55-76a98bcd53ac",
+        "type": "open",
+        "changed_nodes": [
+          "stove_25",
+          "cooking_pot_31",
+          "frying_pan_64"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "a55dd1af-59ee-4e0c-8139-208e2134ed49",
+        "type": "open",
+        "changed_nodes": [
+          "stove_49",
+          "cooking_pot_72",
+          "pan_125",
+          "pan_155",
+          "apple_160",
+          "grapes_161"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "cdbc4306-be8d-470b-bfe4-b843b092c70b",
+        "type": "open",
+        "changed_nodes": [
+          "apple_34"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "89861d79-f711-4bc4-8bdd-8913c9fd2f64",
+        "type": "open",
+        "changed_nodes": [
+          "oven_24",
+          "microwave_25",
+          "baking_tray_27",
+          "microwave_safe_dish_28",
+          "baking_tray_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+        "type": "open",
+        "changed_nodes": [
+          "stove_33",
+          "stove_69",
+          "microwave_33",
+          "pot_63",
+          "pot_141",
+          "cooking_pan_176",
+          "carrots_218",
+          "cucumber_219"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d95e3a80-3bd3-491c-8c9a-deca28b39962",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "cooking_pot_35",
+          "cooking_pot_73"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "14429894-9a2b-4a66-86d6-424d6d0df822",
+        "type": "open",
+        "changed_nodes": [
+          "stove_oven_26",
+          "cooking_pot_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "5e8f884f-03be-4d9d-aa32-14003a8aaf52",
+        "type": "open",
+        "changed_nodes": [
+          "stove_11",
+          "butter_27",
+          "cookware_pot_28"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "debd69a5-6812-4043-bb21-6af2621dd09e",
+        "type": "open",
+        "changed_nodes": [
+          "stove_30",
+          "milk_81",
+          "milk_82",
+          "frying_pan_83",
+          "lemon_94"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "fd0ca30f-a524-4f12-a62d-da0f5b5400a2",
+        "type": "open",
+        "changed_nodes": [
+          "apples_116"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "5dad8c82-3392-40f1-9f95-5a402577ab85",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "frying_pan_24",
+          "cooking_pot_93"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "dd5c367c-d07b-440b-a422-57c7e90b6a33",
+        "type": "open",
+        "changed_nodes": [
+          "apple_34",
+          "lemon_91"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "590bda12-228f-4784-9caa-404aa7340332",
+        "type": "open",
+        "changed_nodes": [
+          "stove_29",
+          "cooking_pot_39",
+          "pan_73",
+          "cooking_pot_105"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "861111df-3fbf-4569-9df9-2d3a9da81415",
+        "type": "open",
+        "changed_nodes": [
+          "grill_24",
+          "stove_oven_27",
+          "microwave_29",
+          "microwave_dish_82"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "28b88033-fc74-4845-89fd-145967413af5",
+        "type": "open",
+        "changed_nodes": [
+          "stove_29",
+          "cooking_pot_39",
+          "pan_73",
+          "cooking_pot_105"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "1a13d5f2-bfd1-4cbd-a52f-251711540454",
+        "type": "open",
+        "changed_nodes": [
+          "stove_2",
+          "grill_18",
+          "pot_2",
+          "pot_47"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "88e23374-3886-402e-811e-4fbb3c9c1b36",
+        "type": "open",
+        "changed_nodes": [
+          "stove_20",
+          "milk_65",
+          "pot_66"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "ed9e36b8-03bb-43bb-a260-37bcc20d9f53",
+        "type": "open",
+        "changed_nodes": [
+          "stove_25",
+          "cooking_pot_31",
+          "frying_pan_64"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7853d8d5-fccc-42e1-8540-cfe67325b42d",
+        "type": "open",
+        "changed_nodes": [
+          "stove_22",
+          "stove_24",
+          "stove_36",
+          "pot_30",
+          "cooking_pot_62",
+          "eggs_90",
+          "butter_92",
+          "cooking_pot_93"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "f3ee3e87-d782-4870-8ed3-2bc92f344010",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "pot_37",
+          "frying_pan_81",
+          "pan_94",
+          "milk_114",
+          "pan_115",
+          "eggs_116"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "283b9299-0fbf-4d1f-8fe6-b45bbbea13e9",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "stove_47",
+          "milk_65",
+          "eggs_66",
+          "pot_68",
+          "pot_132"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "c8dba5e9-77af-41b5-b0d8-2a79f9716e1e",
+        "type": "open",
+        "changed_nodes": [
+          "stove_oven_26",
+          "cooking_pot_62",
+          "raw_vegetables_93"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "3a5724ed-a1f5-4869-86ae-b1a21c969c6f",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "cooking_pot_31"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d2db41fe-f7ef-47de-ba0a-2e6f41ef3ae6",
+        "type": "open",
+        "changed_nodes": [
+          "stove_17",
+          "orange_41",
+          "orange_42",
+          "orange_43",
+          "pot_44",
+          "pan_45",
+          "cooking_pot_64"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e831d7fb-d419-4bbd-ba61-0639a4f1224c",
+        "type": "open",
+        "changed_nodes": [
+          "stove_oven_29",
+          "pot_30",
+          "cooking_pot_84"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "af97421b-0b29-496f-b4e3-b0b8432f2e0b",
+        "type": "open",
+        "changed_nodes": [
+          "stove_29",
+          "cooking_pot_20",
+          "pot_78"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "21d63cf0-3045-4d01-a88a-fe6f7d3e3499",
+        "type": "open",
+        "changed_nodes": [
+          "grill_5",
+          "stove_16"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "ff25ff1c-035a-474b-a42a-e16c6ea1965f",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "stove_28",
+          "pan_15",
+          "cooking_pan_171"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "b2ac8958-c1dc-42d9-a41a-b6e0d8b8dd39",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "cooking_pot_31"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e7405bbf-e725-4a9c-b606-cb1ba299b545",
+        "type": "open",
+        "changed_nodes": [
+          "stove_6",
+          "frying_pan_11",
+          "grill_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "08777e8d-fcc8-4616-b0cd-30f36d015c63",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "pot_37",
+          "frying_pan_81",
+          "pan_94",
+          "milk_114",
+          "pan_115",
+          "eggs_116"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "bc56e4a3-3772-456f-9ae6-8c3396f52880",
+        "type": "open",
+        "changed_nodes": [
+          "stove_22",
+          "microwave_24",
+          "pot_20",
+          "microwave_dish_22",
+          "cooking_pot_48",
+          "pot_82",
+          "microwave_safe_bowl_85",
+          "yak_butter_122"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "4ec4d42e-dd62-4d7b-9807-40d5e5b56366",
+        "type": "open",
+        "changed_nodes": [
+          "stove_oven_26",
+          "cooking_pot_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8aea824c-40a0-40e8-8c1b-a0fc3fb31c3e",
+        "type": "open",
+        "changed_nodes": [
+          "stove_28",
+          "microwave_30",
+          "pan_36",
+          "cooking_pot_72"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "288f86b3-e509-4155-9eec-2976c1c00a13",
+        "type": "open",
+        "changed_nodes": [
+          "butter_30"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8aceac12-2ddb-4c2a-b5bf-35bf01ea36bc",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "stove_47",
+          "milk_65",
+          "eggs_66",
+          "pot_68",
+          "pot_132"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8c717c82-fa1b-4686-905f-1aa1c8eb8608",
+        "type": "open",
+        "changed_nodes": [
+          "stove_29"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "f623e258-d97b-4a07-9121-0337a5fd3277",
+        "type": "open",
+        "changed_nodes": [
+          "stove_2",
+          "grill_18",
+          "pot_2",
+          "pot_47"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "fd73c540-9b92-4c22-9786-f7633bdb9bcd",
+        "type": "open",
+        "changed_nodes": [
+          "grill_24",
+          "stove_oven_27",
+          "microwave_29",
+          "microwave_dish_82",
+          "apple_105"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "68c563ae-1a3b-4246-906b-90992e1c8c84",
+        "type": "open",
+        "changed_nodes": [
+          "stove_29",
+          "cooking_pot_39",
+          "pan_73",
+          "cooking_pot_105"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "937d7013-4182-44a5-86e7-4da7c8a9f4f2",
+        "type": "open",
+        "changed_nodes": [
+          "stove_6",
+          "frying_pan_11",
+          "grill_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "09d86c88-00ab-466a-9c3d-600355ecaec1",
+        "type": "open",
+        "changed_nodes": [
+          "stove_25",
+          "cooking_pot_31",
+          "frying_pan_64"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7bc96205-5b58-4310-b056-8768d2c9ca7a",
+        "type": "open",
+        "changed_nodes": [
+          "stove_14",
+          "stainless_steel_pot_1000"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7f214076-3a09-429d-b5ec-dfaf89cf5c68",
+        "type": "open",
+        "changed_nodes": [
+          "stove_oven_26",
+          "cooking_pot_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "9d023619-a393-4515-942a-f7e162bf3d05",
+        "type": "open",
+        "changed_nodes": [
+          "stove_18",
+          "pan_71",
+          "bread_loaf_84"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "0eaf1724-621f-4b72-b188-5073e3204a60",
+        "type": "open",
+        "changed_nodes": [
+          "stove_25",
+          "cooking_pot_31",
+          "frying_pan_64"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "a59cd58a-9802-4859-ad7e-b2eed0380616",
+        "type": "open",
+        "changed_nodes": [
+          "stove_6",
+          "frying_pan_11",
+          "grill_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8b49c9c3-78f3-4ec3-bb7c-a85f37003656",
+        "type": "open",
+        "changed_nodes": [
+          "stove_28",
+          "microwave_30",
+          "pan_36",
+          "cooking_pot_72"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "c036f584-d49d-42ea-bae7-d165788d04e0",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "cooking_pot_31"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "03629893-0b5b-407d-a52a-212f91f89a30",
+        "type": "open",
+        "changed_nodes": [
+          "stove_12",
+          "cooking_pot_57"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e2d7a48c-0bc8-4a23-a932-83b4cbee492a",
+        "type": "open",
+        "changed_nodes": [
+          "stove_11",
+          "butter_27",
+          "cookware_pot_28"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+        "type": "open",
+        "changed_nodes": [
+          "stove_16",
+          "stove_18",
+          "stove_46",
+          "cooking_pot_52",
+          "frying_pan_53",
+          "butter_54",
+          "frying_pan_138",
+          "saucepan_140",
+          "breakfast_eggs_1"
+        ],
+        "reference_changed": true
+      },
+      {
+        "id": "a9c684f9-b6a6-46f4-b621-b6bd3faad840",
+        "type": "open",
+        "changed_nodes": [
+          "stove_20",
+          "milk_65",
+          "pot_66"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "722ce524-867b-439f-8ab5-950c10010d7e",
+        "type": "open",
+        "changed_nodes": [
+          "grill_24",
+          "stove_oven_27",
+          "microwave_29",
+          "microwave_dish_82"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d6a628ee-f009-43b7-9e38-553e93518fc2",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "stove_47",
+          "milk_65",
+          "eggs_66",
+          "pot_68",
+          "pot_132"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "a5ad3121-b0c7-4a32-a4ff-3bc00e1970ea",
+        "type": "open",
+        "changed_nodes": [
+          "stove_29",
+          "cooking_pot_20",
+          "pot_78"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d1039117-4dd5-411f-bca3-525adbcc1b22",
+        "type": "open",
+        "changed_nodes": [
+          "yak_butter_46"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8e2eac82-2841-4922-ac45-05702b3f073f",
+        "type": "open",
+        "changed_nodes": [
+          "stove_43",
+          "cooking_pot_102",
+          "cooking_pot_127",
+          "pan_128",
+          "apple_155"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "43f14fb2-001a-495e-b9f6-ae11b67c964b",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "pot_25",
+          "pan_26",
+          "pan_72"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "dec162ab-e453-419f-971a-2e32987350f2",
+        "type": "open",
+        "changed_nodes": [
+          "grill_24",
+          "stove_oven_27",
+          "microwave_29",
+          "microwave_dish_82",
+          "apple_105"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "fd22ff41-4720-497c-bad3-7411b468b6cc",
+        "type": "open",
+        "changed_nodes": [
+          "stove_2",
+          "grill_18",
+          "pot_2",
+          "pot_47",
+          "breakfast_eggs_1"
+        ],
+        "reference_changed": true
+      },
+      {
+        "id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "stove_47",
+          "milk_65",
+          "eggs_66",
+          "pot_68",
+          "pot_132",
+          "apple_180"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7a510a12-15d6-4b12-b32d-0ec007dc7327",
+        "type": "open",
+        "changed_nodes": [
+          "stove_20",
+          "milk_65",
+          "pot_66",
+          "lemon_79"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8af35be3-cb5b-4910-ac70-1694acf9c798",
+        "type": "open",
+        "changed_nodes": [
+          "stove_20",
+          "pot_64"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "ba7a53fc-b43d-4163-8d0e-65142445e82d",
+        "type": "open",
+        "changed_nodes": [
+          "stove_17",
+          "stove_19",
+          "apple_129"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "ec2c760f-258b-4231-bff1-0cbdba52596e",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "frying_pan_24",
+          "cooking_pot_93",
+          "spicy_sausage_103"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "4a3dc074-3cd6-4241-a4a5-2c37f31c99a1",
+        "type": "open",
+        "changed_nodes": [
+          "stove_15",
+          "grill_23",
+          "cooking_pot_13",
+          "cooking_pot_56",
+          "cooking_pot_86"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "332cabbc-8ac3-4a05-9054-75b79bc22f11",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "cooking_pot_35",
+          "cooking_pot_73"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "2ba07a0c-db0c-4616-bfa4-9d3380eebd0f",
+        "type": "open",
+        "changed_nodes": [
+          "stove_11",
+          "butter_27",
+          "cookware_pot_28"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "a645ed99-3d81-4e86-b545-cf9cd8b575c5",
+        "type": "open",
+        "changed_nodes": [
+          "stove_43",
+          "cooking_pot_102",
+          "cooking_pot_127",
+          "pan_128"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e942665b-fd87-47e1-aa4d-63a55cc54160",
+        "type": "open",
+        "changed_nodes": [
+          "stove_29",
+          "apple_1",
+          "banana_2"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "4d712c3d-eb48-48b9-bc63-21dd79c613e6",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "cooking_pot_31"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "01feff30-40a5-4bcf-aec9-1f79010fc8e5",
+        "type": "open",
+        "changed_nodes": [
+          "stove_12",
+          "cooking_pot_57"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "7ab69c06-0ba4-4301-9cbd-f3bcd305eae3",
+        "type": "open",
+        "changed_nodes": [
+          "stove_25",
+          "cooking_pot_31",
+          "frying_pan_64",
+          "apple_86",
+          "banana_87"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "c16bc3b7-c472-4a2c-a82d-335f17bd9a82",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "stove_47",
+          "milk_65",
+          "eggs_66",
+          "pot_68",
+          "pot_132"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "d1eef1a3-941c-4a96-bba8-2b8df1ade8f2",
+        "type": "open",
+        "changed_nodes": [
+          "stove_6",
+          "frying_pan_11",
+          "grill_62",
+          "apple_71"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "50282f26-b821-4c48-a7c0-946dc08d14d2",
+        "type": "open",
+        "changed_nodes": [
+          "stove_2",
+          "microwave_3",
+          "pot_35"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "pot_37",
+          "frying_pan_81",
+          "pan_94",
+          "milk_114",
+          "pan_115",
+          "eggs_116"
+        ],
+        "reference_changed": true
+      },
+      {
+        "id": "281de1e9-aa99-43e1-88eb-adc6bd1c820f",
+        "type": "open",
+        "changed_nodes": [
+          "stove_33",
+          "stove_69",
+          "microwave_33",
+          "pot_63",
+          "pot_141",
+          "cooking_pan_176"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "1fb3f5ab-f998-4503-beb7-179612e3df0c",
+        "type": "open",
+        "changed_nodes": [
+          "stove_6",
+          "frying_pan_11",
+          "grill_62"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "b49bddeb-ab18-458f-a861-dc7d8946a800",
+        "type": "open",
+        "changed_nodes": [
+          "stove_20",
+          "bbq_grill_21",
+          "frying_pan_31",
+          "cooking_pot_63"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "81721c19-9d62-480b-a3c9-961016b56e40",
+        "type": "open",
+        "changed_nodes": [
+          "stove_33",
+          "stove_69",
+          "microwave_33",
+          "pot_63",
+          "pot_141",
+          "cooking_pan_176"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "955a94d1-658b-464a-995e-09f4a7082a42",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "cooking_pot_31"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "26891dae-ec9f-48de-8c91-b487dcc8cd29",
+        "type": "open",
+        "changed_nodes": [
+          "stove_16",
+          "stove_38",
+          "pot_129",
+          "cooking_pan_131"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "afe94673-89bb-4af7-9aa6-1025368027f6",
+        "type": "open",
+        "changed_nodes": [
+          "stove_17",
+          "orange_41",
+          "orange_42",
+          "orange_43",
+          "pot_44",
+          "pan_45",
+          "cooking_pot_64"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "2608e618-305d-46d2-b563-2ca9bc351c7b",
+        "type": "open",
+        "changed_nodes": [
+          "stove_22",
+          "microwave_24",
+          "pot_20",
+          "microwave_dish_22",
+          "cooking_pot_48",
+          "pot_82",
+          "microwave_safe_bowl_85"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "776429ab-2fc0-486c-b85d-a43fc8e2ba14",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "cooking_pot_35",
+          "cooking_pot_73"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e6f72f40-9cf5-4fe2-a1d9-f86c1c8e22b0",
+        "type": "open",
+        "changed_nodes": [
+          "stove_33",
+          "stove_69",
+          "microwave_33",
+          "pot_63",
+          "pot_141",
+          "cooking_pan_176"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+        "type": "open",
+        "changed_nodes": [
+          "stove_22",
+          "stove_24",
+          "stove_36",
+          "pot_30",
+          "cooking_pot_62",
+          "eggs_90",
+          "butter_92",
+          "cooking_pot_93"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "b49c7574-ad67-4e70-917c-aff8ad71cc74",
+        "type": "open",
+        "changed_nodes": [
+          "butter_30"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e2c8037c-8c35-4b37-9da0-e10b47c9ab40",
+        "type": "open",
+        "changed_nodes": [
+          "stove_33",
+          "stove_69",
+          "microwave_33",
+          "pot_63",
+          "pot_141",
+          "cooking_pan_176"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "85ad190d-103e-4012-87ea-2840f56098c3",
+        "type": "open",
+        "changed_nodes": [
+          "stove_12",
+          "cooking_pot_57"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "00382bfb-1399-473a-8924-37a1f25b7fc7",
+        "type": "open",
+        "changed_nodes": [
+          "stove_20",
+          "bbq_grill_21",
+          "frying_pan_31",
+          "cooking_pot_63"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "84539106-92e9-423b-8da5-252fa85ca51b",
+        "type": "open",
+        "changed_nodes": [
+          "grill_5",
+          "stove_16"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e8f12ff2-1929-497a-9d87-103ff77d2110",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "stove_47",
+          "milk_65",
+          "eggs_66",
+          "pot_68",
+          "pot_132",
+          "cucumber_180"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "82dc2c7c-fde6-464b-94f0-550d61319faa",
+        "type": "open",
+        "changed_nodes": [
+          "stove_23",
+          "cooking_pot_31"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "2cea301d-22c3-4e95-aea9-813e725b01af",
+        "type": "open",
+        "changed_nodes": [
+          "stove_17"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "6ce529ba-b596-4147-a022-df05aa281414",
+        "type": "open",
+        "changed_nodes": [
+          "stove_29",
+          "cooking_pot_20",
+          "pot_78"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "784bb815-0e73-4977-a346-29f182d41f2d",
+        "type": "open",
+        "changed_nodes": [
+          "stove_26",
+          "pot_37",
+          "frying_pan_81",
+          "pan_94",
+          "milk_114",
+          "pan_115",
+          "eggs_116",
+          "yak_butter_122"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "093718db-3b95-4b2a-b155-8b1e93c3ff38",
+        "type": "open",
+        "changed_nodes": [
+          "bundt_pan_21",
+          "cake_pan_30"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "e0abedd1-c1ab-414b-afb6-587fcfeab5fb",
+        "type": "open",
+        "changed_nodes": [
+          "pot_110",
+          "pan_111"
+        ],
+        "reference_changed": false
+      }
+    ],
+    "reference_repaired_ids": [
+      "fd22ff41-4720-497c-bad3-7411b468b6cc",
+      "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+      "02a5f844-c663-4336-b6c9-fad5540b7cd5"
+    ],
+    "script_sha256": "ea75823913f6aa5d97e1d9fdd30386447adfaed62364d3c032bd839026c50af9"
+  },
+  "local_cooking_goals": {
+    "version": "cooking-goals-v1",
+    "date": "2026-11-11",
+    "base_data_sha256": "5f9349e53099e2405b8d8b10c5fe4419551e17eb452f15ca8ca62264d537f08f",
+    "confirmed_reference_goal_ids": [
+      "fd22ff41-4720-497c-bad3-7411b468b6cc",
+      "02a5f844-c663-4336-b6c9-fad5540b7cd5"
+    ],
+    "updated_goal_ids": [
+      "fd22ff41-4720-497c-bad3-7411b468b6cc",
+      "02a5f844-c663-4336-b6c9-fad5540b7cd5"
+    ],
+    "updated_plan_ids": [
+      "02a5f844-c663-4336-b6c9-fad5540b7cd5"
+    ],
+    "semantics": "Sufficient within the symbolic model, not necessary; offline only. Other cooking annotations are not certified.",
+    "inventory": "docs/validation/cooking_goal_inventory.json",
+    "audit_script": "scripts/audit_cooking_goals.py",
+    "script_sha256": "ea75823913f6aa5d97e1d9fdd30386447adfaed62364d3c032bd839026c50af9",
+    "inventory_sha256": "f5464be007f7d197f8fda382d65c84dc8b5e8e0449d30373910093d32011de60",
+    "audit_script_sha256": "a5671f61f52dab7bc123035656360d5212c6831cfdeccf35c0314d698d0b5471"
+  },
+  "local_warm_brunch_goal": {
+    "version": "warm-brunch-cooked-goal-v1",
+    "date": "2026-11-11",
+    "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+    "added_goal": "(cooked breakfast_eggs_1)",
+    "base_data_sha256": "07d08987ba2d4180fd8421db7ea71376dc14c10eca47a4be0920584da374ec3c",
+    "plan_changed": false,
+    "scene_changed": false,
+    "semantics": "Fix the known raw-egg false positive; the two-serving requirement remains unrepresented. Not certified sufficient for the whole instruction.",
+    "script_sha256": "ea75823913f6aa5d97e1d9fdd30386447adfaed62364d3c032bd839026c50af9"
+  },
+  "local_heated": {
+    "version": "heated-v2",
+    "date": "2026-11-11",
+    "base_data_sha256": "1c8ee7d527985f73ef01c5430d721886ba9afd59ce9d76ab1ac1b15a1bd3937d",
+    "cases": [
+      {
+        "id": "a9f01a35-f905-499e-ac54-007822d408c3",
+        "type": "easy",
+        "changed_nodes": [
+          "teapot_17",
+          "electric_kettle_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "8708a9fe-8ed0-49a8-9339-36f8d2a11611",
+        "type": "medium",
+        "changed_nodes": [
+          "bowl_2"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+        "type": "medium",
+        "changed_nodes": [
+          "cup_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "02a5f844-c663-4336-b6c9-fad5540b7cd5",
+        "type": "medium",
+        "changed_nodes": [
+          "casserole_21"
+        ],
+        "reference_changed": true
+      },
+      {
+        "id": "9c120c15-b00a-4544-bafa-ffeece47d701",
+        "type": "medium",
+        "changed_nodes": [
+          "thermos_1"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+        "type": "open",
+        "changed_nodes": [
+          "breakfast_eggs_1"
+        ],
+        "reference_changed": true
+      },
+      {
+        "id": "fd22ff41-4720-497c-bad3-7411b468b6cc",
+        "type": "open",
+        "changed_nodes": [
+          "breakfast_eggs_1"
+        ],
+        "reference_changed": true
+      },
+      {
+        "id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+        "type": "open",
+        "changed_nodes": [],
+        "reference_changed": true
+      }
+    ],
+    "reference_repaired_ids": [
+      "fd22ff41-4720-497c-bad3-7411b468b6cc",
+      "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+      "02a5f844-c663-4336-b6c9-fad5540b7cd5"
+    ],
+    "confirmed_reference_goal_ids": [
+      "fd22ff41-4720-497c-bad3-7411b468b6cc",
+      "02a5f844-c663-4336-b6c9-fad5540b7cd5"
+    ],
+    "supersedes": [
+      "cooking-v1",
+      "cooking-goals-v1",
+      "warm-brunch-cooked-goal-v1"
+    ],
+    "semantics": "One heated result for food and nonfood; no cooked state or initial doneness distinction. Explicit heatability is required.",
+    "script_sha256": "4e11ff0d4599fbbfc7b372c500500dd2c6cb773197a009f856069a28f5c3a35e",
+    "audit_script_sha256": "aa631c97a90b8ee77992f03e9754231bd317041fe42b04b12d7cc99c72d3cc80"
+  },
+  "local_serves_two": {
+    "version": "serves-two-v1",
+    "date": "2026-11-11",
+    "base_data_sha256": "0a6a8dbd13570d728f1bb079536c0db467b530fbf4b201fab65b82ff51a8b4b0",
+    "food_nodes": {
+      "4bddb476-f1ae-44e1-9558-add1571dd936": "eggs_116",
+      "9027ed1b-fcf9-4f17-8b39-c397d4db7563": "breakfast_eggs_1"
+    },
+    "semantics": "Explicit local declaration: each whole named food object is enough for two diners. Static capacity, not completed processing or serving.",
+    "judge_input_scope": "D1 final PDDL state; D2/D3/D4 inputs unchanged",
+    "script_sha256": "1bad00dabade3fb86c9f761347c67b12e2a88cca87b04e9502587c3129bc3451",
+    "audit_script_sha256": "f80d5e451e623ee7894cc37b7d7ee5cda1c07cb330267c1a1ff1599fc9adf739"
+  },
+  "local_meal_pruning": {
+    "version": "meal-pruning-v1",
+    "date": "2026-11-11",
+    "base_data_sha256": "6f4c5b75033599f7c59f4e1bbf68714f4871c714eef1c106ca3d7fb990c5eec6",
+    "result_data_sha256": "5c71c8d0c7b45eb7a6cdf7deecbe72563575fced0ee0a93e74fbb97da4e13154",
+    "policy": "Manual semantic coverage reduction, not exact-equivalence deduplication; retain explicit processing and temporal constraints. Retention does not certify existing references correct. Node/link Jaccard are exact set overlaps, not semantic embedding scores. Stable names and all node attributes are preserved in node comparison. Different scenes can test the same skill.",
+    "removed_case_count": 16,
+    "reviewed_case_count": 23,
+    "retained_representatives": [
+      {
+        "source_index_at_audit": 243,
+        "id": "a55dd1af-59ee-4e0c-8139-208e2134ed49",
+        "split": "open",
+        "instruction": "Plan and serve a complete evening meal",
+        "explicit_two_diners": false,
+        "proposal": "retain",
+        "retain_for": "普通完整供餐",
+        "coverage_representative_id": null,
+        "scene_node_count": 241,
+        "explicit_food_nodes": [
+          "apple_160",
+          "grapes_161"
+        ],
+        "record_sha256": "a4ede02d7a859b19dfef078b84cefe4149ceeb24057d7939b73f21a500f910d7"
+      },
+      {
+        "source_index_at_audit": 246,
+        "id": "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+        "split": "open",
+        "instruction": "Prepare an elegant dinner and ambiance",
+        "explicit_two_diners": false,
+        "proposal": "retain",
+        "retain_for": "餐食与氛围组合",
+        "coverage_representative_id": null,
+        "scene_node_count": 329,
+        "explicit_food_nodes": [
+          "carrots_218",
+          "cucumber_219"
+        ],
+        "record_sha256": "f71ecb5fea7fa3a9ba16b3c14b051d2b6d236d8f60930bcb3d23f5317fce23f8"
+      },
+      {
+        "source_index_at_audit": 261,
+        "id": "f3ee3e87-d782-4870-8ed3-2bc92f344010",
+        "split": "open",
+        "instruction": "Host a cozy dinner for two tonight.",
+        "explicit_two_diners": true,
+        "proposal": "retain",
+        "retain_for": "明确两人晚餐",
+        "coverage_representative_id": null,
+        "scene_node_count": 171,
+        "explicit_food_nodes": [
+          "milk_114",
+          "eggs_116"
+        ],
+        "record_sha256": "f0e1199a36cff54f34a7f1626f60aebf2e0932a096aea593da2bebe45c6df91f"
+      },
+      {
+        "source_index_at_audit": 301,
+        "id": "dec162ab-e453-419f-971a-2e32987350f2",
+        "split": "open",
+        "instruction": "Prepare an elegant dinner for guests",
+        "explicit_two_diners": false,
+        "proposal": "retain",
+        "retain_for": "客人晚餐",
+        "coverage_representative_id": null,
+        "scene_node_count": 159,
+        "explicit_food_nodes": [
+          "apple_105"
+        ],
+        "record_sha256": "24c85a5b71672230bfcaacdf1c9ceace9d3c13cdf134ad381e823ea93e3df500"
+      },
+      {
+        "source_index_at_audit": 303,
+        "id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+        "split": "open",
+        "instruction": "Host a cozy brunch for two.",
+        "explicit_two_diners": true,
+        "proposal": "retain",
+        "retain_for": "未要求加热的两人早午餐",
+        "coverage_representative_id": null,
+        "scene_node_count": 267,
+        "explicit_food_nodes": [
+          "milk_65",
+          "eggs_66",
+          "apple_180"
+        ],
+        "record_sha256": "c87a196d483db7bf5287d73646687d10e2cb7bb472fe441516dc4b1560ba2c8d"
+      },
+      {
+        "source_index_at_audit": 308,
+        "id": "4a3dc074-3cd6-4241-a4a5-2c37f31c99a1",
+        "split": "open",
+        "instruction": "Host a formal dinner and cleanup",
+        "explicit_two_diners": false,
+        "proposal": "retain",
+        "retain_for": "举办用餐后清理的过程约束",
+        "coverage_representative_id": null,
+        "scene_node_count": 148,
+        "explicit_food_nodes": [],
+        "record_sha256": "a8a351776b32442938cd27c19c4a08c343c1a2841d7b6c961428bdef7174fdc7"
+      },
+      {
+        "source_index_at_audit": 330,
+        "id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+        "split": "open",
+        "instruction": "Prepare a full family breakfast service",
+        "explicit_two_diners": false,
+        "proposal": "retain",
+        "retain_for": "未指定确切人数的家庭早餐",
+        "coverage_representative_id": null,
+        "scene_node_count": 173,
+        "explicit_food_nodes": [
+          "eggs_90",
+          "butter_92"
+        ],
+        "record_sha256": "dc902c81e3b835e5b7f3e808503faa8670d94bf8bda87ee2dcc7ac74427a9f68"
+      }
+    ],
+    "removed_cases": [
+      {
+        "source_index_at_audit": 238,
+        "id": "7b007eb0-dfe0-4bcd-8697-8926d4572585",
+        "split": "open",
+        "instruction": "Prepare a cozy dinner tonight",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "a55dd1af-59ee-4e0c-8139-208e2134ed49",
+        "scene_node_count": 224,
+        "explicit_food_nodes": [
+          "butter_54"
+        ],
+        "record_sha256": "65abf660efb35db103d2d85222b739d639150a3fbeaf18d5fbc67fb795bf1ec0"
+      },
+      {
+        "source_index_at_audit": 240,
+        "id": "cb22d87c-0879-4709-9985-4f367772bf44",
+        "split": "open",
+        "instruction": "Host an elegant dinner this evening",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+        "scene_node_count": 328,
+        "explicit_food_nodes": [],
+        "record_sha256": "557e51072893b65d82d6353338f21b2acbac217e5ed29597b9a042b7b4ccc02d"
+      },
+      {
+        "source_index_at_audit": 249,
+        "id": "5e8f884f-03be-4d9d-aa32-14003a8aaf52",
+        "split": "open",
+        "instruction": "Prepare a comforting breakfast and serve it",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+        "scene_node_count": 60,
+        "explicit_food_nodes": [
+          "butter_27"
+        ],
+        "record_sha256": "dc9c1b6783fc9fb5894af42b81192da993e2a30f25beb2a9dad524887eddc9a0"
+      },
+      {
+        "source_index_at_audit": 254,
+        "id": "590bda12-228f-4784-9caa-404aa7340332",
+        "split": "open",
+        "instruction": "Prepare an inviting meal for family tonight.",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+        "scene_node_count": 163,
+        "explicit_food_nodes": [],
+        "record_sha256": "f02b8be356f313316acfa7ea48636ca0d009106a63da323927eef19121612843"
+      },
+      {
+        "source_index_at_audit": 255,
+        "id": "861111df-3fbf-4569-9df9-2d3a9da81415",
+        "split": "open",
+        "instruction": "Host an elegant evening meal",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "dec162ab-e453-419f-971a-2e32987350f2",
+        "scene_node_count": 158,
+        "explicit_food_nodes": [],
+        "record_sha256": "7bcee7944fde83ee5e8ddd6cf910c339c064b68edb90b6d9386ffd81ff4cc631"
+      },
+      {
+        "source_index_at_audit": 260,
+        "id": "7853d8d5-fccc-42e1-8540-cfe67325b42d",
+        "split": "open",
+        "instruction": "Prepare a complete breakfast for two.",
+        "explicit_two_diners": true,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+        "scene_node_count": 173,
+        "explicit_food_nodes": [
+          "eggs_90",
+          "butter_92"
+        ],
+        "record_sha256": "c8b47c9638679cbba1afa35ea27cc9c352629b266047123b8c7889a5464c5266"
+      },
+      {
+        "source_index_at_audit": 268,
+        "id": "21d63cf0-3045-4d01-a88a-fe6f7d3e3499",
+        "split": "open",
+        "instruction": "Prepare a cozy family dinner tonight",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+        "scene_node_count": 131,
+        "explicit_food_nodes": [],
+        "record_sha256": "b02606ca11ded124c6c82f850c864574bdd05f54217f959c003465f0d09e9203"
+      },
+      {
+        "source_index_at_audit": 269,
+        "id": "ff25ff1c-035a-474b-a42a-e16c6ea1965f",
+        "split": "open",
+        "instruction": "Make tonight's dinner special for everyone",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+        "scene_node_count": 272,
+        "explicit_food_nodes": [],
+        "record_sha256": "05f5fb8b534c02f2a5357013968bbc02838ffce85eb1b87e56f593e80d25ed1f"
+      },
+      {
+        "source_index_at_audit": 270,
+        "id": "b2ac8958-c1dc-42d9-a41a-b6e0d8b8dd39",
+        "split": "open",
+        "instruction": "Prepare a relaxed family breakfast",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+        "scene_node_count": 133,
+        "explicit_food_nodes": [],
+        "record_sha256": "d0b2e0db5b6c915bca51f57546bd93f834eaaa438c29773fc7475eb3b2a8e75b"
+      },
+      {
+        "source_index_at_audit": 273,
+        "id": "bc56e4a3-3772-456f-9ae6-8c3396f52880",
+        "split": "open",
+        "instruction": "Prepare breakfast for two",
+        "explicit_two_diners": true,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+        "scene_node_count": 182,
+        "explicit_food_nodes": [
+          "yak_butter_122"
+        ],
+        "record_sha256": "73119ef18769cb6c837f4fe4d5673b71125251706320431228885b83d6ccb078"
+      },
+      {
+        "source_index_at_audit": 279,
+        "id": "f623e258-d97b-4a07-9121-0337a5fd3277",
+        "split": "open",
+        "instruction": "Prepare a hearty breakfast for two guests",
+        "explicit_two_diners": true,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+        "scene_node_count": 111,
+        "explicit_food_nodes": [],
+        "record_sha256": "f32d96f3c6c5cfcfd4f0feb4d67aa0ad54dc3df8aea469906f96403a52a0d326"
+      },
+      {
+        "source_index_at_audit": 284,
+        "id": "7bc96205-5b58-4310-b056-8768d2c9ca7a",
+        "split": "open",
+        "instruction": "Host a cozy dinner for guests",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "dec162ab-e453-419f-971a-2e32987350f2",
+        "scene_node_count": 174,
+        "explicit_food_nodes": [],
+        "record_sha256": "a5bb05724701403a91d2e244bd41db6807afe9ebbbbfff3ecf4790f5ed44ff9f"
+      },
+      {
+        "source_index_at_audit": 292,
+        "id": "e2d7a48c-0bc8-4a23-a932-83b4cbee492a",
+        "split": "open",
+        "instruction": "Make breakfast for two and serve",
+        "explicit_two_diners": true,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+        "scene_node_count": 61,
+        "explicit_food_nodes": [
+          "butter_27"
+        ],
+        "record_sha256": "9953dc8c7ed52f87c00212584d6724c17483576982aba3f492c9c30b02ffd5a6"
+      },
+      {
+        "source_index_at_audit": 300,
+        "id": "43f14fb2-001a-495e-b9f6-ae11b67c964b",
+        "split": "open",
+        "instruction": "Prepare an elaborate breakfast and serve it",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+        "scene_node_count": 164,
+        "explicit_food_nodes": [],
+        "record_sha256": "ac23309f38e33c6f32aa40c21351c1db1bf8bf8d0e2fea5fbb5fee93fe877da9"
+      },
+      {
+        "source_index_at_audit": 327,
+        "id": "2608e618-305d-46d2-b563-2ca9bc351c7b",
+        "split": "open",
+        "instruction": "Prepare a full weekend brunch.",
+        "explicit_two_diners": false,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+        "scene_node_count": 180,
+        "explicit_food_nodes": [],
+        "record_sha256": "7b1979ff0c4a3f5f43d3a248beb87490b0f6a14c1ddb3783bc21e68883b6670e"
+      },
+      {
+        "source_index_at_audit": 338,
+        "id": "e8f12ff2-1929-497a-9d87-103ff77d2110",
+        "split": "open",
+        "instruction": "Prepare a comforting weekend breakfast for two",
+        "explicit_two_diners": true,
+        "proposal": "remove",
+        "retain_for": null,
+        "coverage_representative_id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+        "scene_node_count": 267,
+        "explicit_food_nodes": [
+          "milk_65",
+          "eggs_66",
+          "cucumber_180"
+        ],
+        "record_sha256": "c8f7e75662ebbb212e5ee7746163aa44a5753019126e3b8727bd7488654551b3"
+      }
+    ],
+    "inventory_path": "docs/validation/meal_pruning_inventory.json",
+    "inventory_sha256": "9bed0ef6889660f1fd58f0cf095ed963b1f8afdaa126fd75b52eef99ed530a17",
+    "script_sha256": "c0c7a8bfeb809c7cbfc7cf063d14fffa7e7daee95d3d2e31dddedc6a15b4f57f",
+    "survivor_policy": "Keep original source lines and order, with no field changes.",
+    "previous_local_revision_entries_preserved": true
+  },
+  "local_group_portions": {
+    "version": "group-portions-v1",
+    "date": "2026-11-11",
+    "base_data_sha256": "5c71c8d0c7b45eb7a6cdf7deecbe72563575fced0ee0a93e74fbb97da4e13154",
+    "two_serving_food_nodes": {
+      "f3ee3e87-d782-4870-8ed3-2bc92f344010": "eggs_116",
+      "0cf41a97-9f6a-4e13-8542-1def6889483d": "eggs_66"
+    },
+    "group_serving_food_nodes": {
+      "dec162ab-e453-419f-971a-2e32987350f2": "cheese_block_106",
+      "198fd035-6f65-4740-8b01-0643a215ccb4": "eggs_90"
+    },
+    "semantics": "Static local capacity for two diners or the scenario intended family/guest group. No numeric group size, doneness, preparation or serving completion is inferred.",
+    "changed_cases": [
+      {
+        "id": "f3ee3e87-d782-4870-8ed3-2bc92f344010",
+        "type": "open",
+        "changed_nodes": [
+          "eggs_116"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "dec162ab-e453-419f-971a-2e32987350f2",
+        "type": "open",
+        "changed_nodes": [
+          "cheese_block_106"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+        "type": "open",
+        "changed_nodes": [
+          "eggs_66"
+        ],
+        "reference_changed": false
+      },
+      {
+        "id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+        "type": "open",
+        "changed_nodes": [
+          "eggs_90"
+        ],
+        "reference_changed": false
+      }
+    ],
+    "script_sha256": "7737e8e0186d5a7422ac7efed3691efe49edfbaef23032784e14e969d91e06cc",
+    "judge_input_scope": "Capacity facts reach D1; D2/D3/D4 input formats unchanged. D3 checks required stages, D4 checks required temporal order."
+  },
+  "local_liquid_pruning": {
+    "version": "liquid-pruning-v1",
+    "date": "2026-11-11",
+    "base_data_sha256": "3c4cd6482c287cf63e654dae58908270cebda5c157eaedc76b5e8ffb9b84f3cb",
+    "result_data_sha256": "0df84da9ed81615e0e8d06e364a0e45be08bca44ddfb6407341db489ddc91cef",
+    "policy": "User-requested semantic coverage reduction to at most six per overrepresented liquid category. Select existing representatives without merging instructions or modifying surviving records. Different scenes and some wording/process details are intentionally reduced; mappings are coverage references, not logical equivalence or correctness certification. Similarity metrics are descriptive, not automatic deletion thresholds.",
+    "removed_case_count": 43,
+    "reviewed_case_count": 67,
+    "retained_representatives": [
+      {
+        "id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "current_source_index_at_audit": 3,
+        "split": "easy",
+        "instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "representative_instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+        "reason": "瓶装补水并交人，跨房间到楼梯",
+        "record_sha256": "4b70bcb85444e82d126091a2ed0fc78c99474e6132e640a3d00cbac4fa451a71",
+        "reference_plan_steps": 7
+      },
+      {
+        "id": "c172ca4c-9f21-407c-87e8-350cbebfe340",
+        "current_source_index_at_audit": 10,
+        "split": "easy",
+        "instruction": "Can you fill the kettle with water for me?",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "c172ca4c-9f21-407c-87e8-350cbebfe340",
+        "representative_instruction": "Can you fill the kettle with water for me?",
+        "reason": "只装水壶，不要求加热；取壶需要开容器",
+        "record_sha256": "a1c78d04157c760685177bdab0692e520a98a2d9ce407e7e09c64f9f483b0f3a",
+        "reference_plan_steps": 9
+      },
+      {
+        "id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "current_source_index_at_audit": 123,
+        "split": "easy",
+        "instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "representative_instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "reason": "隐含需求的玻璃杯饮水；取杯需要开容器",
+        "record_sha256": "36daa7db5eba9bea4971e2f9de1ded2db23f8f59600ee740cadd272cf77bad92",
+        "reference_plan_steps": 9
+      },
+      {
+        "id": "44a3890d-31fb-4a53-b9d2-1d7f2e22f686",
+        "current_source_index_at_audit": 154,
+        "split": "medium",
+        "instruction": "Pick up the reusable water bottle from desk in the bedroom, take it to the sink at sink_cabinet in the laundryroom, fill it with water from the faucet, then return and place it back on desk.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "44a3890d-31fb-4a53-b9d2-1d7f2e22f686",
+        "representative_instruction": "Pick up the reusable water bottle from desk in the bedroom, take it to the sink at sink_cabinet in the laundryroom, fill it with water from the faucet, then return and place it back on desk.",
+        "reason": "明确装水后返回原桌面",
+        "record_sha256": "269e6741911c610fb2b9a2ac987f43ed866ab5dffb88162793eea98981d64dff",
+        "reference_plan_steps": 7
+      },
+      {
+        "id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+        "current_source_index_at_audit": 175,
+        "split": "medium",
+        "instruction": "Refill the student's reusable water bottle and place it in her bedroom so it's ready for her study session.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+        "representative_instruction": "Refill the student's reusable water bottle and place it in her bedroom so it's ready for her study session.",
+        "reason": "装水并在卧室备好，不要求交到手中",
+        "record_sha256": "37e67c6713ac3a55cb28b870986dbae55f6f077c05f561128262971147ce415c",
+        "reference_plan_steps": 6
+      },
+      {
+        "id": "ca93f23c-c8c5-426f-81f5-4f7e51811dfc",
+        "current_source_index_at_audit": 235,
+        "split": "medium",
+        "instruction": "Refill a reusable water bottle and make it available in the kitchen.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "ca93f23c-c8c5-426f-81f5-4f7e51811dfc",
+        "representative_instruction": "Refill a reusable water bottle and make it available in the kitchen.",
+        "reason": "装水并在厨房备好",
+        "record_sha256": "177685cdc6653c359794c748c3a33992ffd60b3be7ff7066429476282fc8fdcb",
+        "reference_plan_steps": 6
+      },
+      {
+        "id": "e9fed962-33e0-43ce-a5f0-ed603c0fe7d6",
+        "current_source_index_at_audit": 8,
+        "split": "easy",
+        "instruction": "Pick up the milk_tea_cup from sink in kitchen and deliver it to person at dining_table in dining_room.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "e9fed962-33e0-43ce-a5f0-ed603c0fe7d6",
+        "representative_instruction": "Pick up the milk_tea_cup from sink in kitchen and deliver it to person at dining_table in dining_room.",
+        "reason": "台面现成饮料交人",
+        "record_sha256": "bddcc9628d7a1192d03744a735e3d053161e349fe3f5b05011f7e1f5ad6d8b37",
+        "reference_plan_steps": 6
+      },
+      {
+        "id": "adb0fda4-53b4-418f-9154-39dd81aeaf78",
+        "current_source_index_at_audit": 24,
+        "split": "easy",
+        "instruction": "Go to the kitchen, open the refrigerator, pick up the bottle of bubble tea from inside the refrigerator, and bring it to the person in bedroom.001 and hand it over to them.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "adb0fda4-53b4-418f-9154-39dd81aeaf78",
+        "representative_instruction": "Go to the kitchen, open the refrigerator, pick up the bottle of bubble tea from inside the refrigerator, and bring it to the person in bedroom.001 and hand it over to them.",
+        "reason": "开冰箱取瓶装饮料交人",
+        "record_sha256": "6b80ecbe70e833f19867eff47d130af0122663ce03881627b1ff6b60d5c54694",
+        "reference_plan_steps": 8
+      },
+      {
+        "id": "ab270610-f68d-4ccf-8ced-455a237f8dc5",
+        "current_source_index_at_audit": 139,
+        "split": "easy",
+        "instruction": "Gather a glass from the kitchen, get ice from the garage fridge (represent as bottle for ice container), and take a juice bottle from the dining room, and set them up next to your laptop in the office.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "scope_note": "包含冰容器、果汁瓶及明确 next_to；饮品取用不等于需要制作。",
+        "decision": "retain",
+        "representative_id": "ab270610-f68d-4ccf-8ced-455a237f8dc5",
+        "representative_instruction": "Gather a glass from the kitchen, get ice from the garage fridge (represent as bottle for ice container), and take a juice bottle from the dining room, and set them up next to your laptop in the office.",
+        "reason": "多房间收集饮品／冰／杯，明确 next_to",
+        "record_sha256": "8d7bd722160330f4a16e4db82a151e619dc9a68fa05bbfc6345cf1ddb076807a",
+        "reference_plan_steps": 32
+      },
+      {
+        "id": "cd03b958-c5dc-40fe-9cc4-6d1b78e53241",
+        "current_source_index_at_audit": 171,
+        "split": "medium",
+        "instruction": "Fetch a small snack and a drink for the child.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "cd03b958-c5dc-40fe-9cc4-6d1b78e53241",
+        "representative_instruction": "Fetch a small snack and a drink for the child.",
+        "reason": "零食与饮料两项交付",
+        "record_sha256": "ddd5ce27b9f2b710a4aac0d8ee025a25e431adbe26548bf41263fece8f646f09",
+        "reference_plan_steps": 8
+      },
+      {
+        "id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+        "current_source_index_at_audit": 172,
+        "split": "medium",
+        "instruction": "Bring your laptop and a notebook from your bedroom to the office for studying, grab a cup of hot tea from the kitchen, and also bring your watch from the office to keep track of your study breaks.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": true,
+        "scope_note": "只取现成热茶，另搬电脑、笔记本和手表；不追加制茶。",
+        "decision": "retain",
+        "representative_id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+        "representative_instruction": "Bring your laptop and a notebook from your bedroom to the office for studying, grab a cup of hot tea from the kitchen, and also bring your watch from the office to keep track of your study breaks.",
+        "reason": "学习用品与现成热茶组合",
+        "record_sha256": "2df5d5d3b50c246892e6fc50e975cd61c411fe3bcd178416285971643008e9fb",
+        "reference_plan_steps": 33
+      },
+      {
+        "id": "079da0e5-422a-4fe4-afc5-e885f4e98453",
+        "current_source_index_at_audit": 221,
+        "split": "medium",
+        "instruction": "Set a candle holder and mooncakes on the dining room table, bring your favorite indie music album (CD) from the bedroom to the living room, and take a bottle of tea from the kitchen to enjoy.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "079da0e5-422a-4fe4-afc5-e885f4e98453",
+        "representative_instruction": "Set a candle holder and mooncakes on the dining room table, bring your favorite indie music album (CD) from the bedroom to the living room, and take a bottle of tea from the kitchen to enjoy.",
+        "reason": "多目的地节庆布置与瓶装茶组合",
+        "record_sha256": "d47caf30d39234c0678331b969cfb81dca62597c3e1ee5bc6d1d12aa7c283630",
+        "reference_plan_steps": 16
+      },
+      {
+        "id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "current_source_index_at_audit": 150,
+        "split": "medium",
+        "instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "retain",
+        "representative_id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "representative_instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "reason": "装水→开机→倒入杯→交人完整流程",
+        "record_sha256": "c17235f563e1716dfab9026741c720d35cd5c1a4d414d76c3c19bd92b21ae04f",
+        "reference_plan_steps": 17
+      },
+      {
+        "id": "c4eaedfe-58a6-4535-8817-5e6c30ef5ba0",
+        "current_source_index_at_audit": 161,
+        "split": "medium",
+        "instruction": "Fill the kettle with water from the sink and place it on the stove to heat.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "retain",
+        "representative_id": "c4eaedfe-58a6-4535-8817-5e6c30ef5ba0",
+        "representative_instruction": "Fill the kettle with water from the sink and place it on the stove to heat.",
+        "reason": "水壶放到炉上加热的指定方法",
+        "record_sha256": "2a272ae5e5d1cb19b061d2d2f3c4419d176cf89418fd5f8619b9780a2856ad99",
+        "reference_plan_steps": 9
+      },
+      {
+        "id": "bd6d5204-77c2-4be5-bd70-9f60a25d6a9d",
+        "current_source_index_at_audit": 164,
+        "split": "medium",
+        "instruction": "Take the electric_kettle from the kitchen_cabinet to the kitchen_island, fill it with water at sink_cabinet, power it on to heat, then pour hot water into a mug on table.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "retain",
+        "representative_id": "bd6d5204-77c2-4be5-bd70-9f60a25d6a9d",
+        "representative_instruction": "Take the electric_kettle from the kitchen_cabinet to the kitchen_island, fill it with water at sink_cabinet, power it on to heat, then pour hot water into a mug on table.",
+        "reason": "从柜内取电水壶、指定中转位置并倒入桌上杯",
+        "record_sha256": "3b27dd5639546a52b4059529fefc4c1f44e2ea072dc4842ec469d28b01886221",
+        "reference_plan_steps": 18
+      },
+      {
+        "id": "184f5333-3807-406c-bec5-124adc3cd227",
+        "current_source_index_at_audit": 176,
+        "split": "medium",
+        "instruction": "Retrieve the portable induction stove and hot pot saucepan from kitchen_cabinet, place them on kitchen_island, fill the saucepan with water, and power on the stove.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": false,
+        "scope_note": "要求取器具、装水和开炉；未要求最终已烧开，不追加终温要求。",
+        "decision": "retain",
+        "representative_id": "184f5333-3807-406c-bec5-124adc3cd227",
+        "representative_instruction": "Retrieve the portable induction stove and hot pot saucepan from kitchen_cabinet, place them on kitchen_island, fill the saucepan with water, and power on the stove.",
+        "reason": "取移动电磁炉和锅、装水开炉的准备任务",
+        "record_sha256": "e5f4435db5689f2139ce0026bbe40ac35c209604585f52fe7d7a2458ce4a11d9",
+        "reference_plan_steps": 22
+      },
+      {
+        "id": "cea31743-32c3-4f59-b07e-b12a71e840de",
+        "current_source_index_at_audit": 190,
+        "split": "medium",
+        "instruction": "Fill the kettle with water from the faucet and power it on to heat the water.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "retain",
+        "representative_id": "cea31743-32c3-4f59-b07e-b12a71e840de",
+        "representative_instruction": "Fill the kettle with water from the faucet and power it on to heat the water.",
+        "reason": "只装水并给水壶通电，不要求分杯交付",
+        "record_sha256": "6bc59db8f4e1fe14e95e58873d8ea323db8820ee9ad3c10ceb260dfa32954f6f",
+        "reference_plan_steps": 11
+      },
+      {
+        "id": "9c120c15-b00a-4544-bafa-ffeece47d701",
+        "current_source_index_at_audit": 225,
+        "split": "medium",
+        "instruction": "On a cold winter day, pour hot water into a thermos bottle and place it on the bedroom chest of drawers so I can have warm water during the night.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "scope_note": "要求倒入热水并放置保温瓶；不强制机器人重新烧水。",
+        "decision": "retain",
+        "representative_id": "9c120c15-b00a-4544-bafa-ffeece47d701",
+        "representative_instruction": "On a cold winter day, pour hot water into a thermos bottle and place it on the bedroom chest of drawers so I can have warm water during the night.",
+        "reason": "热水装保温瓶、指定存放位置及保温用途",
+        "record_sha256": "93685412d4d23f2a13f6081313844605b363d30e80e513fae6ce24ee51e42fb8",
+        "reference_plan_steps": 12
+      },
+      {
+        "id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+        "current_source_index_at_audit": 117,
+        "split": "easy",
+        "instruction": "Hey, could you water the living room plant for me?",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+        "representative_instruction": "Hey, could you water the living room plant for me?",
+        "reason": "单株室内植物浇水",
+        "record_sha256": "61744e4d0061e50f42254d1208f2f7bc97da87dcd46cb1f56c9cfe87b3649142",
+        "reference_plan_steps": 7
+      },
+      {
+        "id": "679dc145-55cf-4f32-9000-dad6d9a16d60",
+        "current_source_index_at_audit": 156,
+        "split": "medium",
+        "instruction": "Fetch the watering_can from the utility area, fill the watering_can at sink, and hand the filled watering_can to the person in utility_room.",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "scope_note": "只需装满并交付浇水壶，不追加浇植物。",
+        "decision": "retain",
+        "representative_id": "679dc145-55cf-4f32-9000-dad6d9a16d60",
+        "representative_instruction": "Fetch the watering_can from the utility area, fill the watering_can at sink, and hand the filled watering_can to the person in utility_room.",
+        "reason": "仅装满浇水壶交人",
+        "record_sha256": "286118cec495fb2b1a4ff924ba65fe9b9b1609f1f22167e6b6e9ba3e070eabcd",
+        "reference_plan_steps": 6
+      },
+      {
+        "id": "8a288187-e7a6-47a9-bfad-2543976de82e",
+        "current_source_index_at_audit": 180,
+        "split": "medium",
+        "instruction": "Go to the kitchen and fill the watering can with water from the sink, then water the plants in the living room.",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "8a288187-e7a6-47a9-bfad-2543976de82e",
+        "representative_instruction": "Go to the kitchen and fill the watering can with water from the sink, then water the plants in the living room.",
+        "reason": "多株植物，需中途重新装水",
+        "record_sha256": "6f3de826ca97d2cde1d3ef529618bde0262d37c5708c1a5631ffa1ebc95040ba",
+        "reference_plan_steps": 12
+      },
+      {
+        "id": "41eef001-7744-4656-bb14-84c8920b2fde",
+        "current_source_index_at_audit": 206,
+        "split": "medium",
+        "instruction": "At dusk, bring a vase and freshen it by filling it with water from the kitchen faucet, then place it back on the bedroom stool.",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "41eef001-7744-4656-bb14-84c8920b2fde",
+        "representative_instruction": "At dusk, bring a vase and freshen it by filling it with water from the kitchen faucet, then place it back on the bedroom stool.",
+        "reason": "花瓶装水后放回指定位置",
+        "record_sha256": "96546275653c05df0fffb046a030dd47f69e351e936d9618b696159edc66d5bb",
+        "reference_plan_steps": 6
+      },
+      {
+        "id": "e78432e1-25fd-4476-8711-7da0d50bc88c",
+        "current_source_index_at_audit": 209,
+        "split": "medium",
+        "instruction": "The plants need a drink — can you fill the watering can and water my vegetable patch outside?",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "e78432e1-25fd-4476-8711-7da0d50bc88c",
+        "representative_instruction": "The plants need a drink — can you fill the watering can and water my vegetable patch outside?",
+        "reason": "室外菜地用水",
+        "record_sha256": "3ae19cbcde69cae3bef03330507d3bc0fcb847f383e49fbb3e413587bbe404f2",
+        "reference_plan_steps": 6
+      },
+      {
+        "id": "4377c209-f70e-4cc9-a0d9-c09e1ffef3b9",
+        "current_source_index_at_audit": 216,
+        "split": "medium",
+        "instruction": "Could you fill the watering can and water my herbs on the coffee table, please?",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "retain",
+        "representative_id": "4377c209-f70e-4cc9-a0d9-c09e1ffef3b9",
+        "representative_instruction": "Could you fill the watering can and water my herbs on the coffee table, please?",
+        "reason": "香草定向浇水，取壶需开容器",
+        "record_sha256": "586487d575df80dc127e93b6144b069e530466f7c2a9a1df4c41c58ef68a6f7c",
+        "reference_plan_steps": 8
+      }
+    ],
+    "removed_cases": [
+      {
+        "id": "2ac616dc-d786-496d-8cef-59fdbd6ea754",
+        "current_source_index_at_audit": 15,
+        "split": "easy",
+        "instruction": "Could you bring a glass of water to my spouse in the bathroom?",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "representative_instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "e5d8a9f1041c84f5bc9368e7b6c8f385a7f9935e8f8641e94678e7d312f267b6",
+        "reference_plan_steps": 7,
+        "comparison": {
+          "instruction_sequence_ratio": 0.5873015873015873,
+          "exact_node_jaccard": 0.011560693641618497,
+          "normalized_link_jaccard": 0.003134796238244514,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "359c9091-abba-4695-aeb4-6ff68340f9dd",
+        "current_source_index_at_audit": 19,
+        "split": "easy",
+        "instruction": "I'm thirsty — can you grab me a glass of water?",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "representative_instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "cf0baf61ad4b2111b890a841b5208dc7c5573b2baa586605d295175345402388",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.6666666666666666,
+          "exact_node_jaccard": 0.0026246719160104987,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "57113a26-952d-4dc6-9617-3ca5bea35246",
+        "current_source_index_at_audit": 26,
+        "split": "easy",
+        "instruction": "Provide a filled reusable water bottle to the teenager in her bedroom.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "representative_instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "842b0c825b68d483718b4fb143c7e595bac251d34339a9a10747c8e9e96be90b",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.5949367088607594,
+          "exact_node_jaccard": 0.003048780487804878,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "d96cb594-897e-4b47-83f3-e8b16bd34998",
+        "current_source_index_at_audit": 49,
+        "split": "easy",
+        "instruction": "Bring a drink of water to the person in the dining room.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "representative_instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "90528e9ac56bb78f1bd50b1422cd0401d050196c10ba13eb4437e3ace5f0d052",
+        "reference_plan_steps": 7,
+        "comparison": {
+          "instruction_sequence_ratio": 0.36666666666666664,
+          "exact_node_jaccard": 0.002688172043010753,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "fa727bbc-9c09-420b-a616-66e6e4a6246c",
+        "current_source_index_at_audit": 74,
+        "split": "easy",
+        "instruction": "Provide a cup of drinking water to the child in her bedroom.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+        "representative_instruction": "Refill the student's reusable water bottle and place it in her bedroom so it's ready for her study session.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "913f01bcb199e7e7ec35fa6cbac7f525167689c99df534b99849da06776b1b13",
+        "reference_plan_steps": 7,
+        "comparison": {
+          "instruction_sequence_ratio": 0.41916167664670656,
+          "exact_node_jaccard": 0.04609929078014184,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "78caec8e-5332-4cd0-82f1-0550a430df58",
+        "current_source_index_at_audit": 79,
+        "split": "easy",
+        "instruction": "Could you bring me a glass of water, please?",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "representative_instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "5d437996fccc06ff4b57cea5008d04b3d4873398421e4f7ce4e133946331e53d",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.8148148148148148,
+          "exact_node_jaccard": 0.012048192771084338,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "645b5311-11d9-4511-bfd5-5b933fe2b482",
+        "current_source_index_at_audit": 80,
+        "split": "easy",
+        "instruction": "Provide a glass of water to the resident in the living room.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "representative_instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "5399a4bf9f3aa6ea9b347a9787b8364815c854dc483fed2c806a1982ee9edc73",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.4032258064516129,
+          "exact_node_jaccard": 0.005970149253731343,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "f3d312f5-1ca9-4745-9c2c-98ed6e10022c",
+        "current_source_index_at_audit": 83,
+        "split": "easy",
+        "instruction": "Provide a filled reusable water bottle to the person in the bathroom.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "representative_instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "7d349210b443985c503d4b20ea5487ca5629eee26a958c2cd2c139fb7672cdc3",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.6751592356687898,
+          "exact_node_jaccard": 0.011363636363636364,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "6a49e355-517f-41cd-a381-99e024419125",
+        "current_source_index_at_audit": 119,
+        "split": "easy",
+        "instruction": "Go to the kitchen, take a drinking glass from kitchen_cabinet, fill it with water from the faucet, and hand the filled glass to person in the entryway.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "representative_instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "61850d64f5e21ca1584bcf4cc218079860b439d94f435f2117881e914238dc10",
+        "reference_plan_steps": 10,
+        "comparison": {
+          "instruction_sequence_ratio": 0.30697674418604654,
+          "exact_node_jaccard": 0.02616279069767442,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "864fcabb-2a56-4efb-9f4b-1d7cb84136c1",
+        "current_source_index_at_audit": 143,
+        "split": "medium",
+        "instruction": "Refill the user's reusable water bottle and deliver it to them.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "representative_instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "37650e029157a676b59c822893f6baf0bd04d628c7fecbba7b9046875b508118",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.5960264900662252,
+          "exact_node_jaccard": 0.055350553505535055,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "d3e7a640-74c8-4c97-a936-41682c7b59c6",
+        "current_source_index_at_audit": 146,
+        "split": "medium",
+        "instruction": "Go to the kitchen, get the mug from bench, fill it at sink, and bring the filled mug to person in bathroom and hand it over.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "representative_instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "b3783cfe03c2a19ccc3c7c3c8fd8d167fe7af46dfe256351ad8ea83bd5789635",
+        "reference_plan_steps": 8,
+        "comparison": {
+          "instruction_sequence_ratio": 0.2553191489361702,
+          "exact_node_jaccard": 0.008264462809917356,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "d0340668-e518-4aa5-b935-b1a877b25952",
+        "current_source_index_at_audit": 147,
+        "split": "medium",
+        "instruction": "Take a glass from the dining table, fill it with water at the kitchen sink, and hand the filled glass to person in empty_room.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "representative_instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "b867dd23aef7499d3580b120b9563ee3b8aebcbf41229f8c5594ed80a7a76a4c",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.2736842105263158,
+          "exact_node_jaccard": 0.0,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "fccd6938-4f5d-4bfe-a8de-087e895319dd",
+        "current_source_index_at_audit": 148,
+        "split": "medium",
+        "instruction": "Pick up the reusable water bottle from the dining_table, walk to sink in kitchen to fill it with water, then hand the filled water bottle to person at dining_table.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "representative_instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "f1186380ae22ffec1d9a1cac410413b7d458aec079703f29796a6233e9d2783f",
+        "reference_plan_steps": 7,
+        "comparison": {
+          "instruction_sequence_ratio": 0.3492063492063492,
+          "exact_node_jaccard": 0.016233766233766232,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": true
+        }
+      },
+      {
+        "id": "3bc23367-bbd0-479e-be4b-c16413664743",
+        "current_source_index_at_audit": 149,
+        "split": "medium",
+        "instruction": "Go to kitchen, pick up the teapot from sink, fill it from the faucet, and hand the filled teapot to person in bedroom.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "c172ca4c-9f21-407c-87e8-350cbebfe340",
+        "representative_instruction": "Can you fill the kettle with water for me?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "b2af2859745fbfd5641ab72ba767b74e352e8a29a4b8c5fe9228bdae7cb15add",
+        "reference_plan_steps": 8,
+        "comparison": {
+          "instruction_sequence_ratio": 0.2625,
+          "exact_node_jaccard": 0.0061162079510703364,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "08fefdd7-7df6-488d-bafe-c71dea3b4b2e",
+        "current_source_index_at_audit": 152,
+        "split": "medium",
+        "instruction": "Refill a reusable water bottle and deliver it to the resident.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "representative_instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "8b11b78a5a50fe561e84c16440da9fb7218eb106bc4bd64201b89dece30bc3c1",
+        "reference_plan_steps": 11,
+        "comparison": {
+          "instruction_sequence_ratio": 0.68,
+          "exact_node_jaccard": 0.018115942028985508,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "175a4f28-3023-4e88-8af4-d73c19a16be0",
+        "current_source_index_at_audit": 158,
+        "split": "medium",
+        "instruction": "Refill a drinking container with tap water and deliver it to the person in the corridor.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "representative_instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "653772f27e82783694a7d9de61031b07e0bc63dc9dd4a278e30aadc47ce178f0",
+        "reference_plan_steps": 7,
+        "comparison": {
+          "instruction_sequence_ratio": 0.5227272727272727,
+          "exact_node_jaccard": 0.030201342281879196,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": true
+        }
+      },
+      {
+        "id": "5804e2c6-9308-4d09-92e8-dbefd7553fec",
+        "current_source_index_at_audit": 166,
+        "split": "medium",
+        "instruction": "Ensure the user's reusable water bottle is filled with water and ready for them to take to work.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "representative_instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "2d675d508fba1686c9f47b82948e737cbe51bf99cee812279c7608787b198f19",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.4673913043478261,
+          "exact_node_jaccard": 0.066006600660066,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "d167567d-7887-4626-9cd7-33ba43257944",
+        "current_source_index_at_audit": 167,
+        "split": "medium",
+        "instruction": "Could you fill a cup with water and bring it to my room, please?",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+        "representative_instruction": "Refill the student's reusable water bottle and place it in her bedroom so it's ready for her study session.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "2a6af08fb02f96f70530d69ee8b8f237e2fa974f8826f6df60e69cfe9058f783",
+        "reference_plan_steps": 7,
+        "comparison": {
+          "instruction_sequence_ratio": 0.38596491228070173,
+          "exact_node_jaccard": 0.05517241379310345,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "451288d0-761d-4576-bf3b-556307ddb7ae",
+        "current_source_index_at_audit": 169,
+        "split": "medium",
+        "instruction": "Fill a plastic cup with water at sink in kitchen and bring it to the child in bedroom, handing it to her.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+        "representative_instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "23115c9cf7d6238d3607ab2696d162b1ebb895215043f0e0b93ff6ea3d736541",
+        "reference_plan_steps": 7,
+        "comparison": {
+          "instruction_sequence_ratio": 0.378698224852071,
+          "exact_node_jaccard": 0.00510204081632653,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "2b60f5c9-31ae-435f-85a2-dbd81109a14b",
+        "current_source_index_at_audit": 203,
+        "split": "medium",
+        "instruction": "Pick up the reusable_water_bottle from dining_table, take it to sink in kitchen, fill it with water, and hand it to person.",
+        "category": "plain_water",
+        "category_label": "常温水装填／补水／交付",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+        "representative_instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "4a20f3ca032da5de996817d3abad940215ccc9a79d7686284661050acb524636",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.4075829383886256,
+          "exact_node_jaccard": 0.027777777777777776,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "0aa92a27-e544-4cf1-bd80-9db63bdbb474",
+        "current_source_index_at_audit": 42,
+        "split": "easy",
+        "instruction": "Deliver a requested beverage from the kitchen area to the person in the bathroom.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "e9fed962-33e0-43ce-a5f0-ed603c0fe7d6",
+        "representative_instruction": "Pick up the milk_tea_cup from sink in kitchen and deliver it to person at dining_table in dining_room.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "edcab6550a81bc97af613e536668e46159ad3561c719cd91aa5a4e653026823d",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.44808743169398907,
+          "exact_node_jaccard": 0.01282051282051282,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": true
+        }
+      },
+      {
+        "id": "d6e3d05d-410c-4c8e-87a9-27be573b76f7",
+        "current_source_index_at_audit": 52,
+        "split": "easy",
+        "instruction": "Deliver a drink to the person in the bedroom to quench their thirst.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "e9fed962-33e0-43ce-a5f0-ed603c0fe7d6",
+        "representative_instruction": "Pick up the milk_tea_cup from sink in kitchen and deliver it to person at dining_table in dining_room.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "d3a9b84bc0cc35d7b3d767073c4bfe9647099547140caa582714883e2e237ae9",
+        "reference_plan_steps": 7,
+        "comparison": {
+          "instruction_sequence_ratio": 0.3411764705882353,
+          "exact_node_jaccard": 0.009036144578313253,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "49d3a7f5-d089-4f5b-a8be-c34a70aecc35",
+        "current_source_index_at_audit": 66,
+        "split": "easy",
+        "instruction": "Go to the kitchen, open refrigerator, take the bottle_of_milk_tea from refrigerator and bring it to person in the hallway, handing it to them.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "adb0fda4-53b4-418f-9154-39dd81aeaf78",
+        "representative_instruction": "Go to the kitchen, open the refrigerator, pick up the bottle of bubble tea from inside the refrigerator, and bring it to the person in bedroom.001 and hand it over to them.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "fd51eff3a7af3501f22604520b9a719165640de4df08e4bcd57087619203709e",
+        "reference_plan_steps": 8,
+        "comparison": {
+          "instruction_sequence_ratio": 0.7707006369426752,
+          "exact_node_jaccard": 0.0027624309392265192,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": true
+        }
+      },
+      {
+        "id": "010b3761-72e6-444f-bbc8-0bf4c55c077c",
+        "current_source_index_at_audit": 72,
+        "split": "easy",
+        "instruction": "Hey, I'm thirsty—can you grab me a water from the fridge?",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "adb0fda4-53b4-418f-9154-39dd81aeaf78",
+        "representative_instruction": "Go to the kitchen, open the refrigerator, pick up the bottle of bubble tea from inside the refrigerator, and bring it to the person in bedroom.001 and hand it over to them.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "2bb223b06e7563e91f586d8a40505fa15778e2468baa4c4d84aaa0bdc43cf1bd",
+        "reference_plan_steps": 8,
+        "comparison": {
+          "instruction_sequence_ratio": 0.29694323144104806,
+          "exact_node_jaccard": 0.010666666666666666,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": true
+        }
+      },
+      {
+        "id": "6cd2dba6-1f1e-4003-b231-13001bc37ec1",
+        "current_source_index_at_audit": 84,
+        "split": "easy",
+        "instruction": "Retrieve a recently-delivered drink and bring it to the user.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "e9fed962-33e0-43ce-a5f0-ed603c0fe7d6",
+        "representative_instruction": "Pick up the milk_tea_cup from sink in kitchen and deliver it to person at dining_table in dining_room.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "5c8c76712d2b0726596dcd8311eb4415b70fb753738fd6d8055ec99f982b29ba",
+        "reference_plan_steps": 5,
+        "comparison": {
+          "instruction_sequence_ratio": 0.34355828220858897,
+          "exact_node_jaccard": 0.010178117048346057,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "facf09d9-cf5d-459f-8344-4d0f6a07adf7",
+        "current_source_index_at_audit": 94,
+        "split": "easy",
+        "instruction": "Hey, can you grab me a milk tea from the kitchen and bring it to my room?",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "e9fed962-33e0-43ce-a5f0-ed603c0fe7d6",
+        "representative_instruction": "Pick up the milk_tea_cup from sink in kitchen and deliver it to person at dining_table in dining_room.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "5f1ce03df0f7a82d2326cd5377c68ed58d2e92f66b1557b0ca5b49eea579b45c",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.48,
+          "exact_node_jaccard": 0.023323615160349854,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "a502dd4d-6f7e-43a9-8eb6-1157d760a621",
+        "current_source_index_at_audit": 98,
+        "split": "easy",
+        "instruction": "Go to the kitchen, open refrigerator, pick up a bottle of mango juice from inside, and bring it to the person in the bedroom, handing it to her.",
+        "category": "ready_drink",
+        "category_label": "现成饮料取用／搬运／摆放",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "adb0fda4-53b4-418f-9154-39dd81aeaf78",
+        "representative_instruction": "Go to the kitchen, open the refrigerator, pick up the bottle of bubble tea from inside the refrigerator, and bring it to the person in bedroom.001 and hand it over to them.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "ac568f89984bed55332115005e594e23d6cdcf1d4b9457d863d67c2c9a27109a",
+        "reference_plan_steps": 8,
+        "comparison": {
+          "instruction_sequence_ratio": 0.7848101265822784,
+          "exact_node_jaccard": 0.014778325123152709,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": true
+        }
+      },
+      {
+        "id": "b5839f9a-eb34-4d4d-ad2b-5665e8b9c5ef",
+        "current_source_index_at_audit": 144,
+        "split": "medium",
+        "instruction": "Prepare a cup of boiled water and deliver it to the user.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "remove",
+        "representative_id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "representative_instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "6d837a217f2b2f5d354db2124d28e237714421478c2f19869c5789d81de832e2",
+        "reference_plan_steps": 18,
+        "comparison": {
+          "instruction_sequence_ratio": 0.2641509433962264,
+          "exact_node_jaccard": 0.041791044776119404,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "63771138-ea77-46d7-98ef-730f7fc06a7d",
+        "current_source_index_at_audit": 160,
+        "split": "medium",
+        "instruction": "Could you make me a cup of hot water and bring it down here?",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "remove",
+        "representative_id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "representative_instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "660ed356d10f6de5bf064d25eab7a74f1fdcf56be8dfeb5b0dcba21062a59c0c",
+        "reference_plan_steps": 18,
+        "comparison": {
+          "instruction_sequence_ratio": 0.24186046511627907,
+          "exact_node_jaccard": 0.059027777777777776,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "75fa2d06-2278-45fa-a9d1-fa3cdb6e3da8",
+        "current_source_index_at_audit": 162,
+        "split": "medium",
+        "instruction": "Prepare a cup of hot water and bring it to the person.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "remove",
+        "representative_id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "representative_instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "e8a4d27c6b86faf808b3da9b38addb3872394ba824d816a7ea69ac6c354168c9",
+        "reference_plan_steps": 12,
+        "comparison": {
+          "instruction_sequence_ratio": 0.3062200956937799,
+          "exact_node_jaccard": 0.013793103448275862,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "0127af55-e737-4be4-8fda-ea2efaf69461",
+        "current_source_index_at_audit": 163,
+        "split": "medium",
+        "instruction": "Prepare a cup of hot water for the user.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "remove",
+        "representative_id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "representative_instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "33f6db13e8d9f526b7d7ba150dd25986cad2a7266e5645d193421b6a0b0591ea",
+        "reference_plan_steps": 18,
+        "comparison": {
+          "instruction_sequence_ratio": 0.26666666666666666,
+          "exact_node_jaccard": 0.06324110671936758,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "e066d3a7-c73c-464d-b0a5-a28ce4b7939d",
+        "current_source_index_at_audit": 170,
+        "split": "medium",
+        "instruction": "Fill the electric kettle at sink (kitchen) with water, power it on to boil, pour the boiled water into a cup on dining_table, and deliver the cup to person in bedroom.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "remove",
+        "representative_id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "representative_instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "73a681162050078bb4362d99d3d7136196ccbe88609f851aeb9b65d7a57f00f0",
+        "reference_plan_steps": 17,
+        "comparison": {
+          "instruction_sequence_ratio": 0.8074534161490683,
+          "exact_node_jaccard": 0.041379310344827586,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": true
+        }
+      },
+      {
+        "id": "3add086d-6d85-470a-a351-bdab3456e295",
+        "current_source_index_at_audit": 177,
+        "split": "medium",
+        "instruction": "I need my hot water — please make me a cup and bring it here.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "remove",
+        "representative_id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "representative_instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "663009d9160d0438ec4016f003bf385cdc9fd84ea813ada880bdd4120747ca19",
+        "reference_plan_steps": 18,
+        "comparison": {
+          "instruction_sequence_ratio": 0.35185185185185186,
+          "exact_node_jaccard": 0.06324110671936758,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "f2c44280-76ff-449b-895e-2d78cdfc6b28",
+        "current_source_index_at_audit": 196,
+        "split": "medium",
+        "instruction": "Go to the kitchen, fill and switch on the electric kettle, pour hot water into the ceramic mug on the kitchen island, and hand the mug to the person in the kitchen.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "remove",
+        "representative_id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "representative_instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "95104c4c5df5c05f4712e6fba91d62f395c58538ab5997f96f9e68ffa85d83c4",
+        "reference_plan_steps": 21,
+        "comparison": {
+          "instruction_sequence_ratio": 0.5642633228840125,
+          "exact_node_jaccard": 0.013245033112582781,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "bd621dea-7022-4f49-ae0f-3018da6b2f12",
+        "current_source_index_at_audit": 220,
+        "split": "medium",
+        "instruction": "Fill the kettle with water from the faucet and then power it on to heat the water.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "remove",
+        "representative_id": "cea31743-32c3-4f59-b07e-b12a71e840de",
+        "representative_instruction": "Fill the kettle with water from the faucet and power it on to heat the water.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "acc6c5ac466c56f331093519bcd03a94dcaeb3da7f6c078486b498531ccb03a2",
+        "reference_plan_steps": 11,
+        "comparison": {
+          "instruction_sequence_ratio": 0.9685534591194969,
+          "exact_node_jaccard": 0.003436426116838488,
+          "normalized_link_jaccard": 0.0037735849056603774,
+          "same_action_sequence": true
+        }
+      },
+      {
+        "id": "7728b3b9-4cd2-4586-8dd0-6f70bdea8e22",
+        "current_source_index_at_audit": 223,
+        "split": "medium",
+        "instruction": "Pick up the electric kettle and a mug from the dining table, fill the kettle at the kitchen sink, power it on to heat the water, pour hot water into the mug, and bring the mug to the person in bathroom.",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "remove",
+        "representative_id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "representative_instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "2969da53b226fb70011951ef45a8d95c4097e5caa436ba2dea6ad6d456475710",
+        "reference_plan_steps": 18,
+        "comparison": {
+          "instruction_sequence_ratio": 0.6386554621848739,
+          "exact_node_jaccard": 0.0528169014084507,
+          "normalized_link_jaccard": 0.007905138339920948,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "4a58251b-b8bf-4f05-ad45-7947bf665031",
+        "current_source_index_at_audit": 229,
+        "split": "medium",
+        "instruction": "Could you please make me a warm cup of boiled water and bring it here?",
+        "category": "hot_water",
+        "category_label": "热水／烧水／倒水与交付",
+        "in_previous_33_task_screen": true,
+        "decision": "remove",
+        "representative_id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+        "representative_instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "f735b4cc8dc841ad0ebe539fc13971471c23fd5106fa01a323e45d2859719b7e",
+        "reference_plan_steps": 18,
+        "comparison": {
+          "instruction_sequence_ratio": 0.3377777777777778,
+          "exact_node_jaccard": 0.015037593984962405,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "da7b09cd-9be9-443b-9d30-5818df18a3ed",
+        "current_source_index_at_audit": 71,
+        "split": "easy",
+        "instruction": "Water an indoor plant in the apartment.",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+        "representative_instruction": "Hey, could you water the living room plant for me?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "cd472c035beeca6e065105e0428fa1c9d01bbc0e1cc7b39c1bef44cdd29a472f",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.47191011235955055,
+          "exact_node_jaccard": 0.0078125,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "45c7ef7c-cbbe-46a5-b464-d161cb6da953",
+        "current_source_index_at_audit": 88,
+        "split": "easy",
+        "instruction": "Maintain the indoor plant by watering it.",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+        "representative_instruction": "Hey, could you water the living room plant for me?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "bcda294307de5de14b7f8a749ca0b156fbcf7f160998155890d72aed854e720b",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.43956043956043955,
+          "exact_node_jaccard": 0.012096774193548387,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "177ac7f6-d696-4581-9f68-9d075052f1cf",
+        "current_source_index_at_audit": 106,
+        "split": "easy",
+        "instruction": "Hey, could you water the plant on the table in the living room? It's getting thirsty.",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+        "representative_instruction": "Hey, could you water the living room plant for me?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "a05b02707be207c566a9f86ab541ca7721124d34674d9d14aa7f42a2b182f9f2",
+        "reference_plan_steps": 6,
+        "comparison": {
+          "instruction_sequence_ratio": 0.5481481481481482,
+          "exact_node_jaccard": 0.10546875,
+          "normalized_link_jaccard": 0.012195121951219513,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "5ae5b97c-620f-400b-b14a-3ad0fa6fcae9",
+        "current_source_index_at_audit": 157,
+        "split": "medium",
+        "instruction": "Pick up the watering_can from bench, fill it at sink in the kitchen, then pour water into vase and vase in living_room.",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "8a288187-e7a6-47a9-bfad-2543976de82e",
+        "representative_instruction": "Go to the kitchen and fill the watering can with water from the sink, then water the plants in the living room.",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "80ec9dd47d59ff9a71d94fc8478010737e43003cfe1493b0eae8ca49ffb9c442",
+        "reference_plan_steps": 10,
+        "comparison": {
+          "instruction_sequence_ratio": 0.43478260869565216,
+          "exact_node_jaccard": 0.012195121951219513,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": false
+        }
+      },
+      {
+        "id": "7ca9b7af-487b-4dde-8c11-3dbc7c7af671",
+        "current_source_index_at_audit": 165,
+        "split": "medium",
+        "instruction": "Fill a watering can at the kitchen sink and use it to water the potted plant located on the vase in the playroom (vase in playroom).",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+        "representative_instruction": "Hey, could you water the living room plant for me?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "cf4a740c2aee98effe9a71ba4ec2efb51a0d6c6df42ad5100b94f88f648fa9fa",
+        "reference_plan_steps": 7,
+        "comparison": {
+          "instruction_sequence_ratio": 0.2967032967032967,
+          "exact_node_jaccard": 0.005780346820809248,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": true
+        }
+      },
+      {
+        "id": "3bc29099-3549-4cbe-8009-9a21718bf60e",
+        "current_source_index_at_audit": 194,
+        "split": "medium",
+        "instruction": "Fill the watering_can at sink and pour water into vase in bathroom to water the plant.",
+        "category": "plant_water",
+        "category_label": "浇植物／花瓶补水及相关装水",
+        "in_previous_33_task_screen": false,
+        "decision": "remove",
+        "representative_id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+        "representative_instruction": "Hey, could you water the living room plant for me?",
+        "reason": "与代表同属相近目标／流程；精简措辞、对象或地点变体，接受减少场景布局覆盖。",
+        "record_sha256": "3de2ec9c5a25aec379680138d0ee8abe158db8a4fa05df8a0b6c20759b4ae41e",
+        "reference_plan_steps": 7,
+        "comparison": {
+          "instruction_sequence_ratio": 0.35294117647058826,
+          "exact_node_jaccard": 0.024096385542168676,
+          "normalized_link_jaccard": 0.0,
+          "same_action_sequence": true
+        }
+      }
+    ],
+    "inventory_path": "docs/validation/liquid_pruning_inventory.json",
+    "inventory_sha256": "ba61dafecdea4e6c94346feb53ca91ab87dbc7421fd12654ae91989cbd9f095c",
+    "script_sha256": "2b7051dc6951cab33560bfd4e2f7949c176a2239128cb9bf953ccbaeec34e2a5",
+    "survivor_policy": "Keep original source lines and order, with no field changes.",
+    "previous_local_revision_entries_preserved": true
+  }
 }

@@ -104,12 +104,22 @@ def check_assets(files: dict[str, bytes], wheel: bool = False) -> list[str]:
                 errors.append(f"domain manifest mismatch: {dataset}")
             if split.get("domain_sha256") != active_domain.get("sha256"):
                 errors.append(f"domain hash manifest mismatch: {dataset}")
-    if count != 348:
-        errors.append("public dataset count must be 348")
+    if count != 296:
+        errors.append("public dataset count must be 296")
     provenance = get("benchmarks/hf_sync.json")
     source = get("benchmarks/ahat_eval_set.jsonl")
     if provenance is not None and source is not None:
-        if hashlib.sha256(source).hexdigest() != json.loads(provenance)["source"]["sha256"]:
+        sync = json.loads(provenance)
+        # source.sha256 identifies the upstream snapshot; artifacts identify
+        # bundled files after any documented local data corrections.
+        artifacts = {item["path"]: item["sha256"] for item in sync["artifacts"]}
+        if "ahat_eval_set.jsonl" not in artifacts:
+            errors.append("missing bundled evaluation data hash")
+        for name, sha in artifacts.items():
+            data = get(f"benchmarks/{name}")
+            if data is not None and hashlib.sha256(data).hexdigest() != sha:
+                errors.append(f"bundled data hash mismatch: {name}")
+        if not sync.get("local_corrections") and hashlib.sha256(source).hexdigest() != sync["source"]["sha256"]:
             errors.append("raw HF source hash mismatch")
     for name in ("configs/default.yaml", "configs/datasets.yaml", "schemas/inference.schema.json",
                  "THIRD_PARTY_NOTICES.md", "licenses/AHAT-MIT", "licenses/VAL-BSD-3-Clause",

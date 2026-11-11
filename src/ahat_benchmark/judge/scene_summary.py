@@ -3,6 +3,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from ..scene import normalize_links
+
 
 def organize_content_list(content_list: list[str]) -> list[str]:
     def get_sort_key(s):
@@ -24,7 +26,9 @@ def get_parents_str(name: str, links: list[list[str]]) -> str:
 
 
 def summarize_scene(scene_graph: dict[str, Any]) -> str:
-    links = scene_graph['links']
+    normalized = normalize_links(scene_graph)
+    links = [[link['to'], link['from'], link['relation']]
+             for link in normalized if link['relation'] in {'on', 'in'}]
 
     def names(category, sort=True):
         items = scene_graph.get(category) or []
@@ -38,4 +42,11 @@ def summarize_scene(scene_graph: dict[str, Any]) -> str:
     object_list = names('objects')
     agent_list = names('agent', sort=False)
     person_list = names('person', sort=False)
-    return f"'room_list': {room_list}, 'furniture_list': {furniture_list}, 'object_list': {object_list}, 'agent_list': {agent_list}, 'person_list': {person_list}"
+    summary = f"'room_list': {room_list}, 'furniture_list': {furniture_list}, 'object_list': {object_list}, 'agent_list': {agent_list}, 'person_list': {person_list}"
+    if scene_graph.get('devices'):
+        summary += f", 'device_list': {names('devices')}"
+    adjacency = [(link['obj1'], link['obj2'], link['location'])
+                 for link in normalized if link['relation'] == 'next_to']
+    if adjacency:
+        summary += f", 'initial_next_to (undirected)': {adjacency}"
+    return summary

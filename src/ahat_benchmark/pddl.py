@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from .vendor.scene_graph import PDDLDomainParser, SceneGraphManager
+from .pddl_effects import effects, typed_symbols
 
 
 def sexpr(text: str) -> list[Any]:
@@ -28,27 +29,6 @@ def sexpr(text: str) -> list[Any]:
     if stack or len(roots) != 1:
         raise ValueError('Unbalanced or multiple PDDL expressions')
     return roots[0]
-
-
-def effects(expr: list[Any], bindings: dict[str, str]) -> list[tuple[bool, tuple[str, ...]]]:
-    """Refuse unsupported effects instead of silently ignoring them."""
-    if not expr:
-        raise ValueError('Empty effect expression')
-    if expr[0] == 'and':
-        result = []
-        for child in expr[1:]:
-            result.extend(effects(child, bindings))
-        return result
-    negative = expr[0] == 'not'
-    if negative and (len(expr) != 2 or not isinstance(expr[1], list)):
-        raise ValueError(f'Malformed negative effect: {expr}')
-    atom = expr[1] if negative else expr
-    if not atom or atom[0] in {'when', 'forall', 'exists', 'or', 'increase', 'assign'} or any(isinstance(x, list) for x in atom):
-        raise ValueError(f'Unsupported effect: {expr}')
-    grounded = tuple(bindings.get(x, x) for x in atom)
-    if any(x.startswith('?') for x in grounded):
-        raise ValueError(f'Unbound effect: {grounded}')
-    return [(negative, grounded)]
 
 
 def full_problem(
@@ -103,9 +83,14 @@ def full_problem(
     return f'(define (problem review) (:domain {domain_name}) (:objects {object_text}) (:init {fact_text}) (:goal (and)))'
 
 
-def simulate(problem: str, plan: list[str], actions: dict[str, Any]) -> list[list[str]]:
+def simulate(
+    problem: str, plan: list[str], actions: dict[str, Any], *,
+    type_parents: dict[str, str] | None = None,
+) -> list[list[str]]:
     """Apply simultaneous delete/add sets. VAL checks preconditions separately."""
-    initial = next(x[1:] for x in sexpr(problem) if isinstance(x, list) and x and x[0] == ':init')
+    parsed = sexpr(problem)
+    initial = next(x[1:] for x in parsed if isinstance(x, list) and x and x[0] == ':init')
+    objects = typed_symbols(next((x[1:] for x in parsed if isinstance(x, list) and x and x[0] == ':objects'), []))
     if any(any(isinstance(y, list) for y in x) for x in initial):
         raise ValueError('Unsupported non-atomic initial state')
     state = {tuple(x) for x in initial}
@@ -117,11 +102,13 @@ def simulate(problem: str, plan: list[str], actions: dict[str, Any]) -> list[lis
         parameters = list(spec['parameters'])
         if len(parameters) != len(action) - 1:
             raise ValueError(f'Wrong action arity: {text}')
-        grounded = effects(spec['effect'], dict(zip(parameters, action[1:])))
+        grounded = effects(spec['effect'], dict(zip(parameters, action[1:])),
+                           objects=objects, parents=type_parents)
         state.difference_update(atom for neg, atom in grounded if neg)
         state.update(atom for neg, atom in grounded if not neg)
     return [list(x) for x in sorted(state)]
 
 
 def final_state(problem: str, plan: list[str], domain_path: Path) -> list[list[str]]:
-    return simulate(problem, plan, PDDLDomainParser(domain_path.read_text(encoding='utf-8')).actions)
+    domain = PDDLDomainParser(domain_path.read_text(encoding='utf-8'))
+    return simulate(problem, plan, domain.actions, type_parents=domain.types)

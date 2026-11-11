@@ -1,8 +1,8 @@
-"""Verbatim paper prompts used by AHAT's GPT-6.1-sol review."""
+"""Versioned AHAT rubric with adjacency, thermal-processing and meal policy."""
 from pathlib import Path
 
 
-PROMPT_VERSION = 'paper-rubric-2602.12244v2'
+PROMPT_VERSION = 'ahat-rubric-portions-and-order-v6'
 PROMPT_DIR = Path(__file__).parent / 'paper_rubric'
 NAMES = {
     'D1': 'Goal_Achievement',

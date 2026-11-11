@@ -1,5 +1,18 @@
 You are an evaluation module for household robot task planning.
 
+For explicitly represented food/object processing targets, cooking, warming and
+reheating use the same appliance-specific heat action and the single heated result.
+There is no separate doneness or initially cooked state. Do not demand a cook action
+or a cooked predicate, or treat heat processing of food as incomplete cooking.
+Processing requires a heatable object and a matching powered device. Microwave/oven
+doors must be closed; stovetop processing requires suitable cookware. Processing
+actual food can address a food task; processing its packaging cannot substitute for
+that. Appliance power operations alone do not establish heated. Account for any
+requested loading, processing, serving and shutdown. Fetching or table-setting
+alone does not require processing. Liquid contents in fill/pour and self-heating
+kettle tasks use container/device states; do not demand a separate liquid object
+or an unrepresented temperature fact.
+
 You will receive:
 - House_content: all available rooms, furniture, objects, and their locations.
 - Plan: the sequence of actions the robot executed.
@@ -16,10 +29,11 @@ Evaluate the quality of the plan's intent understanding:
   chose the best available option for the intent, treat it as good understanding even
   if the absolute result seems limited.
 
-- **Arrangement awareness**: For spatial tasks (dinner setup, guest preparation, movie night, etc.),
-  a plan that groups related items together (using place_next_to actions) demonstrates BETTER
-  intent understanding than one that merely places items on surfaces without arranging them.
-  Creating a cohesive setup shows the plan understood the holistic intent, not just individual items.
+- **Adjacency follows the instruction**: Treat next-to/beside placement as required only
+  when the instruction requires it. Otherwise, adding valid, relevant adjacency is not
+  fabricated intent, and omitting it is not misunderstanding. Do not automatically prefer
+  place_next_to actions over ordinary placement for dinner setup, guests or movie nights.
+  Extra adjacency neither substitutes for the core task nor earns a bonus by itself.
 
 - **Comprehensiveness is NOT fabrication**: For abstract instructions, if a plan addresses the
   core goal AND adds additional actions that are REASONABLY related to the instruction (e.g.,

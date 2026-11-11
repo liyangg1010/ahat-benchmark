@@ -1,0 +1,106 @@
+{
+  "revision": "group-portions-v1",
+  "date": "2026-11-11",
+  "baseline_sha256": "5c71c8d0c7b45eb7a6cdf7deecbe72563575fced0ee0a93e74fbb97da4e13154",
+  "source_sha256": "3c4cd6482c287cf63e654dae58908270cebda5c157eaedc76b5e8ffb9b84f3cb",
+  "domain": {
+    "name": "ahat-v8-group-portions",
+    "path": "vendor/pddl/domain_0102_test.pddl",
+    "sha256": "80f559c2786897313e6af5b55e290faa7b3c1856275b2805d02c3bfe8d743746"
+  },
+  "rubric": "ahat-rubric-portions-and-order-v6",
+  "task_count": 339,
+  "split_counts": {
+    "easy": 149,
+    "medium": 98,
+    "open": 92
+  },
+  "changed_cases": [
+    {
+      "id": "f3ee3e87-d782-4870-8ed3-2bc92f344010",
+      "food": "eggs_116",
+      "state_changes": {
+        "heated": false,
+        "serves_two": true
+      },
+      "changed_fields": [
+        "scene_graph"
+      ],
+      "d2_d3_d4_user_inputs_unchanged": true
+    },
+    {
+      "id": "dec162ab-e453-419f-971a-2e32987350f2",
+      "food": "cheese_block_106",
+      "state_changes": {
+        "is_food": true,
+        "can_be_heated": true,
+        "heated": false,
+        "serves_group": true
+      },
+      "changed_fields": [
+        "scene_graph"
+      ],
+      "d2_d3_d4_user_inputs_unchanged": true
+    },
+    {
+      "id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+      "food": "eggs_66",
+      "state_changes": {
+        "heated": false,
+        "serves_two": true
+      },
+      "changed_fields": [
+        "scene_graph"
+      ],
+      "d2_d3_d4_user_inputs_unchanged": true
+    },
+    {
+      "id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+      "food": "eggs_90",
+      "state_changes": {
+        "heated": false,
+        "serves_group": true
+      },
+      "changed_fields": [
+        "scene_graph"
+      ],
+      "d2_d3_d4_user_inputs_unchanged": true
+    }
+  ],
+  "all_instructions_plans_goals_ids_order_unchanged": true,
+  "easy_medium_data_unchanged": true,
+  "historical_local_entries_preserved": [
+    "local_corrections",
+    "local_pruning",
+    "local_annotations",
+    "local_additions",
+    "local_cooking",
+    "local_cooking_goals",
+    "local_warm_brunch_goal",
+    "local_heated",
+    "local_serves_two",
+    "local_meal_pruning"
+  ],
+  "changed_prompt_hashes": {
+    "D1": true,
+    "D2": false,
+    "D3": true,
+    "D4": true
+  },
+  "portion_counts": {
+    "serves_two": 4,
+    "serves_group": 2
+  },
+  "liquid_classification": {
+    "current_count": 85,
+    "classes": 9,
+    "previous_screen_count": 33,
+    "ids_instructions_and_source_hash_verified": true
+  },
+  "tests_passed": 78,
+  "reference_plans_valid": 339,
+  "reference_goals_reached": 18,
+  "same_final_state_different_plan_evidence_control": true,
+  "live_judge_calls": 0,
+  "hard_temporal_success_gate_added": false
+}

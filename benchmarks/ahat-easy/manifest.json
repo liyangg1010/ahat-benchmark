@@ -1,11 +1,11 @@
 {
   "name": "ahat-easy",
-  "version": "1.2.0",
-  "case_count": 146,
+  "version": "1.7.0",
+  "case_count": 130,
   "schema_version": "1.0",
-  "domain": "ahat-v3-physobj-floor-cleaning",
+  "domain": "ahat-v8-group-portions",
   "data_file": "cases.json",
-  "data_sha256": "8af2931a1a20194ffa7efd09c2e88e2e8073d29f5374fa125c2d9570a773e404",
+  "data_sha256": "630253937604f7b7e88b235c153a2431866bc3b38f1a7b1d9d4da6f681a766a0",
   "source": {
     "repository": "SII-liyang2024/AHAT-dataset",
     "file": "ahat_eval_set.jsonl",
@@ -14,6 +14,34 @@
     "sha256": "05cb4e725b5a8a93feb8c8609c768dc7a93371fb00c076f09ddaa104bdf8fc94"
   },
   "license": "CC-BY-NC-4.0",
-  "domain_sha256": "65cf0f5503763acecbb728f598cee9b6baf7ae7f950087a597f8c99db2d4ff89",
-  "source_domain": "ahat-v2-hf-domain"
+  "domain_sha256": "80f559c2786897313e6af5b55e290faa7b3c1856275b2805d02c3bfe8d743746",
+  "source_domain": "ahat-v2-hf-domain",
+  "local_corrections": [
+    "913ca94e-5eb2-44ec-8c82-867844780d57",
+    "fa3376d5-18a6-41e1-9a80-42bdb5349c75",
+    "8c934a7d-48a8-4069-b6cf-3e9fb9451316"
+  ],
+  "local_pruning": "repeated-instruction-pruning-v1",
+  "local_additions": {
+    "version": "next-to-v1",
+    "ids": [
+      "ce1d381a-2c02-5720-bd6f-bb4cbec0bc7e",
+      "66405407-b3f4-549d-bec3-dc68b8fa5813",
+      "cc6ac010-2c28-55cb-8a12-5c5b0aa07b75",
+      "101df926-f674-57ac-96b1-ffc6111e6e21",
+      "1277c042-3a66-5c9d-b6b4-7e201d28b62f",
+      "01cf3cd4-5412-5d0c-ab92-c92faf724386"
+    ]
+  },
+  "local_annotations": {
+    "version": "explicit-next-to-goals-v1",
+    "ids": [
+      "ab270610-f68d-4ccf-8ced-455a237f8dc5"
+    ]
+  },
+  "local_cooking": "cooking-v1",
+  "local_heated": "heated-v2",
+  "local_serves_two": "serves-two-v1",
+  "local_group_portions": "group-portions-v1",
+  "local_liquid_pruning": "liquid-pruning-v1"
 }

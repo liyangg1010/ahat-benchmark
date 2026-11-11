@@ -25,6 +25,11 @@ documentation; changes to prompts, scoring, domain or VAL must be explicit.
 Checkpoints are signed and deliberately reject changed inputs or code.
 Use a new output directory after upgrading the evaluator.
 
+Record ongoing fixes in [the repair log](docs/repair-log.md), including stable
+case IDs, before/after changes and validation results. For local data corrections,
+preserve the upstream source revision and hash; record the correction and updated
+bundled artifact hashes separately in `benchmarks/hf_sync.json`.
+
 For a bug report, include the package version, dataset revision, command, VAL
 status or dimension status, and a minimal scene/plan if available. Remove
 credentials before attaching any files. Please add a regression check when a

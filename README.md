@@ -2,7 +2,7 @@
 
 Standalone evaluation of household robot plans with **VAL validation** and the
 **four-dimension AHAT LLM rubric**. It includes the evaluation data, PDDL domain,
-original paper prompts and a pinned Linux VAL runtime.
+paper-derived prompts with an explicit adjacency policy and a pinned Linux VAL runtime.
 
 [Project page](https://tgpo2026.github.io/TGPO/) ·
 [Paper](https://arxiv.org/html/2602.12244v2) ·
@@ -133,14 +133,24 @@ example and does not cover the full evaluation set.
 
 | Dataset | Cases |
 | --- | ---: |
-| `ahat-easy` | 146 |
-| `ahat-medium` | 94 |
-| `ahat-open` | 108 |
-| Total | **348** |
+| `ahat-easy` | 130 |
+| `ahat-medium` | 74 |
+| `ahat-open` | 92 |
+| Total | **296** |
 
-Data are pinned to HF revision
-[`44de8a66c58cfd4cea03923bed9dbb8bd69d8f85`](https://huggingface.co/datasets/SII-liyang2024/AHAT-dataset/tree/44de8a66c58cfd4cea03923bed9dbb8bd69d8f85).
-The original `benchmarks/ahat_eval_set.jsonl` retains reference plans; runtime
+Data derive from HF revision
+[`44de8a66c58cfd4cea03923bed9dbb8bd69d8f85`](https://huggingface.co/datasets/SII-liyang2024/AHAT-dataset/tree/44de8a66c58cfd4cea03923bed9dbb8bd69d8f85),
+with documented local sink-cleaning corrections, repeated-instruction pruning
+and 10 locally authored adjacency tasks. [Meal pruning](docs/meal-pruning.md)
+removes 16 overlapping open meal variants, retaining seven representatives and
+all four processing references. [Liquid pruning](docs/liquid-pruning.md) removes another 43
+similar variants, keeping six representatives in each of four large liquid
+categories. [Current liquid classes](docs/liquid-tasks.md) list 42 retained tasks.
+Eleven tasks explicitly require
+next-to placement. [Adjacency notes](docs/next-to.md) explain scene representation,
+task coverage and required versus optional adjacency.
+`benchmarks/ahat_eval_set.jsonl` retains reference plans and the corrected tasks'
+reference goals; runtime
 split files expose only IDs, instructions and scenes. Hashes and source
 provenance are bundled. [Dataset notes](docs/datasets.md) record the domain
 snapshot used by this release and explain custom registries.
@@ -155,6 +165,20 @@ snapshot used by this release and explain custom registries.
 Scores must be `0`, `0.25`, `0.5`, `0.75` or `1`. D1 critical failure caps the
 weighted total at `0.2`. VAL uses a deterministic full scene; D1 receives the
 exact final state derived from the validated initial PDDL and domain effects.
+The `ahat-rubric-portions-and-order-v6` rubric requires adjacency when the instruction
+requires it. Valid optional adjacency is neither an error nor an automatic bonus.
+The `ahat-v8-group-portions` domain removes old adjacency on pickup and
+uses three appliance-specific heat actions. Cooking, warming and reheating all
+produce the single `heated` result for food or other explicitly heatable objects.
+No separate doneness state is modeled. Switching a device on is not processing
+completion. See [thermal-processing notes](docs/heated.md).
+D1 also receives explicit `serves_two` / `serves_group` food capacity for all
+six retained two-person / family / guest meals. D3 checks required earlier stages,
+and D4 checks requested ordering. Capacity does not replace preparation or serving;
+see [portions and plan stages](docs/group-portions-and-order.md).
+D3 distinguishes preparing an edible meal from setting a table or atmosphere.
+For meal preparation, setup alone scores at most 0.25; reasonable cold meals are
+allowed when thermal processing is not required. See [meal policy](docs/d3-meal-policy.md).
 
 The split score is `sum(case scores) / all split cases`. Invalid, malformed and
 empty plans score zero. Infrastructure failures and failed judge calls remain
@@ -174,7 +198,7 @@ use a new output directory or explicitly recompute with `--no-resume`.
 ## Repository layout
 
 ```text
-benchmarks/       pinned 348-case data and manifests
+benchmarks/       pinned 296-case data and manifests
 configs/          public defaults and dataset registry
 docs/             protocol, data and validation evidence
 examples/         offline example and small input fixtures

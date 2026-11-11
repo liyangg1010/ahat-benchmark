@@ -1,0 +1,73 @@
+{
+  "kind": "offline_prompt_protocol_checks_not_live_judge_scores",
+  "date": "2026-11-11",
+  "rubric_version": "ahat-rubric-meal-completeness-v3",
+  "changed_prompt_dimensions": [
+    "D3"
+  ],
+  "prompt_hashes": {
+    "D1": "799343a0fe93d16a523286ce16d935036495b7c108be482bc3e4e7c452468e5f",
+    "D2": "e6e41aaaeb8664dac054c692e2cc8d85c0f95255eaf833180ecfc41f415ee3d6",
+    "D3": "e1d9218aab78b826f59d96ebdd0ecdf8617c8add6b72f8c0ab52d14cc736d386",
+    "D4": "cacf4f624861845a86f313b4d1f6e7bbd6b6983cc6febcba2a6713f34cb2e774"
+  },
+  "snapshot_hashes_before": {
+    "benchmark_manifest.json": "60c69355e06a48dfa9eaa3d52568b5398a5e0b021f7e6fb255ec8c69d3c5f3b9",
+    "src/ahat_benchmark/judge/paper_rubric/Goal_Achievement.txt": "799343a0fe93d16a523286ce16d935036495b7c108be482bc3e4e7c452468e5f",
+    "src/ahat_benchmark/judge/paper_rubric/Intent_Understanding.txt": "e6e41aaaeb8664dac054c692e2cc8d85c0f95255eaf833180ecfc41f415ee3d6",
+    "src/ahat_benchmark/judge/paper_rubric/Completeness.txt": "d26cbc4b2f5b05ef24013aa1d04bf229e7faf986a1e880c19d24d8760e5aac98",
+    "src/ahat_benchmark/judge/paper_rubric/Execution_Quality.txt": "cacf4f624861845a86f313b4d1f6e7bbd6b6983cc6febcba2a6713f34cb2e774",
+    "vendor/pddl/domain_0102_test.pddl": "d2225b781e66794af4476a58594e84ec4a5dbacee11c6d5e36a91e2b764bca43",
+    "benchmarks/ahat_eval_set.jsonl": "07d08987ba2d4180fd8421db7ea71376dc14c10eca47a4be0920584da374ec3c",
+    "benchmarks/ahat-easy/cases.json": "567c3ef370dbb235e3c418e81e63ecdac1716b5d061b92e93ca9da5e94868f02",
+    "benchmarks/ahat-medium/cases.json": "f977c0a62475cff951b7231502709b3df0597da18bd4c1642f9a867141b0ca77",
+    "benchmarks/ahat-open/cases.json": "3d3461c090d324d350be9b63ba7b66976be6362fc786a01475b59a4e93735206"
+  },
+  "snapshot_hashes_after": {
+    "benchmark_manifest.json": "f752716f4e38cbb81dd48ab2e18f176ad4354e2522a25ab203972fd8fe168ffd",
+    "src/ahat_benchmark/judge/paper_rubric/Goal_Achievement.txt": "799343a0fe93d16a523286ce16d935036495b7c108be482bc3e4e7c452468e5f",
+    "src/ahat_benchmark/judge/paper_rubric/Intent_Understanding.txt": "e6e41aaaeb8664dac054c692e2cc8d85c0f95255eaf833180ecfc41f415ee3d6",
+    "src/ahat_benchmark/judge/paper_rubric/Completeness.txt": "e1d9218aab78b826f59d96ebdd0ecdf8617c8add6b72f8c0ab52d14cc736d386",
+    "src/ahat_benchmark/judge/paper_rubric/Execution_Quality.txt": "cacf4f624861845a86f313b4d1f6e7bbd6b6983cc6febcba2a6713f34cb2e774",
+    "vendor/pddl/domain_0102_test.pddl": "d2225b781e66794af4476a58594e84ec4a5dbacee11c6d5e36a91e2b764bca43",
+    "benchmarks/ahat_eval_set.jsonl": "07d08987ba2d4180fd8421db7ea71376dc14c10eca47a4be0920584da374ec3c",
+    "benchmarks/ahat-easy/cases.json": "567c3ef370dbb235e3c418e81e63ecdac1716b5d061b92e93ca9da5e94868f02",
+    "benchmarks/ahat-medium/cases.json": "f977c0a62475cff951b7231502709b3df0597da18bd4c1642f9a867141b0ca77",
+    "benchmarks/ahat-open/cases.json": "3d3461c090d324d350be9b63ba7b66976be6362fc786a01475b59a4e93735206"
+  },
+  "confirmed_unchanged_files": [
+    "src/ahat_benchmark/judge/paper_rubric/Goal_Achievement.txt",
+    "src/ahat_benchmark/judge/paper_rubric/Intent_Understanding.txt",
+    "src/ahat_benchmark/judge/paper_rubric/Execution_Quality.txt",
+    "vendor/pddl/domain_0102_test.pddl",
+    "benchmarks/ahat_eval_set.jsonl",
+    "benchmarks/ahat-easy/cases.json",
+    "benchmarks/ahat-medium/cases.json",
+    "benchmarks/ahat-open/cases.json"
+  ],
+  "unit_and_integration_tests": {
+    "run": 67,
+    "passed": 67,
+    "log_sha256": "f27379ff960ee22993d5f1cd77edea7d75c25ab0e5067a5507c03b7132c556fa"
+  },
+  "checks": {
+    "doctor_passed": true,
+    "source_release_checks_passed": true,
+    "manifest_matches_loaded_prompts": true,
+    "changed_d3_rejects_old_checkpoint_before_api_calls": true,
+    "git_diff_check_passed": true
+  },
+  "manual_policy_examples": "docs/d3-meal-policy.md",
+  "semantic_examples_are_measured_judge_outputs": false,
+  "live_judge_calls": 0,
+  "distribution_rebuilt": false,
+  "implementation_sha256": {
+    "src/ahat_benchmark/judge/prompts.py": "b5fc99b4e8abe5fb87340f8a7f7778883594008cd112e9de96be055233780b0a",
+    "src/ahat_benchmark/judge/evaluator.py": "df5990eae111f8987082de030d345c3e7182f5cef8d21129a03d479fb5a64d3d",
+    "src/ahat_benchmark/pipeline/judge_stage.py": "30851e85b13f22f7737c5deddc7181d9ae283c65ff9f0d18666eca9fb07bbf9f",
+    "src/ahat_benchmark/provenance.py": "c1a286cce31b44b72556b7881072697f8903ef0ac1882a5ea884301f9fe27ae1",
+    "tests/test_pipeline.py": "a881bfb5cb41ede2bee291387750b57cb4f0976b12137206103bbfa086dfd356",
+    "scripts/check_release.py": "af523d0078ac92e08f92fe538c0d02d5ca86d15ef52acef866fcf705e9b3325d",
+    "docs/d3-meal-policy.md": "8603452baf3ab082dad97cc3467f6df23cd6e56d6709ed48217a37ebadbe8387"
+  }
+}

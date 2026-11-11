@@ -1,0 +1,840 @@
+{
+  "revision": "liquid-instruction-audit-v1",
+  "date": "2026-11-11",
+  "source_sha256": "3c4cd6482c287cf63e654dae58908270cebda5c157eaedc76b5e8ffb9b84f3cb",
+  "scope": "Manual classification of current instructions requesting water/beverage availability, preparation, transfer or use. Keyword hits that only mention coffee tables, towels, empty containers, cleaning appliances, or fetching dry noodle packages do not create liquid-preparation goals. Categories are mutually exclusive primary intents; transport/heating/ordering can cross categories.",
+  "task_count": 339,
+  "liquid_instruction_count": 85,
+  "category_counts": {
+    "plain_water": 26,
+    "ready_drink": 13,
+    "hot_water": 16,
+    "tea": 5,
+    "coffee": 5,
+    "warm_beverage": 2,
+    "plant_water": 12,
+    "bath_water": 4,
+    "instant_noodles": 2
+  },
+  "previous_33_category_counts": {
+    "ready_drink": 1,
+    "hot_water": 15,
+    "tea": 5,
+    "coffee": 5,
+    "warm_beverage": 2,
+    "bath_water": 3,
+    "instant_noodles": 2
+  },
+  "records": [
+    {
+      "id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+      "current_source_index_at_audit": 3,
+      "split": "easy",
+      "instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "c172ca4c-9f21-407c-87e8-350cbebfe340",
+      "current_source_index_at_audit": 10,
+      "split": "easy",
+      "instruction": "Can you fill the kettle with water for me?",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "2ac616dc-d786-496d-8cef-59fdbd6ea754",
+      "current_source_index_at_audit": 15,
+      "split": "easy",
+      "instruction": "Could you bring a glass of water to my spouse in the bathroom?",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "359c9091-abba-4695-aeb4-6ff68340f9dd",
+      "current_source_index_at_audit": 19,
+      "split": "easy",
+      "instruction": "I'm thirsty — can you grab me a glass of water?",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "57113a26-952d-4dc6-9617-3ca5bea35246",
+      "current_source_index_at_audit": 26,
+      "split": "easy",
+      "instruction": "Provide a filled reusable water bottle to the teenager in her bedroom.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "d96cb594-897e-4b47-83f3-e8b16bd34998",
+      "current_source_index_at_audit": 49,
+      "split": "easy",
+      "instruction": "Bring a drink of water to the person in the dining room.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "fa727bbc-9c09-420b-a616-66e6e4a6246c",
+      "current_source_index_at_audit": 74,
+      "split": "easy",
+      "instruction": "Provide a cup of drinking water to the child in her bedroom.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "78caec8e-5332-4cd0-82f1-0550a430df58",
+      "current_source_index_at_audit": 79,
+      "split": "easy",
+      "instruction": "Could you bring me a glass of water, please?",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "645b5311-11d9-4511-bfd5-5b933fe2b482",
+      "current_source_index_at_audit": 80,
+      "split": "easy",
+      "instruction": "Provide a glass of water to the resident in the living room.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "f3d312f5-1ca9-4745-9c2c-98ed6e10022c",
+      "current_source_index_at_audit": 83,
+      "split": "easy",
+      "instruction": "Provide a filled reusable water bottle to the person in the bathroom.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "6a49e355-517f-41cd-a381-99e024419125",
+      "current_source_index_at_audit": 119,
+      "split": "easy",
+      "instruction": "Go to the kitchen, take a drinking glass from kitchen_cabinet, fill it with water from the faucet, and hand the filled glass to person in the entryway.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+      "current_source_index_at_audit": 123,
+      "split": "easy",
+      "instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "864fcabb-2a56-4efb-9f4b-1d7cb84136c1",
+      "current_source_index_at_audit": 143,
+      "split": "medium",
+      "instruction": "Refill the user's reusable water bottle and deliver it to them.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "d3e7a640-74c8-4c97-a936-41682c7b59c6",
+      "current_source_index_at_audit": 146,
+      "split": "medium",
+      "instruction": "Go to the kitchen, get the mug from bench, fill it at sink, and bring the filled mug to person in bathroom and hand it over.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "d0340668-e518-4aa5-b935-b1a877b25952",
+      "current_source_index_at_audit": 147,
+      "split": "medium",
+      "instruction": "Take a glass from the dining table, fill it with water at the kitchen sink, and hand the filled glass to person in empty_room.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "fccd6938-4f5d-4bfe-a8de-087e895319dd",
+      "current_source_index_at_audit": 148,
+      "split": "medium",
+      "instruction": "Pick up the reusable water bottle from the dining_table, walk to sink in kitchen to fill it with water, then hand the filled water bottle to person at dining_table.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "3bc23367-bbd0-479e-be4b-c16413664743",
+      "current_source_index_at_audit": 149,
+      "split": "medium",
+      "instruction": "Go to kitchen, pick up the teapot from sink, fill it from the faucet, and hand the filled teapot to person in bedroom.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "08fefdd7-7df6-488d-bafe-c71dea3b4b2e",
+      "current_source_index_at_audit": 152,
+      "split": "medium",
+      "instruction": "Refill a reusable water bottle and deliver it to the resident.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "44a3890d-31fb-4a53-b9d2-1d7f2e22f686",
+      "current_source_index_at_audit": 154,
+      "split": "medium",
+      "instruction": "Pick up the reusable water bottle from desk in the bedroom, take it to the sink at sink_cabinet in the laundryroom, fill it with water from the faucet, then return and place it back on desk.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "175a4f28-3023-4e88-8af4-d73c19a16be0",
+      "current_source_index_at_audit": 158,
+      "split": "medium",
+      "instruction": "Refill a drinking container with tap water and deliver it to the person in the corridor.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "5804e2c6-9308-4d09-92e8-dbefd7553fec",
+      "current_source_index_at_audit": 166,
+      "split": "medium",
+      "instruction": "Ensure the user's reusable water bottle is filled with water and ready for them to take to work.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "d167567d-7887-4626-9cd7-33ba43257944",
+      "current_source_index_at_audit": 167,
+      "split": "medium",
+      "instruction": "Could you fill a cup with water and bring it to my room, please?",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "451288d0-761d-4576-bf3b-556307ddb7ae",
+      "current_source_index_at_audit": 169,
+      "split": "medium",
+      "instruction": "Fill a plastic cup with water at sink in kitchen and bring it to the child in bedroom, handing it to her.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+      "current_source_index_at_audit": 175,
+      "split": "medium",
+      "instruction": "Refill the student's reusable water bottle and place it in her bedroom so it's ready for her study session.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "2b60f5c9-31ae-435f-85a2-dbd81109a14b",
+      "current_source_index_at_audit": 203,
+      "split": "medium",
+      "instruction": "Pick up the reusable_water_bottle from dining_table, take it to sink in kitchen, fill it with water, and hand it to person.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "ca93f23c-c8c5-426f-81f5-4f7e51811dfc",
+      "current_source_index_at_audit": 235,
+      "split": "medium",
+      "instruction": "Refill a reusable water bottle and make it available in the kitchen.",
+      "category": "plain_water",
+      "category_label": "常温水装填／补水／交付",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "e9fed962-33e0-43ce-a5f0-ed603c0fe7d6",
+      "current_source_index_at_audit": 8,
+      "split": "easy",
+      "instruction": "Pick up the milk_tea_cup from sink in kitchen and deliver it to person at dining_table in dining_room.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "adb0fda4-53b4-418f-9154-39dd81aeaf78",
+      "current_source_index_at_audit": 24,
+      "split": "easy",
+      "instruction": "Go to the kitchen, open the refrigerator, pick up the bottle of bubble tea from inside the refrigerator, and bring it to the person in bedroom.001 and hand it over to them.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "0aa92a27-e544-4cf1-bd80-9db63bdbb474",
+      "current_source_index_at_audit": 42,
+      "split": "easy",
+      "instruction": "Deliver a requested beverage from the kitchen area to the person in the bathroom.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "d6e3d05d-410c-4c8e-87a9-27be573b76f7",
+      "current_source_index_at_audit": 52,
+      "split": "easy",
+      "instruction": "Deliver a drink to the person in the bedroom to quench their thirst.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "49d3a7f5-d089-4f5b-a8be-c34a70aecc35",
+      "current_source_index_at_audit": 66,
+      "split": "easy",
+      "instruction": "Go to the kitchen, open refrigerator, take the bottle_of_milk_tea from refrigerator and bring it to person in the hallway, handing it to them.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "010b3761-72e6-444f-bbc8-0bf4c55c077c",
+      "current_source_index_at_audit": 72,
+      "split": "easy",
+      "instruction": "Hey, I'm thirsty—can you grab me a water from the fridge?",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "6cd2dba6-1f1e-4003-b231-13001bc37ec1",
+      "current_source_index_at_audit": 84,
+      "split": "easy",
+      "instruction": "Retrieve a recently-delivered drink and bring it to the user.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "facf09d9-cf5d-459f-8344-4d0f6a07adf7",
+      "current_source_index_at_audit": 94,
+      "split": "easy",
+      "instruction": "Hey, can you grab me a milk tea from the kitchen and bring it to my room?",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "a502dd4d-6f7e-43a9-8eb6-1157d760a621",
+      "current_source_index_at_audit": 98,
+      "split": "easy",
+      "instruction": "Go to the kitchen, open refrigerator, pick up a bottle of mango juice from inside, and bring it to the person in the bedroom, handing it to her.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "ab270610-f68d-4ccf-8ced-455a237f8dc5",
+      "current_source_index_at_audit": 139,
+      "split": "easy",
+      "instruction": "Gather a glass from the kitchen, get ice from the garage fridge (represent as bottle for ice container), and take a juice bottle from the dining room, and set them up next to your laptop in the office.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false,
+      "scope_note": "包含冰容器、果汁瓶及明确 next_to；饮品取用不等于需要制作。"
+    },
+    {
+      "id": "cd03b958-c5dc-40fe-9cc4-6d1b78e53241",
+      "current_source_index_at_audit": 171,
+      "split": "medium",
+      "instruction": "Fetch a small snack and a drink for the child.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+      "current_source_index_at_audit": 172,
+      "split": "medium",
+      "instruction": "Bring your laptop and a notebook from your bedroom to the office for studying, grab a cup of hot tea from the kitchen, and also bring your watch from the office to keep track of your study breaks.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": true,
+      "scope_note": "只取现成热茶，另搬电脑、笔记本和手表；不追加制茶。"
+    },
+    {
+      "id": "079da0e5-422a-4fe4-afc5-e885f4e98453",
+      "current_source_index_at_audit": 221,
+      "split": "medium",
+      "instruction": "Set a candle holder and mooncakes on the dining room table, bring your favorite indie music album (CD) from the bedroom to the living room, and take a bottle of tea from the kitchen to enjoy.",
+      "category": "ready_drink",
+      "category_label": "现成饮料取用／搬运／摆放",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "b5839f9a-eb34-4d4d-ad2b-5665e8b9c5ef",
+      "current_source_index_at_audit": 144,
+      "split": "medium",
+      "instruction": "Prepare a cup of boiled water and deliver it to the user.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+      "current_source_index_at_audit": 150,
+      "split": "medium",
+      "instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "63771138-ea77-46d7-98ef-730f7fc06a7d",
+      "current_source_index_at_audit": 160,
+      "split": "medium",
+      "instruction": "Could you make me a cup of hot water and bring it down here?",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "c4eaedfe-58a6-4535-8817-5e6c30ef5ba0",
+      "current_source_index_at_audit": 161,
+      "split": "medium",
+      "instruction": "Fill the kettle with water from the sink and place it on the stove to heat.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "75fa2d06-2278-45fa-a9d1-fa3cdb6e3da8",
+      "current_source_index_at_audit": 162,
+      "split": "medium",
+      "instruction": "Prepare a cup of hot water and bring it to the person.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "0127af55-e737-4be4-8fda-ea2efaf69461",
+      "current_source_index_at_audit": 163,
+      "split": "medium",
+      "instruction": "Prepare a cup of hot water for the user.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "bd6d5204-77c2-4be5-bd70-9f60a25d6a9d",
+      "current_source_index_at_audit": 164,
+      "split": "medium",
+      "instruction": "Take the electric_kettle from the kitchen_cabinet to the kitchen_island, fill it with water at sink_cabinet, power it on to heat, then pour hot water into a mug on table.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "e066d3a7-c73c-464d-b0a5-a28ce4b7939d",
+      "current_source_index_at_audit": 170,
+      "split": "medium",
+      "instruction": "Fill the electric kettle at sink (kitchen) with water, power it on to boil, pour the boiled water into a cup on dining_table, and deliver the cup to person in bedroom.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "3add086d-6d85-470a-a351-bdab3456e295",
+      "current_source_index_at_audit": 177,
+      "split": "medium",
+      "instruction": "I need my hot water — please make me a cup and bring it here.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "d4e3362f-60d3-46cd-8638-8954f5a9602b",
+      "current_source_index_at_audit": 184,
+      "split": "medium",
+      "instruction": "Go to the kitchen and pick up the vegetables and meat from the refrigerator and kitchen cabinet to prepare a hot pot.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": false,
+      "scope_note": "要求取器具、装水和开炉；未要求最终已烧开，不追加终温要求。"
+    },
+    {
+      "id": "cea31743-32c3-4f59-b07e-b12a71e840de",
+      "current_source_index_at_audit": 190,
+      "split": "medium",
+      "instruction": "Fill the kettle with water from the faucet and power it on to heat the water.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "f2c44280-76ff-449b-895e-2d78cdfc6b28",
+      "current_source_index_at_audit": 196,
+      "split": "medium",
+      "instruction": "Go to the kitchen, fill and switch on the electric kettle, pour hot water into the ceramic mug on the kitchen island, and hand the mug to the person in the kitchen.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "bd621dea-7022-4f49-ae0f-3018da6b2f12",
+      "current_source_index_at_audit": 220,
+      "split": "medium",
+      "instruction": "Fill the kettle with water from the faucet and then power it on to heat the water.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "7728b3b9-4cd2-4586-8dd0-6f70bdea8e22",
+      "current_source_index_at_audit": 223,
+      "split": "medium",
+      "instruction": "Pick up the electric kettle and a mug from the dining table, fill the kettle at the kitchen sink, power it on to heat the water, pour hot water into the mug, and bring the mug to the person in bathroom.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "9c120c15-b00a-4544-bafa-ffeece47d701",
+      "current_source_index_at_audit": 225,
+      "split": "medium",
+      "instruction": "On a cold winter day, pour hot water into a thermos bottle and place it on the bedroom chest of drawers so I can have warm water during the night.",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true,
+      "scope_note": "要求倒入热水并放置保温瓶；不强制机器人重新烧水。"
+    },
+    {
+      "id": "4a58251b-b8bf-4f05-ad45-7947bf665031",
+      "current_source_index_at_audit": 229,
+      "split": "medium",
+      "instruction": "Could you please make me a warm cup of boiled water and bring it here?",
+      "category": "hot_water",
+      "category_label": "热水／烧水／倒水与交付",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "83e9c29c-054d-4269-8bf4-d5ac26b8ccfd",
+      "current_source_index_at_audit": 168,
+      "split": "medium",
+      "instruction": "Go to the kitchen, fill the kettle with water from the faucet, and boil it to prepare tea.",
+      "category": "tea",
+      "category_label": "茶的准备／冲泡",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "8eaf1794-e3f0-4f38-aa7e-d6b77872d7a8",
+      "current_source_index_at_audit": 178,
+      "split": "medium",
+      "instruction": "On a chilly morning, power on the electric kettle in the kitchen and prepare a cup for green tea before your video calls.",
+      "category": "tea",
+      "category_label": "茶的准备／冲泡",
+      "in_previous_33_task_screen": true,
+      "scope_note": "只要求给水壶通电并准备绿茶杯；不能把冲泡茶追加为必需动作。"
+    },
+    {
+      "id": "99c7a3e4-033a-4142-8cb9-9d2bd63c5748",
+      "current_source_index_at_audit": 179,
+      "split": "medium",
+      "instruction": "I'm cold and tired — can you make me a cup of tea and bring it out to the garage?",
+      "category": "tea",
+      "category_label": "茶的准备／冲泡",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "a6858c23-0cee-461d-bbf3-c9951bfbbda3",
+      "current_source_index_at_audit": 202,
+      "split": "medium",
+      "instruction": "Could you make me a cup of tea and bring it to my home office, please?",
+      "category": "tea",
+      "category_label": "茶的准备／冲泡",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "3a12822b-f774-4834-b9af-b741f2592c5e",
+      "current_source_index_at_audit": 219,
+      "split": "medium",
+      "instruction": "Could you make some hot tea and bring a cup to the person at the dining table?",
+      "category": "tea",
+      "category_label": "茶的准备／冲泡",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "f8e914bb-3f3a-43de-8b8f-c86cbaf6894f",
+      "current_source_index_at_audit": 159,
+      "split": "medium",
+      "instruction": "Could you make a coffee and bring it to my friend in the game room?",
+      "category": "coffee",
+      "category_label": "咖啡制作／分配",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "2cd06e0a-88a9-45a6-a5e3-a378199d6414",
+      "current_source_index_at_audit": 200,
+      "split": "medium",
+      "instruction": "Go to the kitchen, use the coffee machine to brew a cup of coffee into a mug, and place the mug on the kitchen island.",
+      "category": "coffee",
+      "category_label": "咖啡制作／分配",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "12b30bd2-1470-4249-9b4c-080acc03c4eb",
+      "current_source_index_at_audit": 207,
+      "split": "medium",
+      "instruction": "Go to the kitchen, fill the coffee machine with water, load coffee grounds, brew a cup into the ceramic mug, and hand the mug to the person in the kitchen.",
+      "category": "coffee",
+      "category_label": "咖啡制作／分配",
+      "in_previous_33_task_screen": true,
+      "scope_note": "明确要求加入咖啡粉；目前没有专门的咖啡粉投料／成分状态动作，不能只凭杯子 is_filled 证明这一前序步骤。"
+    },
+    {
+      "id": "f740c053-35da-470a-8628-e9291a9738cb",
+      "current_source_index_at_audit": 232,
+      "split": "medium",
+      "instruction": "Prepare a gourmet coffee and deliver it to the person in the bedroom.",
+      "category": "coffee",
+      "category_label": "咖啡制作／分配",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "05f9fb16-de68-4fb8-8cc7-4ad1714f7f72",
+      "current_source_index_at_audit": 233,
+      "split": "medium",
+      "instruction": "Prepare a hot cup of coffee in the kitchen and deliver it to the bedroom nightstand.",
+      "category": "coffee",
+      "category_label": "咖啡制作／分配",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "6d1fc47f-358b-4bf5-b8ce-eb61f66d8fa0",
+      "current_source_index_at_audit": 201,
+      "split": "medium",
+      "instruction": "Prepare and deliver a warm drink to a person in another room.",
+      "category": "warm_beverage",
+      "category_label": "未指定种类的温热饮品",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "c77c47ae-9d7a-4369-abbd-c305498e2aad",
+      "current_source_index_at_audit": 217,
+      "split": "medium",
+      "instruction": "Prepare a hot morning beverage and deliver it to the resident's bedroom.",
+      "category": "warm_beverage",
+      "category_label": "未指定种类的温热饮品",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "da7b09cd-9be9-443b-9d30-5818df18a3ed",
+      "current_source_index_at_audit": 71,
+      "split": "easy",
+      "instruction": "Water an indoor plant in the apartment.",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "45c7ef7c-cbbe-46a5-b464-d161cb6da953",
+      "current_source_index_at_audit": 88,
+      "split": "easy",
+      "instruction": "Maintain the indoor plant by watering it.",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "177ac7f6-d696-4581-9f68-9d075052f1cf",
+      "current_source_index_at_audit": 106,
+      "split": "easy",
+      "instruction": "Hey, could you water the plant on the table in the living room? It's getting thirsty.",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+      "current_source_index_at_audit": 117,
+      "split": "easy",
+      "instruction": "Hey, could you water the living room plant for me?",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "679dc145-55cf-4f32-9000-dad6d9a16d60",
+      "current_source_index_at_audit": 156,
+      "split": "medium",
+      "instruction": "Fetch the watering_can from the utility area, fill the watering_can at sink, and hand the filled watering_can to the person in utility_room.",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false,
+      "scope_note": "只需装满并交付浇水壶，不追加浇植物。"
+    },
+    {
+      "id": "5ae5b97c-620f-400b-b14a-3ad0fa6fcae9",
+      "current_source_index_at_audit": 157,
+      "split": "medium",
+      "instruction": "Pick up the watering_can from bench, fill it at sink in the kitchen, then pour water into vase and vase in living_room.",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "7ca9b7af-487b-4dde-8c11-3dbc7c7af671",
+      "current_source_index_at_audit": 165,
+      "split": "medium",
+      "instruction": "Fill a watering can at the kitchen sink and use it to water the potted plant located on the vase in the playroom (vase in playroom).",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "8a288187-e7a6-47a9-bfad-2543976de82e",
+      "current_source_index_at_audit": 180,
+      "split": "medium",
+      "instruction": "Go to the kitchen and fill the watering can with water from the sink, then water the plants in the living room.",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "3bc29099-3549-4cbe-8009-9a21718bf60e",
+      "current_source_index_at_audit": 194,
+      "split": "medium",
+      "instruction": "Fill the watering_can at sink and pour water into vase in bathroom to water the plant.",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "41eef001-7744-4656-bb14-84c8920b2fde",
+      "current_source_index_at_audit": 206,
+      "split": "medium",
+      "instruction": "At dusk, bring a vase and freshen it by filling it with water from the kitchen faucet, then place it back on the bedroom stool.",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "e78432e1-25fd-4476-8711-7da0d50bc88c",
+      "current_source_index_at_audit": 209,
+      "split": "medium",
+      "instruction": "The plants need a drink — can you fill the watering can and water my vegetable patch outside?",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "4377c209-f70e-4cc9-a0d9-c09e1ffef3b9",
+      "current_source_index_at_audit": 216,
+      "split": "medium",
+      "instruction": "Could you fill the watering can and water my herbs on the coffee table, please?",
+      "category": "plant_water",
+      "category_label": "浇植物／花瓶补水及相关装水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "3b49cc0c-0f25-45b2-8c9a-dbc4f957f693",
+      "current_source_index_at_audit": 16,
+      "split": "easy",
+      "instruction": "Can you fill the tub for my bath?",
+      "category": "bath_water",
+      "category_label": "沐浴／清洗用途的水",
+      "in_previous_33_task_screen": false
+    },
+    {
+      "id": "8708a9fe-8ed0-49a8-9339-36f8d2a11611",
+      "current_source_index_at_audit": 145,
+      "split": "medium",
+      "instruction": "On a chilly winter morning, prepare the bathroom by pouring hot water from the kettle into a bowl placed on the bathroom counter, then bring a clean cup for rinsing.",
+      "category": "bath_water",
+      "category_label": "沐浴／清洗用途的水",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "acba2bf0-ad1e-452e-b3f7-43af06ebfc81",
+      "current_source_index_at_audit": 183,
+      "split": "medium",
+      "instruction": "I'm filthy from work — can you run me a hot bath and bring my towel?",
+      "category": "bath_water",
+      "category_label": "沐浴／清洗用途的水",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "e2589b66-026b-4075-9525-3acdbf38e1f0",
+      "current_source_index_at_audit": 214,
+      "split": "medium",
+      "instruction": "Prepare bathing supplies and warm water in the bathroom for a post-work shower.",
+      "category": "bath_water",
+      "category_label": "沐浴／清洗用途的水",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "23178c37-3b65-4dff-9eb5-3c5d1e985232",
+      "current_source_index_at_audit": 191,
+      "split": "medium",
+      "instruction": "Go to the kitchen, take the electric_kettle from the sink area, fill and power it to heat water, then pour the hot water into the instant_noodle_cup on the dining_table and bring a spoon.",
+      "category": "instant_noodles",
+      "category_label": "方便面准备／热水冲泡",
+      "in_previous_33_task_screen": true
+    },
+    {
+      "id": "72d3763d-58b9-4f1f-befe-eed2fba16f6b",
+      "current_source_index_at_audit": 227,
+      "split": "medium",
+      "instruction": "Prepare a quick cup of instant noodles.",
+      "category": "instant_noodles",
+      "category_label": "方便面准备／热水冲泡",
+      "in_previous_33_task_screen": true
+    }
+  ],
+  "related_equipment_contexts": [
+    {
+      "id": "a9f01a35-f905-499e-ac54-007822d408c3",
+      "current_source_index_at_audit": 132,
+      "instruction": "On this chilly Inner Mongolian morning, please bring my teapot and an electric kettle to the bathroom so I can carefully pour and prepare hot water for myself and my spouse.",
+      "reason": "器具搬运／清洁／收纳或检查现成容器；未要求机器人准备或转移液体，不计入上述液体处理主类。"
+    },
+    {
+      "id": "48ecb29b-1d2a-4960-96e0-60a94036540e",
+      "current_source_index_at_audit": 174,
+      "instruction": "Reset the house: relocate a watch and spectacles from bedroom_1 to office_1, clear an old box and cushion from closet_1 to hallway_1, bring a glass and tea kettle to kitchen_1, put a soap dispenser in bathroom_1, and move a stuffed toy from bedroom_2 to closet_2.",
+      "reason": "器具搬运／清洁／收纳或检查现成容器；未要求机器人准备或转移液体，不计入上述液体处理主类。"
+    },
+    {
+      "id": "bdf2badf-6458-4efd-b63e-4c8ef723c4f8",
+      "current_source_index_at_audit": 192,
+      "instruction": "Could you clear my tea things from the dining table and put them away in the kitchen?",
+      "reason": "器具搬运／清洁／收纳或检查现成容器；未要求机器人准备或转移液体，不计入上述液体处理主类。"
+    },
+    {
+      "id": "14fd9928-de67-4d8d-87e6-226455adb64c",
+      "current_source_index_at_audit": 199,
+      "instruction": "Go to the kitchen and clean the coffee maker and the kitchen cabinets.",
+      "reason": "器具搬运／清洁／收纳或检查现成容器；未要求机器人准备或转移液体，不计入上述液体处理主类。"
+    },
+    {
+      "id": "7f0a1344-6ce2-4860-8b0d-1d6de7219fdd",
+      "current_source_index_at_audit": 204,
+      "instruction": "Before a family dinner, arrange plates, spoons, and a casserole on the dining table and check if there is a pitcher of water (jug) present.",
+      "reason": "器具搬运／清洁／收纳或检查现成容器；未要求机器人准备或转移液体，不计入上述液体处理主类。"
+    },
+    {
+      "id": "3f1f4f25-6ff1-4879-a3df-e7b28790de75",
+      "current_source_index_at_audit": 213,
+      "instruction": "Return the kettle from the fridge in the kitchen to the correct cabinet, pick up any cups from the living room coffee table and place them in the dishwasher, and gather any books from the bedroom to the office shelf.",
+      "reason": "器具搬运／清洁／收纳或检查现成容器；未要求机器人准备或转移液体，不计入上述液体处理主类。"
+    }
+  ]
+}

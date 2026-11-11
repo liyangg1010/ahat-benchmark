@@ -1,0 +1,38 @@
+{
+  "revision": "liquid-pruning-v1",
+  "date": "2026-11-11",
+  "baseline_sha256": "3c4cd6482c287cf63e654dae58908270cebda5c157eaedc76b5e8ffb9b84f3cb",
+  "source_sha256": "0df84da9ed81615e0e8d06e364a0e45be08bca44ddfb6407341db489ddc91cef",
+  "before_count": 339,
+  "after_count": 296,
+  "removed_count": 43,
+  "split_counts": {
+    "easy": 130,
+    "medium": 74,
+    "open": 92
+  },
+  "all_surviving_source_lines_byte_identical": true,
+  "all_surviving_fields_and_order_unchanged": true,
+  "open_data_and_manifest_unchanged": true,
+  "domain_rubric_manifest_unchanged": true,
+  "historical_local_entries_preserved": true,
+  "all_18_reference_goal_records_retained": true,
+  "liquid_counts": {
+    "plain_water": 6,
+    "ready_drink": 6,
+    "hot_water": 6,
+    "tea": 5,
+    "coffee": 5,
+    "warm_beverage": 2,
+    "plant_water": 6,
+    "bath_water": 4,
+    "instant_noodles": 2
+  },
+  "current_classification_ids_and_instructions_verified": true,
+  "both_classification_correction_tasks_retained": true,
+  "unapproved_deletion_rejected": "Unapproved baseline task removed",
+  "tests_passed": 78,
+  "reference_plans_valid": 296,
+  "reference_goals_reached": 18,
+  "live_judge_calls": 0
+}

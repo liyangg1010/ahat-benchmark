@@ -1,6 +1,8 @@
 import json
 import subprocess
+import tempfile
 import unittest
+from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 
@@ -80,3 +82,57 @@ class ValTests(unittest.TestCase):
         self.assertEqual(result["status"], "val_timeout")
         self.assertEqual(result["stdout"], "partial")
         json.dumps(result)
+
+    def test_unknown_objects_and_wrong_types_never_reach_native_val(self):
+        cases = [
+            ("(navigate agent_0 cup_1 ghost_1)", "unknown_object", 3, "?to", "ghost_1", "location", None),
+            ("(navigate agent_0 cup_1 agent_0)", "type_mismatch", 3, "?to", "agent_0", "location", "agent"),
+            ("(navigate cup_1 room_1 table_1)", "type_mismatch", 1, "?ag", "cup_1", "agent", "object"),
+        ]
+        for action, kind, position, parameter, argument, expected, actual in cases:
+            with self.subTest(action=action), patch("ahat_benchmark.val.validator.subprocess.run") as native:
+                result = self.validate(scene(), [*PLAN, action])
+            self.assertEqual(native.call_count, 0)
+            self.assertEqual(result["status"], "invalid")
+            self.assertFalse(result["validate_result"])
+            self.assertEqual(result["invalid_action"], action)
+            self.assertEqual(result["argument_error"], {
+                "kind": kind, "position": position, "parameter": parameter,
+                "argument": argument, "expected_type": expected, "actual_type": actual,
+            })
+            json.dumps(result)
+
+    def test_checks_actual_problem_declarations_not_unemitted_scene_names(self):
+        graph = scene()
+        graph["objects"].append({"name": "bad.name", "states": {}})
+        with patch("ahat_benchmark.val.validator.subprocess.run") as native:
+            result = self.validate(graph, ["(navigate agent_0 cup_1 bad.name)"])
+        self.assertEqual(native.call_count, 0)
+        self.assertEqual(result["status"], "invalid")
+        self.assertEqual(result["argument_error"]["kind"], "unknown_object")
+        self.assertNotIn("bad.name -", result["problem_pddl"])
+
+    def test_parent_types_and_case_insensitive_arguments_are_accepted(self):
+        # object, furniture and room all inherit physobj -> location.
+        plan = ["(NAVIGATE AGENT_0 CUP_1 TABLE_1)", "(navigate agent_0 table_1 room_1)"]
+        self.assertEqual(self.validate(scene(), plan)["status"], "valid")
+
+    def test_domain_constants_are_declared_arguments_with_inherited_types(self):
+        with tempfile.TemporaryDirectory() as directory:
+            domain = Path(directory) / "domain.pddl"
+            domain.write_text(DOMAIN.read_text().replace(
+                "(:predicates", "(:constants dock_1 dock_2 - room)\n  (:predicates", 1
+            ))
+            result = validate_plan(
+                scene_graph=scene(), plan=["(navigate agent_0 cup_1 dock_2)"],
+                domain_path=domain, val_executable=VAL, timeout_seconds=10,
+            )
+        self.assertEqual(result["status"], "valid", result.get("fail_reason"))
+
+    def test_scene_preparation_failure_remains_infrastructure_error(self):
+        graph = scene()
+        graph["agent"][0]["holding"] = "ghost_1"
+        with patch("ahat_benchmark.val.validator.subprocess.run") as native:
+            result = self.validate(graph, PLAN)
+        self.assertEqual(native.call_count, 0)
+        self.assertEqual(result["status"], "val_error")

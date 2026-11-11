@@ -1,0 +1,57 @@
+{
+  "revision": "meal-pruning-v1",
+  "date": "2026-11-11",
+  "baseline_sha256": "6f4c5b75033599f7c59f4e1bbf68714f4871c714eef1c106ca3d7fb990c5eec6",
+  "source_sha256": "5c71c8d0c7b45eb7a6cdf7deecbe72563575fced0ee0a93e74fbb97da4e13154",
+  "before_count": 355,
+  "after_count": 339,
+  "removed_count": 16,
+  "removed_ids": [
+    "21d63cf0-3045-4d01-a88a-fe6f7d3e3499",
+    "2608e618-305d-46d2-b563-2ca9bc351c7b",
+    "43f14fb2-001a-495e-b9f6-ae11b67c964b",
+    "590bda12-228f-4784-9caa-404aa7340332",
+    "5e8f884f-03be-4d9d-aa32-14003a8aaf52",
+    "7853d8d5-fccc-42e1-8540-cfe67325b42d",
+    "7b007eb0-dfe0-4bcd-8697-8926d4572585",
+    "7bc96205-5b58-4310-b056-8768d2c9ca7a",
+    "861111df-3fbf-4569-9df9-2d3a9da81415",
+    "b2ac8958-c1dc-42d9-a41a-b6e0d8b8dd39",
+    "bc56e4a3-3772-456f-9ae6-8c3396f52880",
+    "cb22d87c-0879-4709-9985-4f367772bf44",
+    "e2d7a48c-0bc8-4a23-a932-83b4cbee492a",
+    "e8f12ff2-1929-497a-9d87-103ff77d2110",
+    "f623e258-d97b-4a07-9121-0337a5fd3277",
+    "ff25ff1c-035a-474b-a42a-e16c6ea1965f"
+  ],
+  "all_surviving_source_lines_byte_identical": true,
+  "surviving_records_and_order_unchanged": true,
+  "easy_medium_data_and_manifests_unchanged": {
+    "easy": true,
+    "medium": true
+  },
+  "domain_rubric_benchmark_manifest_unchanged": true,
+  "historical_local_provenance_preserved": true,
+  "source_split_projections_match": true,
+  "invalid_migration_controls": [
+    {
+      "control": "changed_removal_candidate",
+      "rejected": true,
+      "reason": "Removal candidate changed since review"
+    },
+    {
+      "control": "partial_pruning",
+      "rejected": true,
+      "reason": "Partially pruned snapshot; refusing ambiguous migration"
+    },
+    {
+      "control": "missing_retained_representative",
+      "rejected": true,
+      "reason": "Approved retained representative is missing"
+    }
+  ],
+  "tests_passed": 74,
+  "reference_plans_valid": 339,
+  "reference_goals_reached": 18,
+  "live_judge_calls": 0
+}

@@ -1,0 +1,190 @@
+{
+  "kind": "offline_reference_and_goal_validation_not_llm_scores",
+  "protocol": {
+    "version": "2.3.0",
+    "domain": {
+      "name": "ahat-v6-heated-only",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "f91f1243e66e14dfc69269145539e2f704322e4bc0c1c81e86142886eed678b7"
+    },
+    "validator": {
+      "name": "VAL",
+      "platform": "linux-x86_64",
+      "path": "vendor/val/Validate",
+      "sha256": "03fa000c6842d3fc5ea15740195e91178a2918f6454d4abd4438454ed136a136",
+      "library_path": "vendor/val/libVAL.so",
+      "library_sha256": "364cbf670a6085885a30fb3d05bbf1a6de923cc94b19f479500aa4dbe7058c95",
+      "version": "full-scene-val-typed-arguments-v3"
+    },
+    "judge": {
+      "version": "ahat-rubric-heated-v4",
+      "dimensions": [
+        "D1",
+        "D2",
+        "D3",
+        "D4"
+      ],
+      "weights": {
+        "D1": 0.4,
+        "D2": 0.2,
+        "D3": 0.2,
+        "D4": 0.2
+      },
+      "critical_failure_cap": 0.2,
+      "paper": "https://arxiv.org/html/2602.12244v2#A3",
+      "prompt_hashes": {
+        "D1": "0e9a568a48e2cf2cab06dde62dd365fea6e7b997e1a287129f2c3a8a21b41e48",
+        "D2": "2b5a53eb4220e4bc6b29fe24176d1e3302998ffaa292730284f0f2e3830f9584",
+        "D3": "02ffdd70d0f574c062410fdcf845f90ea35f48108550bb3222401b6aa60dd412",
+        "D4": "5f9151291867431a24fa3a7a76f5c85b936fe65a99749335ed82d3bbcf85223d"
+      },
+      "adjacency_policy": "Required only by instruction; valid optional adjacency is neither an error nor an automatic bonus"
+    }
+  },
+  "source_sha256": "0a6a8dbd13570d728f1bb079536c0db467b530fbf4b201fab65b82ff51a8b4b0",
+  "domain_sha256": "f91f1243e66e14dfc69269145539e2f704322e4bc0c1c81e86142886eed678b7",
+  "implementation_sha256": {
+    "scripts/check_reference_plans.py": "98b9d5599190922e662dc28445dc63b943662a4aed2f0567b3cbc18945981d0e",
+    "scripts/next_to_cases.py": "45db95e8d7aef4b17638d8244ca9deda9b17b78b5b4bc71240f9733e85b61a64",
+    "scripts/repair_cooking.py": "4e11ff0d4599fbbfc7b372c500500dd2c6cb773197a009f856069a28f5c3a35e",
+    "src/ahat_benchmark/__init__.py": "fcd04606e4729c7a72efe0549256eed4bb0094c75a13100dde80acc85e621094",
+    "src/ahat_benchmark/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/ahat_benchmark/cli.py": "e7354e01c95b39a63e898ce9d57a5c7acd3b1a4c3331b05560c652c16e4fa2dd",
+    "src/ahat_benchmark/config.py": "a97a341757923bd31f9f6237743b70a5e8fb6c28f3842abb29f4d991ed47c000",
+    "src/ahat_benchmark/datasets.py": "ec0ee5412a4219370949df257fd10a8f31712865d8d90e47c95f6c0ab44dd572",
+    "src/ahat_benchmark/io.py": "f4b0f9ec9ffb3c02478cb6c4e80f57196e65071d4293cf43d25696a03fa3df25",
+    "src/ahat_benchmark/judge/__init__.py": "927805ab5f1c98a4c7677f9184eaf5019ee93a30f1a46275068872d097561607",
+    "src/ahat_benchmark/judge/aggregator.py": "cccde5c51c8d95de5e0c8c6651ac53d77ce529d40c0df3dba33e47dd8a872c6e",
+    "src/ahat_benchmark/judge/evaluator.py": "df5990eae111f8987082de030d345c3e7182f5cef8d21129a03d479fb5a64d3d",
+    "src/ahat_benchmark/judge/prompts.py": "5e0a87907f5d046afee936b60fed3e27aa37634b800b0789a31880ce80ba10af",
+    "src/ahat_benchmark/judge/scene_summary.py": "bf02e172f4d0114937a3ed935df363d640176e386213c82b6717a83ab37a60e1",
+    "src/ahat_benchmark/pddl.py": "fb35985d8c7d27f988a2d064a9a2f217dbc921bbd10b4af8dd5407d5823c02f8",
+    "src/ahat_benchmark/pddl_effects.py": "eb3fafe0816477a9d3e16f40bbe8d85fd569552fb89a44d2c36fd689cc8b69c8",
+    "src/ahat_benchmark/pipeline/__init__.py": "f44ff1f6aab9b9895e32250642883b31e2afc99db3b24872f537597c2593fd09",
+    "src/ahat_benchmark/pipeline/common.py": "5593e98944d07d7f1207d54236838c921c75c5c24dde2da90b5830c97b130d9d",
+    "src/ahat_benchmark/pipeline/judge_stage.py": "30851e85b13f22f7737c5deddc7181d9ae283c65ff9f0d18666eca9fb07bbf9f",
+    "src/ahat_benchmark/pipeline/summarize.py": "deffb88d636ba49de353aafc146f972b0e3a78d8a13ba72d9497aabf8f5e4ca2",
+    "src/ahat_benchmark/pipeline/val_stage.py": "62cda8434cc8132845c66c9dd287c008e918c5edc5f4bec7aa909bd4e4fbd040",
+    "src/ahat_benchmark/provenance.py": "c1a286cce31b44b72556b7881072697f8903ef0ac1882a5ea884301f9fe27ae1",
+    "src/ahat_benchmark/scene.py": "9f996df289fd1257c5bdd435e2434f5e4e7f1ef4d9737af74c0e7745e61cba59",
+    "src/ahat_benchmark/schemas.py": "cdfb177852f4b1ab3c2fd978f0f8c49b56c5ace5b490c4341953d84facbc831b",
+    "src/ahat_benchmark/val/__init__.py": "0fe705bb2ab35325eada6bebcdef5462e9d39dcdbfdbd2be87a42892f9ab88d2",
+    "src/ahat_benchmark/val/validator.py": "bd47546d44e4f64674c1bda0895230d7ba72cce890b7d5a8bbaba764e2d4a169",
+    "src/ahat_benchmark/vendor/__init__.py": "04e37e2ef78955acb83da436e81958de5583b1fffc4d68c22d2fbcb990801470",
+    "src/ahat_benchmark/vendor/problem_generator.py": "181502d42ce858453a4717e59dbfd3cab1b7019c7a118ea158135e91ff9f560e",
+    "src/ahat_benchmark/vendor/scene_graph.py": "41efdee95424c0876e8daebed760a729520db4b76036b2f7823bf0ab780f35d1"
+  },
+  "counts": {
+    "valid": 355,
+    "annotated_goals_passed": 18,
+    "adjacency_controls_passed": 11,
+    "cooking_controls_passed": 4,
+    "cooking_scene_roundtrip_steps": 80,
+    "scene_roundtrip_steps": 61
+  },
+  "annotated_cases": [
+    {
+      "id": "913ca94e-5eb2-44ec-8c82-867844780d57",
+      "reference_goal_passed": true
+    },
+    {
+      "id": "8c934a7d-48a8-4069-b6cf-3e9fb9451316",
+      "reference_goal_passed": true
+    },
+    {
+      "id": "fa3376d5-18a6-41e1-9a80-42bdb5349c75",
+      "reference_goal_passed": true
+    },
+    {
+      "id": "ab270610-f68d-4ccf-8ced-455a237f8dc5",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    },
+    {
+      "id": "02a5f844-c663-4336-b6c9-fad5540b7cd5",
+      "reference_goal_passed": true,
+      "processing_omitted_valid": true,
+      "processing_omitted_misses_goal": true
+    },
+    {
+      "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+      "reference_goal_passed": true,
+      "processing_omitted_valid": true,
+      "processing_omitted_misses_goal": true
+    },
+    {
+      "id": "fd22ff41-4720-497c-bad3-7411b468b6cc",
+      "reference_goal_passed": true,
+      "processing_omitted_valid": true,
+      "processing_omitted_misses_goal": true
+    },
+    {
+      "id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "reference_goal_passed": true,
+      "processing_omitted_valid": true,
+      "processing_omitted_misses_goal": true
+    },
+    {
+      "id": "ce1d381a-2c02-5720-bd6f-bb4cbec0bc7e",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    },
+    {
+      "id": "66405407-b3f4-549d-bec3-dc68b8fa5813",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    },
+    {
+      "id": "cc6ac010-2c28-55cb-8a12-5c5b0aa07b75",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    },
+    {
+      "id": "101df926-f674-57ac-96b1-ffc6111e6e21",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    },
+    {
+      "id": "1277c042-3a66-5c9d-b6b4-7e201d28b62f",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    },
+    {
+      "id": "01cf3cd4-5412-5d0c-ab92-c92faf724386",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    },
+    {
+      "id": "6eb04295-170f-5fe1-b4ef-b80b5c493c66",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    },
+    {
+      "id": "815eae12-96e6-51a7-a056-34cd118ace9b",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    },
+    {
+      "id": "507931f2-3566-57de-a6f3-6b8e00363df0",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    },
+    {
+      "id": "3af07561-c24f-5819-9671-5b552fbdbe22",
+      "reference_goal_passed": true,
+      "ordinary_placement_valid": true,
+      "ordinary_placement_misses_goal": true
+    }
+  ],
+  "failures": []
+}

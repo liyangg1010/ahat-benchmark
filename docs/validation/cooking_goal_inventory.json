@@ -1,0 +1,947 @@
+{
+  "revision": "cooking-goals-v1",
+  "date": "2026-11-11",
+  "scope": "Manual instruction and scene review of the 355-task snapshot; broad meal candidates are a conservative screening set, not an assertion that cooking is mandatory. Other fetching/transport/nonmeal tasks remain outside this audit.",
+  "records": [
+    {
+      "id": "4b7617ea-d7bd-4da7-8a03-96f5501fabc0",
+      "source_index_at_audit": 13,
+      "split": "easy",
+      "instruction": "Can you grab some fresh veggies from the fridge for dinner?",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "40441320-4bc6-490a-8ad2-488b6be318ac",
+      "source_index_at_audit": 21,
+      "split": "easy",
+      "instruction": "Since the hot pot dinner is planned for tonight, move bowls, cups, and glass from the bedrooms and bathroom to the kitchen counter for washing and meal prep.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "c48dc423-23d1-438f-8068-07dbafd9553b",
+      "source_index_at_audit": 33,
+      "split": "easy",
+      "instruction": "Go to the kitchen and pick up the pepper mill from the kitchen cabinet to season the seafood.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "b0c83c5e-b2fe-4cc0-897e-c3b26d45903f",
+      "source_index_at_audit": 65,
+      "split": "easy",
+      "instruction": "Can you grab some eggs and bread for breakfast?",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "db78f3ec-8e6d-4a74-8520-1ceddbab954c",
+      "source_index_at_audit": 70,
+      "split": "easy",
+      "instruction": "Can you grab the knife so I can start cooking?",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "da06620b-e992-485d-b65a-c426af1602be",
+      "source_index_at_audit": 73,
+      "split": "easy",
+      "instruction": "Retrieve a cooking spice and deliver it to the person who is cooking.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "d95a3a2f-8662-47bd-8367-e8c197d066cb",
+      "source_index_at_audit": 82,
+      "split": "easy",
+      "instruction": "Relocate a potted herb to the kitchen prep area so it is convenient for cooking.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "f8b2055f-df01-4e78-a676-790572bff4ce",
+      "source_index_at_audit": 87,
+      "split": "easy",
+      "instruction": "Go to the kitchen and pick up the pepper mill from the kitchen cabinet to season the food.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "bbe7f27b-be8b-439b-a34d-79dbe176d2ea",
+      "source_index_at_audit": 137,
+      "split": "easy",
+      "instruction": "We're making dumplings — can you set the rolling pin, bowl, flour and wrappers out on the dining table for us?",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "b5839f9a-eb34-4d4d-ad2b-5665e8b9c5ef",
+      "source_index_at_audit": 144,
+      "split": "medium",
+      "instruction": "Prepare a cup of boiled water and deliver it to the user.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "8708a9fe-8ed0-49a8-9339-36f8d2a11611",
+      "source_index_at_audit": 145,
+      "split": "medium",
+      "instruction": "On a chilly winter morning, prepare the bathroom by pouring hot water from the kettle into a bowl placed on the bathroom counter, then bring a clean cup for rinsing.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+      "source_index_at_audit": 150,
+      "split": "medium",
+      "instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "f8e914bb-3f3a-43de-8b8f-c86cbaf6894f",
+      "source_index_at_audit": 159,
+      "split": "medium",
+      "instruction": "Could you make a coffee and bring it to my friend in the game room?",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "63771138-ea77-46d7-98ef-730f7fc06a7d",
+      "source_index_at_audit": 160,
+      "split": "medium",
+      "instruction": "Could you make me a cup of hot water and bring it down here?",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "c4eaedfe-58a6-4535-8817-5e6c30ef5ba0",
+      "source_index_at_audit": 161,
+      "split": "medium",
+      "instruction": "Fill the kettle with water from the sink and place it on the stove to heat.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "75fa2d06-2278-45fa-a9d1-fa3cdb6e3da8",
+      "source_index_at_audit": 162,
+      "split": "medium",
+      "instruction": "Prepare a cup of hot water and bring it to the person.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "0127af55-e737-4be4-8fda-ea2efaf69461",
+      "source_index_at_audit": 163,
+      "split": "medium",
+      "instruction": "Prepare a cup of hot water for the user.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "bd6d5204-77c2-4be5-bd70-9f60a25d6a9d",
+      "source_index_at_audit": 164,
+      "split": "medium",
+      "instruction": "Take the electric_kettle from the kitchen_cabinet to the kitchen_island, fill it with water at sink_cabinet, power it on to heat, then pour hot water into a mug on table.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "83e9c29c-054d-4269-8bf4-d5ac26b8ccfd",
+      "source_index_at_audit": 168,
+      "split": "medium",
+      "instruction": "Go to the kitchen, fill the kettle with water from the faucet, and boil it to prepare tea.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "e066d3a7-c73c-464d-b0a5-a28ce4b7939d",
+      "source_index_at_audit": 170,
+      "split": "medium",
+      "instruction": "Fill the electric kettle at sink (kitchen) with water, power it on to boil, pour the boiled water into a cup on dining_table, and deliver the cup to person in bedroom.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+      "source_index_at_audit": 172,
+      "split": "medium",
+      "instruction": "Bring your laptop and a notebook from your bedroom to the office for studying, grab a cup of hot tea from the kitchen, and also bring your watch from the office to keep track of your study breaks.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "184f5333-3807-406c-bec5-124adc3cd227",
+      "source_index_at_audit": 176,
+      "split": "medium",
+      "instruction": "Retrieve the portable induction stove and hot pot saucepan from kitchen_cabinet, place them on kitchen_island, fill the saucepan with water, and power on the stove.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "3add086d-6d85-470a-a351-bdab3456e295",
+      "source_index_at_audit": 177,
+      "split": "medium",
+      "instruction": "I need my hot water — please make me a cup and bring it here.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "8eaf1794-e3f0-4f38-aa7e-d6b77872d7a8",
+      "source_index_at_audit": 178,
+      "split": "medium",
+      "instruction": "On a chilly morning, power on the electric kettle in the kitchen and prepare a cup for green tea before your video calls.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "99c7a3e4-033a-4142-8cb9-9d2bd63c5748",
+      "source_index_at_audit": 179,
+      "split": "medium",
+      "instruction": "I'm cold and tired — can you make me a cup of tea and bring it out to the garage?",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "acba2bf0-ad1e-452e-b3f7-43af06ebfc81",
+      "source_index_at_audit": 183,
+      "split": "medium",
+      "instruction": "I'm filthy from work — can you run me a hot bath and bring my towel?",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "d4e3362f-60d3-46cd-8638-8954f5a9602b",
+      "source_index_at_audit": 184,
+      "split": "medium",
+      "instruction": "Go to the kitchen and pick up the vegetables and meat from the refrigerator and kitchen cabinet to prepare a hot pot.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "9a7a00d3-22dd-41c1-8df4-098e2f03e2e3",
+      "source_index_at_audit": 185,
+      "split": "medium",
+      "instruction": "Prepare for a family baking afternoon by collecting cups and plates from the office, bedroom, and dining booth, then arrange them on the kitchen table.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "539c1078-27f9-4389-943f-18914bda27b1",
+      "source_index_at_audit": 186,
+      "split": "medium",
+      "instruction": "Go to the kitchen and pick up the seafood from the refrigerator to prepare a dish.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "cea31743-32c3-4f59-b07e-b12a71e840de",
+      "source_index_at_audit": 190,
+      "split": "medium",
+      "instruction": "Fill the kettle with water from the faucet and power it on to heat the water.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "23178c37-3b65-4dff-9eb5-3c5d1e985232",
+      "source_index_at_audit": 191,
+      "split": "medium",
+      "instruction": "Go to the kitchen, take the electric_kettle from the sink area, fill and power it to heat water, then pour the hot water into the instant_noodle_cup on the dining_table and bring a spoon.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "3165c583-ec81-41ed-a048-1335ff87cbfd",
+      "source_index_at_audit": 193,
+      "split": "medium",
+      "instruction": "After cooking a Yunnan specialty on a rainy afternoon, put away all spice and herb items from the fridge and kitchen counter into the kitchen cabinet.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "f2c44280-76ff-449b-895e-2d78cdfc6b28",
+      "source_index_at_audit": 196,
+      "split": "medium",
+      "instruction": "Go to the kitchen, fill and switch on the electric kettle, pour hot water into the ceramic mug on the kitchen island, and hand the mug to the person in the kitchen.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "2a7392d8-6703-45db-914f-705ca6b4d6cc",
+      "source_index_at_audit": 197,
+      "split": "medium",
+      "instruction": "Go to the kitchen, pick up the blender from the kitchen cabinet, and gather fruits from the refrigerator to make a smoothie.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "2cd06e0a-88a9-45a6-a5e3-a378199d6414",
+      "source_index_at_audit": 200,
+      "split": "medium",
+      "instruction": "Go to the kitchen, use the coffee machine to brew a cup of coffee into a mug, and place the mug on the kitchen island.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "6d1fc47f-358b-4bf5-b8ce-eb61f66d8fa0",
+      "source_index_at_audit": 201,
+      "split": "medium",
+      "instruction": "Prepare and deliver a warm drink to a person in another room.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "a6858c23-0cee-461d-bbf3-c9951bfbbda3",
+      "source_index_at_audit": 202,
+      "split": "medium",
+      "instruction": "Could you make me a cup of tea and bring it to my home office, please?",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "7f0a1344-6ce2-4860-8b0d-1d6de7219fdd",
+      "source_index_at_audit": 204,
+      "split": "medium",
+      "instruction": "Before a family dinner, arrange plates, spoons, and a casserole on the dining table and check if there is a pitcher of water (jug) present.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "3596c678-c745-4c78-9179-b390471b4f25",
+      "source_index_at_audit": 205,
+      "split": "medium",
+      "instruction": "Go to the kitchen and pick up seafood from the refrigerator to prepare a meal.",
+      "group": "preparation_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求准备工具/食材/设备或收纳，不自动要求 cooked。"
+    },
+    {
+      "id": "12b30bd2-1470-4249-9b4c-080acc03c4eb",
+      "source_index_at_audit": 207,
+      "split": "medium",
+      "instruction": "Go to the kitchen, fill the coffee machine with water, load coffee grounds, brew a cup into the ceramic mug, and hand the mug to the person in the kitchen.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "02a5f844-c663-4336-b6c9-fad5540b7cd5",
+      "source_index_at_audit": 210,
+      "split": "medium",
+      "instruction": "Before dinner, take the casserole from the dining room and reheat it in the kitchen oven. After heating, power off the oven and return the casserole to the dining room table.",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": true,
+      "decision": "confirmed",
+      "reason": "熟食初始未加热；场景唯一可用处理设备为 kitchen_1 的 oven_30，heated 可反推在该烤箱复热；返回餐桌并关机可由末态表达。"
+    },
+    {
+      "id": "e2589b66-026b-4075-9525-3acdbf38e1f0",
+      "source_index_at_audit": 214,
+      "split": "medium",
+      "instruction": "Prepare bathing supplies and warm water in the bathroom for a post-work shower.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "c77c47ae-9d7a-4369-abbd-c305498e2aad",
+      "source_index_at_audit": 217,
+      "split": "medium",
+      "instruction": "Prepare a hot morning beverage and deliver it to the resident's bedroom.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "3a12822b-f774-4834-b9af-b741f2592c5e",
+      "source_index_at_audit": 219,
+      "split": "medium",
+      "instruction": "Could you make some hot tea and bring a cup to the person at the dining table?",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "bd621dea-7022-4f49-ae0f-3018da6b2f12",
+      "source_index_at_audit": 220,
+      "split": "medium",
+      "instruction": "Fill the kettle with water from the faucet and then power it on to heat the water.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "7728b3b9-4cd2-4586-8dd0-6f70bdea8e22",
+      "source_index_at_audit": 223,
+      "split": "medium",
+      "instruction": "Pick up the electric kettle and a mug from the dining table, fill the kettle at the kitchen sink, power it on to heat the water, pour hot water into the mug, and bring the mug to the person in bathroom.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "9c120c15-b00a-4544-bafa-ffeece47d701",
+      "source_index_at_audit": 225,
+      "split": "medium",
+      "instruction": "On a cold winter day, pour hot water into a thermos bottle and place it on the bedroom chest of drawers so I can have warm water during the night.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "72d3763d-58b9-4f1f-befe-eed2fba16f6b",
+      "source_index_at_audit": 227,
+      "split": "medium",
+      "instruction": "Prepare a quick cup of instant noodles.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "4a58251b-b8bf-4f05-ad45-7947bf665031",
+      "source_index_at_audit": 229,
+      "split": "medium",
+      "instruction": "Could you please make me a warm cup of boiled water and bring it here?",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "f740c053-35da-470a-8628-e9291a9738cb",
+      "source_index_at_audit": 232,
+      "split": "medium",
+      "instruction": "Prepare a gourmet coffee and deliver it to the person in the bedroom.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "05f9fb16-de68-4fb8-8cc7-4ad1714f7f72",
+      "source_index_at_audit": 233,
+      "split": "medium",
+      "instruction": "Prepare a hot cup of coffee in the kitchen and deliver it to the bedroom nightstand.",
+      "group": "liquid_or_beverage",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "涉及液体、饮品或沐浴；当前无液体温度、成分及热量传递模型，不用固体食物 cooked/heated 伪造完成。"
+    },
+    {
+      "id": "8296e9b3-dfdc-4e3b-81f4-6b9fc1ef3715",
+      "source_index_at_audit": 237,
+      "split": "open",
+      "instruction": "Create a classy dinner atmosphere and tidy afterward",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "7b007eb0-dfe0-4bcd-8697-8926d4572585",
+      "source_index_at_audit": 238,
+      "split": "open",
+      "instruction": "Prepare a cozy dinner tonight",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划只准备饮品；可识别的直接食物仅黄油，包装和 fruit_bowl 未明确内容，不能确认完整晚餐。"
+    },
+    {
+      "id": "36bdd71c-6e6d-4bfd-8c4d-4b319c289c4d",
+      "source_index_at_audit": 239,
+      "split": "open",
+      "instruction": "Create a warm dinner setting tonight",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "cb22d87c-0879-4709-9985-4f367772bf44",
+      "source_index_at_audit": 240,
+      "split": "open",
+      "instruction": "Host an elegant dinner this evening",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划只布置餐桌；包装、蔬菜篮和果碗内容未明确，无法保证已供餐及 elegant 的完整语义。"
+    },
+    {
+      "id": "a55dd1af-59ee-4e0c-8139-208e2134ed49",
+      "source_index_at_audit": 243,
+      "split": "open",
+      "instruction": "Plan and serve a complete evening meal",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "苹果和葡萄可以供食，但不能据此保证 complete evening meal；不自行把水果摆放定义为完整晚餐。"
+    },
+    {
+      "id": "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+      "source_index_at_audit": 246,
+      "split": "open",
+      "instruction": "Prepare an elegant dinner and ambiance",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划只有餐具和氛围布置；胡萝卜和黄瓜可食，但缺少完整晚餐与 elegant 的可验证完成标准。"
+    },
+    {
+      "id": "5e8f884f-03be-4d9d-aa32-14003a8aaf52",
+      "source_index_at_audit": 249,
+      "split": "open",
+      "instruction": "Prepare a comforting breakfast and serve it",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划摆放牛奶包装、鸡蛋包装和黄油；没有明确可烹饪鸡蛋或准备好的主食，不能确认早餐已完成。"
+    },
+    {
+      "id": "590bda12-228f-4784-9caa-404aa7340332",
+      "source_index_at_audit": 254,
+      "split": "open",
+      "instruction": "Prepare an inviting meal for family tonight.",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划把锅和餐具移到桌上；锅内没有明确熟食，family 的供餐人数和份量也未表示。"
+    },
+    {
+      "id": "861111df-3fbf-4569-9df9-2d3a9da81415",
+      "source_index_at_audit": 255,
+      "split": "open",
+      "instruction": "Host an elegant evening meal",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划只有餐具和氛围布置；未确认可供食用的晚餐内容，不能以摆桌替代供餐。"
+    },
+    {
+      "id": "7853d8d5-fccc-42e1-8540-cfe67325b42d",
+      "source_index_at_audit": 260,
+      "split": "open",
+      "instruction": "Prepare a complete breakfast for two.",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "有直接鸡蛋和两只盘子，但没有食物分份或份量模型，无法证明 complete breakfast for two；不为同一份鸡蛋虚构两份状态。"
+    },
+    {
+      "id": "f3ee3e87-d782-4870-8ed3-2bc92f344010",
+      "source_index_at_audit": 261,
+      "split": "open",
+      "instruction": "Host a cozy dinner for two tonight.",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "有鸡蛋和牛奶，但 two 的份量/份数和完整晚餐未表示；原计划仅作氛围布置。"
+    },
+    {
+      "id": "21d63cf0-3045-4d01-a88a-fe6f7d3e3499",
+      "source_index_at_audit": 268,
+      "split": "open",
+      "instruction": "Prepare a cozy family dinner tonight",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划仅布置桌面和灯；果碗内容、family 的份量和晚餐内容未明确。"
+    },
+    {
+      "id": "ff25ff1c-035a-474b-a42a-e16c6ea1965f",
+      "source_index_at_audit": 269,
+      "split": "open",
+      "instruction": "Make tonight's dinner special for everyone",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划摆放桌布、锅具和调料；无明确已准备的晚餐，也无法表达 everyone 的供餐份量。"
+    },
+    {
+      "id": "b2ac8958-c1dc-42d9-a41a-b6e0d8b8dd39",
+      "source_index_at_audit": 270,
+      "split": "open",
+      "instruction": "Prepare a relaxed family breakfast",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划摆放牛奶包装和果碗；不能从包装/果碗节点推断早餐内容和 family 的供餐份量。"
+    },
+    {
+      "id": "bc56e4a3-3772-456f-9ae6-8c3396f52880",
+      "source_index_at_audit": 273,
+      "split": "open",
+      "instruction": "Prepare breakfast for two",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "鸡蛋仍为包装；直接食物仅酥油，无法确认完整早餐及两份供餐。"
+    },
+    {
+      "id": "288f86b3-e509-4155-9eec-2976c1c00a13",
+      "source_index_at_audit": 276,
+      "split": "open",
+      "instruction": "Arrange a romantic dinner for four",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "f623e258-d97b-4a07-9121-0337a5fd3277",
+      "source_index_at_audit": 279,
+      "split": "open",
+      "instruction": "Prepare a hearty breakfast for two guests",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "只有牛奶包装和鸡蛋包装，缺少明确鸡蛋/主食；两位客人的份量和 hearty 均不能保证。"
+    },
+    {
+      "id": "fd73c540-9b92-4c22-9786-f7633bdb9bcd",
+      "source_index_at_audit": 280,
+      "split": "open",
+      "instruction": "Prepare an elegant dinner setting for guests",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "68c563ae-1a3b-4246-906b-90992e1c8c84",
+      "source_index_at_audit": 281,
+      "split": "open",
+      "instruction": "Set up tonight’s family meal",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "09d86c88-00ab-466a-9c3d-600355ecaec1",
+      "source_index_at_audit": 283,
+      "split": "open",
+      "instruction": "Set up dinner for a surprise guest.",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "7bc96205-5b58-4310-b056-8768d2c9ca7a",
+      "source_index_at_audit": 284,
+      "split": "open",
+      "instruction": "Host a cozy dinner for guests",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划只布置氛围和餐位；未明确食物，guests 的供餐人数和份量也未表示。"
+    },
+    {
+      "id": "0eaf1724-621f-4b72-b188-5073e3204a60",
+      "source_index_at_audit": 287,
+      "split": "open",
+      "instruction": "Prepare for a formal dinner gathering.",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "c036f584-d49d-42ea-bae7-d165788d04e0",
+      "source_index_at_audit": 290,
+      "split": "open",
+      "instruction": "Stage a festive meal this evening.",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "e2d7a48c-0bc8-4a23-a932-83b4cbee492a",
+      "source_index_at_audit": 292,
+      "split": "open",
+      "instruction": "Make breakfast for two and serve",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "鸡蛋仍为包装；原计划的杯子未获得饮品，早餐内容和两人份不能保证。"
+    },
+    {
+      "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+      "source_index_at_audit": 293,
+      "split": "open",
+      "instruction": "Prepare a warm brunch for two.",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": true,
+      "decision": "deferred",
+      "reason": "旧 goal 可由 heat 替换 cook 达成，留下未熟鸡蛋；另缺两人份表达。保留数据，不将旧标注认证为充分条件。"
+    },
+    {
+      "id": "a9c684f9-b6a6-46f4-b621-b6bd3faad840",
+      "source_index_at_audit": 294,
+      "split": "open",
+      "instruction": "Set up an elegant family dinner.",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "722ce524-867b-439f-8ab5-950c10010d7e",
+      "source_index_at_audit": 295,
+      "split": "open",
+      "instruction": "Create a cozy dinner atmosphere tonight",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "43f14fb2-001a-495e-b9f6-ae11b67c964b",
+      "source_index_at_audit": 300,
+      "split": "open",
+      "instruction": "Prepare an elaborate breakfast and serve it",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划摆放包装和空碗；现有酸奶杯未明确内容，不能据此保证 elaborate breakfast。"
+    },
+    {
+      "id": "dec162ab-e453-419f-971a-2e32987350f2",
+      "source_index_at_audit": 301,
+      "split": "open",
+      "instruction": "Prepare an elegant dinner for guests",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "苹果和奶酪可食，但不能确认满足 elegant dinner for guests 的完整供餐和人数要求。"
+    },
+    {
+      "id": "fd22ff41-4720-497c-bad3-7411b468b6cc",
+      "source_index_at_audit": 302,
+      "split": "open",
+      "instruction": "Cook a simple breakfast and serve it",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": true,
+      "decision": "confirmed",
+      "reason": "真实鸡蛋可烹饪；cooked+heated 与干净餐盘/餐桌上的供餐状态构成一种 simple breakfast 的充分完成方式，无指定份数或设备。"
+    },
+    {
+      "id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+      "source_index_at_audit": 303,
+      "split": "open",
+      "instruction": "Host a cozy brunch for two.",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "有鸡蛋、牛奶和苹果，但 two 的份量未表示；原计划仅摆杯、装饰和苹果，不能据此保证两人早午餐。"
+    },
+    {
+      "id": "8af35be3-cb5b-4910-ac70-1694acf9c798",
+      "source_index_at_audit": 305,
+      "split": "open",
+      "instruction": "Create a romantic dinner ambiance.",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "4a3dc074-3cd6-4241-a4a5-2c37f31c99a1",
+      "source_index_at_audit": 308,
+      "split": "open",
+      "instruction": "Host a formal dinner and cleanup",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "要求先晚餐后清理；既没有明确已供餐食物，也没有 served/cleaned-after-serving 等历史状态，末态干净不能证明举办过晚餐。"
+    },
+    {
+      "id": "e942665b-fd87-47e1-aa4d-63a55cc54160",
+      "source_index_at_audit": 312,
+      "split": "open",
+      "instruction": "Stage an elegant dinner for four tonight.",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "source_index_at_audit": 319,
+      "split": "open",
+      "instruction": "Make a hot breakfast for two.",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": true,
+      "decision": "deferred",
+      "reason": "旧 goal 可确认熟热鸡蛋和伴餐，但没有两份/两人供餐的表示；VAL 可达不足以认证整条指令完成。"
+    },
+    {
+      "id": "81721c19-9d62-480b-a3c9-961016b56e40",
+      "source_index_at_audit": 323,
+      "split": "open",
+      "instruction": "Set up an elegant dinner tonight",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "26891dae-ec9f-48de-8c91-b487dcc8cd29",
+      "source_index_at_audit": 325,
+      "split": "open",
+      "instruction": "Set up an elegant dinner tonight.",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "2608e618-305d-46d2-b563-2ca9bc351c7b",
+      "source_index_at_audit": 327,
+      "split": "open",
+      "instruction": "Prepare a full weekend brunch.",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "原计划只摆餐具和果碗；果碗/汤罐内容及 full brunch 的完成标准未明确。"
+    },
+    {
+      "id": "e6f72f40-9cf5-4fe2-a1d9-f86c1c8e22b0",
+      "source_index_at_audit": 329,
+      "split": "open",
+      "instruction": "Prepare an elegant evening meal setup.",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+      "source_index_at_audit": 330,
+      "split": "open",
+      "instruction": "Prepare a full family breakfast service",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "有鸡蛋、黄油和餐具，但 family 的供餐份量未表示，不能保证 full family breakfast service。"
+    },
+    {
+      "id": "e2c8037c-8c35-4b37-9da0-e10b47c9ab40",
+      "source_index_at_audit": 333,
+      "split": "open",
+      "instruction": "Prepare an elegant evening meal setting",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "84539106-92e9-423b-8da5-252fa85ca51b",
+      "source_index_at_audit": 337,
+      "split": "open",
+      "instruction": "Set up tonight’s formal dinner gathering",
+      "group": "setting_context",
+      "explicit_food_thermal_requirement": false,
+      "decision": "out_of_scope",
+      "reason": "要求餐桌/氛围布置，不自动要求 cooked。"
+    },
+    {
+      "id": "e8f12ff2-1929-497a-9d87-103ff77d2110",
+      "source_index_at_audit": 338,
+      "split": "open",
+      "instruction": "Prepare a comforting weekend breakfast for two",
+      "group": "food_processing_or_meal_service",
+      "explicit_food_thermal_requirement": false,
+      "decision": "deferred",
+      "reason": "有鸡蛋、牛奶、黄瓜和两只杯子，但没有两份食物的表达；两杯不等于两人早餐。"
+    }
+  ]
+}

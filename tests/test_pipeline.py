@@ -11,6 +11,7 @@ from unittest.mock import patch
 from ahat_benchmark import cli
 from ahat_benchmark.config import load_config
 from ahat_benchmark.judge.evaluator import RubricEvaluator
+from ahat_benchmark.judge.prompts import PROMPTS
 from ahat_benchmark.pipeline.judge_stage import run_judge_stage
 from ahat_benchmark.pipeline.summarize import summarize
 from ahat_benchmark.pipeline.val_stage import run_val_stage
@@ -76,6 +77,24 @@ class PipelineTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'inputs or protocol changed'):
             self.val()
 
+    def test_illegal_arguments_score_zero_without_system_errors_or_judge_calls(self):
+        self.inference.write_text(json.dumps([
+            {'id': 'valid', 'plan': ['(navigate agent_0 cup_1 ghost_1)']},
+            {'id': 'empty', 'plan': ['(navigate agent_0 cup_1 agent_0)']},
+        ]))
+        with patch('ahat_benchmark.val.validator.subprocess.run') as native:
+            checked = self.val()
+        self.assertEqual(native.call_count, 0)
+        self.assertTrue(all(row['status'] == 'invalid' for row in checked['cases']))
+        client = FakeClient()
+        self.judge(client)
+        self.assertEqual(client.calls, [])
+        statistics = self.summary()['statistics']
+        self.assertEqual(statistics['val_invalid'], 2)
+        self.assertEqual(statistics['system_errors'], 0)
+        self.assertTrue(statistics['publishable'])
+        self.assertEqual(statistics['final_score'], 0)
+
     def test_changed_model_or_endpoint_rejects_old_judge_checkpoint(self):
         self.val()
         self.judge(FakeClient())
@@ -83,6 +102,17 @@ class PipelineTests(unittest.TestCase):
             self.judge(FakeClient(), model='other-judge')
         with self.assertRaisesRegex(ValueError, 'inputs or protocol changed'):
             self.judge(FakeClient(base_url='https://other.example/v1'))
+
+    def test_changed_d3_policy_rejects_old_judge_checkpoint_before_api_calls(self):
+        self.val()
+        self.judge(FakeClient())
+        original_checkpoint = self.judge_path.read_bytes()
+        client = FakeClient()
+        with patch.dict(PROMPTS, {'D3': PROMPTS['D3'] + '\nChanged meal policy.'}):
+            with self.assertRaisesRegex(ValueError, 'inputs or protocol changed'):
+                self.judge(client)
+        self.assertEqual(client.calls, [])
+        self.assertEqual(self.judge_path.read_bytes(), original_checkpoint)
 
     def test_failed_dimension_checkpoints_and_resumes_without_zero_score(self):
         self.val()

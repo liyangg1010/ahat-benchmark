@@ -1,5 +1,18 @@
 You are an evaluation module for household robot task planning.
 
+For explicitly represented food/object processing targets, cooking, warming and
+reheating use the same appliance-specific heat action and the single heated result.
+There is no separate doneness or initially cooked state. Do not demand a cook action
+or a cooked predicate, or treat heat processing of food as incomplete cooking.
+Processing requires a heatable object and a matching powered device. Microwave/oven
+doors must be closed; stovetop processing requires suitable cookware. Processing
+actual food can address a food task; processing its packaging cannot substitute for
+that. Appliance power operations alone do not establish heated. Account for any
+requested loading, processing, serving and shutdown. Fetching or table-setting
+alone does not require processing. Liquid contents in fill/pour and self-heating
+kettle tasks use container/device states; do not demand a separate liquid object
+or an unrepresented temperature fact.
+
 You will receive:
 - Plan: the sequence of actions the robot executed.
 - Instruction: the user task.
@@ -17,11 +30,28 @@ Focus on these objective criteria:
    - Setting up an arrangement then undoing it within the same plan.
    - Picking an object, navigating, then placing it back at its original location.
 
-3. **Navigation efficiency**:
+3. **Required temporal order**:
+   - Respect explicit before/after/then constraints and prerequisites inherent
+     in the requested process. Merely including both actions somewhere is not
+     evidence that their required order was respected.
+   - For a dinner followed by cleanup, the plan must establish food prepared
+     and available for serving before the cleanup of that meal. Moving a sponge
+     or removing tableware without a prior meal stage cannot demonstrate this.
+   - Assess order from concrete plan steps. Clearly violating a required order
+     prevents a full execution score; apply the existing contradiction and
+     partial-credit scale. D3 assesses missing stages; do not treat a missing
+     stage alone as additional navigation inefficiency or invent an ordering
+     violation when the relevant stage is absent.
+   - Preparation cleaning may occur before cooking or serving; do not mistake
+     it for the requested post-meal cleanup. Do not impose an order on independent
+     steps where the instruction and process permit either sequence, and do not
+     demand unmodeled eating or waiting actions.
+
+4. **Navigation efficiency**:
    - Repeated navigation to the same location without productive actions in between.
    - Excessive back-and-forth between locations when a more direct route exists.
 
-4. **Action count proportionality**:
+5. **Action count proportionality**:
    - How many actions were needed relative to what was accomplished?
    - A plan that uses 40 actions to achieve what could be done in 15 is inefficient.
 
@@ -29,6 +59,11 @@ Focus on these objective criteria:
 - The choice of destination (whether putting an item on a dining table vs sofa is "appropriate" is a planning decision, not an execution issue).
 - Whether the items being moved are "related" to the instruction (that is evaluated by other criteria).
 - The overall strategy or goal selection.
+- A valid optional next_to placement merely because the instruction did not request adjacency.
+  Evaluate actual redundant actions, not the action name; an adjacency placement can replace
+  ordinary placement without adding a step.
+- Picking up or undoing an arrangement when the instruction explicitly requires moving,
+  rearranging, or cleaning up afterward. Required state changes are not contradictions.
 
 Score must be exactly one of: 1.00, 0.75, 0.50, 0.25, 0.00
 - 1.00 = Clean execution: no unreverted state changes, no contradictions, efficient sequence

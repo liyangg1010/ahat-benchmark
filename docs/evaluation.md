@@ -2,10 +2,19 @@
 
 The evaluation pipeline follows AHAT's `baseline/llm/run_eval_rubric.py` reviewer used for
 saved GPT results, with the action/arity guard from `review_luna_benchmark.py`.
-The four original paper prompts, current domain and VAL runtime are fingerprinted
-in `benchmark_manifest.json`. The domain includes the local floor-cleaning type
-extension described in [dataset notes](datasets.md). [Parity evidence](validation/parity.md)
-records the historical implementation comparison.
+The paper-derived prompts, current domain and VAL runtime are fingerprinted
+in `benchmark_manifest.json`. Version 2.3.0 uses `ahat-rubric-portions-and-order-v6` and
+`ahat-v8-group-portions`: the prompts distinguish required and optional
+adjacency and unified thermal processing. Pickup removes old adjacency in the domain. These prompts are
+local revisions of the original paper text. [Parity evidence](validation/parity.md)
+records the historical implementation comparison, not parity of the new rubric.
+
+The current task set has 296 cases (130/74/92) after
+[meal coverage pruning](meal-pruning.md) and [liquid coverage pruning](liquid-pruning.md).
+Sixteen open meal variants and 43 easy/medium liquid variants were removed;
+surviving scenes, instructions, plans, goals, domain and rubric are unchanged.
+Regenerate inference for these IDs and use a new evaluation output directory.
+Historical aggregate scores on 339/348/355 tasks are not directly comparable.
 
 ## Deterministic validation
 
@@ -15,10 +24,21 @@ existential precondition depends on an otherwise unmentioned object.
 Facts incompatible with domain types or PDDL identifiers are dropped and
 recorded in `excluded_ill_typed_initial_facts`.
 
-Empty and malformed plans are rejected. Unknown actions and incorrect argument
-counts are checked before native VAL, because missing arguments can crash the
-native runtime. The default timeout is 10 seconds. `invalid` requires a native
-invalid verdict; process failures without a verdict are `val_error`.
+Empty and malformed plans are rejected. Before native VAL, the validator checks
+action names, argument counts, object declarations and argument types, including
+subtype ancestry. Objects are checked against the actual generated problem and
+domain constants, with PDDL's case-insensitive matching. Unknown objects and
+incompatible types return `invalid` with `invalid_action` and an `argument_error`
+containing the kind, one-based argument position, parameter, argument and
+expected/actual types. These deterministic plan errors receive zero and do not
+count as infrastructure failures. This guard prevents native crashes or hangs
+on illegal arguments.
+
+The validator protocol is `full-scene-val-typed-arguments-v3`; use a new evaluation
+output directory after upgrading. The default timeout is 10 seconds. Beyond the
+prechecks, `invalid` requires a native invalid verdict; process failures without
+a verdict remain `val_error`, timeouts remain `val_timeout`, and scene/problem
+preparation failures remain `val_error`.
 
 ## Rubric evidence and score
 
@@ -32,9 +52,66 @@ Each valid plan receives four independent chat-completions calls:
 | D4 Execution Quality | Instruction and plan | 0.20 |
 
 The final state starts from the initial PDDL persisted by VAL and applies the
-domain's simultaneous STRIPS delete/add effects. No additional effects are
+domain's simultaneous delete/add effects, including typed unconditional `forall`
+effects for adjacency cleanup. No additional effects are
 inferred by mutating the scene graph. The domain's declared semantics, including
 omissions, determine D1 evidence.
+
+Static `serves_two` / `serves_group` facts on explicitly annotated food nodes survive execution
+and reach D1 through this same state path. D1 checks quantity alongside requested
+processing and serving; capacity alone is not completion. All six retained
+two-person/family/guest meals have a relevant food-capacity declaration. D2/D3/D4
+input formats remain unchanged and do not receive capacity facts; see
+[food capacity and required plan stages](group-portions-and-order.md).
+
+D3 checks required earlier phases even when cleanup later undoes their results;
+D4 checks explicitly requested or necessary order between present phases. D1
+must not infer prior dinner service from a clean final table. These prompt rules
+preserve existing weights and add no hard success gate. A native-valid same-final-state
+counterexample verifies that D3/D4 receive distinguishing plan evidence, not that
+a live judge will necessarily score it correctly.
+
+Adjacency is symmetric and support-specific, not transitive. If the instruction
+requires next-to/beside placement, merely sharing a surface or receptacle does
+not satisfy that requirement; missing required adjacency prevents full D1 goal
+achievement while allowing partial credit for other goals. Valid optional
+adjacency is not a planning error, and its absence is not a failure. The rubric
+does not award a bonus merely for using `next_to`, or let it replace requested
+states and locations. D4 still assesses actual redundant actions; necessary
+rearrangement and requested cleanup are not contradictions.
+
+`reference_goal` annotations remain offline reference checks, not a binary
+runtime success metric or an override of the rubric. The regression suite uses
+the same goal with ordinary and adjacent placement: both pass a placement-only
+goal; only adjacent placement passes an explicit adjacency goal. The native VAL
+reference checker also tests all 11 annotated explicit-adjacency tasks against
+valid ordinary-placement controls. [Adjacency notes](next-to.md) list coverage.
+
+Cooking, warming and reheating share the same three appliance-specific heat
+actions and single `heated` result. Food and other explicitly heatable objects
+use the same processing rules. No separate doneness or initial cooked state is
+modeled; `is_food` identifies food but is not required to heat other objects.
+Power-on alone does not establish `heated`. Require processing only when the
+instruction requests it, not merely fetching food or setting a table. There are
+18 offline reference goal annotations, including four processing tasks with legal
+controls that omit heat processing and fail their targets. See
+[current thermal semantics](heated.md). Existing quantity and full-meal coverage
+limits remain; goal reachability does not certify all annotations sufficient.
+
+These object-processing checks do not add liquid-temperature tracking. Fill/pour
+and self-heating kettle tasks retain their container/device-state abstraction;
+the rubric must not demand an undeclared liquid object or temperature fact.
+
+D3 distinguishes preparing actual edible food from dining setup. A meal request
+requires making a meal ready to eat, plus serving/delivery when requested;
+decorations or table setting alone score at most 0.25 for that request. Setup-only
+instructions do not require food. Reasonable cold meals and prepared food remain
+valid where cooking/warmth is not required. Do not invent package contents,
+portions, a menu or a specific serving arrangement. Explicit diner counts are
+requirements; two cups alone do not demonstrate two food servings. See the
+[D3 policy and contrasting examples](d3-meal-policy.md). The scale and aggregation
+weights are unchanged. This prompt revision requires fresh judge outputs;
+offline tests do not establish how a live judge will apply the policy.
 
 Replies require a nonempty rationale and exactly one score from
 `{0, 0.25, 0.5, 0.75, 1}`. Boolean and arbitrary numeric scores are rejected.

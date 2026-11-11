@@ -5,6 +5,9 @@ import pathlib
 from typing import List, Any, Dict, Union, Set, Tuple
 import copy
 
+from ..scene import normalize_links
+from ..pddl_effects import effects as ground_effects, typed_symbols
+
 
 class PDDLDomainParser:
     """
@@ -65,42 +68,13 @@ class PDDLDomainParser:
 
     def _extract_types(self) -> Dict[str, str]:
         """提取类型及其继承关系。"""
-        types_dict = {'object': None} # 'object' 是PDDL中的根类型
-        types_section = self._find_section(':types')
-        if not types_section:
-            return types_dict
-        
-        # 格式: [physobj, -, location, room, -, physobj, ...]
-        type_list = types_section[1:]
-        current_types = []
-        for item in type_list:
-            if item == '-':
-                parent_type = type_list[type_list.index(item) + 1]
-                for t in current_types:
-                    types_dict[t] = parent_type
-                current_types = []
-            else:
-                if item not in types_dict:
-                     types_dict[item] = 'object' # 默认父类型
-                current_types.append(item)
-        return types_dict
+        section = self._find_section(':types')
+        return typed_symbols(section[1:]) if section else {}
 
 
     def _parse_typed_list(self, typed_list: List[str]) -> Dict[str, str]:
         """解析带有类型的列表，例如 '(?ag - agent ?obj - physobj)'。"""
-        params = {}
-        i = 0
-        while i < len(typed_list):
-            param_name = typed_list[i]
-            if i + 1 < len(typed_list) and typed_list[i+1] == '-':
-                param_type = typed_list[i+2]
-                params[param_name] = param_type
-                i += 3
-            else:
-                # 处理没有明确类型的参数，默认为 'object'
-                params[param_name] = 'object'
-                i += 1
-        return params
+        return typed_symbols(typed_list)
 
     def _extract_predicates(self) -> Dict[str, Dict[str, str]]:
         """提取所有谓词及其参数。"""
@@ -255,39 +229,7 @@ class SceneGraphManager:
         self.extract_all_predicates()
 
     def _upgrade_links_format(self):
-        """
-        [新增] 检查并转换links格式。
-        将输入的 ['container', 'item', 'relation'] 列表转换为
-        {'relation': ..., 'from': ..., 'to': ...} 的字典格式，以便内部处理。
-        这个操作是幂等的，如果已经是字典格式则不会重复转换。
-        """
-        if 'links' not in self.scene_graph or not isinstance(self.scene_graph['links'], list):
-            self.scene_graph['links'] = []
-            return
-
-        upgraded_links = []
-        for link in self.scene_graph['links']:
-            # 如果是旧的列表格式 [obj1, obj2, relation]
-            if isinstance(link, list) and len(link) == 3:
-                obj1, obj2, relation = link
-                new_link_dict = {}
-                # 根据你的原始代码逻辑:
-                # (item_on_surface ?obj ?surface) -> link: [surface, obj, 'on']
-                # (item_in_receptacle ?obj ?receptacle) -> link: [receptacle, obj, 'in']
-                # 所以 obj2 是 item, obj1 是 container/surface
-                if relation in ['on', 'in']:
-                    new_link_dict = {'relation': relation, 'from': obj2, 'to': obj1}
-                # 你可以为其他简单的关系在这里添加转换规则
-                
-                if new_link_dict:
-                    upgraded_links.append(new_link_dict)
-            
-            # 如果已经是新的字典格式，直接保留
-            elif isinstance(link, dict):
-                upgraded_links.append(link)
-        
-        # 用升级后的links列表替换旧的
-        self.scene_graph['links'] = upgraded_links
+        self.scene_graph['links'] = normalize_links(self.scene_graph)
 
     def _build_object_map(self):
         """创建一个从对象名称到其类别和详细信息的映射，并确保每个物体都有谓词列表。"""
@@ -373,15 +315,11 @@ class SceneGraphManager:
                 # --- 新增对 next_to 的处理 ---
                 elif relation == 'next_to' and 'obj1' in link and 'obj2' in link and 'location' in link:
                     i1, i2, s = link['obj1'], link['obj2'], link['location']
-                    predicate = ['next_to', i1, i2, s]
-                    # 将这个关系谓词存储在所有三个相关的对象上，以便查询
-                    if i1 in self.object_map:
-                         self.object_map[i1]['data']['predicates'].append(predicate)
-                    if i2 in self.object_map:
-                         self.object_map[i2]['data']['predicates'].append(predicate)
-                    if s in self.object_map:
-                         self.object_map[s]['data']['predicates'].append(predicate)
-        
+                    for first, second in ((i1, i2), (i2, i1)):
+                        predicate = ['next_to', first, second, s]
+                        for name in (i1, i2, s):
+                            self.object_map[name]['data']['predicates'].append(predicate)
+
         # 4. 从 "agent" 中提取谓词
         if 'agent' in self.scene_graph:
             for agent_info in self.scene_graph['agent']:
@@ -626,65 +564,32 @@ class SceneGraphManager:
 
         param_map = dict(zip(param_keys, bound_params))
 
-        effects = copy.deepcopy(action.get('effect', []))
-        if not effects:
-             return # 没有效果，直接返回
+        self._apply_grounded_effects(action['effect'], param_map)
 
-        if effects and effects[0] == 'and':
-            effects_to_apply = effects[1:]
-        else:
-            effects_to_apply = [effects]
-        # effects_to_apply = self.parse_effect(effects)
-
-        for effect in effects_to_apply:
-            # is_negated = isinstance(effect, list) and effect and effect[0] == 'not'
-            # predicate_exp = effect[1] if is_negated else effect
-            
-            # if not isinstance(predicate_exp, list) or not predicate_exp: continue
-
-            # pred_name = predicate_exp[0]
-            # pred_params = [param_map.get(p, p) for p in predicate_exp[1:]]
-            # process to formated predicate(with param) and the passed to next
-            predicate_with_params = SceneGraphManager.fill_predicate_with_params(effect, param_map)
-            self.apply_predicates(predicate_with_params)
-            
-        # 修改后，重建对象映射并重新提取所有谓词到物体节点中
+    def _apply_grounded_effects(self, expression, bindings, validate_scene=True):
+        objects = {name: self.get_object_pddl_type(name) for name in self.object_map}
+        grounded = ground_effects(expression, bindings, objects=objects, parents=self.pddl_parser.types)
+        # Apply deletions before additions, matching PDDL simultaneous effects.
+        for negative in (True, False):
+            for is_negative, atom in grounded:
+                if is_negative == negative:
+                    self._apply_effect(atom[0], list(atom[1:]), is_negative)
+        if validate_scene:
+            self._upgrade_links_format()
         self._build_object_map()
         self.extract_all_predicates()
-        
-    def apply_predicates(self, predicate_with_param: List[Any]):
+
+    def apply_predicates(self, predicate_with_param):
+        """Apply a grounded expression, including typed forall effects.
+
+        Legacy callers may submit one action's effects separately. Consistency
+        is checked at complete-action and scene-to-problem boundaries so those
+        callers can pass through a temporary state between delete effects.
         """
-        直接将一个具体化的谓词列表（包括肯定和否定形式）应用到场景图上。
-
-        Args:
-            predicates List[Any]: 一个谓词, 谓词本身是一个列表。
-            例如:
-            - Positive: ['item_on_surface', 'apple_1', 'table_1']
-            - Negative: ['not', ['holding', 'agent_0', 'sponge_1']]
-        """
-        if not isinstance(predicate_with_param, list) or not predicate_with_param:
-            return 
-        
-        predicate_exp_list = self.parse_predicate(predicate_with_param)
-
-        for predicate_exp in predicate_exp_list:
-            # 解析肯定/否定形式
-            is_negated = (predicate_exp[0] == 'not')
-            atomic_predicate = predicate_exp[1] if is_negated else predicate_exp
-
-            if not isinstance(atomic_predicate, list) or not atomic_predicate:
-                return 
-
-            pred_name = atomic_predicate[0]
-            pred_params = atomic_predicate[1:]
-
-            # 使用核心的 _apply_effect 方法来修改场景图
-            self._apply_effect(pred_name, pred_params, is_negated)
-
-            # 在所有谓词都应用完毕后，刷新整个管理器的状态以确保一致性
-            # self._build_object_map()
-            # self.extract_all_predicates(
-        
+        if isinstance(predicate_with_param, str):
+            predicate_with_param = self.pddl_parser._s_exp_parse(
+                self.pddl_parser._preprocess_content(predicate_with_param).split())
+        self._apply_grounded_effects(predicate_with_param, {}, validate_scene=False)
 
     def _apply_effect(self, pred_name: str, params: List[str], is_negated: bool):
         """[已修改] 内部辅助函数，用于具体执行单个效果的修改 (现在处理字典格式的link)。"""
@@ -693,7 +598,8 @@ class SceneGraphManager:
         # --- 新增对 next_to 的处理 ---
         if pred_name == "next_to":
             if len(params) != 3: return # 参数数量不符
-            link_dict = {'relation': 'next_to', 'obj1': params[0], 'obj2': params[1], 'location': params[2]}
+            first, second = sorted(params[:2])
+            link_dict = {'relation': 'next_to', 'obj1': first, 'obj2': second, 'location': params[2]}
             if value_to_set:
                 if link_dict not in self.scene_graph['links']:
                     self.scene_graph['links'].append(link_dict)

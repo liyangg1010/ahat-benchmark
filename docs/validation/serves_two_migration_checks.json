@@ -1,0 +1,73 @@
+{
+  "revision": "serves-two-v1",
+  "date": "2026-11-11",
+  "baseline_sha256": "0a6a8dbd13570d728f1bb079536c0db467b530fbf4b201fab65b82ff51a8b4b0",
+  "source_sha256": "6f4c5b75033599f7c59f4e1bbf68714f4871c714eef1c106ca3d7fb990c5eec6",
+  "domain_sha256": "495b55b3156427c4c08d5c5b750d73d37a54cd83d0b8b41ede2740fcba0614c3",
+  "rubric": "ahat-rubric-serves-two-v5",
+  "task_count": 355,
+  "split_counts": {
+    "easy": 149,
+    "medium": 98,
+    "open": 108
+  },
+  "changed_cases": [
+    {
+      "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+      "split": "open",
+      "changed_fields": [
+        "scene_graph",
+        "reference_goal"
+      ],
+      "instruction_and_plan_unchanged": true,
+      "d2_d3_d4_inputs_unchanged": true
+    },
+    {
+      "id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "split": "open",
+      "changed_fields": [
+        "scene_graph",
+        "reference_goal"
+      ],
+      "instruction_and_plan_unchanged": true,
+      "d2_d3_d4_inputs_unchanged": true
+    }
+  ],
+  "easy_medium_data_bytes_unchanged": true,
+  "historical_provenance_entries_preserved": [
+    "local_corrections",
+    "local_pruning",
+    "local_annotations",
+    "local_additions",
+    "local_cooking",
+    "local_cooking_goals",
+    "local_warm_brunch_goal",
+    "local_heated"
+  ],
+  "prompt_checks": {
+    "src/ahat_benchmark/judge/paper_rubric/Goal_Achievement.txt": {
+      "before_sha256": "0e9a568a48e2cf2cab06dde62dd365fea6e7b997e1a287129f2c3a8a21b41e48",
+      "after_sha256": "d973918a1f63b0ecfbf1781e415c2a497a1a304cf5009b6658becd16f14a6136",
+      "changed": true
+    },
+    "src/ahat_benchmark/judge/paper_rubric/Intent_Understanding.txt": {
+      "before_sha256": "2b5a53eb4220e4bc6b29fe24176d1e3302998ffaa292730284f0f2e3830f9584",
+      "after_sha256": "2b5a53eb4220e4bc6b29fe24176d1e3302998ffaa292730284f0f2e3830f9584",
+      "changed": false
+    },
+    "src/ahat_benchmark/judge/paper_rubric/Completeness.txt": {
+      "before_sha256": "02ffdd70d0f574c062410fdcf845f90ea35f48108550bb3222401b6aa60dd412",
+      "after_sha256": "02ffdd70d0f574c062410fdcf845f90ea35f48108550bb3222401b6aa60dd412",
+      "changed": false
+    },
+    "src/ahat_benchmark/judge/paper_rubric/Execution_Quality.txt": {
+      "before_sha256": "5f9151291867431a24fa3a7a76f5c85b936fe65a99749335ed82d3bbcf85223d",
+      "after_sha256": "5f9151291867431a24fa3a7a76f5c85b936fe65a99749335ed82d3bbcf85223d",
+      "changed": false
+    }
+  },
+  "tests_passed": 74,
+  "reference_plans_valid": 355,
+  "reference_goals_reached": 18,
+  "live_judge_calls": 0
+}

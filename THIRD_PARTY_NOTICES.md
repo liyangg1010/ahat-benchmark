@@ -9,13 +9,16 @@ relicense it under MIT.
 | AHAT evaluation code, domain and prompts | `src/ahat_benchmark/`, `vendor/pddl/` | MIT; copyright 2026 Sii-liuzhihong; [original text](licenses/AHAT-MIT), [upstream](https://github.com/Sii-liuzhihong/AHAT) |
 | Scene-graph and PDDL utilities | `src/ahat_benchmark/vendor/` | MIT; copyright 2024 embodied-agent-interface; [original text](licenses/EMBODIED-AGENT-INTERFACE-MIT) |
 | VAL executable and shared library | `vendor/val/` | BSD-3-Clause; copyright 2019 University of Strathclyde, King's College London and Schlumberger Ltd; [original text](licenses/VAL-BSD-3-Clause), [upstream](https://github.com/KCL-Planning/VAL) |
-| Paper rubric text | `src/ahat_benchmark/judge/paper_rubric/` | Copied from AHAT; also attributed to Liu, Li, Huang, Lu and Cai, *Any House Any Task*, [Appendix A.3](https://arxiv.org/html/2602.12244v2#A3); paper CC BY 4.0, [terms](licenses/CC-BY-4.0) |
+| Paper-derived rubric text | `src/ahat_benchmark/judge/paper_rubric/` | Derived from AHAT with local adjacency-policy revisions; attributed to Liu, Li, Huang, Lu and Cai, *Any House Any Task*, [Appendix A.3](https://arxiv.org/html/2602.12244v2#A3); paper CC BY 4.0, [terms](licenses/CC-BY-4.0) |
 | AHAT evaluation data and derived split files | `benchmarks/` | **CC BY-NC 4.0**; noncommercial use with attribution; [terms](licenses/CC-BY-NC-4.0), [pinned dataset card](licenses/AHAT-DATASET-CARD.md) |
 
 The 348-case dataset is from
 [`SII-liyang2024/AHAT-dataset`](https://huggingface.co/datasets/SII-liyang2024/AHAT-dataset/tree/44de8a66c58cfd4cea03923bed9dbb8bd69d8f85),
 revision `44de8a66c58cfd4cea03923bed9dbb8bd69d8f85`.
-The source JSONL is unchanged. Runtime split files project each record to
+The bundled JSONL includes documented local corrections, pruning, annotations
+and 10 locally authored adjacency tasks, also distributed under CC BY-NC 4.0.
+The upstream hash remains recorded separately from local artifacts.
+Runtime split files project each record to
 `id`, `instruction` and `scene_graph`; reference plans are not evaluator inputs.
 Source hashes and transformations are recorded in `benchmarks/hf_sync.json`.
 Please retain the dataset attribution and cite the paper when using it.

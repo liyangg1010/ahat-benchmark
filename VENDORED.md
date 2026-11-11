@@ -6,13 +6,13 @@ scene-graph adapter. Component licenses are in
 
 | File | Original source | Changes |
 | --- | --- | --- |
-| `src/ahat_benchmark/vendor/scene_graph.py` | embodied-agent-interface AHAT adapter: `fix_plan_pddl/update_sg/dynamic_sg.py` | Byte-exact copy |
+| `src/ahat_benchmark/vendor/scene_graph.py` | embodied-agent-interface AHAT adapter: `fix_plan_pddl/update_sg/dynamic_sg.py` | Local person-location correction, typed-symbol parsing, canonical scene links and shared universal effect grounding |
 | `src/ahat_benchmark/vendor/problem_generator.py` | Adapter: `fix_plan_pddl/goal_solver/problem_generator_plan.py` | Package-local imports; unused solver dependency removed; retained utility, unused by the full-scene evaluator |
-| `src/ahat_benchmark/pddl.py` | AHAT: `baseline/llm/run_eval_rubric.py` | Port of full-scene generation and simultaneous STRIPS simulation |
-| `src/ahat_benchmark/val/validator.py` | AHAT audited reviewer and `baseline/llm/review_luna_benchmark.py` | Standalone wrapper; pre-VAL action/arity checks |
-| `src/ahat_benchmark/judge/scene_summary.py` | Audited adapter's `sum_sg_content` | Port of the D2 inventory/location format |
-| `src/ahat_benchmark/judge/paper_rubric/*.txt` | AHAT: `baseline/llm/prompts/paper_rubric/` | Four byte-exact original prompts, including placeholder examples |
-| `vendor/pddl/domain_0102_test.pddl` | HF `SII-liyang2024/AHAT-dataset/ahat_domain.pddl`, revision `44de8a66c58cfd4cea03923bed9dbb8bd69d8f85` | Local extension: `require_floor_cleaner` and the target of `clean_room_floor` accept `physobj` |
+| `src/ahat_benchmark/pddl.py` | AHAT: `baseline/llm/run_eval_rubric.py` | Port of full-scene generation and simultaneous effects; local typed universal deletion support in `pddl_effects.py` |
+| `src/ahat_benchmark/val/validator.py` | AHAT audited reviewer and `baseline/llm/review_luna_benchmark.py` | Standalone wrapper; pre-VAL action/arity, object declaration and inherited type checks |
+| `src/ahat_benchmark/judge/scene_summary.py` | Audited adapter's `sum_sg_content` | Legacy inventory format plus normalized dictionary links and initial adjacency |
+| `src/ahat_benchmark/judge/paper_rubric/*.txt` | AHAT: `baseline/llm/prompts/paper_rubric/` | Local `ahat-rubric-cooking-v2` revisions distinguish required/optional adjacency, cleanup and cooking/heating evidence |
+| `vendor/pddl/domain_0102_test.pddl` | HF `SII-liyang2024/AHAT-dataset/ahat_domain.pddl`; upstream revision/hash in `hf_sync.json.domain` | Floor-cleaning extension, universal adjacency deletion and appliance-specific cooking/heating; local hash in `hf_sync.json.local_domain` |
 | `vendor/val/Validate`, `vendor/val/libVAL.so` | Runtime selected by AHAT's audited reviewer | Byte-exact Linux x86-64 binary snapshot |
 
 The audited reviewer source SHA-256 is
@@ -28,6 +28,7 @@ assets into `ahat_benchmark/resources` during wheel construction.
 Source/editable installs use the top-level copies. This keeps a single source
 copy of the data and excludes local outputs, credentials and audit tools.
 
-The domain extends the pinned HF dataset snapshot with broader floor-cleaning
-target types. See [dataset notes](docs/datasets.md); a different domain is a
+The domain extends the pinned HF snapshot with broader floor-cleaning
+target types, consistent adjacency cleanup and explicit cooking/heating capabilities.
+See [dataset notes](docs/datasets.md); a different domain is a
 different protocol.

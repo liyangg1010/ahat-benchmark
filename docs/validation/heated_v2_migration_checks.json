@@ -1,0 +1,121 @@
+{
+  "kind": "offline_heated_only_migration_and_install_checks_not_llm_scores",
+  "revision": "heated-v2",
+  "date": "2026-11-11",
+  "task_count": 355,
+  "baseline_source_sha256": "1c8ee7d527985f73ef01c5430d721886ba9afd59ce9d76ab1ac1b15a1bd3937d",
+  "ids_instructions_splits_and_order_unchanged": true,
+  "unchanged_records": 347,
+  "change_counts": {
+    "changed_records": 8,
+    "changed_scenes": 7,
+    "changed_plans": 3,
+    "changed_goals": 4
+  },
+  "changed_records": [
+    {
+      "id": "a9f01a35-f905-499e-ac54-007822d408c3",
+      "split": "easy",
+      "changed_fields": [
+        "scene_graph"
+      ]
+    },
+    {
+      "id": "8708a9fe-8ed0-49a8-9339-36f8d2a11611",
+      "split": "medium",
+      "changed_fields": [
+        "scene_graph"
+      ]
+    },
+    {
+      "id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+      "split": "medium",
+      "changed_fields": [
+        "scene_graph"
+      ]
+    },
+    {
+      "id": "02a5f844-c663-4336-b6c9-fad5540b7cd5",
+      "split": "medium",
+      "changed_fields": [
+        "scene_graph",
+        "reference_goal"
+      ]
+    },
+    {
+      "id": "9c120c15-b00a-4544-bafa-ffeece47d701",
+      "split": "medium",
+      "changed_fields": [
+        "scene_graph"
+      ]
+    },
+    {
+      "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+      "split": "open",
+      "changed_fields": [
+        "scene_graph",
+        "plan",
+        "reference_goal"
+      ]
+    },
+    {
+      "id": "fd22ff41-4720-497c-bad3-7411b468b6cc",
+      "split": "open",
+      "changed_fields": [
+        "scene_graph",
+        "plan",
+        "reference_goal"
+      ]
+    },
+    {
+      "id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "split": "open",
+      "changed_fields": [
+        "plan",
+        "reference_goal"
+      ]
+    }
+  ],
+  "split_counts": {
+    "easy": 1,
+    "medium": 4,
+    "open": 3
+  },
+  "unit_tests_passed": 69,
+  "reference_check_counts": {
+    "valid": 355,
+    "annotated_goals_passed": 18,
+    "adjacency_controls_passed": 11,
+    "cooking_controls_passed": 4,
+    "cooking_scene_roundtrip_steps": 80,
+    "scene_roundtrip_steps": 61
+  },
+  "checks": {
+    "preflight_candidate_passed": true,
+    "idempotence_zero_pending": true,
+    "source_doctor_passed": true,
+    "offline_demo_passed": true,
+    "sdist_and_wheel_built": true,
+    "distribution_inspection_passed": true,
+    "isolated_installed_wheel_doctor_passed": true,
+    "installed_reference_goals_passed": 4,
+    "installed_scene_replay_steps": 80,
+    "installed_offline_demo_passed": true,
+    "old_doneness_semantics_retired": true
+  },
+  "live_llm_calls": 0,
+  "input_and_implementation_sha256": {
+    "vendor/pddl/domain_0102_test.pddl": "f91f1243e66e14dfc69269145539e2f704322e4bc0c1c81e86142886eed678b7",
+    "benchmark_manifest.json": "309a5546b0bb079558c0127b2a45cfe8ba4fee0f30566dd39f33222332cdb0f2",
+    "benchmarks/ahat_eval_set.jsonl": "0a6a8dbd13570d728f1bb079536c0db467b530fbf4b201fab65b82ff51a8b4b0",
+    "benchmarks/hf_sync.json": "078a95cab1d408a8bd0304947b7414fc32fe7af73009c6f49e7edccb36233ea6",
+    "scripts/repair_cooking.py": "4e11ff0d4599fbbfc7b372c500500dd2c6cb773197a009f856069a28f5c3a35e",
+    "scripts/audit_cooking_goals.py": "aa631c97a90b8ee77992f03e9754231bd317041fe42b04b12d7cc99c72d3cc80",
+    "tests/test_cooking.py": "725381518e8f79d28ccca96095459e2da4bc5996c2c2859cad19b882bded9c51",
+    "tests/test_cooking_goals.py": "772d6a3a098c8b9ddc0c4c778fc53c4e22d25ae5d822a346dce578c065d948f4",
+    "src/ahat_benchmark/judge/paper_rubric/Goal_Achievement.txt": "0e9a568a48e2cf2cab06dde62dd365fea6e7b997e1a287129f2c3a8a21b41e48",
+    "src/ahat_benchmark/judge/paper_rubric/Intent_Understanding.txt": "2b5a53eb4220e4bc6b29fe24176d1e3302998ffaa292730284f0f2e3830f9584",
+    "src/ahat_benchmark/judge/paper_rubric/Completeness.txt": "02ffdd70d0f574c062410fdcf845f90ea35f48108550bb3222401b6aa60dd412",
+    "src/ahat_benchmark/judge/paper_rubric/Execution_Quality.txt": "5f9151291867431a24fa3a7a76f5c85b936fe65a99749335ed82d3bbcf85223d"
+  }
+}

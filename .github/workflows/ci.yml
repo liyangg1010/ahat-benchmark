@@ -24,7 +24,14 @@ jobs:
         run: |
           python -m unittest discover -s tests -v
           ahat-benchmark doctor
+          python scripts/build_liquid_domain.py --check
           python scripts/check_reference_plans.py
+          python scripts/check_dinner_references.py
+          python scripts/check_dinner_references.py --adoption docs/validation/group_meal_reference_v1_adoption.json --output outputs/group_meal_reference_checks.json
+          python scripts/check_dinner_references.py --adoption docs/validation/guest_dinner_v1_adoption.json --output outputs/guest_dinner_checks.json
+          python scripts/check_domain_types.py
+          python scripts/audit_liquid.py
+          ahat-benchmark export-inputs --dataset ahat-medium --output outputs/medium-inputs.json
           python examples/offline_demo.py
           python scripts/check_release.py
           python scripts/export_public.py --output-dir outputs/ci-public-export
@@ -41,3 +48,4 @@ jobs:
           cd "$RUNNER_TEMP"
           "$RUNNER_TEMP/ahat-wheel-env/bin/python" -I -m ahat_benchmark doctor
           "$RUNNER_TEMP/ahat-wheel-env/bin/python" -I ahat-wheel-examples/offline_demo.py --output-dir ahat-wheel-output
+          "$RUNNER_TEMP/ahat-wheel-env/bin/python" -I ahat-wheel-examples/check_installed_liquid.py

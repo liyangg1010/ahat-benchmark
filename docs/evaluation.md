@@ -3,18 +3,45 @@
 The evaluation pipeline follows AHAT's `baseline/llm/run_eval_rubric.py` reviewer used for
 saved GPT results, with the action/arity guard from `review_luna_benchmark.py`.
 The paper-derived prompts, current domain and VAL runtime are fingerprinted
-in `benchmark_manifest.json`. Version 2.3.0 uses `ahat-rubric-portions-and-order-v6` and
+in `benchmark_manifest.json`. Version 2.3.0 uses `ahat-rubric-scene-lighting-v7` and
 `ahat-v8-group-portions`: the prompts distinguish required and optional
 adjacency and unified thermal processing. Pickup removes old adjacency in the domain. These prompts are
 local revisions of the original paper text. [Parity evidence](validation/parity.md)
 records the historical implementation comparison, not parity of the new rubric.
 
-The current task set has 296 cases (130/74/92) after
-[meal coverage pruning](meal-pruning.md) and [liquid coverage pruning](liquid-pruning.md).
-Sixteen open meal variants and 43 easy/medium liquid variants were removed;
-surviving scenes, instructions, plans, goals, domain and rubric are unchanged.
-Regenerate inference for these IDs and use a new evaluation output directory.
-Historical aggregate scores on 339/348/355 tasks are not directly comparable.
+The current task set has 274 cases (117/65/92): 244 use the ordinary
+domain and rubric, while 30 use the liquid domain and liquid rubric. Seven
+unsupported liquid candidates are quarantined outside the scoring denominator.
+The preceding liquid-pruning revision had 296 tasks; its retained records were
+unchanged at that stage. See [liquid-v1](liquid-domain.md) for the subsequent repairs.
+Both domains use revision `type-hierarchy-v1`, reserving PDDL's built-in `object`
+root and declaring scene items as `small_object`. The liquid domain retains
+the bottle-refill-v1 rule requiring lidded containers to be open before faucet filling.
+Filling, dispensing and pouring are available only in the liquid domain; ordinary
+tasks using those removed actions are rejected as unknown actions. Cleaning and
+soaking with a faucet remain supported in both domains.
+See [type repair and full validation](domain-types.md); re-export problems and
+regenerate results with the new domain hashes.
+See [bottle refill repairs and deduplication](bottle-refill.md). The liquid rubric is
+`ahat-rubric-liquid-lighting-v2`. Lighting uses light_on/off and is_light_on,
+including furniture lamps; no separate power state is required for lights.
+D2 includes precise agent locations, synchronized room links and complete human
+inventories. See [the scene and lighting repair](scene-lighting.md).
+Person positions now use `person.location` or, when absent/null, the unique
+physical location in normalized `on`/`in` links. A consistent room edge is a
+projection of a precise position, not a second `person_at`. Ambiguous/conflicting
+positions and unknown/nonphysical targets are rejected; absent evidence remains
+unspecified. This restores 61 missing initial/final `person_at` facts for D1;
+D2 also includes normalized `person_locations`. No dataset or domain changes
+are required. Implementation fingerprints invalidate previous caches; use fresh
+VAL/judge outputs after upgrading. See [FIX-020](repair-log.md#fix-020人物位置从-scene-到-pddl-的转换).
+
+All cache consumers compare VAL plans with normalized inference actions before
+reuse or judge requests, and valid cached initial states with the current scene.
+Result files carry a cases-content hash; judge upstream signatures bind that hash
+as well as input/protocol provenance, so changing VAL results invalidates old
+judge checkpoints. These checks detect corruption/mismatches, not malicious
+rewriting of both a file and its checksums.
 
 ## Deterministic validation
 
@@ -52,16 +79,17 @@ Each valid plan receives four independent chat-completions calls:
 | D4 Execution Quality | Instruction and plan | 0.20 |
 
 The final state starts from the initial PDDL persisted by VAL and applies the
-domain's simultaneous delete/add effects, including typed unconditional `forall`
-effects for adjacency cleanup. No additional effects are
+domain's simultaneous delete/add effects, including typed `forall` and pre-state conditional `when`
+effects for adjacency cleanup and liquid transfer. No additional effects are
 inferred by mutating the scene graph. The domain's declared semantics, including
 omissions, determine D1 evidence.
 
 Static `serves_two` / `serves_group` facts on explicitly annotated food nodes survive execution
 and reach D1 through this same state path. D1 checks quantity alongside requested
 processing and serving; capacity alone is not completion. All six retained
-two-person/family/guest meals have a relevant food-capacity declaration. D2/D3/D4
-input formats remain unchanged and do not receive capacity facts; see
+two-person/family/guest meals have a relevant food-capacity declaration. Ordinary-domain D2/D3/D4
+do not receive capacity facts; the later D2 inventory/location additions described above
+do not change that policy. See
 [food capacity and required plan stages](group-portions-and-order.md).
 
 D3 checks required earlier phases even when cleanup later undoes their results;
@@ -93,10 +121,16 @@ use the same processing rules. No separate doneness or initial cooked state is
 modeled; `is_food` identifies food but is not required to heat other objects.
 Power-on alone does not establish `heated`. Require processing only when the
 instruction requests it, not merely fetching food or setting a table. There are
-18 offline reference goal annotations, including four processing tasks with legal
-controls that omit heat processing and fail their targets. See
+19 offline reference goal annotations, including the four original processing tasks
+and the guest-dinner example with legal controls that omit heating and fail their
+targets. Seven adopted dinner/group-meal examples also have independent outcome
+checks (one additionally requires an ordered serving stage). See
 [current thermal semantics](heated.md). Existing quantity and full-meal coverage
 limits remain; goal reachability does not certify all annotations sufficient.
+The cooking audit reports its nine historical deferred records separately from
+their current repaired reference examples; none of those nine remains an
+unresolved reference repair. This does not claim a complete symbolic success
+definition for every natural-language instruction.
 
 These object-processing checks do not add liquid-temperature tracking. Fill/pour
 and self-heating kettle tasks retain their container/device-state abstraction;

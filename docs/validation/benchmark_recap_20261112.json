@@ -1,0 +1,159 @@
+{
+  "revision": "benchmark-recap-20261112",
+  "source_sha256": "222bcd1b84c05a7233e676c23beb2d3c099b2fbe470c5625b81a5f1dcaff0e04",
+  "task_count": 287,
+  "splits": {
+    "easy": 130,
+    "medium": 65,
+    "open": 92
+  },
+  "domains": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+      "revision": "type-hierarchy-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+      "revision": "type-hierarchy-v1"
+    }
+  },
+  "domain_counts": {
+    "ahat-v8-group-portions": 257,
+    "ahat-liquid-v1": 30
+  },
+  "split_versions": {
+    "easy": "1.10.0",
+    "medium": "1.10.0",
+    "open": "1.10.4"
+  },
+  "reference_goal_count": 19,
+  "quarantined_case_count": 7,
+  "evidence": {
+    "guest_dinner_v1_reference_checks": {
+      "path": "docs/validation/guest_dinner_v1_reference_checks.json",
+      "sha256": "5eeb21218b4c60038455c6031d6da0ba331bde63ef776d93b52e8e96606f2ea1",
+      "counts": {
+        "valid": 287,
+        "annotated_goals_passed": 19,
+        "adjacency_controls_passed": 11,
+        "cooking_controls_passed": 4,
+        "cooking_scene_roundtrip_steps": 80,
+        "scene_roundtrip_steps": 61
+      },
+      "reuse_basis": "unchanged source and domains; relevant runtime files unchanged by this recap"
+    },
+    "guest_dinner_v1_scene_checks": {
+      "path": "docs/validation/guest_dinner_v1_scene_checks.json",
+      "sha256": "9ff2d57567ce6ab86a721364f66429476397577bd3b14e4176c88cb594230903",
+      "counts": {
+        "domains_checked": 2,
+        "scene_replay_steps": 4168,
+        "cases_checked": 287,
+        "independently_parsed_problems": 287,
+        "initial_facts_dropped": 0
+      },
+      "reuse_basis": "unchanged source and domains; relevant runtime files unchanged by this recap"
+    },
+    "guest_dinner_v1_goal_checks": {
+      "path": "docs/validation/guest_dinner_v1_goal_checks.json",
+      "sha256": "57bbe037d3068cce0007628de7bcc12967ea847551c062a9829152661fb5c978",
+      "counts": {
+        "valid_references_and_final_goals": 1,
+        "omission_controls": 2,
+        "serving_controls": 1,
+        "capacity_controls": 3
+      },
+      "reuse_basis": "unchanged source and domains; relevant runtime files unchanged by this recap"
+    },
+    "liquid": {
+      "path": "docs/validation/recap_20261112_liquid_checks.json",
+      "sha256": "1f4506b4ebdd3dfdec041e343bc21d163ff10773d643ef512da85b8a979b9018",
+      "counts": {
+        "reference_outcomes_reached": 32,
+        "scene_replay_steps": 483,
+        "omission_controls": 74
+      }
+    },
+    "cooking": {
+      "path": "docs/validation/recap_20261112_cooking_checks.json",
+      "sha256": "3c17d24817b17702409b5afdce4d98c85754679bd8452c743b198f6fa954546f",
+      "historical_deferred": 9,
+      "current_repaired_references": 9,
+      "current_deferred_reference_repairs": 0
+    }
+  },
+  "reference_free_exports": [
+    {
+      "split": "easy",
+      "count": 130,
+      "path": "outputs/recap-20261112/inputs/easy.json",
+      "sha256": "23a41cdb9e4435321cc5faeb155cb6eb58e9d8ea8a7afa72487754a4a0f58cc5",
+      "domain_counts": {
+        "ahat-v8-group-portions": 125,
+        "ahat-liquid-v1": 5
+      }
+    },
+    {
+      "split": "medium",
+      "count": 65,
+      "path": "outputs/recap-20261112/inputs/medium.json",
+      "sha256": "3bba9c298065e8ec9dad836de32003581b836093d5709b7432de6050e4101e5f",
+      "domain_counts": {
+        "ahat-liquid-v1": 23,
+        "ahat-v8-group-portions": 42
+      }
+    },
+    {
+      "split": "open",
+      "count": 92,
+      "path": "outputs/recap-20261112/inputs/open.json",
+      "sha256": "231de7409b83be824e96ba87b7d707008b882e0beebfdbeec5a1d7dc767d0e7c",
+      "domain_counts": {
+        "ahat-v8-group-portions": 90,
+        "ahat-liquid-v1": 2
+      }
+    }
+  ],
+  "tests": {
+    "count": 115,
+    "passed": true,
+    "integration_uses_mock_api": true
+  },
+  "fixed_this_recap": [
+    "single-domain inference example and missing result domain bindings",
+    "historical deferred meal counts presented as current"
+  ],
+  "known_deferred_model_gaps": [
+    "closed ancestor container accessibility",
+    "liquid scene invariant closure",
+    "spatial on/in cycles"
+  ],
+  "reference_plan_steps_over_50": [
+    {
+      "id": "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+      "instruction": "Prepare an elegant dinner and ambiance",
+      "steps": 62
+    },
+    {
+      "id": "937d7013-4182-44a5-86e7-4da7c8a9f4f2",
+      "instruction": "Get everything ready for overnight visitors.",
+      "steps": 61
+    },
+    {
+      "id": "4a3dc074-3cd6-4241-a4a5-2c37f31c99a1",
+      "instruction": "Host a formal dinner and cleanup",
+      "steps": 76
+    }
+  ],
+  "historical_direct_launcher": {
+    "expected_tasks": 348,
+    "one_shared_domain": true,
+    "ready_for_current_dataset": false
+  },
+  "live_gpt_or_judge_calls_this_recap": 0,
+  "scope": "Current checked data and execution paths pass; not a proof of universal modeling or instruction-level correctness."
+}

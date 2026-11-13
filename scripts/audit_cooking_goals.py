@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the two semantically reviewed references and deferred-case evidence.
+"""Check historical goal certification and current meal-reference repairs separately.
 
 VAL checks reachability, not natural-language sufficiency. The manual coverage
 arguments and model limits are in docs/heated.md. This script guards
@@ -25,6 +25,9 @@ from repair_cooking import (ADDITIONAL_TWO_SERVING_FOODS, BREAKFAST, CONFIRMED_G
 
 
 INVENTORY = ROOT / 'docs/validation/cooking_goal_inventory.json'
+MEAL_ADOPTIONS = [ROOT / 'docs/validation' / name for name in (
+    'dinner_reference_v1_adoption.json', 'group_meal_reference_v1_adoption.json',
+    'guest_dinner_v1_adoption.json')]
 
 
 def require(condition, message):
@@ -83,6 +86,36 @@ def validate(row, plan):
     return result['problem_pddl']
 
 
+def current_meal_status(cases, historical_deferred):
+    """Resolve historical flags from checked, explicit repair evidence, not names."""
+    repaired = {}
+    for path in MEAL_ADOPTIONS:
+        adoption = json.loads(path.read_text())
+        for record in adoption['records']:
+            case_id = record['id']
+            require(case_id not in repaired, 'Duplicate meal adoption')
+            row = cases[case_id]
+            require(row['plan'] == record['plan'], 'Adopted meal reference changed; repeat review')
+            if record.get('reference_goal_written'):
+                require(row.get('reference_goal') == record['final_goals'], 'Adopted meal goal changed')
+            problem = validate(row, row['plan'])
+            require(native_goal(problem, row['plan'], record['final_goals']), 'Adopted meal outcome missed')
+            for stage in record['stage_goals']:
+                require(native_goal(problem, row['plan'][:stage['after_step']], stage['goals']),
+                        'Adopted meal serving stage missed')
+            repaired[case_id] = {'id': case_id, 'status': 'reference_example_repaired',
+                                 'revision': adoption['revision'],
+                                 'goal_scope': 'concrete_example_not_exhaustive_success_definition'}
+    # These two references and their capacity/heat/serving controls are checked
+    # by audit() above; their original missing-portion objections are resolved.
+    for case_id in TWO_SERVING_FOODS:
+        repaired[case_id] = {'id': case_id, 'status': 'reference_example_repaired',
+                             'revision': 'serves-two-v1',
+                             'goal_scope': 'concrete_example_not_exhaustive_success_definition'}
+    return [repaired.get(r['id'], {'id': r['id'], 'status': 'reference_review_pending'})
+            for r in historical_deferred]
+
+
 def audit(rows, baseline=None):
     cases = {r['id']: r for r in rows}
     inventory = json.loads(INVENTORY.read_text())
@@ -90,6 +123,11 @@ def audit(rows, baseline=None):
     approved_removals = {r['id'] for r in pruning['records'] if r['proposal'] == 'remove'}
     liquid_pruning = json.loads((ROOT / 'docs/validation/liquid_pruning_inventory.json').read_text())
     approved_removals |= {r['id'] for r in liquid_pruning['records'] if r['decision'] == 'remove'}
+    liquid_inventory = ROOT / 'docs/validation/liquid_v1_inventory.json'
+    if liquid_inventory.exists():
+        approved_removals |= {r['id'] for r in json.loads(liquid_inventory.read_text())['records'] if r['decision'] == 'quarantine'}
+    easy_pruning = json.loads((ROOT / 'docs/validation/easy_pruning_v1_inventory.json').read_text())
+    approved_removals |= set(easy_pruning['remove_ids'])
     missing_ids = {r['id'] for r in inventory['records']} - set(cases)
     require(missing_ids <= approved_removals, 'Unapproved task missing from historical inventory')
     active_records = [r for r in inventory['records'] if r['id'] in cases]
@@ -117,7 +155,12 @@ def audit(rows, baseline=None):
         require([r['id'] for r in expected_baseline] == [r['id'] for r in rows], 'Task IDs/order changed')
         require(all((a['instruction'], a['type']) == (b['instruction'], b['type'])
                     for a, b in zip(expected_baseline, rows)), 'Instruction/split changed')
-        require(repair_cases(expected_baseline) == rows, 'Changes exceed approved pruning and scene/reference migration')
+        repaired = repair_cases(expected_baseline)
+        if liquid_inventory.exists():
+            from repair_liquid import repair
+            approved_ids = {r['id'] for r in json.loads(liquid_inventory.read_text())['records']}
+            repaired = [repair(r)[0] if r['id'] in approved_ids else r for r in repaired]
+        require(repaired == rows, 'Changes exceed approved pruning and scene/reference migration')
 
     records = []
     for case_id in CONFIRMED_GOAL_IDS:
@@ -235,14 +278,19 @@ def audit(rows, baseline=None):
     control = [a for a in warm['plan'] if not sexpr(a)[0].startswith('heat_')]
     validate(warm, control)
     require(not native_goal(reference_problem, control, warm['reference_goal']), 'Warm-brunch goal accepts no processing')
+    historical_deferred = [r for r in active_records if r['decision'] == 'deferred']
+    current_status = current_meal_status(cases, historical_deferred)
     return {'kind': 'manual_semantic_review_with_native_witnesses_not_llm_scores',
-            'revision': 'liquid-pruning-v1', 'inventory_revision': inventory['revision'], 'task_count': len(rows),
+            'revision': 'meal-reference-status-v1', 'inventory_revision': inventory['revision'], 'task_count': len(rows),
             'historical_inventory_count': len(inventory['records']),
             'approved_pruned_inventory_count': len(missing_ids),
             'group_counts': dict(Counter(r['group'] for r in active_records)),
             'explicit_food_thermal_requirements': sum(r['explicit_food_thermal_requirement'] for r in active_records),
             'confirmed_count': len(confirmed),
-            'deferred_meal_candidates': sum(r['decision'] == 'deferred' for r in active_records),
+            'historical_deferred_meal_candidates': len(historical_deferred),
+            'current_repaired_meal_references': sum(r['status'] == 'reference_example_repaired' for r in current_status),
+            'current_deferred_reference_repairs': sum(r['status'] == 'reference_review_pending' for r in current_status),
+            'current_meal_reference_status': current_status,
             'baseline_preservation_checked': baseline is not None, 'domain_premises': premises,
             'confirmed_references': records,
             'two_serving_checks': portion_checks,
@@ -267,14 +315,16 @@ def main():
     result['baseline_sha256'] = hashlib.sha256(args.baseline.read_bytes()).hexdigest() if args.baseline else None
     result['implementation_sha256'] = {p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
                                       for p in [DOMAIN, INVENTORY, ROOT / 'docs/validation/meal_pruning_inventory.json',
-                                                ROOT / 'docs/validation/liquid_pruning_inventory.json', Path(__file__),
+                                                ROOT / 'docs/validation/liquid_pruning_inventory.json',
+                                                ROOT / 'docs/validation/easy_pruning_v1_inventory.json', Path(__file__),
                                                 ROOT / 'scripts/repair_cooking.py',
                                                 ROOT / 'scripts/check_reference_plans.py',
                                                 *sorted((ROOT / 'src/ahat_benchmark').rglob('*.py'))]}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({k: result[k] for k in ['task_count', 'group_counts', 'explicit_food_thermal_requirements',
-                                          'confirmed_count', 'deferred_meal_candidates']}))
+                                          'confirmed_count', 'historical_deferred_meal_candidates',
+                                          'current_repaired_meal_references', 'current_deferred_reference_repairs']}))
 
 
 if __name__ == '__main__':

@@ -1,6 +1,53 @@
 # Datasets and custom inputs
 
-The bundled release has 296 cases: easy 130, medium 74 and open 92.
+The bundled development snapshot has 274 active cases: easy 117, medium 65 and open 92.
+Seven cases are quarantined with original records and reasons; they are not scored.
+There are 244 ordinary-domain cases and 30 liquid-domain cases. See
+[liquid-v1](liquid-domain.md) for domain assignment and migration details.
+The [scene-lighting-v1](scene-lighting.md) revision used split versions
+1.9.0 / 1.8.0 / 1.9.0. It repairs scene attributes/locations and 11 lighting
+reference plans without changing the task IDs, instructions or existing goals.
+Person inventories accept lists (legacy strings remain supported); agent room
+links are redundant projections of their precise `location`.
+The [bottle-refill-v1](bottle-refill.md) revision used split versions
+1.9.1 / 1.9.0 / 1.9.1, archives two redundant bottle tasks and adds opening to
+the two retained references. Both retained tasks explicitly use the liquid domain.
+The coffee-pod-v1 revision used split versions 1.9.1 / 1.9.1 / 1.9.1.
+It replaces one boxed coffee supply with a directly usable pod and removes box
+opening and redundant navigation from its reference. Cabinet opening and the
+hot-coffee delivery goals remain; both domains are unchanged. See
+[FIX-019](repair-log.md#fix-019咖啡胶囊原料与参考计划简化).
+The ordinary-core-v1 revision used split versions 1.9.2 / 1.9.2 / 1.9.2
+to bind the ordinary domain with five liquid actions removed. Dataset bytes,
+references and the liquid domain are unchanged; see
+[FIX-021](repair-log.md#fix-021普通-domain-移除液体制作与转移动作).
+The [type-hierarchy-v1](domain-types.md) revision used split versions
+1.10.0 / 1.10.0 / 1.10.0. Both domains reserve the built-in `object` root and use
+`small_object` for scene items. Task data bytes are unchanged; exported PDDL
+declarations and both domain hashes change, so regenerate inference inputs.
+The [dinner-food-v1](dinner-food.md) revision used split versions
+1.10.0 / 1.10.0 / 1.10.1. It adds eight explicit food nodes to three open dinner
+scenes, preserving all instructions, reference plans, goals and both domains.
+The [dinner-reference-v1](dinner-reference-candidates.md) revision used
+split versions 1.10.0 / 1.10.0 / 1.10.2. Three source reference plans now prepare
+and serve dinner, including ambiance or subsequent clearing where requested.
+Scene/input data and both domains are unchanged; final and ordered-stage witnesses
+remain offline verification records, not additional runtime scoring gates.
+The [group-meal-reference-v1](group-meal-references.md) revision used
+split versions 1.10.0 / 1.10.0 / 1.10.3. Three two-person/family references now
+heat and serve actual food. Add two two-serving foods to the dinner scene and
+one family-serving bread portion to the breakfast scene; preserve existing
+capacity annotations. Both domains and scoring rules are unchanged. Regenerate
+inputs and evaluations for the changed scenes; witness goals remain offline.
+The [guest-dinner-v1](guest-dinner.md) revision used split versions
+1.10.0 / 1.10.0 / 1.10.4. The guest-dinner scene adds group-serving salmon,
+potatoes and vegetables. Its 49-step reference heats, plates and serves them,
+then lights a candle; a sufficient example `reference_goal` is stored in the
+source task. Inference exports omit the reference plan/goal, and runtime scoring
+is unchanged. Regenerate this task's scene inputs and evaluations.
+The current [easy-pruning-v1](easy-pruning.md) revision uses split versions
+1.11.0 / 1.10.0 / 1.10.4. It archives 13 reviewed easy variants; all surviving
+source records and medium/open artifacts retain their bytes and order.
 The upstream snapshot is pinned to HF revision
 [`44de8a66c58cfd4cea03923bed9dbb8bd69d8f85`](https://huggingface.co/datasets/SII-liyang2024/AHAT-dataset/tree/44de8a66c58cfd4cea03923bed9dbb8bd69d8f85).
 Source SHA-256:
@@ -8,12 +55,12 @@ Source SHA-256:
 Data license: [CC BY-NC 4.0](../licenses/CC-BY-NC-4.0).
 
 `ahat_eval_set.jsonl` includes reference plans in `plan`, the local corrections,
-pruning and 10 locally authored adjacency tasks listed below. The source SHA-256 above identifies the unmodified
+pruning and eight active locally authored adjacency tasks (ten originally added). The source SHA-256 above identifies the unmodified
 348-record upstream file;
 `benchmarks/hf_sync.json` records hashes of the corrected bundled artifacts.
 Runtime `ahat-{easy,medium,open}/cases.json` files split by source `type`,
-preserve source order, and project to `id`, `instruction` and `scene_graph`.
-Each split manifest records the active runtime domain name and hash, case count,
+preserve source order, and project to `id`, `instruction`, `scene_graph` and optional `domain_id`.
+Each split manifest records the default domain, the registered domain IDs/hashes, case count,
 file hash, source revision and license. The `source_domain` field records the
 upstream HF domain label; it is retained for provenance and is not the runtime
 evaluation protocol.
@@ -25,23 +72,23 @@ results and a template for future corrections.
 
 ## Liquid coverage pruning
 
-The current [liquid-pruning-v1](liquid-pruning.md) revision removes 43 variants
+The preceding [liquid-pruning-v1](liquid-pruning.md) revision removes 43 variants
 from four categories: plain water 26→6, ready drinks 13→6, hot water 16→6 and
-plant/vase water 12→6. The other five categories are unchanged; current liquid
-coverage is 42 tasks in nine classes. A prior classification index error is
+plant/vase water 12→6. The other five categories are unchanged; liquid
+coverage at that revision is 42 tasks in nine classes. A prior classification index error is
 corrected without removing either affected benchmark task. All surviving source
 lines, fields and order are unchanged, including all 18 reference goals.
 Split versions are easy `1.7.0`, medium `1.6.0`, open `1.7.0`; open data/manifest,
 domain and rubric remain unchanged. `hf_sync.json.local_liquid_pruning` records
 the exact IDs, original instructions, representative mappings and snapshot hashes.
-See [current instructions](liquid-tasks.md). Use the current ID set and fresh
+See [historical instructions](liquid-tasks.md) and the subsequent [liquid-domain migration](liquid-domain.md). Use the current ID set and fresh
 evaluation outputs; historical aggregate scores have different denominators.
 
 ## Meal coverage pruning
 
 The subsequent [group-portions-v1](group-portions-and-order.md) revision adds
 food capacity to the other two-person and family/guest meals: four scenes change,
-with no instruction/plan/goal changes. Current split versions are 1.6.0/1.5.0/1.7.0,
+with no instruction/plan/goal changes. Split versions at that stage were 1.6.0/1.5.0/1.7.0,
 domain `ahat-v8-group-portions`. All six such meals now declare actual food capacity.
 `serves_group` means enough for the scenario's intended group; no numeric family/guest
 size is invented. [Liquid instruction classes](liquid-tasks.md) document a separate
@@ -167,8 +214,8 @@ Use a new evaluation output directory when adopting the corrected data.
 The bundled domain is based on the `ahat_domain.pddl` snapshot shipped with the
 pinned HF dataset. It includes `light_on` and `clean_item_with_faucet`, and fixes the
 missing `holding` deletions in `place_in_receptacle` and
-`hand_over_to_person`. All 296 reference plans validate with the current
-domain: easy 130, medium 74 and open 92. Reference plans are not supplied to
+`hand_over_to_person`. All 274 reference plans validate with their assigned
+domains: easy 117, medium 65 and open 92. Reference plans are not supplied to
 the LLM reviewer.
 
 The earlier local `ahat-v3-physobj-floor-cleaning` protocol widened the `?r` parameter of

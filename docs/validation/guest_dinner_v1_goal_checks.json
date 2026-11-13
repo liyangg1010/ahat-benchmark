@@ -1,0 +1,25 @@
+{
+  "revision": "guest-dinner-v1",
+  "source_sha256": "222bcd1b84c05a7233e676c23beb2d3c099b2fbe470c5625b81a5f1dcaff0e04",
+  "domains": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+      "revision": "type-hierarchy-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+      "revision": "type-hierarchy-v1"
+    }
+  },
+  "counts": {
+    "valid_references_and_final_goals": 1,
+    "omission_controls": 2,
+    "serving_controls": 1,
+    "capacity_controls": 3
+  },
+  "failures": []
+}

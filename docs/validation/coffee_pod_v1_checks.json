@@ -1,0 +1,108 @@
+{
+  "revision": "coffee-pod-v1",
+  "id": "05f9fb16-de68-4fb8-8cc7-4ad1714f7f72",
+  "source_index": 182,
+  "split": "medium",
+  "split_index": 58,
+  "instruction": "Prepare a hot cup of coffee in the kitchen and deliver it to the bedroom nightstand.",
+  "base_source_sha256": "81ef3c42d9abe6b8e568ae68c6243df968ef97cbeaf8941de42957a491317a70",
+  "source_sha256": "fa42e746754d826145e026800c553b6d9208fb3c0f1593100b7bcb3b1c1d28e0",
+  "domain_registry_unchanged": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "4b93389a6a3761e70e8712403b0516bc5d94ff9caffe96371cd31eaf08350e8a",
+      "revision": "scene-lighting-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "2faf00bc2e85600600cdc38a66d650a7ce1874854499973e64875d4e496e9c5f",
+      "revision": "bottle-refill-v1"
+    }
+  },
+  "node_before": {
+    "name": "coffee_pod_box_44",
+    "type": "coffee_pod_box",
+    "states": {
+      "can_dispense": true,
+      "can_be_opened": true,
+      "coffee_supply": true,
+      "ingredient_available": true
+    }
+  },
+  "node_after": {
+    "name": "coffee_pod_44",
+    "type": "coffee_pod",
+    "states": {
+      "coffee_supply": true,
+      "ingredient_available": true
+    }
+  },
+  "plan_before": [
+    "(navigate agent_0 kitchen_9 coffee_mug_43)",
+    "(pick_from_surface agent_0 coffee_mug_43 end_table_109)",
+    "(navigate agent_0 coffee_mug_43 sink_95)",
+    "(fill_from_faucet agent_0 coffee_mug_43 sink_95)",
+    "(navigate agent_0 sink_95 espresso_maker_86)",
+    "(pour_into agent_0 coffee_mug_43 espresso_maker_86)",
+    "(place_on_surface agent_0 coffee_mug_43 espresso_maker_86)",
+    "(navigate agent_0 espresso_maker_86 coffee_pod_box_44)",
+    "(open agent_0 coffee_pod_box_44)",
+    "(navigate agent_0 coffee_pod_box_44 kitchen_cabinet_84)",
+    "(open agent_0 kitchen_cabinet_84)",
+    "(navigate agent_0 kitchen_cabinet_84 coffee_pod_box_44)",
+    "(pick_from_receptacle agent_0 coffee_pod_box_44 kitchen_cabinet_84)",
+    "(navigate agent_0 coffee_pod_box_44 espresso_maker_86)",
+    "(load_coffee agent_0 coffee_pod_box_44 espresso_maker_86)",
+    "(navigate agent_0 espresso_maker_86 kitchen_cabinet_84)",
+    "(place_on_surface agent_0 coffee_pod_box_44 kitchen_cabinet_84)",
+    "(navigate agent_0 kitchen_cabinet_84 espresso_maker_86)",
+    "(power_on agent_0 espresso_maker_86)",
+    "(dispense_from_device agent_0 espresso_maker_86 coffee_mug_43)",
+    "(navigate agent_0 espresso_maker_86 coffee_mug_43)",
+    "(pick_from_surface agent_0 coffee_mug_43 espresso_maker_86)",
+    "(navigate agent_0 coffee_mug_43 nightstand_54)",
+    "(place_on_surface agent_0 coffee_mug_43 nightstand_54)"
+  ],
+  "plan_after": [
+    "(navigate agent_0 kitchen_9 coffee_mug_43)",
+    "(pick_from_surface agent_0 coffee_mug_43 end_table_109)",
+    "(navigate agent_0 coffee_mug_43 sink_95)",
+    "(fill_from_faucet agent_0 coffee_mug_43 sink_95)",
+    "(navigate agent_0 sink_95 espresso_maker_86)",
+    "(pour_into agent_0 coffee_mug_43 espresso_maker_86)",
+    "(place_on_surface agent_0 coffee_mug_43 espresso_maker_86)",
+    "(navigate agent_0 espresso_maker_86 kitchen_cabinet_84)",
+    "(open agent_0 kitchen_cabinet_84)",
+    "(navigate agent_0 kitchen_cabinet_84 coffee_pod_44)",
+    "(pick_from_receptacle agent_0 coffee_pod_44 kitchen_cabinet_84)",
+    "(navigate agent_0 coffee_pod_44 espresso_maker_86)",
+    "(load_coffee agent_0 coffee_pod_44 espresso_maker_86)",
+    "(navigate agent_0 espresso_maker_86 kitchen_cabinet_84)",
+    "(place_on_surface agent_0 coffee_pod_44 kitchen_cabinet_84)",
+    "(navigate agent_0 kitchen_cabinet_84 espresso_maker_86)",
+    "(power_on agent_0 espresso_maker_86)",
+    "(dispense_from_device agent_0 espresso_maker_86 coffee_mug_43)",
+    "(navigate agent_0 espresso_maker_86 coffee_mug_43)",
+    "(pick_from_surface agent_0 coffee_mug_43 espresso_maker_86)",
+    "(navigate agent_0 coffee_mug_43 nightstand_54)",
+    "(place_on_surface agent_0 coffee_mug_43 nightstand_54)"
+  ],
+  "goals_unchanged": [
+    "(item_on_surface coffee_mug_43 nightstand_54)",
+    "(is_filled coffee_mug_43)",
+    "(contains_coffee coffee_mug_43)",
+    "(contents_heated coffee_mug_43)"
+  ],
+  "validation": {
+    "native_val_status": "valid",
+    "native_goals_reached": true,
+    "scene_roundtrip_steps": 22,
+    "ingredient_consumed": true,
+    "without_open": "invalid",
+    "without_load_coffee": "invalid",
+    "other_source_lines_unchanged": 286
+  },
+  "failures": []
+}

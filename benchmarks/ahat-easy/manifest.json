@@ -1,11 +1,11 @@
 {
   "name": "ahat-easy",
-  "version": "1.7.0",
-  "case_count": 130,
-  "schema_version": "1.0",
+  "version": "1.11.0",
+  "case_count": 117,
+  "schema_version": "2.0",
   "domain": "ahat-v8-group-portions",
   "data_file": "cases.json",
-  "data_sha256": "630253937604f7b7e88b235c153a2431866bc3b38f1a7b1d9d4da6f681a766a0",
+  "data_sha256": "852b3fcb4b1506539b3b5d4ad8ea52dc463e4df5841186e7212bde1a9ea37305",
   "source": {
     "repository": "SII-liyang2024/AHAT-dataset",
     "file": "ahat_eval_set.jsonl",
@@ -14,7 +14,7 @@
     "sha256": "05cb4e725b5a8a93feb8c8609c768dc7a93371fb00c076f09ddaa104bdf8fc94"
   },
   "license": "CC-BY-NC-4.0",
-  "domain_sha256": "80f559c2786897313e6af5b55e290faa7b3c1856275b2805d02c3bfe8d743746",
+  "domain_sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
   "source_domain": "ahat-v2-hf-domain",
   "local_corrections": [
     "913ca94e-5eb2-44ec-8c82-867844780d57",
@@ -26,11 +26,21 @@
     "version": "next-to-v1",
     "ids": [
       "ce1d381a-2c02-5720-bd6f-bb4cbec0bc7e",
+      "101df926-f674-57ac-96b1-ffc6111e6e21",
+      "1277c042-3a66-5c9d-b6b4-7e201d28b62f",
+      "01cf3cd4-5412-5d0c-ab92-c92faf724386"
+    ],
+    "original_ids": [
+      "ce1d381a-2c02-5720-bd6f-bb4cbec0bc7e",
       "66405407-b3f4-549d-bec3-dc68b8fa5813",
       "cc6ac010-2c28-55cb-8a12-5c5b0aa07b75",
       "101df926-f674-57ac-96b1-ffc6111e6e21",
       "1277c042-3a66-5c9d-b6b4-7e201d28b62f",
       "01cf3cd4-5412-5d0c-ab92-c92faf724386"
+    ],
+    "archived_ids": [
+      "66405407-b3f4-549d-bec3-dc68b8fa5813",
+      "cc6ac010-2c28-55cb-8a12-5c5b0aa07b75"
     ]
   },
   "local_annotations": {
@@ -43,5 +53,26 @@
   "local_heated": "heated-v2",
   "local_serves_two": "serves-two-v1",
   "local_group_portions": "group-portions-v1",
-  "local_liquid_pruning": "liquid-pruning-v1"
+  "local_liquid_pruning": "liquid-pruning-v1",
+  "domains": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+      "revision": "type-hierarchy-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+      "revision": "type-hierarchy-v1"
+    }
+  },
+  "local_liquid_v1": "liquid-v1",
+  "local_action_invariants": "location-capacity-v1",
+  "local_scene_lighting": "scene-lighting-v1",
+  "local_bottle_refill": "bottle-refill-v1",
+  "local_ordinary_core": "ordinary-core-v1",
+  "local_type_hierarchy": "type-hierarchy-v1",
+  "local_easy_pruning": "easy-pruning-v1"
 }

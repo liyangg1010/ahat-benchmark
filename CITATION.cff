@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use AHAT Benchmark, please cite the AHAT paper and attribute the dataset."
 title: "AHAT Benchmark"
 version: 2.3.0
-date-released: "2026-11-10"
+date-released: "2026-11-13"
 type: software
 license: MIT
 authors:

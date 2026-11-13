@@ -1,0 +1,98 @@
+{
+  "revision": "location-capacity-v1",
+  "source_sha256": "600719d9c53ac423e94e0748b24307c0adef1e093cd8b5e8d3d6e78915b1fc0e",
+  "cases": [
+    {
+      "domain_id": "ahat-v8-group-portions",
+      "action": "move_furniture_to_room",
+      "robot_locations_before": 2,
+      "robot_locations_after": 1,
+      "stale_location_exploit_before": "valid",
+      "stale_location_exploit_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-v8-group-portions",
+      "action": "move_device_to_room",
+      "robot_locations_before": 2,
+      "robot_locations_after": 1,
+      "stale_location_exploit_before": "valid",
+      "stale_location_exploit_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-v8-group-portions",
+      "action": "place_on_surface",
+      "occupied_limited_support_before": "invalid",
+      "occupied_limited_support_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-v8-group-portions",
+      "action": "place_next_to_surface",
+      "occupied_limited_support_before": "valid",
+      "occupied_limited_support_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-v8-group-portions",
+      "action": "place_in_receptacle",
+      "occupied_limited_support_before": "valid",
+      "occupied_limited_support_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-v8-group-portions",
+      "action": "place_next_to_inside",
+      "occupied_limited_support_before": "valid",
+      "occupied_limited_support_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-liquid-v1",
+      "action": "move_furniture_to_room",
+      "robot_locations_before": 2,
+      "robot_locations_after": 1,
+      "stale_location_exploit_before": "valid",
+      "stale_location_exploit_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-liquid-v1",
+      "action": "move_device_to_room",
+      "robot_locations_before": 2,
+      "robot_locations_after": 1,
+      "stale_location_exploit_before": "valid",
+      "stale_location_exploit_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-liquid-v1",
+      "action": "place_on_surface",
+      "occupied_limited_support_before": "invalid",
+      "occupied_limited_support_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-liquid-v1",
+      "action": "place_next_to_surface",
+      "occupied_limited_support_before": "valid",
+      "occupied_limited_support_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-liquid-v1",
+      "action": "place_in_receptacle",
+      "occupied_limited_support_before": "valid",
+      "occupied_limited_support_after": "invalid"
+    },
+    {
+      "domain_id": "ahat-liquid-v1",
+      "action": "place_next_to_inside",
+      "occupied_limited_support_before": "valid",
+      "occupied_limited_support_after": "invalid"
+    }
+  ],
+  "domains": {
+    "ahat-v8-group-portions": {
+      "before_sha256": "80f559c2786897313e6af5b55e290faa7b3c1856275b2805d02c3bfe8d743746",
+      "after_sha256": "668eee6079e8c33e1c89f029cdea4b142f31976f1ec24b6900db61efd10d78df"
+    },
+    "ahat-liquid-v1": {
+      "before_sha256": "26d923cf60a6a7c9e3690cbb53d3ba64557bcca4ba3be44b3319cf76f2c9aa4d",
+      "after_sha256": "579020afff9b94f36b8f80d556651e33a1d28572d3c2bed3d7c1bd4e3d5cfb15"
+    }
+  },
+  "reference_states_unchanged": 289,
+  "task_records_changed": 0
+}

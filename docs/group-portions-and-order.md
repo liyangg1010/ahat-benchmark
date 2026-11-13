@@ -54,11 +54,24 @@ requested processing and serving/location evidence. No action or converter chang
 are needed. D2's inventory summary and D3/D4's plan-only inputs still do not receive
 scene capacity declarations.
 
-Only four source scenes change. All IDs, instructions, reference plans and goals
+At introduction, only four source scenes changed. All IDs, instructions, reference plans and goals
 are unchanged. In particular, the two-person brunch plan still leaves its eggs in
 storage: adding capacity does not imply they were prepared or served. The four
 new annotations do not certify the entire old reference plans as sufficient.
 No reference goal is added to these uncertain meals.
+
+Update (2026-11-12): [group-meal-reference-v1](group-meal-references.md) replaces
+the first three references above with actual heating and serving examples. The
+two-person brunch now serves its eggs and apple; dinner adds two-serving potatoes
+and vegetables, and family breakfast adds family-serving bread. These additions
+are explicit food capacities too. Initial capacity never implies initial heating.
+The guest-dinner reference is outside that repair. The earlier statements about
+unchanged plans and eggs left in storage describe the annotation-only revision.
+
+The later [guest-dinner-v1](guest-dinner.md) revision also completes the guest
+dinner: three new foods each declare serves_group, and its new oven/serving/lighting
+reference reaches a stored sufficient example reference_goal. The original cheese
+capacity annotation remains; it is not used to stand in for serving the new meal.
 
 ## Checking earlier stages with D3 and D4
 

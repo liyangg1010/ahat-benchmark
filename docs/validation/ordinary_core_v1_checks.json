@@ -1,0 +1,98 @@
+{
+  "revision": "ordinary-core-v1",
+  "source_sha256_unchanged": "fa42e746754d826145e026800c553b6d9208fb3c0f1593100b7bcb3b1c1d28e0",
+  "domains_before": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "4b93389a6a3761e70e8712403b0516bc5d94ff9caffe96371cd31eaf08350e8a",
+      "revision": "scene-lighting-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "2faf00bc2e85600600cdc38a66d650a7ce1874854499973e64875d4e496e9c5f",
+      "revision": "bottle-refill-v1"
+    }
+  },
+  "domains_after": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "e0ea026925e40b9e0e80a630d6d369cb50f15e80fa42da1e9b71e408b9be7f25",
+      "revision": "ordinary-core-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "2faf00bc2e85600600cdc38a66d650a7ce1874854499973e64875d4e496e9c5f",
+      "revision": "bottle-refill-v1"
+    }
+  },
+  "removed_actions": [
+    "dispense_from_device",
+    "fill_device_with_water",
+    "fill_from_faucet",
+    "pour",
+    "pour_into"
+  ],
+  "counts": {
+    "ordinary_references_without_removed_actions": 257,
+    "unchanged_initial_and_final_states": 287
+  },
+  "checks": {
+    "only_five_action_definitions_removed": true,
+    "liquid_domain_bytes_unchanged": true,
+    "all_initial_and_final_states_unchanged": true
+  },
+  "ordinary_action_count_before": 30,
+  "ordinary_action_count_after": 25,
+  "controls": [
+    {
+      "action": "fill_from_faucet",
+      "plan": [
+        "(fill_from_faucet agent_0 laptop_1 sink_1)"
+      ],
+      "old_status": "valid",
+      "new_status": "invalid",
+      "new_reason": "Unknown domain action"
+    },
+    {
+      "action": "fill_device_with_water",
+      "plan": [
+        "(fill_device_with_water agent_0 sink_1)"
+      ],
+      "old_status": "valid",
+      "new_status": "invalid",
+      "new_reason": "Unknown domain action"
+    },
+    {
+      "action": "dispense_from_device",
+      "plan": [
+        "(dispense_from_device agent_0 machine_1 cup_1)"
+      ],
+      "old_status": "valid",
+      "new_status": "invalid",
+      "new_reason": "Unknown domain action"
+    },
+    {
+      "action": "pour_into",
+      "plan": [
+        "(pour_into agent_0 laptop_1 cup_1)"
+      ],
+      "old_status": "valid",
+      "new_status": "invalid",
+      "new_reason": "Unknown domain action"
+    },
+    {
+      "action": "pour",
+      "plan": [
+        "(pour agent_0 laptop_1 sink_1)"
+      ],
+      "old_status": "valid",
+      "new_status": "invalid",
+      "new_reason": "Unknown domain action"
+    }
+  ],
+  "failures": []
+}

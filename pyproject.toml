@@ -24,7 +24,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-dev = ["build>=1.2"]
+dev = ["build>=1.2", "pddl==0.4.6"]
 
 [project.urls]
 Homepage = "https://tgpo2026.github.io/TGPO/"
@@ -39,7 +39,7 @@ ahat-benchmark = "ahat_benchmark.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-"ahat_benchmark.judge" = ["paper_rubric/*.txt"]
+"ahat_benchmark.judge" = ["paper_rubric/*.txt", "liquid_rubric/*.txt"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]

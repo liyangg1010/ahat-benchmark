@@ -1,0 +1,675 @@
+{
+  "kind": "offline_liquid_witness_validation_not_llm_scores",
+  "counts": {
+    "reference_outcomes_reached": 32,
+    "scene_replay_steps": 483,
+    "omission_controls": 74
+  },
+  "cases": [
+    {
+      "id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 reusable_water_bottle_24 sink_67)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "c172ca4c-9f21-407c-87e8-350cbebfe340",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 kettle_61 shower_stall_120)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "3b49cc0c-0f25-45b2-8c9a-dbc4f957f693",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_device_with_water agent_0 bathtub_9)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 watering_can_22 sink_55)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(water_plant agent_0 watering_can_22 potted_plant_34)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 drinking_glass_63 bathtub_33)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "a9f01a35-f905-499e-ac54-007822d408c3",
+      "domain_id": null,
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": []
+    },
+    {
+      "id": "8708a9fe-8ed0-49a8-9339-36f8d2a11611",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_1 kettle_1 cabinet_112)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(heat_liquid_in_kettle agent_1 kettle_1)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_1 kettle_1 bowl_2)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 electric_kettle_23 sink_3)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(heat_liquid_in_kettle agent_0 electric_kettle_23)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 electric_kettle_23 mug_24)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "44a3890d-31fb-4a53-b9d2-1d7f2e22f686",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 reusable_water_bottle_47 sink_cabinet_46)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "679dc145-55cf-4f32-9000-dad6d9a16d60",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 watering_can_18 sink_60)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "f8e914bb-3f3a-43de-8b8f-c86cbaf6894f",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 mug_17 bathtub_26)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 mug_17 coffee_machine_16)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(load_coffee agent_0 coffee_pod_18 coffee_machine_16)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(dispense_from_device agent_0 coffee_machine_16 mug_17)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "bd6d5204-77c2-4be5-bd70-9f60a25d6a9d",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 electric_kettle_32 sink_cabinet_38)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(heat_liquid_in_kettle agent_0 electric_kettle_32)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 electric_kettle_32 mug_33)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": []
+    },
+    {
+      "id": "184f5333-3807-406c-bec5-124adc3cd227",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 hot_pot_saucepan_26 shower_stall_42)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "8eaf1794-e3f0-4f38-aa7e-d6b77872d7a8",
+      "domain_id": null,
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": []
+    },
+    {
+      "id": "99c7a3e4-033a-4142-8cb9-9d2bd63c5748",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 electric_kettle_40 sink_63)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(heat_liquid_in_kettle agent_0 electric_kettle_40)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 electric_kettle_40 ceramic_mug_41)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(load_tea agent_0 box_of_tea_bags_42 ceramic_mug_41)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(brew_tea agent_0 ceramic_mug_41)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "8a288187-e7a6-47a9-bfad-2543976de82e",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 watering_can_24 sink_67)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(water_plant agent_0 watering_can_24 potted_plant_40)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(fill_from_faucet agent_0 watering_can_24 sink_67)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(water_plant agent_0 watering_can_24 potted_plant_41)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "cea31743-32c3-4f59-b07e-b12a71e840de",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 kettle_28 pedestal_sink_13)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "23178c37-3b65-4dff-9eb5-3c5d1e985232",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 electric_kettle_44 sink_6)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(heat_liquid_in_kettle agent_0 electric_kettle_44)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 electric_kettle_44 instant_noodle_cup_45)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(prepare_instant_noodles agent_0 instant_noodle_cup_45)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "2cd06e0a-88a9-45a6-a5e3-a378199d6414",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 coffee_mug_40 bathtub_79)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 coffee_mug_40 coffee_machine_39)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(load_coffee agent_0 coffee_pod_box_41 coffee_machine_39)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(dispense_from_device agent_0 coffee_machine_39 coffee_mug_40)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "6d1fc47f-358b-4bf5-b8ce-eb61f66d8fa0",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 electric_kettle_14 sink_3)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(heat_liquid_in_kettle agent_0 electric_kettle_14)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 electric_kettle_14 ceramic_cup_17)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "a6858c23-0cee-461d-bbf3-c9951bfbbda3",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 electric_kettle_17 sink_4)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(heat_liquid_in_kettle agent_0 electric_kettle_17)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 electric_kettle_17 teacup_18)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(load_tea agent_0 tea_box_19 teacup_18)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(brew_tea agent_0 teacup_18)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "7f0a1344-6ce2-4860-8b0d-1d6de7219fdd",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(inspect_water_container robot_0 jug_1)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "41eef001-7744-4656-bb14-84c8920b2fde",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_1 vase_0 cabinet_21)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "12b30bd2-1470-4249-9b4c-080acc03c4eb",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 ceramic_mug_37 sink_cabinet_60)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 ceramic_mug_37 coffee_machine_36)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(load_coffee agent_0 coffee_canister_38 coffee_machine_36)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(dispense_from_device agent_0 coffee_machine_36 ceramic_mug_37)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "4377c209-f70e-4cc9-a0d9-c09e1ffef3b9",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 watering_can_32 bathtub_117)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(water_plant agent_0 watering_can_32 potted_herbs_33)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "c77c47ae-9d7a-4369-abbd-c305498e2aad",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 electric_kettle_35 sink_74)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(heat_liquid_in_kettle agent_0 electric_kettle_35)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 electric_kettle_35 teacup_36)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "3a12822b-f774-4834-b9af-b741f2592c5e",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 electric_kettle_44 sink_6)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(heat_liquid_in_kettle agent_0 electric_kettle_44)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 electric_kettle_44 teacup_45)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(load_tea agent_0 tea_container_46 teacup_45)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(brew_tea agent_0 teacup_45)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "72d3763d-58b9-4f1f-befe-eed2fba16f6b",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 electric_kettle_45 shower_stall_75)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(heat_liquid_in_kettle agent_0 electric_kettle_45)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 electric_kettle_45 instant_noodle_cup_46)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(prepare_instant_noodles agent_0 instant_noodle_cup_46)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "05f9fb16-de68-4fb8-8cc7-4ad1714f7f72",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 coffee_mug_43 sink_95)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(pour_into agent_0 coffee_mug_43 espresso_maker_86)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(load_coffee agent_0 coffee_pod_44 espresso_maker_86)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        },
+        {
+          "omitted": "(dispense_from_device agent_0 espresso_maker_86 coffee_mug_43)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "ed9e36b8-03bb-43bb-a260-37bcc20d9f53",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 drinking_cup_85 sink_2)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    },
+    {
+      "id": "3a5724ed-a1f5-4869-86ae-b1a21c969c6f",
+      "domain_id": "ahat-liquid-v1",
+      "valid": true,
+      "outcomes_reached": true,
+      "controls": [
+        {
+          "omitted": "(fill_from_faucet agent_0 water_glass_16 kitchen_sink_24)",
+          "invalid_or_outcome_missed": true,
+          "required_stage_missed": true
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "source_sha256": "222bcd1b84c05a7233e676c23beb2d3c099b2fbe470c5625b81a5f1dcaff0e04",
+  "baseline_sha256": null,
+  "domains": {
+    "ahat-v8-group-portions": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+    "ahat-liquid-v1": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919"
+  },
+  "implementation_sha256": {
+    "scripts/audit_liquid.py": "ffee41d0e5df990b37ec9975d99f6da33761e2115a814abdf62c7896efc35ba6",
+    "scripts/repair_liquid.py": "29ed5cfa1145eb5fd1deb7ee0952db60129c2b087f0a2e0eb184432ec6f27ea7",
+    "scripts/build_liquid_domain.py": "300ffb549215240da88e3e1f6a9165f8d35e0235001c715538973279736ab97a",
+    "src/ahat_benchmark/__init__.py": "fcd04606e4729c7a72efe0549256eed4bb0094c75a13100dde80acc85e621094",
+    "src/ahat_benchmark/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/ahat_benchmark/cli.py": "f36882526458b7deb8d9d6ab930b8e5d81f22fcec7b0bede9b6cd03f0bf87971",
+    "src/ahat_benchmark/config.py": "a97a341757923bd31f9f6237743b70a5e8fb6c28f3842abb29f4d991ed47c000",
+    "src/ahat_benchmark/datasets.py": "e125269b3ecadea47fb31e6dfe58b2103efb3433db6b933d696623c6540164f2",
+    "src/ahat_benchmark/domains.py": "5ad4836395223164919f6501f22353bcd8ea0993e97b177510555dc8dfd44708",
+    "src/ahat_benchmark/inference_inputs.py": "1c75a450c6eed8def16a293c66a6bbc19d3ca4edec06a3ec11d04a5acd54a585",
+    "src/ahat_benchmark/io.py": "f4b0f9ec9ffb3c02478cb6c4e80f57196e65071d4293cf43d25696a03fa3df25",
+    "src/ahat_benchmark/judge/__init__.py": "927805ab5f1c98a4c7677f9184eaf5019ee93a30f1a46275068872d097561607",
+    "src/ahat_benchmark/judge/aggregator.py": "cccde5c51c8d95de5e0c8c6651ac53d77ce529d40c0df3dba33e47dd8a872c6e",
+    "src/ahat_benchmark/judge/evaluator.py": "9424b34ce975bc118428ef07244abaf7404ac5df936f85213428f9d121168c91",
+    "src/ahat_benchmark/judge/prompts.py": "9c4c1f7aa41c66e10b32b9c06e04421f247f45eb94cdde418395c21750091601",
+    "src/ahat_benchmark/judge/scene_summary.py": "34acae5d5da09ba5362ebc0512a10fe5a29272983526ce09d9fac8e735f2a3dd",
+    "src/ahat_benchmark/liquid.py": "6638de0272eb3058147f822165566140139266b3d85cdb431d3790f8c7420624",
+    "src/ahat_benchmark/pddl.py": "2fb67efc29f0f264fac3518d89719aa5574e2137fe147b9692ea748af44b4b63",
+    "src/ahat_benchmark/pddl_effects.py": "9a8eea604e26302099806f342baeb4caf7f8c02f9491962461caedc0c0db7fc5",
+    "src/ahat_benchmark/pipeline/__init__.py": "f44ff1f6aab9b9895e32250642883b31e2afc99db3b24872f537597c2593fd09",
+    "src/ahat_benchmark/pipeline/cache.py": "5f57b71ee65e6d0ee67c819f218b86af45c96f89f19731947bb3707dc1db2921",
+    "src/ahat_benchmark/pipeline/common.py": "558a4381c6818bab68dae7ee58afa13a5f0cb211b55f1b195d460722a0e58b0a",
+    "src/ahat_benchmark/pipeline/judge_stage.py": "4f7257635d478e2ce77133e061859e07833ac1664fb39d78ecd2bae31cf1d45a",
+    "src/ahat_benchmark/pipeline/summarize.py": "205bae099ff9b0a72f1c2b8ca184fda2f7fa67174b215cde36e765119562f06e",
+    "src/ahat_benchmark/pipeline/val_stage.py": "b239cbe085d4825ffc7c0c2f42c8b92745cf814e82e5b4c4c77ffef8ef8401e1",
+    "src/ahat_benchmark/provenance.py": "96427794a53fffb1a031b3f2b409560a72529c02847408be68b55fc1d005e3f6",
+    "src/ahat_benchmark/scene.py": "56e281ad66dd47d868517285df57ce63e84d50b1a51413fa15718b51ef50604c",
+    "src/ahat_benchmark/schemas.py": "9410ad35a4b84da480d5cfd93ad4a4ce0234da82a3876db600abf81191b9689f",
+    "src/ahat_benchmark/val/__init__.py": "0fe705bb2ab35325eada6bebcdef5462e9d39dcdbfdbd2be87a42892f9ab88d2",
+    "src/ahat_benchmark/val/validator.py": "bd47546d44e4f64674c1bda0895230d7ba72cce890b7d5a8bbaba764e2d4a169",
+    "src/ahat_benchmark/vendor/__init__.py": "04e37e2ef78955acb83da436e81958de5583b1fffc4d68c22d2fbcb990801470",
+    "src/ahat_benchmark/vendor/problem_generator.py": "181502d42ce858453a4717e59dbfd3cab1b7019c7a118ea158135e91ff9f560e",
+    "src/ahat_benchmark/vendor/scene_graph.py": "e934e7409e93e55aa91baf3487d1ea8eabbc25de86f035d60598a2aa846f1a6b"
+  }
+}

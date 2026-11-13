@@ -1,0 +1,25 @@
+{
+  "revision": "type-hierarchy-v1",
+  "package_version": "2.3.0",
+  "published": false,
+  "source_and_distribution_release_checks": "passed",
+  "installed_doctor": "passed",
+  "installed_checks": {
+    "valid": 287,
+    "native_goals": 50,
+    "liquid_replay_steps": 471,
+    "mixed_pipeline": "passed_mock_judge_real_VAL",
+    "reference_free_export": "passed"
+  },
+  "artifacts": [
+    {
+      "filename": "ahat_benchmark-2.3.0-py3-none-linux_x86_64.whl",
+      "sha256": "eee119bcc4e694feacf57f1b5dcb6859d87933371a360c52c820256cb7f38f94"
+    },
+    {
+      "filename": "ahat_benchmark-2.3.0.tar.gz",
+      "sha256": "9c5e5ffae36d5d469d39b1ec3f1cac21af6f5e61fbb43ab617fb7479a5642869"
+    }
+  ],
+  "failures": []
+}

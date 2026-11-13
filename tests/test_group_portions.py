@@ -22,6 +22,11 @@ class GroupPortionTests(unittest.TestCase):
             (cls.repair['ADDITIONAL_TWO_SERVING_FOODS'], 'serves_two'),
             (cls.repair['GROUP_SERVING_FOODS'], 'serves_group')]
             for i, food in mapping.items()]
+        for name in ['group_meal_reference_v1_adoption.json', 'guest_dinner_v1_adoption.json']:
+            adoption = json.loads((PROJECT / 'docs/validation' / name).read_text())
+            cls.additions = sorted(set(cls.additions) | {
+                (r['id'], c['food'], c['predicate']) for r in adoption['records']
+                for c in r['controls']['missing_capacity']})
 
     def test_new_capacity_facts_reach_actual_d1_requests_without_inventing_processing(self):
         for case_id, food, pred in self.additions:
@@ -34,7 +39,11 @@ class GroupPortionTests(unittest.TestCase):
                 call = next(c for c in client.calls if c['messages'][0]['content'] == PROMPTS['D1'])
                 self.assertIn(f'({pred} {food})', call['messages'][1]['content'])
                 self.assertIn(['is_food', food], result['pddl_end_state'])
-                self.assertNotIn(['heated', food], result['pddl_end_state'])
+                self.assertNotIn(['heated', food], compute_final_state(row['scene_graph'], [], DOMAIN))
+                no_heat = [step for step in row['plan'] if not sexpr(step)[0].startswith('heat_')]
+                unprocessed = compute_final_state(row['scene_graph'], no_heat, DOMAIN)
+                self.assertNotIn(['heated', food], unprocessed)
+                self.assertIn([pred, food], unprocessed)
                 if pred == 'serves_group':
                     self.assertNotIn(['serves_two', food], result['pddl_end_state'])
 
@@ -51,13 +60,13 @@ class GroupPortionTests(unittest.TestCase):
                 self.assertEqual(state, final_state(problem, row['plan'][:i], DOMAIN))
 
     def test_false_absent_capacity_is_not_inferred_and_annotations_stay_explicit(self):
-        annotations = {}
+        annotations = set()
         for row in self.rows:
             for node in row['scene_graph']['objects']:
                 if node.get('states', {}).get('serves_group'):
                     self.assertTrue(node['states']['is_food'])
-                    annotations[row['id']] = node['name']
-        self.assertEqual(annotations, self.repair['GROUP_SERVING_FOODS'])
+                    annotations.add((row['id'], node['name']))
+        self.assertEqual(annotations, {(i, food) for i, food, pred in self.additions if pred == 'serves_group'})
         self.assertEqual(self.repair['repair_cases'](self.rows), self.rows)
         for case_id, food, pred in self.additions:
             row = self.cases[case_id]

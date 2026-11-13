@@ -1,0 +1,44 @@
+{
+  "kind": "offline_completion_audit_not_algorithm_or_live_judge_scores",
+  "base_commit": "c14898f",
+  "active_cases": 289,
+  "domain_counts": {
+    "ahat-v8-group-portions": 257,
+    "ahat-liquid-v1": 32
+  },
+  "quarantined_cases": 7,
+  "unit_and_integration_tests": 87,
+  "existing_goals_preserved": 18,
+  "ordinary_source_lines_and_reference_states_unchanged": 255,
+  "ordinary_domain_and_rubric_bytes_unchanged": true,
+  "source_fingerprints": {
+    "benchmark_manifest.json": "3a8ba33d688dd93c57bdd5fcea78f073d1b790b4e6ec02beee9272cb918f8a4b",
+    "benchmarks/ahat_eval_set.jsonl": "600719d9c53ac423e94e0748b24307c0adef1e093cd8b5e8d3d6e78915b1fc0e",
+    "benchmarks/hf_sync.json": "568c754be83f4896d8fb83cbf072294f5001d563c47cd92ac7724f3ce0e5ef6d",
+    "vendor/pddl/domain_0102_test.pddl": "80f559c2786897313e6af5b55e290faa7b3c1856275b2805d02c3bfe8d743746",
+    "vendor/pddl/domain_liquid_v1.pddl": "26d923cf60a6a7c9e3690cbb53d3ba64557bcca4ba3be44b3319cf76f2c9aa4d"
+  },
+  "artifacts": {
+    "ahat_benchmark-2.3.0.tar.gz": "66923503cec460e692a2ccb5223bed59933b50941a861519c87e70511a6db8bf",
+    "ahat_benchmark-2.3.0-py3-none-linux_x86_64.whl": "ab2d8f19ebc555eb55044899607974538d586d5e3ab3e695b5e564481e3ff145"
+  },
+  "installed_check": {
+    "valid": 289,
+    "native_goals": 52,
+    "liquid_replay_steps": 483,
+    "mixed_pipeline": "passed_mock_judge_real_VAL",
+    "reference_free_export": "passed"
+  },
+  "validation_evidence": [
+    "liquid_v1_inventory.json",
+    "liquid_v1_checks.json",
+    "liquid_v1_reference_checks.json",
+    "liquid_v1_cooking_checks.json"
+  ],
+  "limitations": [
+    "No numeric volume, partial transfer, mixing, cooling or overnight retention.",
+    "Two abstract refreshment references assert observable drink/service outcomes without certifying subjective quality or unspecified fruit contents.",
+    "External algorithms must consume task-specific domains via the provided export/API; historical external experiment snapshots were not modified.",
+    "No live judge or algorithm runs; mixed pipeline checks use a mock judge."
+  ]
+}

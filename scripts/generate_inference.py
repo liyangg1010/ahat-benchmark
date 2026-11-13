@@ -20,6 +20,7 @@ from openai import OpenAI  # noqa: E402
 
 from ahat_benchmark.config import load_config, resolve_project_path  # noqa: E402
 from ahat_benchmark.datasets import load_eval_set  # noqa: E402
+from ahat_benchmark.domains import domain_binding, resolve_domain  # noqa: E402
 from ahat_benchmark.io import write_json_atomic  # noqa: E402
 from ahat_benchmark.schemas import normalize_plan  # noqa: E402
 
@@ -114,8 +115,7 @@ def main() -> int:
         / "outputs"
         / f"inference-{args.dataset}-{safe_model_name(model)}.json"
     )
-    domain_path = resolve_project_path(config["domain"], config["_config_path"])
-    domain = domain_path.read_text(encoding="utf-8")
+    default_domain = resolve_project_path(config["domain"], config["_config_path"])
     cases = load_eval_set(args.dataset)
     selected_cases = cases if args.limit == 0 else cases[: args.limit]
     client = OpenAI(
@@ -133,6 +133,9 @@ def main() -> int:
         "results": [],
     }
     for index, case in enumerate(selected_cases, start=1):
+        domain_path = resolve_domain(case.domain_id, default_domain)
+        domain = domain_path.read_text(encoding="utf-8")
+        binding = domain_binding(case.domain_id, default_domain)
         print(f"[{index}/{len(selected_cases)}] inferring {case.id}...", flush=True)
         raw_response: str | None = None
         error: str | None = None
@@ -153,6 +156,7 @@ def main() -> int:
         output["results"].append(
             {
                 "id": case.id,
+                **binding,
                 "plan": plan,
                 "raw_response": raw_response,
                 "error": error,

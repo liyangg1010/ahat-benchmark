@@ -1,0 +1,428 @@
+{
+  "revision": "liquid-v1",
+  "base_sha256": "0df84da9ed81615e0e8d06e364a0e45be08bca44ddfb6407341db489ddc91cef",
+  "active_count": 289,
+  "decisions": {
+    "migrate": 32,
+    "retain_base": 5,
+    "repair_equipment": 2,
+    "quarantine": 7
+  },
+  "records": [
+    {
+      "source_index": 3,
+      "id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+      "instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+      "split": "easy",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "4b70bcb85444e82d126091a2ed0fc78c99474e6132e640a3d00cbac4fa451a71"
+    },
+    {
+      "source_index": 8,
+      "id": "e9fed962-33e0-43ce-a5f0-ed603c0fe7d6",
+      "instruction": "Pick up the milk_tea_cup from sink in kitchen and deliver it to person at dining_table in dining_room.",
+      "split": "easy",
+      "decision": "retain_base",
+      "reason": "Ready-drink transport; existing object identity and spatial semantics suffice.",
+      "before_sha256": "bddcc9628d7a1192d03744a735e3d053161e349fe3f5b05011f7e1f5ad6d8b37"
+    },
+    {
+      "source_index": 10,
+      "id": "c172ca4c-9f21-407c-87e8-350cbebfe340",
+      "instruction": "Can you fill the kettle with water for me?",
+      "split": "easy",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "a1c78d04157c760685177bdab0692e520a98a2d9ce407e7e09c64f9f483b0f3a"
+    },
+    {
+      "source_index": 15,
+      "id": "3b49cc0c-0f25-45b2-8c9a-dbc4f957f693",
+      "instruction": "Can you fill the tub for my bath?",
+      "split": "easy",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "5f4c33f112895926963eddb828a33f4747b5533628b93475993d6e19962272e6"
+    },
+    {
+      "source_index": 22,
+      "id": "adb0fda4-53b4-418f-9154-39dd81aeaf78",
+      "instruction": "Go to the kitchen, open the refrigerator, pick up the bottle of bubble tea from inside the refrigerator, and bring it to the person in bedroom.001 and hand it over to them.",
+      "split": "easy",
+      "decision": "retain_base",
+      "reason": "Ready-drink transport; existing object identity and spatial semantics suffice.",
+      "before_sha256": "6b80ecbe70e833f19867eff47d130af0122663ce03881627b1ff6b60d5c54694"
+    },
+    {
+      "source_index": 99,
+      "id": "8b696fe2-79cb-412f-94a1-0c7cb5a5da84",
+      "instruction": "Hey, could you water the living room plant for me?",
+      "split": "easy",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "61744e4d0061e50f42254d1208f2f7bc97da87dcd46cb1f56c9cfe87b3649142"
+    },
+    {
+      "source_index": 104,
+      "id": "6f3adc5c-dc18-480e-852d-dcfca0387ba7",
+      "instruction": "I'm a bit parched — could you bring me a glass of water, please?",
+      "split": "easy",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "da9e3473f313d1144be81302cda7321d34a5b385ef1e3c1df6ad0957d06db16f"
+    },
+    {
+      "source_index": 113,
+      "id": "a9f01a35-f905-499e-ac54-007822d408c3",
+      "instruction": "On this chilly Inner Mongolian morning, please bring my teapot and an electric kettle to the bathroom so I can carefully pour and prepare hot water for myself and my spouse.",
+      "split": "easy",
+      "decision": "repair_equipment",
+      "reason": "Equipment preparation only; no automatic tea/hot-water completion requirement.",
+      "before_sha256": "20fdd16c24d8940d264b42b224fc3be1eef518669e83004a22cfc28cc9c3eb71"
+    },
+    {
+      "source_index": 120,
+      "id": "ab270610-f68d-4ccf-8ced-455a237f8dc5",
+      "instruction": "Gather a glass from the kitchen, get ice from the garage fridge (represent as bottle for ice container), and take a juice bottle from the dining room, and set them up next to your laptop in the office.",
+      "split": "easy",
+      "decision": "retain_base",
+      "reason": "Ready-drink transport; existing object identity and spatial semantics suffice.",
+      "before_sha256": "8d7bd722160330f4a16e4db82a151e619dc9a68fa05bbfc6345cf1ddb076807a"
+    },
+    {
+      "source_index": 124,
+      "id": "8708a9fe-8ed0-49a8-9339-36f8d2a11611",
+      "instruction": "On a chilly winter morning, prepare the bathroom by pouring hot water from the kettle into a bowl placed on the bathroom counter, then bring a clean cup for rinsing.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "54bda3ef42a3f47eee05c3955558e9149a1d2865ae65d75ec3a35874ddc95462"
+    },
+    {
+      "source_index": 125,
+      "id": "d3512291-7f63-46ff-8377-3bc926e7fc98",
+      "instruction": "Fill the electric_kettle on sink with water, power it on to heat, pour the hot water into the mug on dining_table, then hand the mug to person in bathroom.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "c17235f563e1716dfab9026741c720d35cd5c1a4d414d76c3c19bd92b21ae04f"
+    },
+    {
+      "source_index": 128,
+      "id": "44a3890d-31fb-4a53-b9d2-1d7f2e22f686",
+      "instruction": "Pick up the reusable water bottle from desk in the bedroom, take it to the sink at sink_cabinet in the laundryroom, fill it with water from the faucet, then return and place it back on desk.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Declare faucet capability on the existing instruction-named sink cabinet.",
+      "before_sha256": "269e6741911c610fb2b9a2ac987f43ed866ab5dffb88162793eea98981d64dff"
+    },
+    {
+      "source_index": 130,
+      "id": "679dc145-55cf-4f32-9000-dad6d9a16d60",
+      "instruction": "Fetch the watering_can from the utility area, fill the watering_can at sink, and hand the filled watering_can to the person in utility_room.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "286118cec495fb2b1a4ff924ba65fe9b9b1609f1f22167e6b6e9ba3e070eabcd"
+    },
+    {
+      "source_index": 131,
+      "id": "f8e914bb-3f3a-43de-8b8f-c86cbaf6894f",
+      "instruction": "Could you make a coffee and bring it to my friend in the game room?",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "c17a6326f1c5bb9e3ef698325e8171ace63e057295c1e9f01c7f99c48d590da0"
+    },
+    {
+      "source_index": 132,
+      "id": "c4eaedfe-58a6-4535-8817-5e6c30ef5ba0",
+      "instruction": "Fill the kettle with water from the sink and place it on the stove to heat.",
+      "split": "medium",
+      "decision": "quarantine",
+      "reason": "Instruction requires a stove; scene has no stove/cooking surface. Old plan used a powered kettle on an island.",
+      "before_sha256": "2a272ae5e5d1cb19b061d2d2f3c4419d176cf89418fd5f8619b9780a2856ad99"
+    },
+    {
+      "source_index": 133,
+      "id": "bd6d5204-77c2-4be5-bd70-9f60a25d6a9d",
+      "instruction": "Take the electric_kettle from the kitchen_cabinet to the kitchen_island, fill it with water at sink_cabinet, power it on to heat, then pour hot water into a mug on table.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Declare faucet capability on the existing instruction-named sink cabinet.",
+      "before_sha256": "3b27dd5639546a52b4059529fefc4c1f44e2ea072dc4842ec469d28b01886221"
+    },
+    {
+      "source_index": 134,
+      "id": "83e9c29c-054d-4269-8bf4-d5ac26b8ccfd",
+      "instruction": "Go to the kitchen, fill the kettle with water from the faucet, and boil it to prepare tea.",
+      "split": "medium",
+      "decision": "quarantine",
+      "reason": "Kitchen boiling preparation has no kitchen water source in the scene; old reference filled from a bathroom bathtub. Restore after a documented scene repair.",
+      "before_sha256": "42d7174052c4d2212b8bea153749837b45d0956d9e93f04d1da0f4e0210ba7c5"
+    },
+    {
+      "source_index": 135,
+      "id": "cd03b958-c5dc-40fe-9cc4-6d1b78e53241",
+      "instruction": "Fetch a small snack and a drink for the child.",
+      "split": "medium",
+      "decision": "retain_base",
+      "reason": "Ready-drink transport; existing object identity and spatial semantics suffice.",
+      "before_sha256": "ddd5ce27b9f2b710a4aac0d8ee025a25e431adbe26548bf41263fece8f646f09"
+    },
+    {
+      "source_index": 136,
+      "id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+      "instruction": "Bring your laptop and a notebook from your bedroom to the office for studying, grab a cup of hot tea from the kitchen, and also bring your watch from the office to keep track of your study breaks.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Instruction explicitly fetches ready hot tea: declare initial tea/heated contents instead of fabricating a brewing requirement.",
+      "before_sha256": "2df5d5d3b50c246892e6fc50e975cd61c411fe3bcd178416285971643008e9fb"
+    },
+    {
+      "source_index": 139,
+      "id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+      "instruction": "Refill the student's reusable water bottle and place it in her bedroom so it's ready for her study session.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "37e67c6713ac3a55cb28b870986dbae55f6f077c05f561128262971147ce415c"
+    },
+    {
+      "source_index": 140,
+      "id": "184f5333-3807-406c-bec5-124adc3cd227",
+      "instruction": "Retrieve the portable induction stove and hot pot saucepan from kitchen_cabinet, place them on kitchen_island, fill the saucepan with water, and power on the stove.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Equipment preparation only: no request to put the saucepan on the stove or finish heating.",
+      "before_sha256": "e5f4435db5689f2139ce0026bbe40ac35c209604585f52fe7d7a2458ce4a11d9"
+    },
+    {
+      "source_index": 141,
+      "id": "8eaf1794-e3f0-4f38-aa7e-d6b77872d7a8",
+      "instruction": "On a chilly morning, power on the electric kettle in the kitchen and prepare a cup for green tea before your video calls.",
+      "split": "medium",
+      "decision": "repair_equipment",
+      "reason": "Equipment preparation only; no automatic tea/hot-water completion requirement.",
+      "before_sha256": "63644ffbb01fd3d385ad78654eeaf0795fbaed07627fc39571eb8b0b0943fab8"
+    },
+    {
+      "source_index": 142,
+      "id": "99c7a3e4-033a-4142-8cb9-9d2bd63c5748",
+      "instruction": "I'm cold and tired — can you make me a cup of tea and bring it out to the garage?",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "568e3bb889ff267f2ca5d6ccbbe6085cdd6239833aac16b845d4951dd292e2aa"
+    },
+    {
+      "source_index": 143,
+      "id": "8a288187-e7a6-47a9-bfad-2543976de82e",
+      "instruction": "Go to the kitchen and fill the watering can with water from the sink, then water the plants in the living room.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "6f3de826ca97d2cde1d3ef529618bde0262d37c5708c1a5631ffa1ebc95040ba"
+    },
+    {
+      "source_index": 146,
+      "id": "acba2bf0-ad1e-452e-b3f7-43af06ebfc81",
+      "instruction": "I'm filthy from work — can you run me a hot bath and bring my towel?",
+      "split": "medium",
+      "decision": "quarantine",
+      "reason": "Hot bath requires a declared hot-water source or bath-heating capability; neither is provided.",
+      "before_sha256": "af00da471b44272524d8982d434eb90ef836defd70cd292dde1455c313952964"
+    },
+    {
+      "source_index": 153,
+      "id": "cea31743-32c3-4f59-b07e-b12a71e840de",
+      "instruction": "Fill the kettle with water from the faucet and power it on to heat the water.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Instruction specifies filling and switching on to heat; do not require completed heating as an extra goal.",
+      "before_sha256": "6bc59db8f4e1fe14e95e58873d8ea323db8820ee9ad3c10ceb260dfa32954f6f"
+    },
+    {
+      "source_index": 154,
+      "id": "23178c37-3b65-4dff-9eb5-3c5d1e985232",
+      "instruction": "Go to the kitchen, take the electric_kettle from the sink area, fill and power it to heat water, then pour the hot water into the instant_noodle_cup on the dining_table and bring a spoon.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "3ed757af598ec4dc16942b334020a650cd9fd2bf94e8e85976e13677842759ce"
+    },
+    {
+      "source_index": 161,
+      "id": "2cd06e0a-88a9-45a6-a5e3-a378199d6414",
+      "instruction": "Go to the kitchen, use the coffee machine to brew a cup of coffee into a mug, and place the mug on the kitchen island.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "ec38250ff83418427e98a19dcca09068d0cba7932efa8d30234f056ef712b77a"
+    },
+    {
+      "source_index": 162,
+      "id": "6d1fc47f-358b-4bf5-b8ce-eb61f66d8fa0",
+      "instruction": "Prepare and deliver a warm drink to a person in another room.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "7fb712bd964bed42affc9416bdf53594769aa1dd5eea880cacc41a3923fb9b33"
+    },
+    {
+      "source_index": 163,
+      "id": "a6858c23-0cee-461d-bbf3-c9951bfbbda3",
+      "instruction": "Could you make me a cup of tea and bring it to my home office, please?",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "b9fab0c71829a94c635043155e77c921f1cfb66f8d44a428d76c410fb97b63c1"
+    },
+    {
+      "source_index": 164,
+      "id": "7f0a1344-6ce2-4860-8b0d-1d6de7219fdd",
+      "instruction": "Before a family dinner, arrange plates, spoons, and a casserole on the dining table and check if there is a pitcher of water (jug) present.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Instruction identifies a pitcher of water: declare its initial water contents and explicitly inspect it after setting the table.",
+      "before_sha256": "caa25a64680b3bc32202205dd967e0c0d70df26a5d571dd4aa7e38426073f5c9"
+    },
+    {
+      "source_index": 166,
+      "id": "41eef001-7744-4656-bb14-84c8920b2fde",
+      "instruction": "At dusk, bring a vase and freshen it by filling it with water from the kitchen faucet, then place it back on the bedroom stool.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "96546275653c05df0fffb046a030dd47f69e351e936d9618b696159edc66d5bb"
+    },
+    {
+      "source_index": 167,
+      "id": "12b30bd2-1470-4249-9b4c-080acc03c4eb",
+      "instruction": "Go to the kitchen, fill the coffee machine with water, load coffee grounds, brew a cup into the ceramic mug, and hand the mug to the person in the kitchen.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Declare faucet capability on the existing instruction-named sink cabinet.",
+      "before_sha256": "eda716f1f1b19d0b1310439196d2f113e8a4cd7b282864df2bf4239afee97fb5"
+    },
+    {
+      "source_index": 169,
+      "id": "e78432e1-25fd-4476-8711-7da0d50bc88c",
+      "instruction": "The plants need a drink — can you fill the watering can and water my vegetable patch outside?",
+      "split": "medium",
+      "decision": "quarantine",
+      "reason": "Vegetable patch is absent; old reference poured into the outdoor room itself. A room cannot stand for an unspecified planting target.",
+      "before_sha256": "97ee0509ca64266bdab4956c6dd993a27c0d2af04034b6855d8f9071c3396312"
+    },
+    {
+      "source_index": 174,
+      "id": "e2589b66-026b-4075-9525-3acdbf38e1f0",
+      "instruction": "Prepare bathing supplies and warm water in the bathroom for a post-work shower.",
+      "split": "medium",
+      "decision": "quarantine",
+      "reason": "Warm shower preparation lacks a declared warm-water supply and a clear shower-ready outcome; a filled wash basin is insufficient.",
+      "before_sha256": "34d4948c841e836f233142ea257599425134f59b8658f099e0a9f4eb5afdb0ee"
+    },
+    {
+      "source_index": 176,
+      "id": "4377c209-f70e-4cc9-a0d9-c09e1ffef3b9",
+      "instruction": "Could you fill the watering can and water my herbs on the coffee table, please?",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "586487d575df80dc127e93b6144b069e530466f7c2a9a1df4c41c58ef68a6f7c"
+    },
+    {
+      "source_index": 177,
+      "id": "c77c47ae-9d7a-4369-abbd-c305498e2aad",
+      "instruction": "Prepare a hot morning beverage and deliver it to the resident's bedroom.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "a4e0559f61a11f0dd689a8ac2e6bdb32f67133de718cfe0de51dcb1c99b6c99d"
+    },
+    {
+      "source_index": 179,
+      "id": "3a12822b-f774-4834-b9af-b741f2592c5e",
+      "instruction": "Could you make some hot tea and bring a cup to the person at the dining table?",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "7f90429beda33f937b867cd054c54577fc85896a2dd5d31e8d065f15a9fe440c"
+    },
+    {
+      "source_index": 180,
+      "id": "079da0e5-422a-4fe4-afc5-e885f4e98453",
+      "instruction": "Set a candle holder and mooncakes on the dining room table, bring your favorite indie music album (CD) from the bedroom to the living room, and take a bottle of tea from the kitchen to enjoy.",
+      "split": "medium",
+      "decision": "retain_base",
+      "reason": "Ready-drink transport; existing object identity and spatial semantics suffice.",
+      "before_sha256": "d47caf30d39234c0678331b969cfb81dca62597c3e1ee5bc6d1d12aa7c283630"
+    },
+    {
+      "source_index": 183,
+      "id": "9c120c15-b00a-4544-bafa-ffeece47d701",
+      "instruction": "On a cold winter day, pour hot water into a thermos bottle and place it on the bedroom chest of drawers so I can have warm water during the night.",
+      "split": "medium",
+      "decision": "quarantine",
+      "reason": "Night-time warmth/retention is outside the no-time/no-cooling model; old plan also lacks a hot-water pour.",
+      "before_sha256": "93685412d4d23f2a13f6081313844605b363d30e80e513fae6ce24ee51e42fb8"
+    },
+    {
+      "source_index": 185,
+      "id": "72d3763d-58b9-4f1f-befe-eed2fba16f6b",
+      "instruction": "Prepare a quick cup of instant noodles.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "dedbce1d2608229cf10d98c42bfc79943ab0d78a246e7a74d7785f59d3323ebb"
+    },
+    {
+      "source_index": 189,
+      "id": "f740c053-35da-470a-8628-e9291a9738cb",
+      "instruction": "Prepare a gourmet coffee and deliver it to the person in the bedroom.",
+      "split": "medium",
+      "decision": "quarantine",
+      "reason": "Gourmet quality has no operational criterion; ordinary coffee production cannot certify it.",
+      "before_sha256": "7c99d1121edb5d36ec772cf7ae4fbc6b593e3fa8ff85ba652b5cdfe6271a8881"
+    },
+    {
+      "source_index": 190,
+      "id": "05f9fb16-de68-4fb8-8cc7-4ad1714f7f72",
+      "instruction": "Prepare a hot cup of coffee in the kitchen and deliver it to the bedroom nightstand.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "7f879224c3f87a2223e03f36e790573271f48f414797871d60d1806702ddd793"
+    },
+    {
+      "source_index": 192,
+      "id": "ca93f23c-c8c5-426f-81f5-4f7e51811dfc",
+      "instruction": "Refill a reusable water bottle and make it available in the kitchen.",
+      "split": "medium",
+      "decision": "migrate",
+      "reason": "Explicit container contents, legal processing and instruction-matched reference.",
+      "before_sha256": "177685cdc6653c359794c748c3a33992ffd60b3be7ff7066429476282fc8fdcb"
+    },
+    {
+      "source_index": 211,
+      "id": "ed9e36b8-03bb-43bb-a260-37bcc20d9f53",
+      "instruction": "Set up a calming morning refreshment",
+      "split": "open",
+      "decision": "migrate",
+      "reason": "Minimal refreshment witness: clean drinking water served on the table; remove unrelated bath products. Subjective calming quality is not certified.",
+      "before_sha256": "2103c4a88ad15c88c4bbfd575171b0894666912d719239088f5427e92e2ab93a"
+    },
+    {
+      "source_index": 215,
+      "id": "3a5724ed-a1f5-4869-86ae-b1a21c969c6f",
+      "instruction": "Prepare and serve a light evening refreshment.",
+      "split": "open",
+      "decision": "migrate",
+      "reason": "Final assertions cover the drink/service; do not certify the contents of an unannotated fruit bowl.",
+      "before_sha256": "767a588d6fb31217445adb682de8b3fd5ba6233a0c1daeee50f290315e082ec9"
+    }
+  ],
+  "result_sha256": "600719d9c53ac423e94e0748b24307c0adef1e093cd8b5e8d3d6e78915b1fc0e"
+}

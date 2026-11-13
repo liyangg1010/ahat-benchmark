@@ -5,11 +5,13 @@ from pathlib import Path
 from threading import Lock
 from typing import Any
 
+from ..domains import check_inference_binding, domain_binding
 from ..datasets import align_cases, load_eval_set, load_inference
 from ..io import read_json
 from ..judge.evaluator import RubricEvaluator
-from ..provenance import digest, index_cases, make_provenance, require_compatible, verify_stage_context
+from ..provenance import index_cases, make_provenance, require_compatible, result_digest, verify_stage_context
 from .common import save_stage
+from .cache import verify_val_cases
 
 
 ZERO_STATUSES = {"invalid", "missing_plan", "malformed_plan"}
@@ -28,19 +30,17 @@ def run_judge_stage(
         inference_path=inference_path, domain_path=evaluator.domain_path,
     )
     aligned = align_cases(eval_cases, inference_cases, allow_missing=val_provenance["protocol"].get("allow_missing", False))
+    for case, inference in aligned:
+        check_inference_binding(case, inference, evaluator.domain_path)
     val_by_id = index_cases(val_data, eval_cases)
     missing = [case.id for case in eval_cases if case.id not in val_by_id]
     if missing:
         raise ValueError(f"VAL stage is incomplete; missing {len(missing)} cases")
-    for item in val_by_id.values():
-        if item.get("status") == "valid":
-            problem = item.get("problem_pddl")
-            if not isinstance(problem, str) or digest(problem.encode()) != item.get("problem_sha256"):
-                raise ValueError("VAL initial-state record is missing or corrupt; rerun VAL")
+    verify_val_cases(aligned, val_by_id, evaluator.domain_path)
 
     provenance = make_provenance(
         stage="judge", dataset=dataset, eval_cases=eval_cases, inference_path=inference_path,
-        domain_path=evaluator.domain_path, protocol=evaluator.protocol(), parent_signature=val_provenance["signature"],
+        domain_path=evaluator.domain_path, protocol=evaluator.protocol(), parent_signature=result_digest(val_data),
     )
     previous = {}
     if resume and output_path.exists():
@@ -72,6 +72,9 @@ def run_judge_stage(
     def evaluate(pair):
         eval_case, _ = pair
         validation = val_by_id[eval_case.id]
+        expected_binding = domain_binding(eval_case.domain_id, evaluator.domain_path)
+        if any(validation.get(k) != v for k, v in expected_binding.items()):
+            raise ValueError(f'VAL domain binding mismatch for {eval_case.id}')
         if validation.get("status") != "valid":
             ordinary_invalid = validation.get("status") in ZERO_STATUSES
             return eval_case.id, {
@@ -84,7 +87,7 @@ def run_judge_stage(
             }
         result = evaluator.evaluate(
             eval_case.instruction, eval_case.scene_graph, validation["plan"],
-            problem_text=validation["problem_pddl"],
+            problem_text=validation["problem_pddl"], domain_id=eval_case.domain_id,
             previous_dimensions=previous.get(eval_case.id, {}).get("dimensions"),
             on_update=lambda value: checkpoint(eval_case.id, value),
         )

@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from types import SimpleNamespace
 
-from ahat_benchmark.judge.prompts import PROMPTS
+from ahat_benchmark.judge.prompts import PROMPTS, LIQUID_PROMPTS
 
 
 PROJECT = Path(__file__).resolve().parents[1]
@@ -35,8 +35,8 @@ class FakeClient:
 
     def create(self, **kwargs):
         self.calls.append(kwargs)
-        dimension = next(key for key, prompt in PROMPTS.items() if prompt == kwargs['messages'][0]['content'])
-        count = sum(call['messages'][0]['content'] == PROMPTS[dimension] for call in self.calls)
+        dimension = next(key for prompts in (PROMPTS, LIQUID_PROMPTS) for key, prompt in prompts.items() if prompt == kwargs['messages'][0]['content'])
+        count = sum(call['messages'][0]['content'] == kwargs['messages'][0]['content'] for call in self.calls)
         raw = self.responder(dimension, count) if self.responder else {
             'score': 1, 'rationale': 'checked', 'critical_failure': False,
         }

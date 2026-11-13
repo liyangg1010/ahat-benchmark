@@ -8,6 +8,7 @@ import yaml
 
 from .io import read_json
 from .config import PROJECT_DIR
+from .domains import resolve_domain, domain_registry
 from .schemas import EvalCase, InferenceCase, SchemaError, normalize_plan, require_string
 
 
@@ -28,6 +29,7 @@ def load_eval_set(dataset: str, registry_path: Path | None = None) -> list[EvalC
         raise SchemaError(f"unknown dataset {dataset!r}; choose from {sorted(registry)}")
     data_path = registry[dataset]
     _verify_manifest(data_path)
+    manifest = read_json(data_path.parent / "manifest.json")
     raw = read_json(data_path)
     if not isinstance(raw, list):
         raise SchemaError("eval set root must be a JSON array")
@@ -44,7 +46,13 @@ def load_eval_set(dataset: str, registry_path: Path | None = None) -> list[EvalC
         scene_graph = item.get("scene_graph")
         if not isinstance(scene_graph, dict) or not scene_graph:
             raise SchemaError(f"eval case {index}.scene_graph must be a non-empty object")
-        cases.append(EvalCase(case_id, instruction, scene_graph))
+        if 'domain_id' in item:
+            require_string(item['domain_id'], f'eval case {index}.domain_id')
+        domain_id = item.get('domain_id', manifest.get('domain') if 'domains' in manifest else None)
+        if domain_id is not None:
+            require_string(domain_id, f'eval case {index}.domain_id')
+            resolve_domain(domain_id)
+        cases.append(EvalCase(case_id, instruction, scene_graph, domain_id))
     return cases
 
 
@@ -53,6 +61,12 @@ def _verify_manifest(data_path: Path) -> None:
     if not manifest_path.exists():
         raise SchemaError(f"benchmark manifest is missing: {manifest_path}")
     manifest = read_json(manifest_path)
+    if 'domains' in manifest:
+        registry = domain_registry()
+        if manifest['domains'] != registry or manifest.get('domain') not in registry:
+            raise SchemaError('Dataset domain registry/default differs from the registered protocol')
+        if manifest.get('domain_sha256') != registry[manifest['domain']]['sha256']:
+            raise SchemaError('Dataset default domain fingerprint mismatch')
     expected_hash = manifest.get("data_sha256")
     actual_hash = hashlib.sha256(data_path.read_bytes()).hexdigest()
     if expected_hash != actual_hash:
@@ -93,6 +107,7 @@ def load_inference(path: Path) -> tuple[dict[str, Any], dict[str, InferenceCase]
             plan=normalize_plan(item.get("plan")),
             raw_response=item.get("raw_response"),
             error=item.get("error"),
+            domain_id=item.get("domain_id"), domain_sha256=item.get("domain_sha256"),
         )
     return meta if isinstance(meta, dict) else {}, cases
 

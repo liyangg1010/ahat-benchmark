@@ -1,0 +1,512 @@
+{
+  "revision": "group-meal-reference-v1",
+  "base_source_sha256": "5c0509493c84697eebf2b9449d50092b620b82ea59c9b6355c24f472ce765c9a",
+  "source_sha256": "fdb0de588fc94aa3372246b2d06d894bacedfc0b49afad51ddd5ee8bce140202",
+  "domains_unchanged": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+      "revision": "type-hierarchy-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+      "revision": "type-hierarchy-v1"
+    }
+  },
+  "other_source_lines_unchanged": 284,
+  "reference_goals_not_added": true,
+  "records": [
+    {
+      "id": "f3ee3e87-d782-4870-8ed3-2bc92f344010",
+      "instruction": "Host a cozy dinner for two tonight.",
+      "design": {
+        "table": "dining_table_19",
+        "dish": "fruit_bowl_74",
+        "pot": "pot_37",
+        "stove": "stove_26",
+        "fridge": "refrigerator_32",
+        "capacity": "serves_two",
+        "heat": [
+          "eggs_116",
+          "potatoes_122",
+          "vegetables_123"
+        ],
+        "serve": [],
+        "added": [
+          [
+            "potatoes_122",
+            "potato"
+          ],
+          [
+            "vegetables_123",
+            "vegetables"
+          ]
+        ],
+        "capacity_foods": [
+          "eggs_116",
+          "potatoes_122",
+          "vegetables_123"
+        ],
+        "decor": [
+          "centerpiece_27"
+        ],
+        "light": "candle_29"
+      },
+      "added_nodes": [
+        {
+          "name": "potatoes_122",
+          "type": "potato",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_two": true
+          }
+        },
+        {
+          "name": "vegetables_123",
+          "type": "vegetables",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_two": true
+          }
+        }
+      ],
+      "plan": [
+        "(navigate agent_0 empty_room_10 refrigerator_32)",
+        "(open agent_0 refrigerator_32)",
+        "(navigate agent_0 refrigerator_32 eggs_116)",
+        "(pick_from_receptacle agent_0 eggs_116 refrigerator_32)",
+        "(navigate agent_0 eggs_116 pot_37)",
+        "(place_on_surface agent_0 eggs_116 pot_37)",
+        "(navigate agent_0 pot_37 stove_26)",
+        "(power_on agent_0 stove_26)",
+        "(heat_on_heating_device agent_0 eggs_116 pot_37 stove_26)",
+        "(power_off agent_0 stove_26)",
+        "(navigate agent_0 stove_26 eggs_116)",
+        "(pick_from_surface agent_0 eggs_116 pot_37)",
+        "(navigate agent_0 eggs_116 fruit_bowl_74)",
+        "(place_on_surface agent_0 eggs_116 fruit_bowl_74)",
+        "(navigate agent_0 fruit_bowl_74 potatoes_122)",
+        "(pick_from_receptacle agent_0 potatoes_122 refrigerator_32)",
+        "(navigate agent_0 potatoes_122 pot_37)",
+        "(place_on_surface agent_0 potatoes_122 pot_37)",
+        "(navigate agent_0 pot_37 stove_26)",
+        "(power_on agent_0 stove_26)",
+        "(heat_on_heating_device agent_0 potatoes_122 pot_37 stove_26)",
+        "(power_off agent_0 stove_26)",
+        "(navigate agent_0 stove_26 potatoes_122)",
+        "(pick_from_surface agent_0 potatoes_122 pot_37)",
+        "(navigate agent_0 potatoes_122 fruit_bowl_74)",
+        "(place_on_surface agent_0 potatoes_122 fruit_bowl_74)",
+        "(navigate agent_0 fruit_bowl_74 vegetables_123)",
+        "(pick_from_receptacle agent_0 vegetables_123 refrigerator_32)",
+        "(navigate agent_0 vegetables_123 pot_37)",
+        "(place_on_surface agent_0 vegetables_123 pot_37)",
+        "(navigate agent_0 pot_37 stove_26)",
+        "(power_on agent_0 stove_26)",
+        "(heat_on_heating_device agent_0 vegetables_123 pot_37 stove_26)",
+        "(power_off agent_0 stove_26)",
+        "(navigate agent_0 stove_26 vegetables_123)",
+        "(pick_from_surface agent_0 vegetables_123 pot_37)",
+        "(navigate agent_0 vegetables_123 fruit_bowl_74)",
+        "(place_on_surface agent_0 vegetables_123 fruit_bowl_74)",
+        "(navigate agent_0 fruit_bowl_74 candle_29)",
+        "(light_on agent_0 candle_29)",
+        "(navigate agent_0 candle_29 refrigerator_32)",
+        "(close agent_0 refrigerator_32)"
+      ],
+      "final_goals": [
+        "(heated eggs_116)",
+        "(heated potatoes_122)",
+        "(heated vegetables_123)",
+        "(is_food eggs_116)",
+        "(item_on_surface eggs_116 fruit_bowl_74)",
+        "(is_food potatoes_122)",
+        "(item_on_surface potatoes_122 fruit_bowl_74)",
+        "(is_food vegetables_123)",
+        "(item_on_surface vegetables_123 fruit_bowl_74)",
+        "(serves_two eggs_116)",
+        "(serves_two potatoes_122)",
+        "(serves_two vegetables_123)",
+        "(item_on_surface fruit_bowl_74 dining_table_19)",
+        "(is_clean fruit_bowl_74)",
+        "(is_clean dining_table_19)",
+        "(not (is_powered_on stove_26))",
+        "(handempty agent_0)",
+        "(not (is_open refrigerator_32))",
+        "(item_on_surface centerpiece_27 dining_table_19)",
+        "(is_light_on candle_29)",
+        "(item_on_surface candle_29 dining_table_19)"
+      ],
+      "stage_goals": [],
+      "controls": {
+        "omit_heating": {
+          "valid": true,
+          "final_goal_reached": false
+        },
+        "stop_before_serving": {
+          "after_step": 10,
+          "valid": true,
+          "final_goal_reached": false
+        },
+        "missing_capacity": [
+          {
+            "food": "eggs_116",
+            "predicate": "serves_two"
+          },
+          {
+            "food": "potatoes_122",
+            "predicate": "serves_two"
+          },
+          {
+            "food": "vegetables_123",
+            "predicate": "serves_two"
+          }
+        ],
+        "omit_lighting": {
+          "valid": true,
+          "final_goal_reached": false
+        }
+      },
+      "native_val_valid": true,
+      "goals_reached": true,
+      "scene_replay_steps": 42,
+      "plan_before": [
+        "(navigate agent_0 empty_room_10 tablecloth_70)",
+        "(pick_from_surface agent_0 tablecloth_70 dining_table_19)",
+        "(navigate agent_0 tablecloth_70 dining_table_19)",
+        "(place_on_surface agent_0 tablecloth_70 dining_table_19)",
+        "(navigate agent_0 dining_table_19 centerpiece_27)",
+        "(pick_from_surface agent_0 centerpiece_27 dining_table_19)",
+        "(navigate agent_0 centerpiece_27 dining_table_19)",
+        "(place_next_to_surface agent_0 centerpiece_27 tablecloth_70 dining_table_19)",
+        "(navigate agent_0 dining_table_19 candle_29)",
+        "(pick_from_surface agent_0 candle_29 dining_table_19)",
+        "(navigate agent_0 candle_29 dining_table_19)",
+        "(place_next_to_surface agent_0 candle_29 centerpiece_27 dining_table_19)",
+        "(navigate agent_0 dining_table_19 fruit_bowl_74)",
+        "(pick_from_surface agent_0 fruit_bowl_74 dining_table_19)",
+        "(navigate agent_0 fruit_bowl_74 dining_table_19)",
+        "(place_next_to_surface agent_0 fruit_bowl_74 candle_29 dining_table_19)",
+        "(navigate agent_0 dining_table_19 candle_72)",
+        "(pick_from_surface agent_0 candle_72 dining_table_19)",
+        "(navigate agent_0 candle_72 dining_table_19)",
+        "(place_next_to_surface agent_0 candle_72 fruit_bowl_74 dining_table_19)",
+        "(navigate agent_0 dining_table_19 candle_73)",
+        "(pick_from_surface agent_0 candle_73 dining_table_19)",
+        "(navigate agent_0 candle_73 dining_table_19)",
+        "(place_next_to_surface agent_0 candle_73 candle_72 dining_table_19)",
+        "(navigate agent_0 dining_table_19 table_centerpiece_93)",
+        "(pick_from_surface agent_0 table_centerpiece_93 dining_table_19)",
+        "(navigate agent_0 table_centerpiece_93 dining_table_19)",
+        "(place_next_to_surface agent_0 table_centerpiece_93 candle_73 dining_table_19)"
+      ],
+      "source_index": 203,
+      "status": "accepted_reference_example"
+    },
+    {
+      "id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+      "instruction": "Host a cozy brunch for two.",
+      "design": {
+        "table": "dining_table_52",
+        "dish": "fruit_bowl_30",
+        "pot": "pot_132",
+        "stove": "stove_26",
+        "fridge": "refrigerator_46",
+        "capacity": "serves_two",
+        "heat": [
+          "eggs_66"
+        ],
+        "serve": [
+          "apple_180"
+        ],
+        "added": [],
+        "capacity_foods": [
+          "eggs_66"
+        ],
+        "decor": [],
+        "light": "candle_set_28"
+      },
+      "added_nodes": [],
+      "plan": [
+        "(navigate agent_0 rec_game_18 cabinets_49)",
+        "(open agent_0 cabinets_49)",
+        "(navigate agent_0 cabinets_49 fruit_bowl_30)",
+        "(pick_from_receptacle agent_0 fruit_bowl_30 cabinets_49)",
+        "(navigate agent_0 fruit_bowl_30 dining_table_52)",
+        "(place_on_surface agent_0 fruit_bowl_30 dining_table_52)",
+        "(navigate agent_0 dining_table_52 refrigerator_46)",
+        "(open agent_0 refrigerator_46)",
+        "(navigate agent_0 refrigerator_46 eggs_66)",
+        "(pick_from_receptacle agent_0 eggs_66 refrigerator_46)",
+        "(navigate agent_0 eggs_66 pot_132)",
+        "(place_on_surface agent_0 eggs_66 pot_132)",
+        "(navigate agent_0 pot_132 stove_26)",
+        "(power_on agent_0 stove_26)",
+        "(heat_on_heating_device agent_0 eggs_66 pot_132 stove_26)",
+        "(power_off agent_0 stove_26)",
+        "(navigate agent_0 stove_26 eggs_66)",
+        "(pick_from_surface agent_0 eggs_66 pot_132)",
+        "(navigate agent_0 eggs_66 fruit_bowl_30)",
+        "(place_on_surface agent_0 eggs_66 fruit_bowl_30)",
+        "(navigate agent_0 fruit_bowl_30 refrigerator_25)",
+        "(open agent_0 refrigerator_25)",
+        "(navigate agent_0 refrigerator_25 apple_180)",
+        "(pick_from_receptacle agent_0 apple_180 refrigerator_25)",
+        "(navigate agent_0 apple_180 fruit_bowl_30)",
+        "(place_on_surface agent_0 apple_180 fruit_bowl_30)",
+        "(navigate agent_0 fruit_bowl_30 candle_set_28)",
+        "(light_on agent_0 candle_set_28)",
+        "(navigate agent_0 candle_set_28 cabinets_49)",
+        "(close agent_0 cabinets_49)",
+        "(navigate agent_0 cabinets_49 refrigerator_25)",
+        "(close agent_0 refrigerator_25)",
+        "(navigate agent_0 refrigerator_25 refrigerator_46)",
+        "(close agent_0 refrigerator_46)"
+      ],
+      "final_goals": [
+        "(heated eggs_66)",
+        "(is_food eggs_66)",
+        "(item_on_surface eggs_66 fruit_bowl_30)",
+        "(is_food apple_180)",
+        "(item_on_surface apple_180 fruit_bowl_30)",
+        "(serves_two eggs_66)",
+        "(item_on_surface fruit_bowl_30 dining_table_52)",
+        "(is_clean fruit_bowl_30)",
+        "(is_clean dining_table_52)",
+        "(not (is_powered_on stove_26))",
+        "(handempty agent_0)",
+        "(not (is_open cabinets_49))",
+        "(not (is_open refrigerator_25))",
+        "(not (is_open refrigerator_46))",
+        "(is_light_on candle_set_28)",
+        "(item_on_surface candle_set_28 dining_table_52)"
+      ],
+      "stage_goals": [],
+      "controls": {
+        "omit_heating": {
+          "valid": true,
+          "final_goal_reached": false
+        },
+        "stop_before_serving": {
+          "after_step": 16,
+          "valid": true,
+          "final_goal_reached": false
+        },
+        "missing_capacity": [
+          {
+            "food": "eggs_66",
+            "predicate": "serves_two"
+          }
+        ],
+        "omit_lighting": {
+          "valid": true,
+          "final_goal_reached": false
+        }
+      },
+      "native_val_valid": true,
+      "goals_reached": true,
+      "scene_replay_steps": 34,
+      "plan_before": [
+        "(navigate agent_0 rec_game_18 coffee_mug_38)",
+        "(pick_from_surface agent_0 coffee_mug_38 coffee_table_22)",
+        "(navigate agent_0 coffee_mug_38 dining_table_52)",
+        "(place_on_surface agent_0 coffee_mug_38 dining_table_52)",
+        "(navigate agent_0 dining_table_52 candle_set_28)",
+        "(pick_from_surface agent_0 candle_set_28 dining_table_52)",
+        "(navigate agent_0 candle_set_28 dining_table_52)",
+        "(place_next_to_surface agent_0 candle_set_28 coffee_mug_38 dining_table_52)",
+        "(navigate agent_0 dining_table_52 coaster_set_2)",
+        "(pick_from_surface agent_0 coaster_set_2 coffee_table_22)",
+        "(navigate agent_0 coaster_set_2 dining_table_52)",
+        "(place_next_to_surface agent_0 coaster_set_2 candle_set_28 dining_table_52)",
+        "(navigate agent_0 dining_table_52 apple_180)",
+        "(navigate agent_0 apple_180 refrigerator_25)",
+        "(open agent_0 refrigerator_25)",
+        "(navigate agent_0 refrigerator_25 apple_180)",
+        "(pick_from_receptacle agent_0 apple_180 refrigerator_25)",
+        "(navigate agent_0 apple_180 dining_table_52)",
+        "(place_next_to_surface agent_0 apple_180 coaster_set_2 dining_table_52)"
+      ],
+      "source_index": 237,
+      "status": "accepted_reference_example"
+    },
+    {
+      "id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+      "instruction": "Prepare a full family breakfast service",
+      "design": {
+        "table": "dining_table_19",
+        "dish": "plate_86",
+        "pot": "pot_30",
+        "stove": "stove_22",
+        "fridge": "refrigerator_35",
+        "capacity": "serves_group",
+        "heat": [
+          "eggs_90"
+        ],
+        "serve": [
+          "bread_115",
+          "butter_92"
+        ],
+        "added": [
+          [
+            "bread_115",
+            "bread"
+          ]
+        ],
+        "capacity_foods": [
+          "eggs_90",
+          "bread_115"
+        ],
+        "decor": [
+          "napkin_87"
+        ],
+        "light": null
+      },
+      "added_nodes": [
+        {
+          "name": "bread_115",
+          "type": "bread",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_group": true
+          }
+        }
+      ],
+      "plan": [
+        "(navigate agent_0 corridor_11 plate_86)",
+        "(pick_from_surface agent_0 plate_86 dining_table_38)",
+        "(navigate agent_0 plate_86 dining_table_19)",
+        "(place_on_surface agent_0 plate_86 dining_table_19)",
+        "(navigate agent_0 dining_table_19 refrigerator_35)",
+        "(open agent_0 refrigerator_35)",
+        "(navigate agent_0 refrigerator_35 eggs_90)",
+        "(pick_from_receptacle agent_0 eggs_90 refrigerator_35)",
+        "(navigate agent_0 eggs_90 pot_30)",
+        "(place_on_surface agent_0 eggs_90 pot_30)",
+        "(navigate agent_0 pot_30 stove_22)",
+        "(power_on agent_0 stove_22)",
+        "(heat_on_heating_device agent_0 eggs_90 pot_30 stove_22)",
+        "(power_off agent_0 stove_22)",
+        "(navigate agent_0 stove_22 eggs_90)",
+        "(pick_from_surface agent_0 eggs_90 pot_30)",
+        "(navigate agent_0 eggs_90 plate_86)",
+        "(place_on_surface agent_0 eggs_90 plate_86)",
+        "(navigate agent_0 plate_86 bread_115)",
+        "(pick_from_receptacle agent_0 bread_115 refrigerator_35)",
+        "(navigate agent_0 bread_115 plate_86)",
+        "(place_on_surface agent_0 bread_115 plate_86)",
+        "(navigate agent_0 plate_86 refrigerator_23)",
+        "(open agent_0 refrigerator_23)",
+        "(navigate agent_0 refrigerator_23 butter_92)",
+        "(pick_from_receptacle agent_0 butter_92 refrigerator_23)",
+        "(navigate agent_0 butter_92 plate_86)",
+        "(place_on_surface agent_0 butter_92 plate_86)",
+        "(navigate agent_0 plate_86 napkin_87)",
+        "(pick_from_surface agent_0 napkin_87 dining_table_38)",
+        "(navigate agent_0 napkin_87 dining_table_19)",
+        "(place_on_surface agent_0 napkin_87 dining_table_19)",
+        "(navigate agent_0 dining_table_19 refrigerator_23)",
+        "(close agent_0 refrigerator_23)",
+        "(navigate agent_0 refrigerator_23 refrigerator_35)",
+        "(close agent_0 refrigerator_35)"
+      ],
+      "final_goals": [
+        "(heated eggs_90)",
+        "(is_food eggs_90)",
+        "(item_on_surface eggs_90 plate_86)",
+        "(is_food bread_115)",
+        "(item_on_surface bread_115 plate_86)",
+        "(is_food butter_92)",
+        "(item_on_surface butter_92 plate_86)",
+        "(serves_group eggs_90)",
+        "(serves_group bread_115)",
+        "(item_on_surface plate_86 dining_table_19)",
+        "(is_clean plate_86)",
+        "(is_clean dining_table_19)",
+        "(not (is_powered_on stove_22))",
+        "(handempty agent_0)",
+        "(not (is_open refrigerator_23))",
+        "(not (is_open refrigerator_35))",
+        "(item_on_surface napkin_87 dining_table_19)"
+      ],
+      "stage_goals": [],
+      "controls": {
+        "omit_heating": {
+          "valid": true,
+          "final_goal_reached": false
+        },
+        "stop_before_serving": {
+          "after_step": 14,
+          "valid": true,
+          "final_goal_reached": false
+        },
+        "missing_capacity": [
+          {
+            "food": "eggs_90",
+            "predicate": "serves_group"
+          },
+          {
+            "food": "bread_115",
+            "predicate": "serves_group"
+          }
+        ]
+      },
+      "native_val_valid": true,
+      "goals_reached": true,
+      "scene_replay_steps": 36,
+      "plan_before": [
+        "(navigate agent_0 corridor_11 milk_carton_29)",
+        "(navigate agent_0 milk_carton_29 refrigerator_21)",
+        "(open agent_0 refrigerator_21)",
+        "(navigate agent_0 refrigerator_21 milk_carton_29)",
+        "(pick_from_receptacle agent_0 milk_carton_29 refrigerator_21)",
+        "(navigate agent_0 milk_carton_29 dining_table_19)",
+        "(place_on_surface agent_0 milk_carton_29 dining_table_19)",
+        "(navigate agent_0 dining_table_19 eggs_90)",
+        "(navigate agent_0 eggs_90 refrigerator_35)",
+        "(open agent_0 refrigerator_35)",
+        "(navigate agent_0 refrigerator_35 eggs_90)",
+        "(pick_from_receptacle agent_0 eggs_90 refrigerator_35)",
+        "(navigate agent_0 eggs_90 dining_table_19)",
+        "(place_next_to_surface agent_0 eggs_90 milk_carton_29 dining_table_19)",
+        "(navigate agent_0 dining_table_19 butter_92)",
+        "(navigate agent_0 butter_92 refrigerator_23)",
+        "(open agent_0 refrigerator_23)",
+        "(navigate agent_0 refrigerator_23 butter_92)",
+        "(pick_from_receptacle agent_0 butter_92 refrigerator_23)",
+        "(navigate agent_0 butter_92 dining_table_19)",
+        "(place_next_to_surface agent_0 butter_92 eggs_90 dining_table_19)",
+        "(navigate agent_0 dining_table_19 plate_86)",
+        "(pick_from_surface agent_0 plate_86 dining_table_38)",
+        "(navigate agent_0 plate_86 dining_table_19)",
+        "(place_next_to_surface agent_0 plate_86 butter_92 dining_table_19)",
+        "(navigate agent_0 dining_table_19 glass_25)",
+        "(pick_from_surface agent_0 glass_25 dining_table_19)",
+        "(navigate agent_0 glass_25 dining_table_19)",
+        "(place_next_to_surface agent_0 glass_25 plate_86 dining_table_19)",
+        "(navigate agent_0 dining_table_19 napkin_87)",
+        "(pick_from_surface agent_0 napkin_87 dining_table_38)",
+        "(navigate agent_0 napkin_87 dining_table_19)",
+        "(place_next_to_surface agent_0 napkin_87 glass_25 dining_table_19)"
+      ],
+      "source_index": 263,
+      "status": "accepted_reference_example"
+    }
+  ],
+  "failures": []
+}

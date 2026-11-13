@@ -1,11 +1,11 @@
 {
   "name": "ahat-open",
-  "version": "1.7.0",
+  "version": "1.10.4",
   "case_count": 92,
-  "schema_version": "1.0",
+  "schema_version": "2.0",
   "domain": "ahat-v8-group-portions",
   "data_file": "cases.json",
-  "data_sha256": "2b84c26b2b5e9ada660ff880fc147244131e29a0aabda147b7aea8727245b83a",
+  "data_sha256": "b0776ed0c47a6c33502e0218acfa59532e6bc92e12125fdee62aa13ad8d0ca38",
   "source": {
     "repository": "SII-liyang2024/AHAT-dataset",
     "file": "ahat_eval_set.jsonl",
@@ -14,11 +14,35 @@
     "sha256": "05cb4e725b5a8a93feb8c8609c768dc7a93371fb00c076f09ddaa104bdf8fc94"
   },
   "license": "CC-BY-NC-4.0",
-  "domain_sha256": "80f559c2786897313e6af5b55e290faa7b3c1856275b2805d02c3bfe8d743746",
+  "domain_sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
   "source_domain": "ahat-v2-hf-domain",
   "local_cooking": "cooking-v1",
   "local_heated": "heated-v2",
   "local_serves_two": "serves-two-v1",
   "local_meal_pruning": "meal-pruning-v1",
-  "local_group_portions": "group-portions-v1"
+  "local_group_portions": "group-portions-v1",
+  "domains": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+      "revision": "type-hierarchy-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+      "revision": "type-hierarchy-v1"
+    }
+  },
+  "local_liquid_v1": "liquid-v1",
+  "local_action_invariants": "location-capacity-v1",
+  "local_scene_lighting": "scene-lighting-v1",
+  "local_bottle_refill": "bottle-refill-v1",
+  "local_ordinary_core": "ordinary-core-v1",
+  "local_type_hierarchy": "type-hierarchy-v1",
+  "local_dinner_food": "dinner-food-v1",
+  "local_dinner_reference": "dinner-reference-v1",
+  "local_group_meal_reference": "group-meal-reference-v1",
+  "local_guest_dinner": "guest-dinner-v1"
 }

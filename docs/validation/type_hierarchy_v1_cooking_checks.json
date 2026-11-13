@@ -1,0 +1,227 @@
+{
+  "kind": "manual_semantic_review_with_native_witnesses_not_llm_scores",
+  "revision": "liquid-pruning-v1",
+  "inventory_revision": "cooking-goals-v1",
+  "task_count": 287,
+  "historical_inventory_count": 94,
+  "approved_pruned_inventory_count": 32,
+  "group_counts": {
+    "preparation_context": 17,
+    "liquid_or_beverage": 17,
+    "food_processing_or_meal_service": 11,
+    "setting_context": 17
+  },
+  "explicit_food_thermal_requirements": 4,
+  "confirmed_count": 2,
+  "deferred_meal_candidates": 9,
+  "baseline_preservation_checked": false,
+  "domain_premises": {
+    "heated_producers": [
+      "heat_on_heating_device",
+      "heat_with_microwave",
+      "heat_with_oven"
+    ],
+    "single_thermal_result": true,
+    "capabilities_immutable": true,
+    "heated_never_deleted": true
+  },
+  "confirmed_references": [
+    {
+      "id": "fd22ff41-4720-497c-bad3-7411b468b6cc",
+      "reference_goal": [
+        "(heated breakfast_eggs_1)",
+        "(item_on_surface breakfast_eggs_1 plate_48)",
+        "(item_on_surface plate_48 dining_table_3)",
+        "(furniture_in_room dining_table_3 dining_room_2)",
+        "(is_clean plate_48)",
+        "(is_clean dining_table_3)",
+        "(not (is_powered_on stove_2))",
+        "(handempty agent_0)"
+      ],
+      "plan": [
+        "(navigate agent_0 outdoor_12 refrigerator_1)",
+        "(open agent_0 refrigerator_1)",
+        "(navigate agent_0 refrigerator_1 egg_carton_46)",
+        "(open agent_0 egg_carton_46)",
+        "(navigate agent_0 egg_carton_46 breakfast_eggs_1)",
+        "(pick_from_receptacle agent_0 breakfast_eggs_1 egg_carton_46)",
+        "(navigate agent_0 breakfast_eggs_1 pot_2)",
+        "(place_on_surface agent_0 breakfast_eggs_1 pot_2)",
+        "(navigate agent_0 pot_2 stove_2)",
+        "(power_on agent_0 stove_2)",
+        "(heat_on_heating_device agent_0 breakfast_eggs_1 pot_2 stove_2)",
+        "(power_off agent_0 stove_2)",
+        "(navigate agent_0 stove_2 breakfast_eggs_1)",
+        "(pick_from_surface agent_0 breakfast_eggs_1 pot_2)",
+        "(navigate agent_0 breakfast_eggs_1 plate_48)",
+        "(place_on_surface agent_0 breakfast_eggs_1 plate_48)"
+      ],
+      "native_val_valid": true,
+      "goal_reached": true,
+      "legal_controls_missing_goal": [
+        "omit_processing",
+        "omit_power_off",
+        "omit_serving"
+      ],
+      "scene_replay_steps": 16,
+      "semantic_status": "manually_reviewed_sufficient_within_symbolic_model_not_necessary"
+    },
+    {
+      "id": "02a5f844-c663-4336-b6c9-fad5540b7cd5",
+      "reference_goal": [
+        "(heated casserole_21)",
+        "(item_on_surface casserole_21 table_29)",
+        "(furniture_in_room table_29 dining_room_1)",
+        "(furniture_in_room oven_30 kitchen_1)",
+        "(not (is_powered_on oven_30))",
+        "(handempty robot1)"
+      ],
+      "plan": [
+        "(open robot1 counter_40)",
+        "(navigate robot1 counter_40 oven_30)",
+        "(open robot1 oven_30)",
+        "(navigate robot1 oven_30 casserole_21)",
+        "(pick_from_receptacle robot1 casserole_21 counter_40)",
+        "(navigate robot1 casserole_21 oven_30)",
+        "(place_in_receptacle robot1 casserole_21 oven_30)",
+        "(close robot1 oven_30)",
+        "(power_on robot1 oven_30)",
+        "(heat_with_oven robot1 casserole_21 oven_30)",
+        "(power_off robot1 oven_30)",
+        "(open robot1 oven_30)",
+        "(navigate robot1 oven_30 casserole_21)",
+        "(pick_from_receptacle robot1 casserole_21 oven_30)",
+        "(navigate robot1 casserole_21 table_29)",
+        "(place_on_surface robot1 casserole_21 table_29)"
+      ],
+      "native_val_valid": true,
+      "goal_reached": true,
+      "legal_controls_missing_goal": [
+        "omit_processing",
+        "omit_power_off",
+        "return_to_wrong_room"
+      ],
+      "scene_replay_steps": 16,
+      "semantic_status": "manually_reviewed_sufficient_within_symbolic_model_not_necessary"
+    }
+  ],
+  "two_serving_checks": [
+    {
+      "id": "4bddb476-f1ae-44e1-9558-add1571dd936",
+      "food": "eggs_116",
+      "d1_contains": "(serves_two eggs_116)",
+      "reference_goal_passed": true,
+      "missing_capacity_control_valid": true,
+      "missing_capacity_control_misses_goal": true,
+      "legal_controls_with_capacity_missing_goal": [
+        "omit_processing",
+        "omit_serving"
+      ]
+    },
+    {
+      "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+      "food": "breakfast_eggs_1",
+      "d1_contains": "(serves_two breakfast_eggs_1)",
+      "reference_goal_passed": true,
+      "missing_capacity_control_valid": true,
+      "missing_capacity_control_misses_goal": true,
+      "legal_controls_with_capacity_missing_goal": [
+        "omit_processing",
+        "omit_serving"
+      ]
+    }
+  ],
+  "additional_portion_checks": [
+    {
+      "id": "f3ee3e87-d782-4870-8ed3-2bc92f344010",
+      "food": "eggs_116",
+      "capacity_predicate": "serves_two",
+      "native_plan_valid": true,
+      "d1_contains": "(serves_two eggs_116)",
+      "false_capacity_control_valid_and_missing_fact": true,
+      "whole_instruction_sufficiency_certified": false
+    },
+    {
+      "id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
+      "food": "eggs_66",
+      "capacity_predicate": "serves_two",
+      "native_plan_valid": true,
+      "d1_contains": "(serves_two eggs_66)",
+      "false_capacity_control_valid_and_missing_fact": true,
+      "whole_instruction_sufficiency_certified": false
+    },
+    {
+      "id": "dec162ab-e453-419f-971a-2e32987350f2",
+      "food": "cheese_block_106",
+      "capacity_predicate": "serves_group",
+      "native_plan_valid": true,
+      "d1_contains": "(serves_group cheese_block_106)",
+      "false_capacity_control_valid_and_missing_fact": true,
+      "whole_instruction_sufficiency_certified": false
+    },
+    {
+      "id": "198fd035-6f65-4740-8b01-0643a215ccb4",
+      "food": "eggs_90",
+      "capacity_predicate": "serves_group",
+      "native_plan_valid": true,
+      "d1_contains": "(serves_group eggs_90)",
+      "false_capacity_control_valid_and_missing_fact": true,
+      "whole_instruction_sufficiency_certified": false
+    }
+  ],
+  "warm_brunch_check": {
+    "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
+    "reference_goal": [
+      "(heated breakfast_eggs_1)",
+      "(item_on_surface breakfast_eggs_1 dining_table_21)",
+      "(item_on_surface butter_54 dining_table_21)",
+      "(item_on_surface fruit_bowl_48 dining_table_21)",
+      "(not (is_powered_on stove_16))",
+      "(serves_two breakfast_eggs_1)"
+    ],
+    "reference_plan_reaches_goal": true,
+    "no_processing_control_misses_goal": true,
+    "semantic_status": "two_serving_capacity_explicit_reference_goal_reached"
+  },
+  "source_sha256": "fa42e746754d826145e026800c553b6d9208fb3c0f1593100b7bcb3b1c1d28e0",
+  "baseline_sha256": null,
+  "implementation_sha256": {
+    "vendor/pddl/domain_0102_test.pddl": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+    "docs/validation/cooking_goal_inventory.json": "f5464be007f7d197f8fda382d65c84dc8b5e8e0449d30373910093d32011de60",
+    "docs/validation/meal_pruning_inventory.json": "9bed0ef6889660f1fd58f0cf095ed963b1f8afdaa126fd75b52eef99ed530a17",
+    "docs/validation/liquid_pruning_inventory.json": "ba61dafecdea4e6c94346feb53ca91ab87dbc7421fd12654ae91989cbd9f095c",
+    "scripts/audit_cooking_goals.py": "ad8197d426bf6b5d0946598fd9a54a905a4dbeb4b6cd2a72ae4e825c589e185d",
+    "scripts/repair_cooking.py": "7737e8e0186d5a7422ac7efed3691efe49edfbaef23032784e14e969d91e06cc",
+    "scripts/check_reference_plans.py": "46e1d7396976616eaf76666f57aca0c1fbcb80283256a12edfb54a97001d85b3",
+    "src/ahat_benchmark/__init__.py": "fcd04606e4729c7a72efe0549256eed4bb0094c75a13100dde80acc85e621094",
+    "src/ahat_benchmark/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src/ahat_benchmark/cli.py": "f36882526458b7deb8d9d6ab930b8e5d81f22fcec7b0bede9b6cd03f0bf87971",
+    "src/ahat_benchmark/config.py": "a97a341757923bd31f9f6237743b70a5e8fb6c28f3842abb29f4d991ed47c000",
+    "src/ahat_benchmark/datasets.py": "e125269b3ecadea47fb31e6dfe58b2103efb3433db6b933d696623c6540164f2",
+    "src/ahat_benchmark/domains.py": "5ad4836395223164919f6501f22353bcd8ea0993e97b177510555dc8dfd44708",
+    "src/ahat_benchmark/inference_inputs.py": "1c75a450c6eed8def16a293c66a6bbc19d3ca4edec06a3ec11d04a5acd54a585",
+    "src/ahat_benchmark/io.py": "f4b0f9ec9ffb3c02478cb6c4e80f57196e65071d4293cf43d25696a03fa3df25",
+    "src/ahat_benchmark/judge/__init__.py": "927805ab5f1c98a4c7677f9184eaf5019ee93a30f1a46275068872d097561607",
+    "src/ahat_benchmark/judge/aggregator.py": "cccde5c51c8d95de5e0c8c6651ac53d77ce529d40c0df3dba33e47dd8a872c6e",
+    "src/ahat_benchmark/judge/evaluator.py": "9424b34ce975bc118428ef07244abaf7404ac5df936f85213428f9d121168c91",
+    "src/ahat_benchmark/judge/prompts.py": "9c4c1f7aa41c66e10b32b9c06e04421f247f45eb94cdde418395c21750091601",
+    "src/ahat_benchmark/judge/scene_summary.py": "34acae5d5da09ba5362ebc0512a10fe5a29272983526ce09d9fac8e735f2a3dd",
+    "src/ahat_benchmark/liquid.py": "6638de0272eb3058147f822165566140139266b3d85cdb431d3790f8c7420624",
+    "src/ahat_benchmark/pddl.py": "2fb67efc29f0f264fac3518d89719aa5574e2137fe147b9692ea748af44b4b63",
+    "src/ahat_benchmark/pddl_effects.py": "9a8eea604e26302099806f342baeb4caf7f8c02f9491962461caedc0c0db7fc5",
+    "src/ahat_benchmark/pipeline/__init__.py": "f44ff1f6aab9b9895e32250642883b31e2afc99db3b24872f537597c2593fd09",
+    "src/ahat_benchmark/pipeline/cache.py": "5f57b71ee65e6d0ee67c819f218b86af45c96f89f19731947bb3707dc1db2921",
+    "src/ahat_benchmark/pipeline/common.py": "558a4381c6818bab68dae7ee58afa13a5f0cb211b55f1b195d460722a0e58b0a",
+    "src/ahat_benchmark/pipeline/judge_stage.py": "4f7257635d478e2ce77133e061859e07833ac1664fb39d78ecd2bae31cf1d45a",
+    "src/ahat_benchmark/pipeline/summarize.py": "205bae099ff9b0a72f1c2b8ca184fda2f7fa67174b215cde36e765119562f06e",
+    "src/ahat_benchmark/pipeline/val_stage.py": "b239cbe085d4825ffc7c0c2f42c8b92745cf814e82e5b4c4c77ffef8ef8401e1",
+    "src/ahat_benchmark/provenance.py": "96427794a53fffb1a031b3f2b409560a72529c02847408be68b55fc1d005e3f6",
+    "src/ahat_benchmark/scene.py": "56e281ad66dd47d868517285df57ce63e84d50b1a51413fa15718b51ef50604c",
+    "src/ahat_benchmark/schemas.py": "9410ad35a4b84da480d5cfd93ad4a4ce0234da82a3876db600abf81191b9689f",
+    "src/ahat_benchmark/val/__init__.py": "0fe705bb2ab35325eada6bebcdef5462e9d39dcdbfdbd2be87a42892f9ab88d2",
+    "src/ahat_benchmark/val/validator.py": "bd47546d44e4f64674c1bda0895230d7ba72cce890b7d5a8bbaba764e2d4a169",
+    "src/ahat_benchmark/vendor/__init__.py": "04e37e2ef78955acb83da436e81958de5583b1fffc4d68c22d2fbcb990801470",
+    "src/ahat_benchmark/vendor/problem_generator.py": "181502d42ce858453a4717e59dbfd3cab1b7019c7a118ea158135e91ff9f560e",
+    "src/ahat_benchmark/vendor/scene_graph.py": "e934e7409e93e55aa91baf3487d1ea8eabbc25de86f035d60598a2aa846f1a6b"
+  }
+}

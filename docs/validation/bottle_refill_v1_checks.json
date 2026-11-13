@@ -1,0 +1,52 @@
+{
+  "kind": "offline_bottle_scope_and_native_val_controls_not_llm_scores",
+  "source_sha256": "81ef3c42d9abe6b8e568ae68c6243df968ef97cbeaf8941de42957a491317a70",
+  "domains": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "4b93389a6a3761e70e8712403b0516bc5d94ff9caffe96371cd31eaf08350e8a",
+      "revision": "scene-lighting-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "2faf00bc2e85600600cdc38a66d650a7ce1874854499973e64875d4e496e9c5f",
+      "revision": "bottle-refill-v1"
+    }
+  },
+  "counts": {
+    "active": 287,
+    "unchanged_records_and_source_lines": 285,
+    "retained_repaired": 2,
+    "archived_exact_originals": 2
+  },
+  "domain_change": "Only liquid fill_from_faucet precondition changed; ordinary domain byte-identical.",
+  "cases": [
+    {
+      "id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+      "old_domain_old_plan": "valid",
+      "new_domain_without_open": "invalid",
+      "new_domain_repaired_plan": "valid",
+      "added_final_facts": [
+        [
+          "is_open",
+          "reusable_water_bottle_24"
+        ]
+      ]
+    },
+    {
+      "id": "44a3890d-31fb-4a53-b9d2-1d7f2e22f686",
+      "old_domain_old_plan": "valid",
+      "new_domain_without_open": "invalid",
+      "new_domain_repaired_plan": "valid",
+      "added_final_facts": [
+        [
+          "is_open",
+          "reusable_water_bottle_47"
+        ]
+      ]
+    }
+  ],
+  "failures": []
+}

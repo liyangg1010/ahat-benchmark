@@ -79,7 +79,7 @@ def check_assets(files: dict[str, bytes], wheel: bool = False) -> list[str]:
         return errors
     manifest = json.loads(raw)
     active_domain = manifest.get("domain", {})
-    expected = [(manifest["domain"]["path"], manifest["domain"]["sha256"]),
+    expected = [(v["path"], v["sha256"]) for v in manifest.get("domains", {active_domain["name"]: active_domain}).values()] + [
                 (manifest["validator"]["path"], manifest["validator"]["sha256"]),
                 (manifest["validator"]["library_path"], manifest["validator"]["library_sha256"])]
     for name, sha in expected:
@@ -91,6 +91,12 @@ def check_assets(files: dict[str, bytes], wheel: bool = False) -> list[str]:
         path = prompt_prefix + f"judge/paper_rubric/{name}.txt"
         if path not in files or hashlib.sha256(files[path]).hexdigest() != manifest["judge"]["prompt_hashes"][key]:
             errors.append(f"missing/changed prompt: {key}")
+    for domain_id, profile in manifest.get('judge_profiles', {}).items():
+        folder = 'liquid_rubric' if domain_id == 'ahat-liquid-v1' else 'paper_rubric'
+        for key, name in PROMPT_NAMES.items():
+            path = prompt_prefix + f'judge/{folder}/{name}.txt'
+            if path not in files or hashlib.sha256(files[path]).hexdigest() != profile['prompt_hashes'][key]:
+                errors.append(f'missing/changed profile prompt: {domain_id}/{key}')
     count = 0
     for dataset in manifest["benchmarks"]:
         data = get(f"benchmarks/{dataset}/cases.json")
@@ -100,12 +106,17 @@ def check_assets(files: dict[str, bytes], wheel: bool = False) -> list[str]:
             count += len(json.loads(data))
             if hashlib.sha256(data).hexdigest() != split["data_sha256"] or len(json.loads(data)) != split["case_count"]:
                 errors.append(f"data manifest mismatch: {dataset}")
+            if 'domains' in manifest and split.get('domains') != manifest['domains']:
+                errors.append(f'domain registry manifest mismatch: {dataset}')
+            for row in json.loads(data):
+                if row.get('domain_id', active_domain['name']) not in manifest.get('domains', {active_domain['name']: active_domain}):
+                    errors.append(f'unknown task domain: {row.get("id")}')
             if split.get("domain") != active_domain.get("name"):
                 errors.append(f"domain manifest mismatch: {dataset}")
             if split.get("domain_sha256") != active_domain.get("sha256"):
                 errors.append(f"domain hash manifest mismatch: {dataset}")
-    if count != 296:
-        errors.append("public dataset count must be 296")
+    if count != manifest.get('active_case_count'):
+        errors.append("public dataset count does not match active_case_count")
     provenance = get("benchmarks/hf_sync.json")
     source = get("benchmarks/ahat_eval_set.jsonl")
     if provenance is not None and source is not None:

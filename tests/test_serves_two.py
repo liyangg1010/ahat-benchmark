@@ -78,7 +78,7 @@ class ServesTwoTests(unittest.TestCase):
             self.assertFalse(native_goal(row['scene_graph'], no_serving, row['reference_goal']))
 
     def test_dataset_annotations_are_explicit_food_nodes_only(self):
-        annotations = {}
+        annotations = set()
         for row in self.rows:
             for group, nodes in row['scene_graph'].items():
                 if group == 'links' or not isinstance(nodes, list):
@@ -87,8 +87,12 @@ class ServesTwoTests(unittest.TestCase):
                     if isinstance(node, dict) and node.get('states', {}).get('serves_two'):
                         self.assertTrue(node['states'].get('is_food'))
                         self.assertEqual(group, 'objects')
-                        annotations[row['id']] = node['name']
-        self.assertEqual(annotations, self.repair['ALL_TWO_SERVING_FOODS'])
+                        annotations.add((row['id'], node['name']))
+        adoption = json.loads((PROJECT / 'docs/validation/group_meal_reference_v1_adoption.json').read_text())
+        expected = set(self.repair['ALL_TWO_SERVING_FOODS'].items()) | {
+            (r['id'], c['food']) for r in adoption['records']
+            for c in r['controls']['missing_capacity'] if c['predicate'] == 'serves_two'}
+        self.assertEqual(annotations, expected)
         self.assertEqual(self.repair['repair_cases'](self.rows), self.rows)
 
 

@@ -1,0 +1,4079 @@
+[
+  {
+    "representative_id": "44a3890d-31fb-4a53-b9d2-1d7f2e22f686",
+    "reason": "Redundant refill-and-place task; retain specified faucet and return-to-origin coverage.",
+    "original_record": {
+      "record_id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+      "instruction": "Refill the student's reusable water bottle and place it in her bedroom so it's ready for her study session.",
+      "scene_graph": {
+        "rooms": [
+          {
+            "name": "bathroom_1",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "bathroom_2",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "bathroom_3",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "bedroom_4",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "bedroom_5",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "bedroom_6",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "corridor_7",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "corridor_8",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "dining_room_9",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "garage_10",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "home_office_11",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "home_office_12",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "kitchen_13",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "kitchen_14",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "living_room_15",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "living_room_16",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "sauna_17",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "staircase_18",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "staircase_19",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "utility_room_20",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          }
+        ],
+        "furnitures": [
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "bench_1",
+            "type": "bench"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "bench_2",
+            "type": "bench"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bench_3",
+            "type": "bench"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "bench_4",
+            "type": "bench"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bench_5",
+            "type": "bench"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bench_6",
+            "type": "bench"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bench_7",
+            "type": "bench"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "bench_8",
+            "type": "bench"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "chair_20",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_21",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "chair_22",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_23",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "chair_24",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_25",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_26",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_27",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "chair_28",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_29",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "chair_30",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_31",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "chair_32",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_33",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "chair_34",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_35",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "chair_36",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_37",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "chair_38",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "chair_39",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "couch_40",
+            "type": "couch"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "couch_41",
+            "type": "couch"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "couch_42",
+            "type": "couch"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bed_51",
+            "type": "bed"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "bed_52",
+            "type": "bed"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bed_53",
+            "type": "bed"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bed_54",
+            "type": "bed"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bed_55",
+            "type": "bed"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "dining_table_56",
+            "type": "dining_table"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "dining_table_57",
+            "type": "dining_table"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "dining_table_58",
+            "type": "dining_table"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "dining_table_59",
+            "type": "dining_table"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "is_powerable": true
+            },
+            "name": "toilet_60",
+            "type": "toilet"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "is_powerable": true
+            },
+            "name": "toilet_61",
+            "type": "toilet"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "is_powerable": true
+            },
+            "name": "toilet_62",
+            "type": "toilet"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "is_powerable": true
+            },
+            "name": "toilet_63",
+            "type": "toilet"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_opened": true,
+              "is_heater": true,
+              "is_powerable": true,
+              "is_oven": true,
+              "is_heating_device": true
+            },
+            "name": "oven_65",
+            "type": "oven"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "is_powerable": true,
+              "has_faucet": true
+            },
+            "name": "sink_66",
+            "type": "sink"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "is_powerable": true,
+              "has_faucet": true
+            },
+            "name": "sink_67",
+            "type": "sink"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "is_powerable": true,
+              "has_faucet": true
+            },
+            "name": "sink_68",
+            "type": "sink"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "is_powerable": true,
+              "has_faucet": true
+            },
+            "name": "sink_69",
+            "type": "sink"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "is_powerable": true,
+              "has_faucet": true
+            },
+            "name": "sink_70",
+            "type": "sink"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "refrigerator_71",
+            "type": "refrigerator"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "refrigerator_72",
+            "type": "refrigerator"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "refrigerator_73",
+            "type": "refrigerator"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "refrigerator_74",
+            "type": "refrigerator"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "vase_80",
+            "type": "vase"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "vase_81",
+            "type": "vase"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "vase_82",
+            "type": "vase"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "vase_83",
+            "type": "vase"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "vase_84",
+            "type": "vase"
+          }
+        ],
+        "objects": [
+          {
+            "states": {},
+            "name": "sports_ball_9",
+            "type": "sports_ball"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "bottle_10",
+            "type": "bottle"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "bottle_11",
+            "type": "bottle"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "bottle_12",
+            "type": "bottle"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "bottle_13",
+            "type": "bottle"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "bottle_14",
+            "type": "bottle"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "bottle_15",
+            "type": "bottle"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "bottle_16",
+            "type": "bottle"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "bottle_17",
+            "type": "bottle"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "bowl_18",
+            "type": "bowl"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "bowl_19",
+            "type": "bowl"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_43",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_44",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_45",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_46",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_47",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_48",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_49",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_50",
+            "type": "potted_plant"
+          },
+          {
+            "states": {
+              "is_powerable": true
+            },
+            "name": "tv_64",
+            "type": "tv"
+          },
+          {
+            "states": {},
+            "name": "book_75",
+            "type": "book"
+          },
+          {
+            "states": {},
+            "name": "book_76",
+            "type": "book"
+          },
+          {
+            "states": {},
+            "name": "book_77",
+            "type": "book"
+          },
+          {
+            "states": {},
+            "name": "book_78",
+            "type": "book"
+          },
+          {
+            "states": {},
+            "name": "book_79",
+            "type": "book"
+          },
+          {
+            "name": "reusable_water_bottle_25",
+            "type": "reusable_water_bottle",
+            "states": {
+              "can_be_opened": true,
+              "is_liquid_container": true,
+              "is_filled": false,
+              "contents_heated": false,
+              "contains_water": false,
+              "contains_tea": false,
+              "contains_coffee": false,
+              "contains_other_drink": false
+            }
+          },
+          {
+            "name": "earbuds_26",
+            "type": "earbuds",
+            "states": {
+              "is_powerable": true
+            }
+          },
+          {
+            "name": "textbook_27",
+            "type": "textbook",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "running_shoes_28",
+            "type": "running_shoes",
+            "states": {}
+          },
+          {
+            "name": "lunchbox_29",
+            "type": "lunchbox",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "fridge_magnet_30",
+            "type": "fridge_magnet",
+            "states": {}
+          },
+          {
+            "name": "hairbrush_31",
+            "type": "hairbrush",
+            "states": {}
+          },
+          {
+            "name": "remote_control_32",
+            "type": "remote_control",
+            "states": {
+              "is_powerable": true
+            }
+          },
+          {
+            "name": "backpack_33",
+            "type": "backpack",
+            "states": {}
+          },
+          {
+            "name": "yoga_mat_34",
+            "type": "yoga_mat",
+            "states": {
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "soccer_ball_35",
+            "type": "soccer_ball",
+            "states": {}
+          },
+          {
+            "name": "remote_control_36",
+            "type": "remote_control",
+            "states": {
+              "is_powerable": true
+            }
+          },
+          {
+            "name": "takeout_bag_37",
+            "type": "takeout_bag",
+            "states": {}
+          },
+          {
+            "name": "house_keys_38",
+            "type": "house_keys",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "newspaper_39",
+            "type": "newspaper",
+            "states": {}
+          },
+          {
+            "name": "umbrella_40",
+            "type": "umbrella",
+            "states": {}
+          },
+          {
+            "name": "slippers_41",
+            "type": "slippers",
+            "states": {}
+          },
+          {
+            "name": "toothbrush_42",
+            "type": "toothbrush",
+            "states": {}
+          },
+          {
+            "name": "laptop_43",
+            "type": "laptop",
+            "states": {
+              "is_powerable": true
+            }
+          },
+          {
+            "name": "grocery_bag_44",
+            "type": "grocery_bag",
+            "states": {}
+          },
+          {
+            "name": "toy_train_45",
+            "type": "toy_train",
+            "states": {}
+          },
+          {
+            "name": "comic_book_46",
+            "type": "comic_book",
+            "states": {}
+          },
+          {
+            "name": "headphones_47",
+            "type": "headphones",
+            "states": {}
+          },
+          {
+            "name": "juice_box_48",
+            "type": "juice_box",
+            "states": {
+              "can_dispense": true,
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "toothbrush_49",
+            "type": "toothbrush",
+            "states": {}
+          },
+          {
+            "name": "toolbox_50",
+            "type": "toolbox",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "soccer_ball_51",
+            "type": "soccer_ball",
+            "states": {}
+          },
+          {
+            "name": "potted_plant_52",
+            "type": "potted_plant",
+            "states": {}
+          },
+          {
+            "name": "remote_control_53",
+            "type": "remote_control",
+            "states": {
+              "is_powerable": true
+            }
+          },
+          {
+            "name": "remote_control_54",
+            "type": "remote_control",
+            "states": {
+              "is_powerable": true
+            }
+          },
+          {
+            "name": "throw_blanket_55",
+            "type": "throw_blanket",
+            "states": {}
+          },
+          {
+            "name": "book_56",
+            "type": "book",
+            "states": {}
+          },
+          {
+            "name": "coffee_mug_57",
+            "type": "coffee_mug",
+            "states": {}
+          },
+          {
+            "name": "laptop_58",
+            "type": "laptop",
+            "states": {
+              "is_powerable": true
+            }
+          },
+          {
+            "name": "slippers_59",
+            "type": "slippers",
+            "states": {}
+          },
+          {
+            "name": "notebook_60",
+            "type": "notebook",
+            "states": {}
+          },
+          {
+            "name": "toolbox_61",
+            "type": "toolbox",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "water_bottle_62",
+            "type": "water_bottle",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "plant_pot_63",
+            "type": "plant_pot",
+            "states": {}
+          },
+          {
+            "name": "backpack_64",
+            "type": "backpack",
+            "states": {}
+          },
+          {
+            "name": "headphones_65",
+            "type": "headphones",
+            "states": {}
+          },
+          {
+            "name": "remote_control_66",
+            "type": "remote_control",
+            "states": {
+              "is_powerable": true
+            }
+          },
+          {
+            "name": "magazine_67",
+            "type": "magazine",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "toolbox_68",
+            "type": "toolbox",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "soccer_ball_69",
+            "type": "soccer_ball",
+            "states": {}
+          },
+          {
+            "name": "toothbrush_70",
+            "type": "toothbrush",
+            "states": {}
+          },
+          {
+            "name": "laundry_basket_71",
+            "type": "laundry_basket",
+            "states": {}
+          },
+          {
+            "name": "notebook_72",
+            "type": "notebook",
+            "states": {}
+          },
+          {
+            "name": "water_bottle_73",
+            "type": "water_bottle",
+            "states": {
+              "can_be_opened": true
+            }
+          }
+        ],
+        "agent": [
+          {
+            "name": "agent_0",
+            "location": "bedroom_5"
+          }
+        ],
+        "links": [
+          [
+            "garage_10",
+            "bench_1",
+            "in"
+          ],
+          [
+            "garage_10",
+            "bench_2",
+            "in"
+          ],
+          [
+            "garage_10",
+            "bench_3",
+            "in"
+          ],
+          [
+            "garage_10",
+            "bench_4",
+            "in"
+          ],
+          [
+            "garage_10",
+            "bench_5",
+            "in"
+          ],
+          [
+            "living_room_16",
+            "bench_6",
+            "in"
+          ],
+          [
+            "living_room_16",
+            "bench_7",
+            "in"
+          ],
+          [
+            "living_room_16",
+            "chair_20",
+            "in"
+          ],
+          [
+            "living_room_16",
+            "chair_21",
+            "in"
+          ],
+          [
+            "home_office_11",
+            "chair_22",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "chair_23",
+            "in"
+          ],
+          [
+            "dining_room_9",
+            "chair_24",
+            "in"
+          ],
+          [
+            "dining_room_9",
+            "chair_25",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "chair_26",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "chair_27",
+            "in"
+          ],
+          [
+            "dining_room_9",
+            "chair_28",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "chair_29",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "chair_30",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "chair_31",
+            "in"
+          ],
+          [
+            "dining_room_9",
+            "chair_32",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "chair_33",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "chair_34",
+            "in"
+          ],
+          [
+            "living_room_15",
+            "chair_35",
+            "in"
+          ],
+          [
+            "corridor_7",
+            "chair_36",
+            "in"
+          ],
+          [
+            "living_room_15",
+            "chair_37",
+            "in"
+          ],
+          [
+            "bedroom_5",
+            "chair_38",
+            "in"
+          ],
+          [
+            "home_office_12",
+            "chair_39",
+            "in"
+          ],
+          [
+            "living_room_16",
+            "couch_40",
+            "in"
+          ],
+          [
+            "living_room_16",
+            "couch_41",
+            "in"
+          ],
+          [
+            "living_room_16",
+            "couch_42",
+            "in"
+          ],
+          [
+            "bedroom_4",
+            "bed_51",
+            "in"
+          ],
+          [
+            "bedroom_4",
+            "bed_52",
+            "in"
+          ],
+          [
+            "bedroom_6",
+            "bed_53",
+            "in"
+          ],
+          [
+            "bedroom_5",
+            "bed_54",
+            "in"
+          ],
+          [
+            "bedroom_5",
+            "bed_55",
+            "in"
+          ],
+          [
+            "dining_room_9",
+            "dining_table_56",
+            "in"
+          ],
+          [
+            "dining_room_9",
+            "dining_table_57",
+            "in"
+          ],
+          [
+            "dining_room_9",
+            "dining_table_58",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "dining_table_59",
+            "in"
+          ],
+          [
+            "utility_room_20",
+            "toilet_60",
+            "in"
+          ],
+          [
+            "bathroom_1",
+            "toilet_61",
+            "in"
+          ],
+          [
+            "bathroom_2",
+            "toilet_62",
+            "in"
+          ],
+          [
+            "bathroom_3",
+            "toilet_63",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "oven_65",
+            "in"
+          ],
+          [
+            "bathroom_1",
+            "sink_66",
+            "in"
+          ],
+          [
+            "kitchen_13",
+            "sink_67",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "sink_68",
+            "in"
+          ],
+          [
+            "bathroom_2",
+            "sink_69",
+            "in"
+          ],
+          [
+            "bathroom_3",
+            "sink_70",
+            "in"
+          ],
+          [
+            "garage_10",
+            "refrigerator_71",
+            "in"
+          ],
+          [
+            "garage_10",
+            "refrigerator_72",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "refrigerator_73",
+            "in"
+          ],
+          [
+            "bedroom_4",
+            "refrigerator_74",
+            "in"
+          ],
+          [
+            "sauna_17",
+            "vase_80",
+            "in"
+          ],
+          [
+            "living_room_15",
+            "vase_81",
+            "in"
+          ],
+          [
+            "home_office_12",
+            "vase_82",
+            "in"
+          ],
+          [
+            "bedroom_6",
+            "vase_83",
+            "in"
+          ],
+          [
+            "bathroom_3",
+            "vase_84",
+            "in"
+          ],
+          [
+            "bench_5",
+            "sports_ball_9",
+            "on"
+          ],
+          [
+            "sink_67",
+            "bottle_10",
+            "on"
+          ],
+          [
+            "sink_67",
+            "bottle_11",
+            "on"
+          ],
+          [
+            "sink_67",
+            "bottle_12",
+            "on"
+          ],
+          [
+            "sink_67",
+            "bottle_13",
+            "on"
+          ],
+          [
+            "sink_67",
+            "bottle_14",
+            "on"
+          ],
+          [
+            "toilet_61",
+            "bottle_15",
+            "on"
+          ],
+          [
+            "chair_34",
+            "bottle_16",
+            "on"
+          ],
+          [
+            "chair_22",
+            "bottle_17",
+            "on"
+          ],
+          [
+            "chair_39",
+            "bowl_18",
+            "on"
+          ],
+          [
+            "vase_82",
+            "bowl_19",
+            "on"
+          ],
+          [
+            "vase_81",
+            "potted_plant_43",
+            "on"
+          ],
+          [
+            "vase_81",
+            "potted_plant_44",
+            "on"
+          ],
+          [
+            "bench_8",
+            "potted_plant_45",
+            "on"
+          ],
+          [
+            "chair_35",
+            "potted_plant_46",
+            "on"
+          ],
+          [
+            "chair_35",
+            "potted_plant_47",
+            "on"
+          ],
+          [
+            "vase_81",
+            "potted_plant_48",
+            "on"
+          ],
+          [
+            "chair_39",
+            "potted_plant_49",
+            "on"
+          ],
+          [
+            "vase_84",
+            "potted_plant_50",
+            "on"
+          ],
+          [
+            "bench_7",
+            "tv_64",
+            "on"
+          ],
+          [
+            "couch_41",
+            "book_75",
+            "on"
+          ],
+          [
+            "bed_51",
+            "book_76",
+            "on"
+          ],
+          [
+            "chair_39",
+            "book_77",
+            "on"
+          ],
+          [
+            "chair_39",
+            "book_78",
+            "on"
+          ],
+          [
+            "vase_82",
+            "book_79",
+            "on"
+          ],
+          [
+            "bedroom_5",
+            "agent_0",
+            "in"
+          ],
+          [
+            "bathroom_2",
+            "person_0",
+            "in"
+          ],
+          [
+            "chair_38",
+            "reusable_water_bottle_25",
+            "on"
+          ],
+          [
+            "bed_51",
+            "earbuds_26",
+            "on"
+          ],
+          [
+            "chair_22",
+            "textbook_27",
+            "on"
+          ],
+          [
+            "bench_6",
+            "running_shoes_28",
+            "on"
+          ],
+          [
+            "dining_table_57",
+            "lunchbox_29",
+            "on"
+          ],
+          [
+            "refrigerator_73",
+            "fridge_magnet_30",
+            "in"
+          ],
+          [
+            "sink_66",
+            "hairbrush_31",
+            "on"
+          ],
+          [
+            "couch_40",
+            "remote_control_32",
+            "on"
+          ],
+          [
+            "chair_33",
+            "backpack_33",
+            "on"
+          ],
+          [
+            "couch_41",
+            "yoga_mat_34",
+            "on"
+          ],
+          [
+            "bench_6",
+            "soccer_ball_35",
+            "on"
+          ],
+          [
+            "couch_41",
+            "remote_control_36",
+            "on"
+          ],
+          [
+            "dining_table_56",
+            "takeout_bag_37",
+            "on"
+          ],
+          [
+            "bench_1",
+            "house_keys_38",
+            "on"
+          ],
+          [
+            "chair_24",
+            "newspaper_39",
+            "on"
+          ],
+          [
+            "chair_36",
+            "umbrella_40",
+            "on"
+          ],
+          [
+            "bed_51",
+            "slippers_41",
+            "on"
+          ],
+          [
+            "sink_69",
+            "toothbrush_42",
+            "on"
+          ],
+          [
+            "dining_table_59",
+            "laptop_43",
+            "on"
+          ],
+          [
+            "refrigerator_73",
+            "grocery_bag_44",
+            "in"
+          ],
+          [
+            "couch_40",
+            "toy_train_45",
+            "on"
+          ],
+          [
+            "bed_54",
+            "comic_book_46",
+            "on"
+          ],
+          [
+            "couch_41",
+            "headphones_47",
+            "on"
+          ],
+          [
+            "dining_table_56",
+            "juice_box_48",
+            "on"
+          ],
+          [
+            "sink_66",
+            "toothbrush_49",
+            "on"
+          ],
+          [
+            "bench_1",
+            "toolbox_50",
+            "on"
+          ],
+          [
+            "couch_42",
+            "soccer_ball_51",
+            "on"
+          ],
+          [
+            "bench_6",
+            "potted_plant_52",
+            "on"
+          ],
+          [
+            "dining_table_57",
+            "remote_control_53",
+            "on"
+          ],
+          [
+            "couch_40",
+            "remote_control_54",
+            "on"
+          ],
+          [
+            "couch_41",
+            "throw_blanket_55",
+            "on"
+          ],
+          [
+            "chair_37",
+            "book_56",
+            "on"
+          ],
+          [
+            "dining_table_59",
+            "coffee_mug_57",
+            "on"
+          ],
+          [
+            "bench_6",
+            "laptop_58",
+            "on"
+          ],
+          [
+            "bed_54",
+            "slippers_59",
+            "on"
+          ],
+          [
+            "chair_22",
+            "notebook_60",
+            "on"
+          ],
+          [
+            "bench_1",
+            "toolbox_61",
+            "on"
+          ],
+          [
+            "bench_2",
+            "water_bottle_62",
+            "on"
+          ],
+          [
+            "couch_42",
+            "plant_pot_63",
+            "on"
+          ],
+          [
+            "chair_38",
+            "backpack_64",
+            "on"
+          ],
+          [
+            "couch_41",
+            "headphones_65",
+            "on"
+          ],
+          [
+            "couch_40",
+            "remote_control_66",
+            "on"
+          ],
+          [
+            "chair_37",
+            "magazine_67",
+            "on"
+          ],
+          [
+            "bench_1",
+            "toolbox_68",
+            "on"
+          ],
+          [
+            "bed_51",
+            "soccer_ball_69",
+            "on"
+          ],
+          [
+            "sink_66",
+            "toothbrush_70",
+            "on"
+          ],
+          [
+            "bench_3",
+            "laundry_basket_71",
+            "on"
+          ],
+          [
+            "dining_table_56",
+            "notebook_72",
+            "on"
+          ],
+          [
+            "chair_23",
+            "water_bottle_73",
+            "on"
+          ],
+          [
+            "bedroom_5",
+            "bench_8",
+            "in"
+          ]
+        ],
+        "person": [
+          {
+            "name": "person_0",
+            "location": "bathroom_2"
+          }
+        ]
+      },
+      "id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+      "plan": [
+        "(navigate agent_0 bedroom_5 reusable_water_bottle_25)",
+        "(pick_from_surface agent_0 reusable_water_bottle_25 chair_38)",
+        "(navigate agent_0 reusable_water_bottle_25 sink_66)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_25 sink_66)",
+        "(navigate agent_0 sink_66 bed_55)",
+        "(place_on_surface agent_0 reusable_water_bottle_25 bed_55)"
+      ],
+      "type": "medium",
+      "domain_id": "ahat-liquid-v1",
+      "liquid_reference": {
+        "goals": [
+          "(item_on_surface reusable_water_bottle_25 bed_55)",
+          "(is_filled reusable_water_bottle_25)",
+          "(contains_water reusable_water_bottle_25)"
+        ],
+        "scope": "plan_and_state_witness_not_necessary_goal",
+        "required_actions": [
+          "(fill_from_faucet agent_0 reusable_water_bottle_25 sink_66)"
+        ],
+        "notes": []
+      }
+    }
+  },
+  {
+    "representative_id": "44a3890d-31fb-4a53-b9d2-1d7f2e22f686",
+    "reason": "Redundant refill-and-place task; retain specified faucet and return-to-origin coverage.",
+    "original_record": {
+      "record_id": "ca93f23c-c8c5-426f-81f5-4f7e51811dfc",
+      "instruction": "Refill a reusable water bottle and make it available in the kitchen.",
+      "scene_graph": {
+        "rooms": [
+          {
+            "name": "bedroom_1",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "closet_2",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "living_room_3",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "bathroom_4",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "other_room_5",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "bedroom_6",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "hallway_7",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "laundryroom_8",
+            "states": {
+              "is_clean": true,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "office_9",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "other_room_10",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "toilet_room_11",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "terrace_12",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "hallway_13",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          },
+          {
+            "name": "kitchen_14",
+            "states": {
+              "is_clean": false,
+              "require_floor_cleaner": true
+            }
+          }
+        ],
+        "furnitures": [
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_opened": true
+            },
+            "name": "nightstand_2",
+            "type": "chest_of_drawers"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_opened": true
+            },
+            "name": "nightstand_3",
+            "type": "chest_of_drawers"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "bed_4",
+            "type": "bed"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_opened": true
+            },
+            "name": "chest_of_drawers_11",
+            "type": "chest_of_drawers"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_lighted": true
+            },
+            "name": "pendant_lamp_12",
+            "type": "ceiling_lamp"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "bookcase_20",
+            "type": "shelves"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bookcase_21",
+            "type": "shelves"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bench_22",
+            "type": "bench"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_lighted": true
+            },
+            "name": "ceiling_lamp_26",
+            "type": "ceiling_lamp"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "vase_32",
+            "type": "vase"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_lighted": true
+            },
+            "name": "ceiling_lamp_36",
+            "type": "ceiling_lamp"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "armchair_37",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "armchair_38",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "stool_40",
+            "type": "stool"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "stool_41",
+            "type": "stool"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "coffee_table_42",
+            "type": "table"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "desk_43",
+            "type": "table"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "console_table_46",
+            "type": "table"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "end_table_51",
+            "type": "table"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "sofa_53",
+            "type": "couch"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "is_powerable": true
+            },
+            "name": "toilet_54",
+            "type": "toilet"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "has_faucet": true
+            },
+            "name": "shower_stall_55",
+            "type": "shower"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bed_58",
+            "type": "bed"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true
+            },
+            "name": "armoire_59",
+            "type": "wardrobe"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "end_table_63",
+            "type": "table"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_lighted": true
+            },
+            "name": "pendant_lamp_67",
+            "type": "ceiling_lamp"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_lighted": true
+            },
+            "name": "ceiling_lamp_69",
+            "type": "ceiling_lamp"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true,
+              "is_powerable": true
+            },
+            "name": "washer_70",
+            "type": "washer_dryer"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_opened": true,
+              "is_powerable": true
+            },
+            "name": "washer_71",
+            "type": "washer_dryer"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true
+            },
+            "name": "kitchen_cabinet_72",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true
+            },
+            "name": "kitchen_cabinet_73",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true
+            },
+            "name": "sink_cabinet_74",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_opened": true
+            },
+            "name": "kitchen_cabinet_75",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "end_table_77",
+            "type": "table"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true
+            },
+            "name": "cabinet_80",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "desk_82",
+            "type": "table"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "swivel_chair_86",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "armchair_89",
+            "type": "chair"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "sink_stand_92",
+            "type": "stand"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_lighted": true
+            },
+            "name": "ceiling_lamp_94",
+            "type": "ceiling_lamp"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "is_powerable": true
+            },
+            "name": "toilet_96",
+            "type": "toilet"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "sofa_97",
+            "type": "couch"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "table_101",
+            "type": "table"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "tv_stand_104",
+            "type": "stand"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_lighted": true
+            },
+            "name": "ceiling_lamp_105",
+            "type": "ceiling_lamp"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_lighted": true
+            },
+            "name": "ceiling_lamp_106",
+            "type": "ceiling_lamp"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_lighted": true
+            },
+            "name": "ceiling_lamp_107",
+            "type": "ceiling_lamp"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "vase_111",
+            "type": "vase"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true
+            },
+            "name": "bread-bin_113",
+            "type": "breadbin"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "is_heater": true,
+              "is_powerable": true
+            },
+            "name": "toaster_114",
+            "type": "toaster"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "is_heater": true,
+              "is_powerable": true
+            },
+            "name": "espresso_maker_117",
+            "type": "coffee_maker"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true
+            },
+            "name": "sink_cabinet_119",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true
+            },
+            "name": "kitchen_cabinet_120",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_opened": true
+            },
+            "name": "kitchen_cabinet_121",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true
+            },
+            "name": "kitchen_island_122",
+            "type": "counter"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bar_stool_126",
+            "type": "stool"
+          },
+          {
+            "states": {
+              "is_clean": false
+            },
+            "name": "bar_stool_127",
+            "type": "stool"
+          },
+          {
+            "states": {
+              "is_clean": true
+            },
+            "name": "bar_stool_128",
+            "type": "stool"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "can_be_opened": true
+            },
+            "name": "kitchen_cabinet_129",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_opened": true
+            },
+            "name": "kitchen_cabinet_130",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": true,
+              "is_powerable": true
+            },
+            "name": "range_hood_132",
+            "type": "range_hood"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_opened": true
+            },
+            "name": "kitchen_cabinet_133",
+            "type": "cabinet"
+          },
+          {
+            "states": {
+              "is_clean": false,
+              "can_be_opened": true,
+              "is_powerable": true
+            },
+            "name": "refrigerator_134",
+            "type": "fridge"
+          }
+        ],
+        "objects": [
+          {
+            "states": {},
+            "name": "window_curtain_1",
+            "type": "curtain"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_5",
+            "type": "cushion"
+          },
+          {
+            "states": {},
+            "name": "wall_mirror_6",
+            "type": "mirror"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_7",
+            "type": "potted_plant"
+          },
+          {
+            "states": {
+              "require_floor_cleaner": true
+            },
+            "name": "rug_8",
+            "type": "carpet"
+          },
+          {
+            "states": {
+              "can_be_lighted": true
+            },
+            "name": "candlestick_9",
+            "type": "candle"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_10",
+            "type": "cushion"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_13",
+            "type": "cushion"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_14",
+            "type": "cushion"
+          },
+          {
+            "states": {},
+            "name": "wall_art_15",
+            "type": "picture"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_16",
+            "type": "cushion"
+          },
+          {
+            "states": {
+              "can_be_lighted": true
+            },
+            "name": "candlestick_17",
+            "type": "candle"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_18",
+            "type": "cushion"
+          },
+          {
+            "states": {
+              "can_be_lighted": true
+            },
+            "name": "candle_19",
+            "type": "candle"
+          },
+          {
+            "states": {},
+            "name": "book_23",
+            "type": "book"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_24",
+            "type": "cushion"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_25",
+            "type": "cushion"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_27",
+            "type": "cushion"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_28",
+            "type": "cushion"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_29",
+            "type": "potted_plant"
+          },
+          {
+            "states": {
+              "can_be_lighted": true
+            },
+            "name": "candlestick_30",
+            "type": "candle"
+          },
+          {
+            "states": {},
+            "name": "book_31",
+            "type": "book"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_33",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "flower_in_vase_34",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_35",
+            "type": "cushion"
+          },
+          {
+            "states": {
+              "require_floor_cleaner": true
+            },
+            "name": "rug_39",
+            "type": "carpet"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_44",
+            "type": "cushion"
+          },
+          {
+            "states": {
+              "require_floor_cleaner": true
+            },
+            "name": "rug_45",
+            "type": "carpet"
+          },
+          {
+            "states": {
+              "can_be_lighted": true
+            },
+            "name": "candle_47",
+            "type": "candle"
+          },
+          {
+            "states": {},
+            "name": "throw_pillow_48",
+            "type": "cushion"
+          },
+          {
+            "states": {},
+            "name": "wall_mirror_49",
+            "type": "mirror"
+          },
+          {
+            "states": {},
+            "name": "wall_art_50",
+            "type": "picture"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_52",
+            "type": "potted_plant"
+          },
+          {
+            "states": {
+              "is_powerable": true
+            },
+            "name": "mantel_clock_56",
+            "type": "mantel_clock"
+          },
+          {
+            "states": {},
+            "name": "plush_toy_57",
+            "type": "plush_toy"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_60",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_61",
+            "type": "potted_plant"
+          },
+          {
+            "states": {
+              "can_be_lighted": true
+            },
+            "name": "table_lamp_62",
+            "type": "table_lamp"
+          },
+          {
+            "states": {
+              "require_floor_cleaner": true
+            },
+            "name": "rug_64",
+            "type": "carpet"
+          },
+          {
+            "states": {},
+            "name": "book_65",
+            "type": "book"
+          },
+          {
+            "states": {},
+            "name": "wall_art_66",
+            "type": "picture"
+          },
+          {
+            "states": {},
+            "name": "notebook_78",
+            "type": "book"
+          },
+          {
+            "states": {
+              "can_be_lighted": true
+            },
+            "name": "candlestick_79",
+            "type": "candle"
+          },
+          {
+            "states": {},
+            "name": "book_81",
+            "type": "book"
+          },
+          {
+            "states": {},
+            "name": "flower_in_vase_83",
+            "type": "potted_plant"
+          },
+          {
+            "states": {
+              "is_powerable": true
+            },
+            "name": "laptop_84",
+            "type": "laptop"
+          },
+          {
+            "states": {},
+            "name": "wall_art_85",
+            "type": "picture"
+          },
+          {
+            "states": {
+              "require_floor_cleaner": true
+            },
+            "name": "rug_87",
+            "type": "carpet"
+          },
+          {
+            "states": {},
+            "name": "wall_art_88",
+            "type": "picture"
+          },
+          {
+            "states": {},
+            "name": "wall_mirror_90",
+            "type": "mirror"
+          },
+          {
+            "states": {
+              "require_floor_cleaner": true
+            },
+            "name": "rug_91",
+            "type": "carpet"
+          },
+          {
+            "states": {},
+            "name": "wall_mirror_93",
+            "type": "mirror"
+          },
+          {
+            "states": {},
+            "name": "toiletry_95",
+            "type": "toiletry"
+          },
+          {
+            "states": {},
+            "name": "flower_in_vase_98",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_99",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "potted_plant_100",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "shoe_102",
+            "type": "shoes"
+          },
+          {
+            "states": {},
+            "name": "flower_in_vase_103",
+            "type": "potted_plant"
+          },
+          {
+            "states": {},
+            "name": "wall_mirror_108",
+            "type": "mirror"
+          },
+          {
+            "states": {},
+            "name": "shoe_109",
+            "type": "shoes"
+          },
+          {
+            "states": {},
+            "name": "wall_art_110",
+            "type": "picture"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "jug_112",
+            "type": "bottle"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "cup_115",
+            "type": "drinkware"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true,
+              "is_heating_container": true
+            },
+            "name": "casserole_116",
+            "type": "pot"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "plate_118",
+            "type": "plate"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "cup_123",
+            "type": "drinkware"
+          },
+          {
+            "states": {
+              "requires_water_to_clean": true
+            },
+            "name": "cup_124",
+            "type": "drinkware"
+          },
+          {
+            "states": {},
+            "name": "book_125",
+            "type": "book"
+          },
+          {
+            "states": {},
+            "name": "flower_in_vase_131",
+            "type": "potted_plant"
+          },
+          {
+            "name": "reusable_water_bottle_70",
+            "type": "reusable_water_bottle",
+            "states": {
+              "can_be_opened": true,
+              "is_liquid_container": true,
+              "is_filled": false,
+              "contents_heated": false,
+              "contains_water": false,
+              "contains_tea": false,
+              "contains_coffee": false,
+              "contains_other_drink": false
+            }
+          },
+          {
+            "name": "cookbook_71",
+            "type": "cookbook",
+            "states": {}
+          },
+          {
+            "name": "fruit_bowl_72",
+            "type": "fruit_bowl",
+            "states": {}
+          },
+          {
+            "name": "tea_towel_73",
+            "type": "tea_towel",
+            "states": {}
+          },
+          {
+            "name": "cutting_board_74",
+            "type": "cutting_board",
+            "states": {}
+          },
+          {
+            "name": "spice_jar_75",
+            "type": "spice_jar",
+            "states": {}
+          },
+          {
+            "name": "potted_plant_76_283",
+            "type": "potted_plant",
+            "states": {}
+          },
+          {
+            "name": "magazine_77",
+            "type": "magazine",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "knitting_basket_78",
+            "type": "knitting_basket",
+            "states": {}
+          },
+          {
+            "name": "school_backpack_79",
+            "type": "school_backpack",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "childs_toy_80",
+            "type": "childs_toy",
+            "states": {}
+          },
+          {
+            "name": "cutting_board_81",
+            "type": "cutting_board",
+            "states": {}
+          },
+          {
+            "name": "chef_knife_82",
+            "type": "chef_knife",
+            "states": {}
+          },
+          {
+            "name": "olive_oil_bottle_83",
+            "type": "olive_oil_bottle",
+            "states": {}
+          },
+          {
+            "name": "spice_rack_84",
+            "type": "spice_rack",
+            "states": {}
+          },
+          {
+            "name": "dish_towel_85",
+            "type": "dish_towel",
+            "states": {}
+          },
+          {
+            "name": "fruit_bowl_86",
+            "type": "fruit_bowl",
+            "states": {}
+          },
+          {
+            "name": "magazine_87",
+            "type": "magazine",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "throw_blanket_88",
+            "type": "throw_blanket",
+            "states": {}
+          },
+          {
+            "name": "remote_control_89",
+            "type": "remote_control",
+            "states": {
+              "is_powerable": true
+            }
+          },
+          {
+            "name": "cookbook_90",
+            "type": "cookbook",
+            "states": {}
+          },
+          {
+            "name": "olive_oil_bottle_91",
+            "type": "olive_oil_bottle",
+            "states": {}
+          },
+          {
+            "name": "cutting_board_92",
+            "type": "cutting_board",
+            "states": {}
+          },
+          {
+            "name": "espresso_cup_93",
+            "type": "espresso_cup",
+            "states": {}
+          },
+          {
+            "name": "dish_drying_rack_94",
+            "type": "dish_drying_rack",
+            "states": {}
+          },
+          {
+            "name": "magazine_95",
+            "type": "magazine",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "potted_herb_96",
+            "type": "potted_herb",
+            "states": {}
+          },
+          {
+            "name": "wine_bottle_97",
+            "type": "wine_bottle",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "takeout_box_98",
+            "type": "takeout_box",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "kitchen_timer_99",
+            "type": "kitchen_timer",
+            "states": {}
+          },
+          {
+            "name": "cookbook_100",
+            "type": "cookbook",
+            "states": {}
+          },
+          {
+            "name": "cutting_board_101",
+            "type": "cutting_board",
+            "states": {}
+          },
+          {
+            "name": "knife_block_102",
+            "type": "knife_block",
+            "states": {}
+          },
+          {
+            "name": "coffee_mug_103",
+            "type": "coffee_mug",
+            "states": {}
+          },
+          {
+            "name": "fruit_bowl_104",
+            "type": "fruit_bowl",
+            "states": {}
+          },
+          {
+            "name": "sketchbook_105",
+            "type": "sketchbook",
+            "states": {}
+          },
+          {
+            "name": "paint_tubes_106",
+            "type": "paint_tubes",
+            "states": {
+              "can_dispense": true
+            }
+          },
+          {
+            "name": "throw_blanket_107",
+            "type": "throw_blanket",
+            "states": {}
+          },
+          {
+            "name": "magazine_108",
+            "type": "magazine",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "pair_of_slippers_109",
+            "type": "pair_of_slippers",
+            "states": {}
+          },
+          {
+            "name": "potted_plant_110",
+            "type": "potted_plant",
+            "states": {}
+          },
+          {
+            "name": "newspaper_111",
+            "type": "newspaper",
+            "states": {}
+          },
+          {
+            "name": "knitting_basket_112",
+            "type": "knitting_basket",
+            "states": {}
+          },
+          {
+            "name": "gardening_gloves_113",
+            "type": "gardening_gloves",
+            "states": {}
+          },
+          {
+            "name": "pair_of_slippers_114",
+            "type": "pair_of_slippers",
+            "states": {}
+          },
+          {
+            "name": "medicine_box_115",
+            "type": "medicine_box",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "spectacles_case_116",
+            "type": "spectacles_case",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "radio_117",
+            "type": "radio",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "seed_packet_118",
+            "type": "seed_packet",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "photo_frame_119",
+            "type": "photo_frame",
+            "states": {}
+          },
+          {
+            "name": "cookbook_120",
+            "type": "cookbook",
+            "states": {}
+          },
+          {
+            "name": "cereal_box_121",
+            "type": "cereal_box",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "spice_rack_122",
+            "type": "spice_rack",
+            "states": {}
+          },
+          {
+            "name": "dish_soap_123",
+            "type": "dish_soap",
+            "states": {
+              "can_dispense": true,
+              "is_cleaning_tool": true,
+              "requires_water_to_clean": true
+            }
+          },
+          {
+            "name": "tea_towel_124",
+            "type": "tea_towel",
+            "states": {}
+          },
+          {
+            "name": "shopping_bag_125",
+            "type": "shopping_bag",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "alarm_clock_126",
+            "type": "alarm_clock",
+            "states": {
+              "is_powerable": true
+            }
+          },
+          {
+            "name": "slippers_127",
+            "type": "slippers",
+            "states": {}
+          },
+          {
+            "name": "magazine_128",
+            "type": "magazine",
+            "states": {
+              "can_be_opened": true
+            }
+          },
+          {
+            "name": "potted_plant_129",
+            "type": "potted_plant",
+            "states": {}
+          }
+        ],
+        "links": [
+          [
+            "bedroom_1",
+            "nightstand_2",
+            "in"
+          ],
+          [
+            "bedroom_1",
+            "nightstand_3",
+            "in"
+          ],
+          [
+            "bedroom_1",
+            "bed_4",
+            "in"
+          ],
+          [
+            "bedroom_1",
+            "chest_of_drawers_11",
+            "in"
+          ],
+          [
+            "bedroom_1",
+            "pendant_lamp_12",
+            "in"
+          ],
+          [
+            "closet_2",
+            "bookcase_20",
+            "in"
+          ],
+          [
+            "closet_2",
+            "bookcase_21",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "bench_22",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "ceiling_lamp_26",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "vase_32",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "ceiling_lamp_36",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "armchair_37",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "armchair_38",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "stool_40",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "stool_41",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "coffee_table_42",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "desk_43",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "console_table_46",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "end_table_51",
+            "in"
+          ],
+          [
+            "living_room_3",
+            "sofa_53",
+            "in"
+          ],
+          [
+            "bathroom_4",
+            "toilet_54",
+            "in"
+          ],
+          [
+            "bathroom_4",
+            "shower_stall_55",
+            "in"
+          ],
+          [
+            "bedroom_6",
+            "bed_58",
+            "in"
+          ],
+          [
+            "bedroom_6",
+            "armoire_59",
+            "in"
+          ],
+          [
+            "bedroom_6",
+            "end_table_63",
+            "in"
+          ],
+          [
+            "bedroom_6",
+            "pendant_lamp_67",
+            "in"
+          ],
+          [
+            "laundryroom_8",
+            "ceiling_lamp_69",
+            "in"
+          ],
+          [
+            "laundryroom_8",
+            "washer_70",
+            "in"
+          ],
+          [
+            "laundryroom_8",
+            "washer_71",
+            "in"
+          ],
+          [
+            "laundryroom_8",
+            "kitchen_cabinet_72",
+            "in"
+          ],
+          [
+            "laundryroom_8",
+            "kitchen_cabinet_73",
+            "in"
+          ],
+          [
+            "laundryroom_8",
+            "sink_cabinet_74",
+            "in"
+          ],
+          [
+            "laundryroom_8",
+            "kitchen_cabinet_75",
+            "in"
+          ],
+          [
+            "office_9",
+            "end_table_77",
+            "in"
+          ],
+          [
+            "office_9",
+            "cabinet_80",
+            "in"
+          ],
+          [
+            "office_9",
+            "desk_82",
+            "in"
+          ],
+          [
+            "office_9",
+            "swivel_chair_86",
+            "in"
+          ],
+          [
+            "other_room_10",
+            "armchair_89",
+            "in"
+          ],
+          [
+            "toilet_room_11",
+            "sink_stand_92",
+            "in"
+          ],
+          [
+            "toilet_room_11",
+            "ceiling_lamp_94",
+            "in"
+          ],
+          [
+            "toilet_room_11",
+            "toilet_96",
+            "in"
+          ],
+          [
+            "terrace_12",
+            "sofa_97",
+            "in"
+          ],
+          [
+            "terrace_12",
+            "table_101",
+            "in"
+          ],
+          [
+            "hallway_13",
+            "tv_stand_104",
+            "in"
+          ],
+          [
+            "hallway_13",
+            "ceiling_lamp_105",
+            "in"
+          ],
+          [
+            "hallway_13",
+            "ceiling_lamp_106",
+            "in"
+          ],
+          [
+            "hallway_13",
+            "ceiling_lamp_107",
+            "in"
+          ],
+          [
+            "hallway_13",
+            "vase_111",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "bread-bin_113",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "toaster_114",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "espresso_maker_117",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "sink_cabinet_119",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "kitchen_cabinet_120",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "kitchen_cabinet_121",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "kitchen_island_122",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "bar_stool_126",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "bar_stool_127",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "bar_stool_128",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "kitchen_cabinet_129",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "kitchen_cabinet_130",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "range_hood_132",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "kitchen_cabinet_133",
+            "in"
+          ],
+          [
+            "kitchen_14",
+            "refrigerator_134",
+            "in"
+          ],
+          [
+            "bed_4",
+            "window_curtain_1",
+            "on"
+          ],
+          [
+            "bed_4",
+            "throw_pillow_5",
+            "on"
+          ],
+          [
+            "nightstand_3",
+            "wall_mirror_6",
+            "in"
+          ],
+          [
+            "nightstand_2",
+            "potted_plant_7",
+            "on"
+          ],
+          [
+            "bed_4",
+            "rug_8",
+            "on"
+          ],
+          [
+            "pendant_lamp_12",
+            "candlestick_9",
+            "on"
+          ],
+          [
+            "nightstand_3",
+            "throw_pillow_10",
+            "in"
+          ],
+          [
+            "nightstand_3",
+            "throw_pillow_13",
+            "in"
+          ],
+          [
+            "pendant_lamp_12",
+            "throw_pillow_14",
+            "on"
+          ],
+          [
+            "nightstand_3",
+            "wall_art_15",
+            "on"
+          ],
+          [
+            "nightstand_3",
+            "throw_pillow_16",
+            "in"
+          ],
+          [
+            "nightstand_3",
+            "candlestick_17",
+            "on"
+          ],
+          [
+            "nightstand_2",
+            "throw_pillow_18",
+            "on"
+          ],
+          [
+            "bed_4",
+            "candle_19",
+            "on"
+          ],
+          [
+            "armchair_37",
+            "book_23",
+            "on"
+          ],
+          [
+            "end_table_51",
+            "throw_pillow_24",
+            "on"
+          ],
+          [
+            "end_table_51",
+            "throw_pillow_25",
+            "on"
+          ],
+          [
+            "ceiling_lamp_36",
+            "throw_pillow_27",
+            "on"
+          ],
+          [
+            "end_table_51",
+            "throw_pillow_28",
+            "on"
+          ],
+          [
+            "stool_40",
+            "potted_plant_29",
+            "on"
+          ],
+          [
+            "bench_22",
+            "candlestick_30",
+            "on"
+          ],
+          [
+            "console_table_46",
+            "book_31",
+            "on"
+          ],
+          [
+            "bench_22",
+            "potted_plant_33",
+            "on"
+          ],
+          [
+            "ceiling_lamp_26",
+            "flower_in_vase_34",
+            "on"
+          ],
+          [
+            "ceiling_lamp_26",
+            "throw_pillow_35",
+            "on"
+          ],
+          [
+            "bench_22",
+            "rug_39",
+            "on"
+          ],
+          [
+            "ceiling_lamp_36",
+            "throw_pillow_44",
+            "on"
+          ],
+          [
+            "armchair_38",
+            "rug_45",
+            "on"
+          ],
+          [
+            "armchair_38",
+            "candle_47",
+            "on"
+          ],
+          [
+            "vase_32",
+            "throw_pillow_48",
+            "on"
+          ],
+          [
+            "console_table_46",
+            "wall_mirror_49",
+            "on"
+          ],
+          [
+            "end_table_51",
+            "wall_art_50",
+            "on"
+          ],
+          [
+            "stool_40",
+            "potted_plant_52",
+            "on"
+          ],
+          [
+            "armoire_59",
+            "mantel_clock_56",
+            "on"
+          ],
+          [
+            "pendant_lamp_67",
+            "plush_toy_57",
+            "on"
+          ],
+          [
+            "armoire_59",
+            "potted_plant_60",
+            "on"
+          ],
+          [
+            "bed_58",
+            "potted_plant_61",
+            "on"
+          ],
+          [
+            "bed_58",
+            "table_lamp_62",
+            "on"
+          ],
+          [
+            "armoire_59",
+            "rug_64",
+            "on"
+          ],
+          [
+            "pendant_lamp_67",
+            "book_65",
+            "on"
+          ],
+          [
+            "pendant_lamp_67",
+            "wall_art_66",
+            "on"
+          ],
+          [
+            "swivel_chair_86",
+            "notebook_78",
+            "on"
+          ],
+          [
+            "desk_82",
+            "candlestick_79",
+            "on"
+          ],
+          [
+            "cabinet_80",
+            "book_81",
+            "in"
+          ],
+          [
+            "end_table_77",
+            "flower_in_vase_83",
+            "on"
+          ],
+          [
+            "cabinet_80",
+            "laptop_84",
+            "in"
+          ],
+          [
+            "desk_82",
+            "wall_art_85",
+            "on"
+          ],
+          [
+            "swivel_chair_86",
+            "rug_87",
+            "on"
+          ],
+          [
+            "cabinet_80",
+            "wall_art_88",
+            "on"
+          ],
+          [
+            "armchair_89",
+            "wall_mirror_90",
+            "on"
+          ],
+          [
+            "armchair_89",
+            "rug_91",
+            "on"
+          ],
+          [
+            "sink_stand_92",
+            "wall_mirror_93",
+            "on"
+          ],
+          [
+            "ceiling_lamp_94",
+            "toiletry_95",
+            "on"
+          ],
+          [
+            "table_101",
+            "flower_in_vase_98",
+            "on"
+          ],
+          [
+            "table_101",
+            "potted_plant_99",
+            "on"
+          ],
+          [
+            "table_101",
+            "potted_plant_100",
+            "on"
+          ],
+          [
+            "vase_111",
+            "shoe_102",
+            "on"
+          ],
+          [
+            "vase_111",
+            "flower_in_vase_103",
+            "on"
+          ],
+          [
+            "ceiling_lamp_107",
+            "wall_mirror_108",
+            "on"
+          ],
+          [
+            "tv_stand_104",
+            "shoe_109",
+            "on"
+          ],
+          [
+            "ceiling_lamp_105",
+            "wall_art_110",
+            "on"
+          ],
+          [
+            "bar_stool_128",
+            "jug_112",
+            "on"
+          ],
+          [
+            "toaster_114",
+            "cup_115",
+            "on"
+          ],
+          [
+            "range_hood_132",
+            "casserole_116",
+            "on"
+          ],
+          [
+            "bar_stool_127",
+            "plate_118",
+            "on"
+          ],
+          [
+            "range_hood_132",
+            "cup_123",
+            "on"
+          ],
+          [
+            "kitchen_cabinet_133",
+            "cup_124",
+            "on"
+          ],
+          [
+            "kitchen_island_122",
+            "book_125",
+            "in"
+          ],
+          [
+            "kitchen_cabinet_129",
+            "flower_in_vase_131",
+            "in"
+          ],
+          [
+            "closet_2",
+            "agent_0",
+            "in"
+          ],
+          [
+            "other_room_5",
+            "person_0",
+            "in"
+          ],
+          [
+            "kitchen_cabinet_120",
+            "reusable_water_bottle_70",
+            "on"
+          ],
+          [
+            "kitchen_island_122",
+            "cookbook_71",
+            "in"
+          ],
+          [
+            "kitchen_island_122",
+            "fruit_bowl_72",
+            "in"
+          ],
+          [
+            "sink_cabinet_119",
+            "tea_towel_73",
+            "in"
+          ],
+          [
+            "kitchen_cabinet_129",
+            "cutting_board_74",
+            "in"
+          ],
+          [
+            "kitchen_cabinet_120",
+            "spice_jar_75",
+            "in"
+          ],
+          [
+            "coffee_table_42",
+            "magazine_77",
+            "on"
+          ],
+          [
+            "armchair_37",
+            "knitting_basket_78",
+            "on"
+          ],
+          [
+            "end_table_77",
+            "school_backpack_79",
+            "on"
+          ],
+          [
+            "sofa_53",
+            "childs_toy_80",
+            "on"
+          ],
+          [
+            "kitchen_island_122",
+            "cutting_board_81",
+            "in"
+          ],
+          [
+            "kitchen_island_122",
+            "chef_knife_82",
+            "on"
+          ],
+          [
+            "kitchen_cabinet_129",
+            "olive_oil_bottle_83",
+            "in"
+          ],
+          [
+            "kitchen_cabinet_120",
+            "spice_rack_84",
+            "in"
+          ],
+          [
+            "sink_cabinet_119",
+            "dish_towel_85",
+            "in"
+          ],
+          [
+            "kitchen_island_122",
+            "fruit_bowl_86",
+            "in"
+          ],
+          [
+            "coffee_table_42",
+            "magazine_87",
+            "on"
+          ],
+          [
+            "sofa_53",
+            "throw_blanket_88",
+            "on"
+          ],
+          [
+            "tv_stand_104",
+            "remote_control_89",
+            "on"
+          ],
+          [
+            "desk_43",
+            "cookbook_90",
+            "on"
+          ],
+          [
+            "kitchen_island_122",
+            "olive_oil_bottle_91",
+            "in"
+          ],
+          [
+            "kitchen_island_122",
+            "cutting_board_92",
+            "on"
+          ],
+          [
+            "kitchen_island_122",
+            "espresso_cup_93",
+            "on"
+          ],
+          [
+            "sink_cabinet_119",
+            "dish_drying_rack_94",
+            "in"
+          ],
+          [
+            "end_table_51",
+            "magazine_95",
+            "on"
+          ],
+          [
+            "coffee_table_42",
+            "potted_herb_96",
+            "on"
+          ],
+          [
+            "cabinet_80",
+            "wine_bottle_97",
+            "on"
+          ],
+          [
+            "coffee_table_42",
+            "takeout_box_98",
+            "on"
+          ],
+          [
+            "kitchen_cabinet_121",
+            "kitchen_timer_99",
+            "on"
+          ],
+          [
+            "kitchen_island_122",
+            "cookbook_100",
+            "in"
+          ],
+          [
+            "sink_cabinet_119",
+            "cutting_board_101",
+            "in"
+          ],
+          [
+            "kitchen_cabinet_120",
+            "knife_block_102",
+            "on"
+          ],
+          [
+            "espresso_maker_117",
+            "coffee_mug_103",
+            "on"
+          ],
+          [
+            "kitchen_island_122",
+            "fruit_bowl_104",
+            "on"
+          ],
+          [
+            "desk_82",
+            "sketchbook_105",
+            "on"
+          ],
+          [
+            "desk_82",
+            "paint_tubes_106",
+            "on"
+          ],
+          [
+            "sofa_53",
+            "throw_blanket_107",
+            "on"
+          ],
+          [
+            "tv_stand_104",
+            "magazine_108",
+            "on"
+          ],
+          [
+            "bench_22",
+            "pair_of_slippers_109",
+            "on"
+          ],
+          [
+            "console_table_46",
+            "potted_plant_110",
+            "on"
+          ],
+          [
+            "sofa_53",
+            "newspaper_111",
+            "on"
+          ],
+          [
+            "end_table_63",
+            "knitting_basket_112",
+            "on"
+          ],
+          [
+            "bench_22",
+            "gardening_gloves_113",
+            "on"
+          ],
+          [
+            "bed_58",
+            "pair_of_slippers_114",
+            "on"
+          ],
+          [
+            "cabinet_80",
+            "medicine_box_115",
+            "in"
+          ],
+          [
+            "desk_43",
+            "spectacles_case_116",
+            "on"
+          ],
+          [
+            "tv_stand_104",
+            "radio_117",
+            "on"
+          ],
+          [
+            "bookcase_20",
+            "seed_packet_118",
+            "on"
+          ],
+          [
+            "desk_82",
+            "photo_frame_119",
+            "on"
+          ],
+          [
+            "kitchen_cabinet_121",
+            "cookbook_120",
+            "in"
+          ],
+          [
+            "kitchen_island_122",
+            "cereal_box_121",
+            "in"
+          ],
+          [
+            "kitchen_cabinet_120",
+            "spice_rack_122",
+            "on"
+          ],
+          [
+            "sink_cabinet_119",
+            "dish_soap_123",
+            "in"
+          ],
+          [
+            "bar_stool_126",
+            "tea_towel_124",
+            "on"
+          ],
+          [
+            "kitchen_island_122",
+            "shopping_bag_125",
+            "in"
+          ],
+          [
+            "nightstand_2",
+            "alarm_clock_126",
+            "in"
+          ],
+          [
+            "bench_22",
+            "slippers_127",
+            "on"
+          ],
+          [
+            "coffee_table_42",
+            "magazine_128",
+            "on"
+          ],
+          [
+            "console_table_46",
+            "potted_plant_129",
+            "on"
+          ],
+          [
+            "ceiling_lamp_105",
+            "potted_plant_76_283",
+            "on"
+          ]
+        ],
+        "person": [
+          {
+            "name": "person_0",
+            "location": "other_room_5"
+          }
+        ],
+        "agent": [
+          {
+            "name": "agent_0",
+            "location": "closet_2"
+          }
+        ]
+      },
+      "id": "ca93f23c-c8c5-426f-81f5-4f7e51811dfc",
+      "plan": [
+        "(navigate agent_0 closet_2 reusable_water_bottle_70)",
+        "(pick_from_surface agent_0 reusable_water_bottle_70 kitchen_cabinet_120)",
+        "(navigate agent_0 reusable_water_bottle_70 shower_stall_55)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_70 shower_stall_55)",
+        "(navigate agent_0 shower_stall_55 kitchen_island_122)",
+        "(place_on_surface agent_0 reusable_water_bottle_70 kitchen_island_122)"
+      ],
+      "type": "medium",
+      "domain_id": "ahat-liquid-v1",
+      "liquid_reference": {
+        "goals": [
+          "(item_on_surface reusable_water_bottle_70 kitchen_island_122)",
+          "(is_filled reusable_water_bottle_70)",
+          "(contains_water reusable_water_bottle_70)"
+        ],
+        "scope": "plan_and_state_witness_not_necessary_goal",
+        "required_actions": [
+          "(fill_from_faucet agent_0 reusable_water_bottle_70 shower_stall_55)"
+        ],
+        "notes": []
+      }
+    }
+  }
+]

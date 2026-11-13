@@ -1,0 +1,25 @@
+{
+  "revision": "dinner-reference-v1",
+  "source_sha256": "5c0509493c84697eebf2b9449d50092b620b82ea59c9b6355c24f472ce765c9a",
+  "domains": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+      "revision": "type-hierarchy-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+      "revision": "type-hierarchy-v1"
+    }
+  },
+  "counts": {
+    "valid_references_and_final_goals": 3,
+    "omission_controls": 4,
+    "serving_stages_before_cleanup": 1,
+    "final_only_goal_insufficiency_controls": 1
+  },
+  "failures": []
+}

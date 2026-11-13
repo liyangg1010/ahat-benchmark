@@ -5,11 +5,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from ..domains import domain_binding, check_inference_binding
 from ..datasets import align_cases, load_eval_set, load_inference
 from ..io import read_json, write_json_atomic
 from ..judge.aggregator import aggregate
-from ..provenance import index_cases, verify_stage_context
+from ..provenance import index_cases, result_digest, verify_stage_context
 from .judge_stage import ZERO_STATUSES
+from .cache import verify_val_cases
 
 
 def summarize(
@@ -32,10 +34,17 @@ def summarize(
     judge_provenance = verify_stage_context(
         judge_data, stage="judge", dataset=dataset, eval_cases=eval_cases,
         inference_path=inference_path, domain_path=domain_path,
-        parent_signature=val_provenance["signature"],
+        parent_signature=result_digest(val_data),
     )
-    align_cases(eval_cases, inference, allow_missing=val_provenance["protocol"].get("allow_missing", False))
+    aligned = align_cases(eval_cases, inference, allow_missing=val_provenance["protocol"].get("allow_missing", False))
     val_by_id, judge_by_id = index_cases(val_data, eval_cases), index_cases(judge_data, eval_cases)
+    verify_val_cases(aligned, val_by_id, domain_path)
+    for case in eval_cases:
+        check_inference_binding(case, inference.get(case.id), domain_path)
+        expected = domain_binding(case.domain_id, domain_path)
+        value = val_by_id.get(case.id)
+        if value is not None and any(value.get(k) != v for k, v in expected.items()):
+            raise ValueError(f'VAL domain binding mismatch for {case.id}')
     scoring = judge_provenance["protocol"]
     case_results, valid_judged, dimension_values = [], [], {}
     system_errors = 0
@@ -59,7 +68,7 @@ def summarize(
         if score is None:
             system_errors += 1
         case_results.append({
-            "id": case.id, "instruction": case.instruction,
+            "id": case.id, "instruction": case.instruction, **domain_binding(case.domain_id, domain_path),
             "plan": inference[case.id].plan if case.id in inference else [],
             "val": val, "judge": judge, "final_score": score,
         })
@@ -75,6 +84,12 @@ def summarize(
         "rubric_mean_on_valid": statistics.fmean(valid_judged) if valid_judged else None,
         "dimension_means": {key: statistics.fmean(values) for key, values in dimension_values.items()},
     }
+    summary_stats['by_domain'] = {}
+    for name in sorted({item['domain_id'] for item in case_results}):
+        group = [item for item in case_results if item['domain_id'] == name]
+        complete = all(item['final_score'] is not None for item in group)
+        summary_stats['by_domain'][name] = {'total_cases': len(group),
+            'final_score': sum(item['final_score'] for item in group) / len(group) if complete else None}
     if len(valid_judged) > 1:
         summary_stats["rubric_std_dev_on_valid"] = statistics.stdev(valid_judged)
     output = {

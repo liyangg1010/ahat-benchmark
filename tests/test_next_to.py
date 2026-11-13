@@ -26,14 +26,14 @@ def adjacency_scene(inside=False):
     return graph
 
 
-def native_goal(graph, plan, goals):
-    problem = full_problem(graph, DOMAIN).replace('(:goal (and))', '(:goal (and ' + ' '.join(goals) + '))')
+def native_goal(graph, plan, goals, domain=DOMAIN):
+    problem = full_problem(graph, domain).replace('(:goal (and))', '(:goal (and ' + ' '.join(goals) + '))')
     with tempfile.TemporaryDirectory() as directory:
         folder = Path(directory)
         (folder / 'problem.pddl').write_text(problem)
         (folder / 'plan.txt').write_text('\n'.join(plan))
         env = {**os.environ, 'LD_LIBRARY_PATH': str(VAL.parent) + ':' + os.environ.get('LD_LIBRARY_PATH', '')}
-        result = subprocess.run([str(VAL), '-v', str(DOMAIN), str(folder / 'problem.pddl'), str(folder / 'plan.txt')],
+        result = subprocess.run([str(VAL), '-v', str(domain), str(folder / 'problem.pddl'), str(folder / 'plan.txt')],
                                 capture_output=True, text=True, timeout=10, env=env)
     return result.returncode == 0 and 'Successful plans:' in result.stdout
 
@@ -43,7 +43,11 @@ class AdjacencyTests(unittest.TestCase):
         records = runpy.run_path(str(PROJECT / 'scripts/next_to_cases.py'))['build_cases']()
         bundled = {r['id']: r for r in map(json.loads, (PROJECT / 'benchmarks/ahat_eval_set.jsonl').read_text().splitlines())}
         self.assertEqual(len({r['id'] for r in records}), 10)
-        self.assertEqual([bundled[r['id']] for r in records], records)
+        archived = {r['id']: r for r in map(json.loads, (PROJECT / 'benchmarks/easy-pruning-v1/removed.jsonl').read_text().splitlines())}
+        self.assertFalse(set(bundled) & set(archived))
+        self.assertEqual(sum(r['id'] in bundled for r in records), 8)
+        self.assertEqual(sum(r['id'] in archived for r in records), 2)
+        self.assertEqual([(bundled | archived)[r['id']] for r in records], records)
 
     def test_input_is_undirected_idempotent_and_does_not_invent_transitivity(self):
         graph = adjacency_scene()

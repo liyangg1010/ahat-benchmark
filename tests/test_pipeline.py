@@ -16,7 +16,7 @@ from ahat_benchmark.pipeline.judge_stage import run_judge_stage
 from ahat_benchmark.pipeline.summarize import summarize
 from ahat_benchmark.pipeline.val_stage import run_val_stage
 from ahat_benchmark.schemas import EvalCase
-from ahat_benchmark.provenance import digest
+from ahat_benchmark.provenance import canonical, digest
 from helpers import DOMAIN, VAL, PLAN, FakeClient, scene
 
 
@@ -66,6 +66,67 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(self.val()['meta']['signature'], first['meta']['signature'])
         self.judge(client)
         self.assertEqual(len(client.calls), 4)
+
+    def rewrite_val(self, change, rehash=True):
+        data = json.loads(self.val_path.read_text())
+        change(data['cases'][0])
+        if rehash:
+            data['meta']['cases_sha256'] = digest(canonical(data['cases']).encode())
+        self.val_path.write_text(json.dumps(data))
+
+    def test_cached_plan_mismatch_is_rejected_before_resume_or_judge(self):
+        self.val()
+        self.judge(FakeClient())
+        self.rewrite_val(lambda row: row.update(plan=['(place_on_surface agent_0 cup_1 table_1)']))
+        before = self.val_path.read_bytes(), self.judge_path.read_bytes()
+        client = FakeClient()
+        for stage in (self.val, lambda: self.judge(client), self.summary):
+            with self.subTest(stage=stage):
+                with self.assertRaises(ValueError):
+                    stage()
+        self.assertEqual(client.calls, [])
+        self.assertEqual(before, (self.val_path.read_bytes(), self.judge_path.read_bytes()))
+
+    def test_cached_equivalent_plan_format_is_accepted(self):
+        self.val()
+        self.rewrite_val(lambda row: row.update(plan=['PICK_FROM_SURFACE(agent_0, cup_1, table_1)']))
+        self.val()
+        client = FakeClient()
+        self.judge(client)
+        self.assertEqual(len(client.calls), 4)
+        self.assertEqual(self.summary()['statistics']['final_score'], .5)
+
+    def test_result_corruption_and_upstream_case_changes_invalidate_judge_resume(self):
+        self.val()
+        self.judge(FakeClient())
+        self.rewrite_val(lambda row: row.update(duration_seconds=999), rehash=False)
+        with self.assertRaisesRegex(ValueError, 'content.*corrupt'):
+            self.judge(FakeClient())
+        self.rewrite_val(lambda row: None)
+        with self.assertRaisesRegex(ValueError, 'inputs or protocol changed'):
+            self.judge(FakeClient())
+        with self.assertRaises(ValueError):
+            self.summary()
+
+    def test_rehashed_problem_must_still_match_dataset_scene(self):
+        self.val()
+        def change(row):
+            row['problem_pddl'] = row['problem_pddl'].replace('(:init ', '(:init (is_clean cup_1) ')
+            row['problem_sha256'] = digest(row['problem_pddl'].encode())
+        self.rewrite_val(change)
+        client = FakeClient()
+        with self.assertRaisesRegex(ValueError, 'initial state does not match scene'):
+            self.judge(client)
+        self.assertEqual(client.calls, [])
+
+    def test_malformed_plan_cache_remains_a_zero_scoring_submission(self):
+        self.inference.write_text(json.dumps([{'id': 'valid', 'plan': ['unparseable']}, self.rows[1]]))
+        self.val()
+        self.val()
+        client = FakeClient()
+        self.judge(client)
+        self.assertEqual(client.calls, [])
+        self.assertEqual(self.summary()['statistics']['final_score'], 0)
 
     def test_changed_inference_or_scene_rejects_old_val_checkpoint(self):
         self.val()

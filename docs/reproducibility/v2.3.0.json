@@ -1,0 +1,115 @@
+{
+  "release_tag": "v2.3.0",
+  "package_version": "2.3.0",
+  "date": "2026-11-13",
+  "active_case_count": 274,
+  "split_counts": {
+    "easy": 117,
+    "medium": 65,
+    "open": 92
+  },
+  "split_versions": {
+    "easy": "1.11.0",
+    "medium": "1.10.0",
+    "open": "1.10.4"
+  },
+  "benchmark_manifest_sha256": "a18644bdb617a671708fe231294da8725070c730d5c87a1f6a5b0d4fc8396f77",
+  "hf_sync_sha256": "3bc57b2765b12da07a24aecee81bb90ddcc0f8e9a508c5932adb1391be091140",
+  "source_sha256": "f7b849950deb3684bd31e7787a110e0b5508eb7811b10ac9c836ebafc309ea78",
+  "domains": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+      "revision": "type-hierarchy-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+      "revision": "type-hierarchy-v1"
+    }
+  },
+  "judge_profiles": {
+    "ahat-v8-group-portions": {
+      "version": "ahat-rubric-scene-lighting-v7",
+      "prompt_hashes": {
+        "D1": "e60503dcccc05bcec423087728633f2b9b664948000c2b1cd5d4e9cc55a5c2b0",
+        "D2": "9ef97aec76d91ae5ede146df3432fa5b90d6c8f23968a0097b4fcc5ba4ef24f1",
+        "D3": "64f1e029de4a8ba4e168a52bcfe62577babafee9109f7a8cf97536fc0e3454bc",
+        "D4": "5d6a7ae62df11daf9e95279e1656ae6cc7feae4461faefc9d9ac22241e19ea7c"
+      }
+    },
+    "ahat-liquid-v1": {
+      "version": "ahat-rubric-liquid-lighting-v2",
+      "prompt_hashes": {
+        "D1": "ac65ae8fedda0473646240d70abddd3763deb9f65334d13388c1bdb1b411cb6f",
+        "D2": "4e500e92354db66e55747b7efd0abbbd3d7930fae4383281dd7c47fa0557c49d",
+        "D3": "9dc8030854e25ab327dcb0b9fca3238c45ce4570117feea9db69f245d76e0fd9",
+        "D4": "7362522535f89c4fdb8acf259e7d13a779461a966c4548077b85be6fafc92bad"
+      }
+    }
+  },
+  "validator": {
+    "name": "VAL",
+    "platform": "linux-x86_64",
+    "path": "vendor/val/Validate",
+    "sha256": "03fa000c6842d3fc5ea15740195e91178a2918f6454d4abd4438454ed136a136",
+    "library_path": "vendor/val/libVAL.so",
+    "library_sha256": "364cbf670a6085885a30fb3d05bbf1a6de923cc94b19f479500aa4dbe7058c95",
+    "version": "full-scene-val-typed-arguments-v3"
+  },
+  "paper_snapshot": {
+    "tag": "paper-tgpo-v1",
+    "tag_object": "ef6abc0704a193f93c8b092c29bb2e0f8c3bc55f",
+    "commit": "fafa4624cf4e99c4af10d1738d51fc9cd97e91fb",
+    "version_lock_sha256": "a9cc61f9beb0ee7d57977ecd351f0002ebb9c427a9b18855f1fbd7d3251e49ad",
+    "active_case_count": 348
+  },
+  "data_artifacts": [
+    {
+      "path": "ahat_eval_set.jsonl",
+      "sha256": "f7b849950deb3684bd31e7787a110e0b5508eb7811b10ac9c836ebafc309ea78"
+    },
+    {
+      "path": "ahat-easy/cases.json",
+      "sha256": "852b3fcb4b1506539b3b5d4ad8ea52dc463e4df5841186e7212bde1a9ea37305"
+    },
+    {
+      "path": "ahat-easy/manifest.json",
+      "sha256": "249211d4b09af2f647d3beaa6df1bb79573368631aabdfb7146a223b531b2468"
+    },
+    {
+      "path": "ahat-medium/cases.json",
+      "sha256": "63a47ac182c1f545b2e24a6a68ff215e1cd9d21099b64532c2b89d9babb9b958"
+    },
+    {
+      "path": "ahat-medium/manifest.json",
+      "sha256": "083937507bb70aaf1fe5192f148db6c871373672a533601dd0cceb2dc585e471"
+    },
+    {
+      "path": "ahat-open/cases.json",
+      "sha256": "b0776ed0c47a6c33502e0218acfa59532e6bc92e12125fdee62aa13ad8d0ca38"
+    },
+    {
+      "path": "ahat-open/manifest.json",
+      "sha256": "6128757c6ecb8b911e10906c326cf2017080c8ca51ff82a27d7da8f737298c06"
+    },
+    {
+      "path": "liquid-v1/originals.jsonl",
+      "sha256": "79702cf859224c8ea71824216de77aac3ce6de3c682c2d5fe9a9f1288a0fc8da"
+    },
+    {
+      "path": "liquid-v1/quarantined.json",
+      "sha256": "7fbdbdf5338345921ef5f06ac05d7b120d17e4179668dc1b4739692e3c63de3b"
+    },
+    {
+      "path": "bottle-refill-v1/pruned.json",
+      "sha256": "bd05439a1c109bec7b16716612a0bf0e577a811ebea183f422e93ee3616d060a"
+    },
+    {
+      "path": "easy-pruning-v1/removed.jsonl",
+      "sha256": "283108cc9598345b8577d3cb6d2c15184424dce8ec9faefb25fb150985d64c0b"
+    }
+  ]
+}

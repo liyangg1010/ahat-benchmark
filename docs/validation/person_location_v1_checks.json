@@ -1,0 +1,766 @@
+{
+  "revision": "person-location-v1",
+  "source_sha256_unchanged": "fa42e746754d826145e026800c553b6d9208fb3c0f1593100b7bcb3b1c1d28e0",
+  "domains_unchanged": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "4b93389a6a3761e70e8712403b0516bc5d94ff9caffe96371cd31eaf08350e8a",
+      "revision": "scene-lighting-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "2faf00bc2e85600600cdc38a66d650a7ce1874854499973e64875d4e496e9c5f",
+      "revision": "bottle-refill-v1"
+    }
+  },
+  "counts": {
+    "scene_replay_steps": 3985,
+    "cases_checked": 287,
+    "people_with_position": 277,
+    "affected_cases": 61,
+    "restored_person_at_facts": 61
+  },
+  "checks": {
+    "only_expected_person_facts_added": true,
+    "other_initial_and_final_facts_unchanged": true,
+    "new_facts_visible_to_D1_and_D2": true,
+    "all_step_scene_pddl_roundtrips_equal": true
+  },
+  "changes": [
+    {
+      "id": "da7dda12-673f-45ac-bad9-0d20078ebbf1",
+      "source_index": 6,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "entryway_1"
+        ]
+      ]
+    },
+    {
+      "id": "d5e8b167-4f7e-4aed-8960-570a455c9267",
+      "source_index": 11,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "9104baaa-79d5-4f34-8fea-23172be534d6",
+      "source_index": 12,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "b6a3a03a-3909-4092-88d6-1e524beb6d41",
+      "source_index": 14,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "47b1ca5e-7111-4b41-ac24-c053d45ee620",
+      "source_index": 16,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "40441320-4bc6-490a-8ad2-488b6be318ac",
+      "source_index": 19,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "33e6f455-684e-476b-9351-bbb7a6e485cf",
+      "source_index": 20,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "687c1289-5efb-4a9b-bd39-550fa4ca8a56",
+      "source_index": 24,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "619dd563-92d9-4588-b836-e983eaaaa6b7",
+      "source_index": 31,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "dining_booth_1"
+        ]
+      ]
+    },
+    {
+      "id": "910d8e7a-fb88-49d7-a9cd-edf1b895556b",
+      "source_index": 34,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "garage_1"
+        ]
+      ]
+    },
+    {
+      "id": "f611a984-31d5-4a50-8ec9-ea9450e5419c",
+      "source_index": 35,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "hallway_1"
+        ]
+      ]
+    },
+    {
+      "id": "c9520831-5973-4b31-bbb9-97590cd58ebd",
+      "source_index": 37,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "90dd2cec-deb5-4f64-ae2e-a263685d9c2d",
+      "source_index": 39,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "14ca4494-b0ed-4b6b-8ab0-f663f85ebd18",
+      "source_index": 42,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "outdoor_1"
+        ]
+      ]
+    },
+    {
+      "id": "95a77dd6-751f-4ee2-bd1c-d82485892d90",
+      "source_index": 44,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "40cfb817-07f2-4415-a5c2-4542f4a38eb0",
+      "source_index": 48,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "a18f1141-27f1-4beb-ac46-e8c5b14041bb",
+      "source_index": 55,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "entryway_1"
+        ]
+      ]
+    },
+    {
+      "id": "55db5fdf-a63b-4495-a6dc-35556ec04133",
+      "source_index": 72,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "rec_1"
+        ]
+      ]
+    },
+    {
+      "id": "e7983d84-bb92-466b-a07b-5c91f1ccccc1",
+      "source_index": 78,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "90130cca-38f5-4bbf-96c2-83b6cb51650a",
+      "source_index": 79,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "closet_1"
+        ]
+      ]
+    },
+    {
+      "id": "ebbf8478-e748-47b1-bcbf-b650b2735ee7",
+      "source_index": 82,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "b2a741df-6e15-4ba7-9d9a-fda9cf5849b4",
+      "source_index": 91,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "39a0ddf2-fdba-4f63-baf6-b5b9ebc729db",
+      "source_index": 94,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "closet_1"
+        ]
+      ]
+    },
+    {
+      "id": "0c60c61b-a37b-4b23-9435-a335552b7702",
+      "source_index": 96,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "porch_1"
+        ]
+      ]
+    },
+    {
+      "id": "410962c9-1740-4e74-8cf3-08030c874108",
+      "source_index": 97,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bathroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "79414f0b-947f-4614-ae40-1bee070410bc",
+      "source_index": 98,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "a9f01a35-f905-499e-ac54-007822d408c3",
+      "source_index": 113,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bathroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "612273ba-8701-4933-881c-8dadfc5357dc",
+      "source_index": 114,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "967aaf96-c1b0-458d-9b06-b0148e8f5f1a",
+      "source_index": 115,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "lounge_1"
+        ]
+      ]
+    },
+    {
+      "id": "6f54c6ff-8beb-47a3-95cf-e0196c946960",
+      "source_index": 117,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "ab270610-f68d-4ccf-8ced-455a237f8dc5",
+      "source_index": 120,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "outdoor_1"
+        ]
+      ]
+    },
+    {
+      "id": "54704d51-cfcd-4cb5-a333-8917f0718bff",
+      "source_index": 121,
+      "split": "easy",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "garage_1"
+        ]
+      ]
+    },
+    {
+      "id": "8708a9fe-8ed0-49a8-9339-36f8d2a11611",
+      "source_index": 124,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "lounge_1"
+        ]
+      ]
+    },
+    {
+      "id": "8141f80a-b786-4dea-af34-d4db59ed0c68",
+      "source_index": 126,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "95268a02-bced-4de2-9963-2261ccf2851e",
+      "source_index": 127,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "4782e797-4375-47f2-9e8a-258f739c89ce",
+      "source_index": 129,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "garage_1"
+        ]
+      ]
+    },
+    {
+      "id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+      "source_index": 134,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "48ecb29b-1d2a-4960-96e0-60a94036540e",
+      "source_index": 136,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "closet_1"
+        ]
+      ]
+    },
+    {
+      "id": "8eaf1794-e3f0-4f38-aa7e-d6b77872d7a8",
+      "source_index": 138,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "63613b83-4e00-48e3-812f-e4dd3e98014a",
+      "source_index": 142,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "9a7a00d3-22dd-41c1-8df4-098e2f03e2e3",
+      "source_index": 144,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "dining_booth_1"
+        ]
+      ]
+    },
+    {
+      "id": "83b97e81-d8a2-4ae9-97d4-fddb4c0cdf89",
+      "source_index": 147,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "garage_1"
+        ]
+      ]
+    },
+    {
+      "id": "9f4c4952-9d53-4f4f-b512-c49d9f2b7102",
+      "source_index": 148,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "3165c583-ec81-41ed-a048-1335ff87cbfd",
+      "source_index": 152,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "porch_1"
+        ]
+      ]
+    },
+    {
+      "id": "4716c0d9-8084-4646-b242-ae40c032829b",
+      "source_index": 153,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "5430d117-1d16-4e1a-8573-169cc437c5ff",
+      "source_index": 155,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "7f0a1344-6ce2-4860-8b0d-1d6de7219fdd",
+      "source_index": 160,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bathroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "41eef001-7744-4656-bb14-84c8920b2fde",
+      "source_index": 162,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "porch_1"
+        ]
+      ]
+    },
+    {
+      "id": "b60639f5-930d-40c4-b6a1-71e581df6335",
+      "source_index": 164,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "02a5f844-c663-4336-b6c9-fad5540b7cd5",
+      "source_index": 165,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "b814802a-a506-4c4a-9311-635c4a5bf01e",
+      "source_index": 166,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "garage_1"
+        ]
+      ]
+    },
+    {
+      "id": "ca238890-0c28-4074-b323-27cf9f92cebe",
+      "source_index": 167,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "garage_1"
+        ]
+      ]
+    },
+    {
+      "id": "3f1f4f25-6ff1-4879-a3df-e7b28790de75",
+      "source_index": 168,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "office_1"
+        ]
+      ]
+    },
+    {
+      "id": "adb234ae-ab86-431b-a699-25339daea983",
+      "source_index": 169,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "fac6321b-b35f-4b4c-a91c-3ea5f96f6ddc",
+      "source_index": 172,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    },
+    {
+      "id": "079da0e5-422a-4fe4-afc5-e885f4e98453",
+      "source_index": 174,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "efee78f0-4ae2-415b-bfb7-dbc84b3e9307",
+      "source_index": 176,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "bc46d239-8b46-4705-a7d1-77b58382db10",
+      "source_index": 177,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "closet_1"
+        ]
+      ]
+    },
+    {
+      "id": "41522639-98da-429a-807c-5061466c1356",
+      "source_index": 181,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "entryway_1"
+        ]
+      ]
+    },
+    {
+      "id": "13f1ed27-3fef-48ca-9b6f-806b944e57b2",
+      "source_index": 183,
+      "split": "medium",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "living_room_1"
+        ]
+      ]
+    },
+    {
+      "id": "093718db-3b95-4b2a-b155-8b1e93c3ff38",
+      "source_index": 275,
+      "split": "open",
+      "added_initial_and_final_facts": [
+        [
+          "person_at",
+          "person_0",
+          "bedroom_1"
+        ]
+      ]
+    }
+  ],
+  "failures": []
+}

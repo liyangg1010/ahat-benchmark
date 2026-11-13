@@ -1,9 +1,14 @@
 # Preparing a release
 
-The 2.3.0 preparation adds adjacency consistency, unified appliance-specific
+The [2.3.0 release](releases/v2.3.0.md), tagged `v2.3.0`, freezes the 274-task snapshot.
+The TGPO paper remains locked to `paper-tgpo-v1` (348 tasks). Never move or
+replace that tag when publishing later versions.
+
+The 2.3.0 release adds adjacency consistency, unified appliance-specific
 thermal processing with one heated result, explicit heatability/cookware
 capabilities, the D3 meal/setup distinction and instruction-based judging,
-with 296 bundled tasks after semantic meal and liquid coverage pruning. Domain, rubric and
+with 274 active tasks after easy-pruning-v1, earlier semantic pruning, liquid-v1 quarantine and bottle
+deduplication. Domain, rubric and
 task-set revisions require fresh
 evaluation outputs; older scores are historical snapshots.
 

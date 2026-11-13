@@ -1,0 +1,1152 @@
+{
+  "dataset_sha256": "186f7d071a35fe662c85dc1945c2690899373101bd86e636a08b402a7a0fc8b7",
+  "domains": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "4b93389a6a3761e70e8712403b0516bc5d94ff9caffe96371cd31eaf08350e8a",
+      "revision": "scene-lighting-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "70b6d2641a8bbf501ad6849357750ea9e586e62f04dc6e11ea808c3f6b81c7fd",
+      "revision": "scene-lighting-v1"
+    }
+  },
+  "closed_bottle_references": [
+    {
+      "id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+      "instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+      "bottle": {
+        "name": "reusable_water_bottle_24",
+        "type": "reusable_water_bottle",
+        "states": {
+          "can_be_opened": true,
+          "is_liquid_container": true,
+          "is_filled": false,
+          "contents_heated": false,
+          "contains_water": false,
+          "contains_tea": false,
+          "contains_coffee": false,
+          "contains_other_drink": false
+        }
+      },
+      "step": 4,
+      "action": "(fill_from_faucet agent_0 reusable_water_bottle_24 sink_67)",
+      "reference_status": "valid",
+      "native_closed_and_filled": true,
+      "plan": [
+        "(navigate agent_0 dining_room_15 reusable_water_bottle_24)",
+        "(pick_from_surface agent_0 reusable_water_bottle_24 dining_table_51)",
+        "(navigate agent_0 reusable_water_bottle_24 sink_67)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_24 sink_67)",
+        "(navigate agent_0 sink_67 person_0)",
+        "(hand_over_to_person agent_0 person_0 reusable_water_bottle_24)"
+      ]
+    },
+    {
+      "id": "44a3890d-31fb-4a53-b9d2-1d7f2e22f686",
+      "instruction": "Pick up the reusable water bottle from desk in the bedroom, take it to the sink at sink_cabinet in the laundryroom, fill it with water from the faucet, then return and place it back on desk.",
+      "bottle": {
+        "name": "reusable_water_bottle_47",
+        "type": "reusable_water_bottle",
+        "states": {
+          "can_be_opened": true,
+          "is_liquid_container": true,
+          "is_filled": false,
+          "contents_heated": false,
+          "contains_water": false,
+          "contains_tea": false,
+          "contains_coffee": false,
+          "contains_other_drink": false
+        }
+      },
+      "step": 4,
+      "action": "(fill_from_faucet agent_0 reusable_water_bottle_47 sink_cabinet_46)",
+      "reference_status": "valid",
+      "native_closed_and_filled": true,
+      "plan": [
+        "(navigate agent_0 hallway_4 reusable_water_bottle_47)",
+        "(pick_from_surface agent_0 reusable_water_bottle_47 desk_9)",
+        "(navigate agent_0 reusable_water_bottle_47 sink_cabinet_46)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_47 sink_cabinet_46)",
+        "(navigate agent_0 sink_cabinet_46 desk_9)",
+        "(place_on_surface agent_0 reusable_water_bottle_47 desk_9)"
+      ]
+    },
+    {
+      "id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+      "instruction": "Refill the student's reusable water bottle and place it in her bedroom so it's ready for her study session.",
+      "bottle": {
+        "name": "reusable_water_bottle_25",
+        "type": "reusable_water_bottle",
+        "states": {
+          "can_be_opened": true,
+          "is_liquid_container": true,
+          "is_filled": false,
+          "contents_heated": false,
+          "contains_water": false,
+          "contains_tea": false,
+          "contains_coffee": false,
+          "contains_other_drink": false
+        }
+      },
+      "step": 4,
+      "action": "(fill_from_faucet agent_0 reusable_water_bottle_25 sink_66)",
+      "reference_status": "valid",
+      "native_closed_and_filled": true,
+      "plan": [
+        "(navigate agent_0 bedroom_5 reusable_water_bottle_25)",
+        "(pick_from_surface agent_0 reusable_water_bottle_25 chair_38)",
+        "(navigate agent_0 reusable_water_bottle_25 sink_66)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_25 sink_66)",
+        "(navigate agent_0 sink_66 bed_55)",
+        "(place_on_surface agent_0 reusable_water_bottle_25 bed_55)"
+      ]
+    },
+    {
+      "id": "ca93f23c-c8c5-426f-81f5-4f7e51811dfc",
+      "instruction": "Refill a reusable water bottle and make it available in the kitchen.",
+      "bottle": {
+        "name": "reusable_water_bottle_70",
+        "type": "reusable_water_bottle",
+        "states": {
+          "can_be_opened": true,
+          "is_liquid_container": true,
+          "is_filled": false,
+          "contents_heated": false,
+          "contains_water": false,
+          "contains_tea": false,
+          "contains_coffee": false,
+          "contains_other_drink": false
+        }
+      },
+      "step": 4,
+      "action": "(fill_from_faucet agent_0 reusable_water_bottle_70 shower_stall_55)",
+      "reference_status": "valid",
+      "native_closed_and_filled": true,
+      "plan": [
+        "(navigate agent_0 closet_2 reusable_water_bottle_70)",
+        "(pick_from_surface agent_0 reusable_water_bottle_70 kitchen_cabinet_120)",
+        "(navigate agent_0 reusable_water_bottle_70 shower_stall_55)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_70 shower_stall_55)",
+        "(navigate agent_0 shower_stall_55 kitchen_island_122)",
+        "(place_on_surface agent_0 reusable_water_bottle_70 kitchen_island_122)"
+      ]
+    }
+  ],
+  "missing_person_locations": [
+    {
+      "id": "da7dda12-673f-45ac-bad9-0d20078ebbf1",
+      "instruction": "On a busy work morning, place your laptop, lunch box, and cellphone in the office for your spouse's use, ensuring all are on the desk.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "entryway_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "d5e8b167-4f7e-4aed-8960-570a455c9267",
+      "instruction": "On a sunny weekend, tidy up the living room by collecting the baseball bat, helmet, and box from the couch and placing them neatly inside the hallway for easy access before an outing.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "9104baaa-79d5-4f34-8fea-23172be534d6",
+      "instruction": "Organize the shoes in the entryway by placing any scattered ones together neatly near the door.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "b6a3a03a-3909-4092-88d6-1e524beb6d41",
+      "instruction": "On Lantern Festival evening, place all candle holders in the bedroom and living room onto the main living room table for decoration.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "47b1ca5e-7111-4b41-ac24-c053d45ee620",
+      "instruction": "On the morning of Children's Day, bring the toy construction set from the bedroom and the toy fruits from the kitchen chair to your table in bedroom_2 for a celebration.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "40441320-4bc6-490a-8ad2-488b6be318ac",
+      "instruction": "Since the hot pot dinner is planned for tonight, move bowls, cups, and glass from the bedrooms and bathroom to the kitchen counter for washing and meal prep.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "33e6f455-684e-476b-9351-bbb7a6e485cf",
+      "instruction": "To keep your workspace organized after a gaming night, put your gaming console away in the bedroom chest of drawers.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "687c1289-5efb-4a9b-bd39-550fa4ca8a56",
+      "instruction": "On a rainy evening, bring a bath towel from the bathroom to the bedroom for a warm shower later.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "619dd563-92d9-4588-b836-e983eaaaa6b7",
+      "instruction": "Before your evening walk, take your backpack from the bedroom and place it on the entryway bench for easy grab-and-go.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "dining_booth_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "910d8e7a-fb88-49d7-a9cd-edf1b895556b",
+      "instruction": "For a family movie night, bring toy food from the kitchen table to the living room coffee table for the children.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "garage_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "f611a984-31d5-4a50-8ec9-ea9450e5419c",
+      "instruction": "On a spring evening before Nawruz Festival, tidy up the lounge by placing all scattered books and cushions onto shelves and couches.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "hallway_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "c9520831-5973-4b31-bbb9-97590cd58ebd",
+      "instruction": "After a sweaty basketball game, bring a clean bath towel from the bathroom to your bedroom and place it on your bed for your shower later.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "90dd2cec-deb5-4f64-ae2e-a263685d9c2d",
+      "instruction": "Before watching afternoon TV dramas, fetch the lunch box and bottle from the kitchen chairs and place them on the living room table for a snack.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "14ca4494-b0ed-4b6b-8ab0-f663f85ebd18",
+      "instruction": "Before heading to your boutique, power off the laptop in the office to save electricity.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "outdoor_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "95a77dd6-751f-4ee2-bd1c-d82485892d90",
+      "instruction": "Place your cellphone (cellphone_2) on the newly added phone stand in bedroom_1 so it's easy to charge overnight on Sunday.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "40cfb817-07f2-4415-a5c2-4542f4a38eb0",
+      "instruction": "Late at night before bed, place my cellphone in the chest of drawers in the bedroom to charge.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "a18f1141-27f1-4beb-ac46-e8c5b14041bb",
+      "instruction": "On a cool spring morning, take your eco-friendly lunch box from the kitchen chair and place it onto the table to prepare for your packed vegetarian meal.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "entryway_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "55db5fdf-a63b-4495-a6dc-35556ec04133",
+      "instruction": "Retrieve a pencil case from your bedroom, a bowl from the kitchen, a spray bottle from the laundry, and a book from the office, place all on your desk in the office to set up for a drawing session.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "rec_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "e7983d84-bb92-466b-a07b-5c91f1ccccc1",
+      "instruction": "Tonight is pizza-and-gaming night! Fetch my cellphone from the bedroom chair and place it on the living room couch so I won’t miss notifications.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "90130cca-38f5-4bbf-96c2-83b6cb51650a",
+      "instruction": "Bring your cellphone and laptop cover to the office for group study prep the night before a big exam.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "closet_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "ebbf8478-e748-47b1-bcbf-b650b2735ee7",
+      "instruction": "Early in the morning, organize your art supplies by placing a pencil case and folder in your bedroom’s chest of drawers.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "b2a741df-6e15-4ba7-9d9a-fda9cf5849b4",
+      "instruction": "After coming home from art class, place my backpack and sketchbook on my bed for the night.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "39a0ddf2-fdba-4f63-baf6-b5b9ebc729db",
+      "instruction": "Put a hand towel, soap dispenser, and soap dish in the bathroom for guests coming this evening.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "closet_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "0c60c61b-a37b-4b23-9435-a335552b7702",
+      "instruction": "Before your next online lecture, ensure your laptop cover and cellphone are on the bedroom desk for easy access.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "porch_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "410962c9-1740-4e74-8cf3-08030c874108",
+      "instruction": "Freshen up the bedroom by placing a candle holder and a new book on the bedside table for evening relaxation.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bathroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "79414f0b-947f-4614-ae40-1bee070410bc",
+      "instruction": "Gather festive items—a candle holder, teapot, a bowl, a plate, a bunch of toy fruits for grandchildren, a vase, and a new clock—placing them on the dining table for decoration and family gathering.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "a9f01a35-f905-499e-ac54-007822d408c3",
+      "instruction": "On this chilly Inner Mongolian morning, please bring my teapot and an electric kettle to the bathroom so I can carefully pour and prepare hot water for myself and my spouse.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bathroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "612273ba-8701-4933-881c-8dadfc5357dc",
+      "instruction": "Set out a towel and a bottle of soap in the bathroom for guests coming over during the Lunar New Year holiday.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "967aaf96-c1b0-458d-9b06-b0148e8f5f1a",
+      "instruction": "Move your reading glasses from the lounge to the office so you can use them while reading after dinner.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "lounge_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "6f54c6ff-8beb-47a3-95cf-e0196c946960",
+      "instruction": "Put away your favorite outdoor adventure book on the office shelves after reading on a rainy afternoon.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "ab270610-f68d-4ccf-8ced-455a237f8dc5",
+      "instruction": "Gather a glass from the kitchen, get ice from the garage fridge (represent as bottle for ice container), and take a juice bottle from the dining room, and set them up next to your laptop in the office.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "outdoor_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "54704d51-cfcd-4cb5-a333-8917f0718bff",
+      "instruction": "Before bedtime, organize any books left around my bed in bedroom_2 by putting them neatly on the bedside table.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "garage_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "8708a9fe-8ed0-49a8-9339-36f8d2a11611",
+      "instruction": "On a chilly winter morning, prepare the bathroom by pouring hot water from the kettle into a bowl placed on the bathroom counter, then bring a clean cup for rinsing.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "lounge_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "8141f80a-b786-4dea-af34-d4db59ed0c68",
+      "instruction": "Move a decorative plant container from the entryway to the dining room counter, place a bowl and fork from the kitchen onto the dining table, and bring a box from the closet to the table for snacks.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "95268a02-bced-4de2-9963-2261ccf2851e",
+      "instruction": "Collect used plates and cups from the living room, bring toy items from the shelf to the bedroom, and close all opened cupboards in the kitchen.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "4782e797-4375-47f2-9e8a-258f739c89ce",
+      "instruction": "Arrange the dining table with the statue, vase, cap, plate, and teapot from the dining room and kitchen, bring a candle from the laundry room to the dining table, light the candle, and place a bowl of fruit on the table.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "garage_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "1cdf223d-1597-4e0e-ab9f-c601b577dfab",
+      "instruction": "Bring your laptop and a notebook from your bedroom to the office for studying, grab a cup of hot tea from the kitchen, and also bring your watch from the office to keep track of your study breaks.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "48ecb29b-1d2a-4960-96e0-60a94036540e",
+      "instruction": "Reset the house: relocate a watch and spectacles from bedroom_1 to office_1, clear an old box and cushion from closet_1 to hallway_1, bring a glass and tea kettle to kitchen_1, put a soap dispenser in bathroom_1, and move a stuffed toy from bedroom_2 to closet_2.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "closet_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "8eaf1794-e3f0-4f38-aa7e-d6b77872d7a8",
+      "instruction": "On a chilly morning, power on the electric kettle in the kitchen and prepare a cup for green tea before your video calls.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "63613b83-4e00-48e3-812f-e4dd3e98014a",
+      "instruction": "Collect your laptop from the bedroom, a lamp from the living room, a notebook (box) from the bedroom, and set up a remote work station on the table in the living room for afternoon work.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "9a7a00d3-22dd-41c1-8df4-098e2f03e2e3",
+      "instruction": "Prepare for a family baking afternoon by collecting cups and plates from the office, bedroom, and dining booth, then arrange them on the kitchen table.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "dining_booth_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "83b97e81-d8a2-4ae9-97d4-fddb4c0cdf89",
+      "instruction": "Set up the living room for movie time by bringing snacks (a plate, a bottle, and a bowl) from the kitchen, extra cushions from bedroom_2, and a blanket from bedroom_1. Place a stuffed toy from bedroom_2 to comfort the younger child. Keep a clock on the tv stand to manage screen time, and set up a spray bottle for easy cleaning after snacks.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "garage_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "9f4c4952-9d53-4f4f-b512-c49d9f2b7102",
+      "instruction": "Collect scissors, tape, and colored pencils from the closet, office, and bedrooms. Set up all materials on the kitchen table for a family craft night, then power on the multiport hub in the living room so everyone can charge their devices during the activity. Afterwards, clean up by putting all used materials back in their original rooms.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "3165c583-ec81-41ed-a048-1335ff87cbfd",
+      "instruction": "After cooking a Yunnan specialty on a rainy afternoon, put away all spice and herb items from the fridge and kitchen counter into the kitchen cabinet.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "porch_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "4716c0d9-8084-4646-b242-ae40c032829b",
+      "instruction": "Gather all your toy construction sets and toy vehicles from the bedroom, family room, closet, and living room. Also, bring together some toy food, a tray, an extra plate, and a cup from the kitchen and entryway. Scatter the vehicles and construction sets in the hallway and entryway for your convoy, and set up a pretend picnic on the living room table with the toy food, plate, cup, and tray.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "5430d117-1d16-4e1a-8573-169cc437c5ff",
+      "instruction": "Take a book from the office for quiet time in the bedroom, bring a canister of cookies from the kitchen to the living room for snacks, and retrieve a watch from the closet to check the time.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "7f0a1344-6ce2-4860-8b0d-1d6de7219fdd",
+      "instruction": "Before a family dinner, arrange plates, spoons, and a casserole on the dining table and check if there is a pitcher of water (jug) present.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bathroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "41eef001-7744-4656-bb14-84c8920b2fde",
+      "instruction": "At dusk, bring a vase and freshen it by filling it with water from the kitchen faucet, then place it back on the bedroom stool.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "porch_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "b60639f5-930d-40c4-b6a1-71e581df6335",
+      "instruction": "Before heading out for your morning walk, make sure your cellphone is charged and placed on your bedside chest of drawers.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "02a5f844-c663-4336-b6c9-fad5540b7cd5",
+      "instruction": "Before dinner, take the casserole from the dining room and reheat it in the kitchen oven. After heating, power off the oven and return the casserole to the dining room table.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "b814802a-a506-4c4a-9311-635c4a5bf01e",
+      "instruction": "After coming back from the local market, sort all hats and bags found in the closet, placing hats on the closet shelves and bags on the bench in the garage.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "garage_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "ca238890-0c28-4074-b323-27cf9f92cebe",
+      "instruction": "Organize and tidy up the closet in your bedroom before the summer rainy season arrives by adding a canister for small items and arranging your child's toy vehicles.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "garage_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "3f1f4f25-6ff1-4879-a3df-e7b28790de75",
+      "instruction": "Return the kettle from the fridge in the kitchen to the correct cabinet, pick up any cups from the living room coffee table and place them in the dishwasher, and gather any books from the bedroom to the office shelf.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "office_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "adb234ae-ab86-431b-a699-25339daea983",
+      "instruction": "Gather the laptop cover and mouse pad from the bedroom and office, respectively, and place them in the office desk drawer, move a multiport hub from the living room to the kitchen, and place a book on your bedroom nightstand.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "fac6321b-b35f-4b4c-a91c-3ea5f96f6ddc",
+      "instruction": "Arrange ambient lighting by switching on lamps in the bedroom and office, tidy up by moving scattered books from the dining room, office, and closet to the bedroom shelf, and bring a festive candle from the closet to the dining table.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "079da0e5-422a-4fe4-afc5-e885f4e98453",
+      "instruction": "Set a candle holder and mooncakes on the dining room table, bring your favorite indie music album (CD) from the bedroom to the living room, and take a bottle of tea from the kitchen to enjoy.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "efee78f0-4ae2-415b-bfb7-dbc84b3e9307",
+      "instruction": "Collect your laptop cover from the unknown room and your toy animal from the bedroom, then store them in the closet. Bring your favorite stuffed toy to the living room couch for movie time and leave a bowl in the kitchen for a late snack prep.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "bc46d239-8b46-4705-a7d1-77b58382db10",
+      "instruction": "Before bedtime, bring a bath towel and soap dispenser to the bathroom from your closet and bedroom for your shower routine.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "closet_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "41522639-98da-429a-807c-5061466c1356",
+      "instruction": "Place a flower vase from the entryway on the main dining table, move a candle from bedroom_1 to the dining room, bring a plate of fruits from the kitchen, and open the dining room window for fresh air.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "entryway_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "13f1ed27-3fef-48ca-9b6f-806b944e57b2",
+      "instruction": "Tidy up quickly: move any stray box from the living room to the closet, shift a backpack from the hallway to the bedroom, pick up a bottle from the bathroom and return it to the kitchen, then close the fridge after checking contents.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "living_room_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    },
+    {
+      "id": "093718db-3b95-4b2a-b155-8b1e93c3ff38",
+      "instruction": "Clean up the living room and kitchen.",
+      "links": [
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        }
+      ],
+      "pddl_has_person_at": false,
+      "reference_handover": false
+    }
+  ],
+  "domain_parser_checks": [
+    {
+      "domain_id": "ahat-v8-group-portions",
+      "independent_parser": "pddl.parse_domain",
+      "error": {
+        "type": "UnexpectedToken",
+        "message": "Unexpected token Token('OBJECT', 'object') at line 18, column 9.\nExpected one of: \n\t* NAME\n\t* RPAR\n"
+      },
+      "types": {
+        "item": "item",
+        "agent": "item",
+        "location": "item",
+        "person": "location",
+        "physobj": "location",
+        "room": "physobj",
+        "furniture": "physobj",
+        "device": "physobj",
+        "object": "physobj",
+        "container": "object"
+      }
+    },
+    {
+      "domain_id": "ahat-liquid-v1",
+      "independent_parser": "pddl.parse_domain",
+      "error": {
+        "type": "UnexpectedToken",
+        "message": "Unexpected token Token('OBJECT', 'object') at line 5, column 134.\nExpected one of: \n\t* NAME\n\t* RPAR\n"
+      },
+      "types": {
+        "item": "item",
+        "agent": "item",
+        "location": "item",
+        "person": "location",
+        "physobj": "location",
+        "room": "physobj",
+        "furniture": "physobj",
+        "device": "physobj",
+        "object": "physobj",
+        "container": "object"
+      }
+    }
+  ],
+  "counterexamples": [
+    {
+      "label": "ordinary_fill_laptop",
+      "domain_id": "ahat-v8-group-portions",
+      "scene": {
+        "rooms": [
+          {
+            "name": "room_1",
+            "states": {}
+          }
+        ],
+        "furnitures": [
+          {
+            "name": "table_1",
+            "states": {}
+          },
+          {
+            "name": "sink_1",
+            "states": {
+              "has_faucet": true
+            }
+          }
+        ],
+        "objects": [
+          {
+            "name": "laptop_1",
+            "states": {}
+          }
+        ],
+        "agent": [
+          {
+            "name": "agent_0",
+            "location": "sink_1",
+            "holding": "laptop_1"
+          }
+        ],
+        "person": [],
+        "links": [
+          [
+            "room_1",
+            "table_1",
+            "in"
+          ],
+          [
+            "room_1",
+            "sink_1",
+            "in"
+          ]
+        ]
+      },
+      "plan": [
+        "(fill_from_faucet agent_0 laptop_1 sink_1)"
+      ],
+      "status": "valid",
+      "native_goal_reached": true,
+      "goals": [
+        "(is_filled laptop_1)"
+      ],
+      "scene_replay_error": null
+    },
+    {
+      "label": "noodles_then_tea_breaks_scene_invariant",
+      "domain_id": "ahat-liquid-v1",
+      "scene": {
+        "rooms": [
+          {
+            "name": "room_1",
+            "states": {}
+          }
+        ],
+        "furnitures": [
+          {
+            "name": "table_1",
+            "states": {}
+          }
+        ],
+        "objects": [
+          {
+            "name": "cup_1",
+            "states": {
+              "is_liquid_container": true,
+              "is_filled": true,
+              "contains_water": true,
+              "contents_heated": true,
+              "contains_noodles": true
+            }
+          },
+          {
+            "name": "tea_1",
+            "states": {
+              "tea_supply": true,
+              "ingredient_available": true
+            }
+          }
+        ],
+        "agent": [
+          {
+            "name": "agent_0",
+            "location": "cup_1",
+            "holding": "tea_1"
+          }
+        ],
+        "person": [],
+        "links": [
+          [
+            "room_1",
+            "table_1",
+            "in"
+          ],
+          [
+            "table_1",
+            "cup_1",
+            "on"
+          ]
+        ]
+      },
+      "plan": [
+        "(load_tea agent_0 tea_1 cup_1)",
+        "(navigate agent_0 cup_1 table_1)",
+        "(place_on_surface agent_0 tea_1 table_1)",
+        "(navigate agent_0 table_1 cup_1)",
+        "(prepare_instant_noodles agent_0 cup_1)",
+        "(brew_tea agent_0 cup_1)"
+      ],
+      "status": "valid",
+      "native_goal_reached": true,
+      "goals": [
+        "(noodles_prepared cup_1)",
+        "(contains_tea cup_1)",
+        "(not (contains_water cup_1))"
+      ],
+      "scene_replay_error": "Prepared noodles lack hot water: cup_1"
+    }
+  ],
+  "ordinary_reference_liquid_actions": 0,
+  "tea_and_noodles_same_scene_count": 0,
+  "reference_closed_ancestor_actions": [
+    {
+      "id": "05f9fb16-de68-4fb8-8cc7-4ad1714f7f72",
+      "instruction": "Prepare a hot cup of coffee in the kitchen and deliver it to the bedroom nightstand.",
+      "step": 9,
+      "action": "(open agent_0 coffee_pod_box_44)",
+      "closed_ancestors": [
+        "kitchen_cabinet_84"
+      ],
+      "reference_status": "valid",
+      "native_opened_inside_closed_cabinet": true,
+      "plan": [
+        "(navigate agent_0 kitchen_9 coffee_mug_43)",
+        "(pick_from_surface agent_0 coffee_mug_43 end_table_109)",
+        "(navigate agent_0 coffee_mug_43 sink_95)",
+        "(fill_from_faucet agent_0 coffee_mug_43 sink_95)",
+        "(navigate agent_0 sink_95 espresso_maker_86)",
+        "(pour_into agent_0 coffee_mug_43 espresso_maker_86)",
+        "(place_on_surface agent_0 coffee_mug_43 espresso_maker_86)",
+        "(navigate agent_0 espresso_maker_86 coffee_pod_box_44)",
+        "(open agent_0 coffee_pod_box_44)",
+        "(navigate agent_0 coffee_pod_box_44 kitchen_cabinet_84)",
+        "(open agent_0 kitchen_cabinet_84)",
+        "(navigate agent_0 kitchen_cabinet_84 coffee_pod_box_44)",
+        "(pick_from_receptacle agent_0 coffee_pod_box_44 kitchen_cabinet_84)",
+        "(navigate agent_0 coffee_pod_box_44 espresso_maker_86)",
+        "(load_coffee agent_0 coffee_pod_box_44 espresso_maker_86)",
+        "(navigate agent_0 espresso_maker_86 kitchen_cabinet_84)",
+        "(place_on_surface agent_0 coffee_pod_box_44 kitchen_cabinet_84)",
+        "(navigate agent_0 kitchen_cabinet_84 espresso_maker_86)",
+        "(power_on agent_0 espresso_maker_86)",
+        "(dispense_from_device agent_0 espresso_maker_86 coffee_mug_43)",
+        "(navigate agent_0 espresso_maker_86 coffee_mug_43)",
+        "(pick_from_surface agent_0 coffee_mug_43 espresso_maker_86)",
+        "(navigate agent_0 coffee_mug_43 nightstand_54)",
+        "(place_on_surface agent_0 coffee_mug_43 nightstand_54)"
+      ]
+    }
+  ],
+  "independent_parser_version": "pddl 0.4.6"
+}

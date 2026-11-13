@@ -7,7 +7,7 @@
 
 
   (:types
-    item
+    item - object ; PDDL 内置根类型；不再自定义 object
     agent - item ; 智能体
     location - item
       person - location ; 人类
@@ -15,8 +15,8 @@
         room - physobj
         furniture - physobj ; 家具 (桌子、椅子等)
         device - physobj    ; 设备 (冰箱、微波炉等)
-        object - physobj    ; 可拿取的小物品 (苹果、书等)
-          container - object; 可拿取的小容器 (盒子、碗等)
+        small_object - physobj    ; 可拿取的小物品 (苹果、书等)
+          container - small_object; 可拿取的小容器 (盒子、碗等)
     )
 
 
@@ -58,7 +58,7 @@
 
     ; 点亮能力与灯光状态
     (can_be_lighted ?c - physobj)
-    (is_light_on ?c - object)
+    (is_light_on ?c - physobj)
 
     ; heating相关谓词
     (is_heating_device ?p - physobj) ; 描述一个物理对象是否是加热设备（如微波炉、烤箱等）
@@ -152,6 +152,8 @@
   (:action place_in_receptacle
     :parameters (?ag - agent ?obj - physobj ?r - physobj)
     :precondition (and (agent_at ?ag ?r) (holding ?ag ?obj) (not (handempty ?ag)) (is_open ?r) (not (= ?obj ?r))
+      (imply (can_only_place_one_object ?r)
+             (not (exists (?other_obj - physobj) (item_in_receptacle ?other_obj ?r))))
     )
     :effect (and
       (item_in_receptacle ?obj ?r)
@@ -193,41 +195,6 @@
     :parameters (?ag - agent ?p - physobj)
     :precondition (and (agent_at ?ag ?p) (is_powerable ?p) (is_powered_on ?p) (handempty ?ag))
     :effect (not (is_powered_on ?p))
-  )
-
-  ; Action: fill_from_faucet
-  (:action fill_from_faucet
-    :parameters (?ag - agent ?c - physobj ?faucet_loc - physobj)
-    :precondition (and (agent_at ?ag ?faucet_loc) (holding ?ag ?c) (not (handempty ?ag)) (has_faucet ?faucet_loc) (not (is_filled ?c)))
-    :effect (is_filled ?c)
-  )
-
-  ; =================================================================
-  ; !! 新增动作 !!
-  ; 描述: 从一个具有分配功能的设备（如咖啡机）中，将液体装入一个手持容器。
-  ; 这是解决“倒咖啡”问题的关键动作。
-  ; =================================================================
-  (:action dispense_from_device
-    :parameters (?ag - agent ?d - physobj ?c - physobj)
-    :precondition (and
-        (agent_at ?ag ?d)      ; 1. 智能体必须在设备旁边
-        (item_on_surface ?c ?d)       ; 2. 目标容器必须放在设备上
-        (can_dispense ?d)      ; 3. 该设备必须具有分配功能
-        (is_powered_on ?d)     ; 4. 设备电源已打开
-        (not (is_filled ?c))   ; 5. 目标容器当前是空的
-    )
-    :effect (is_filled ?c)     ; 效果: 目标容器被填满
-  )
-
-  ; Action: pour_into
-  (:action pour_into
-    :parameters (?ag - agent ?c - physobj ?target - physobj)
-    :precondition (and (holding ?ag ?c) (not (handempty ?ag)) (is_filled ?c) (agent_at ?ag ?target)
-      (not (is_filled ?target)))
-    :effect (and
-              (not (is_filled ?c))
-              (is_filled ?target)
-            )
   )
 
   ; Unified thermal processing for food and other explicitly heatable objects.
@@ -325,6 +292,8 @@
       (holding ?ag ?obj_to_place)
       (not (handempty ?ag))
       (item_on_surface ?obj_reference ?surface)
+      (imply (can_only_place_one_object ?surface)
+             (not (exists (?other_obj - physobj) (item_on_surface ?other_obj ?surface))))
       (not (= ?obj_to_place ?obj_reference))
       (not (= ?obj_to_place ?surface))
       (not (= ?obj_reference ?surface))
@@ -345,6 +314,8 @@
       (not (handempty ?ag))
       (item_in_receptacle ?obj_reference ?receptacle)
       (is_open ?receptacle)
+      (imply (can_only_place_one_object ?receptacle)
+             (not (exists (?other_obj - physobj) (item_in_receptacle ?other_obj ?receptacle))))
       (not (= ?obj_to_place ?obj_reference))
       (not (= ?obj_to_place ?receptacle))
       (not (= ?obj_reference ?receptacle))
@@ -374,7 +345,7 @@
   )
 
   (:action clean_item
-    :parameters (?ag - agent ?obj - physobj ?target - object)
+    :parameters (?ag - agent ?obj - physobj ?target - small_object)
     :precondition (and
       (holding ?ag ?obj)
       (not (handempty ?ag))
@@ -411,29 +382,25 @@
   ;   :precondition (and (agent_at ?ag ?d) (not (is_setup ?d)) (handempty ?ag))
   ;   :effect (is_setup ?d)
   ; )
-  (:action fill_device_with_water
-    :parameters (?ag - agent ?d - physobj)
-    :precondition (and (agent_at ?ag ?d) (not (is_filled ?d)) (has_faucet ?d))
-    :effect (is_filled ?d)
-  )
-  (:action pour
-    :parameters (?ag - agent ?c - physobj ?furn_with_faucet - furniture)
-    :precondition (and (holding ?ag ?c) (not (handempty ?ag)) (is_filled ?c) (agent_at ?ag ?furn_with_faucet)
-      (has_faucet ?furn_with_faucet))
-    :effect (and
-              (not (is_filled ?c))
-            )
-  )
   ; Action: light_on
   ; 描述: 智能体到达灯具/可点亮对象的位置后打开灯
   (:action light_on
-    :parameters (?ag - agent ?obj - object)
+    :parameters (?ag - agent ?obj - physobj)
     :precondition (and
       (agent_at ?ag ?obj)
       (can_be_lighted ?obj)
       (not (is_light_on ?obj))
     )
     :effect (is_light_on ?obj)
+  )
+
+  (:action light_off
+    :parameters (?ag - agent ?obj - physobj)
+    :precondition (and
+      (agent_at ?ag ?obj)
+      (can_be_lighted ?obj)
+      (is_light_on ?obj))
+    :effect (not (is_light_on ?obj))
   )
 
   (:action move_furniture_to_room
@@ -451,13 +418,14 @@
     :effect (and
         (not (furniture_in_room ?f ?from))
         (furniture_in_room ?f ?to)
+        (not (agent_at ?ag ?f))
         (agent_at ?ag ?to)
     )
 )
   (:action move_device_to_room
     :parameters (?ag - agent ?d - device ?from - room ?to - room)
     :precondition (and (can_be_moved ?d) (agent_at ?ag ?d) (device_in_room ?d ?from) (not (= ?from ?to)) (handempty ?ag))
-    :effect (and (not (device_in_room ?d ?from)) (device_in_room ?d ?to) (agent_at ?ag ?to))
+    :effect (and (not (device_in_room ?d ?from)) (device_in_room ?d ?to) (not (agent_at ?ag ?d)) (agent_at ?ag ?to))
   )
   (:action hand_over_to_person
     :parameters (?ag - agent ?p - person ?obj - physobj)

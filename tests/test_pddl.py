@@ -23,7 +23,7 @@ class PDDLTests(unittest.TestCase):
         original = copy.deepcopy(graph)
         first = build_problem(graph, PLAN, DOMAIN)
         self.assertEqual(first, build_problem(graph, ['(navigate agent_0 cup_1 table_1)'], DOMAIN))
-        self.assertIn('lid_1 - object', first)
+        self.assertIn('lid_1 - small_object', first)
         self.assertIn('(item_on_surface lid_1 cup_1)', first)
         self.assertEqual(graph, original)
 
@@ -72,7 +72,7 @@ class PDDLTests(unittest.TestCase):
         actions = {'test': {'parameters': {}, 'effect': ['and', ['p'], ['not', ['p']]]}}
         self.assertIn(['p'], simulate('(define (problem p) (:init))', ['(test)'], actions))
 
-    def test_unknown_wrong_arity_unbound_and_conditional_effects_fail(self):
+    def test_unknown_wrong_arity_unbound_and_unsupported_effects_fail(self):
         problem = '(define (problem p) (:init))'
         actions = {'test': {'parameters': {'?a': 'agent'}, 'effect': ['p', '?a']}}
         with self.assertRaises(KeyError):
@@ -82,6 +82,6 @@ class PDDLTests(unittest.TestCase):
         actions['test']['effect'] = ['p', '?unbound']
         with self.assertRaises(ValueError):
             simulate(problem, ['(test robot)'], actions)
-        actions['test']['effect'] = ['when', ['p'], ['q']]
+        actions['test']['effect'] = ['assign', ['amount'], '1']
         with self.assertRaises(ValueError):
             simulate(problem, ['(test robot)'], actions)

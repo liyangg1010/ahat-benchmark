@@ -1,9 +1,10 @@
 """D2 inventory/locations formatting from the audited review's sum_sg_content."""
 from __future__ import annotations
 
+import copy
 from typing import Any
 
-from ..scene import normalize_links
+from ..scene import held_objects, normalize_links, normalize_person_locations, sync_agent_rooms
 
 
 def organize_content_list(content_list: list[str]) -> list[str]:
@@ -26,6 +27,9 @@ def get_parents_str(name: str, links: list[list[str]]) -> str:
 
 
 def summarize_scene(scene_graph: dict[str, Any]) -> str:
+    scene_graph = copy.deepcopy(scene_graph)
+    normalize_person_locations(scene_graph)
+    sync_agent_rooms(scene_graph)
     normalized = normalize_links(scene_graph)
     links = [[link['to'], link['from'], link['relation']]
              for link in normalized if link['relation'] in {'on', 'in'}]
@@ -49,4 +53,10 @@ def summarize_scene(scene_graph: dict[str, Any]) -> str:
                  for link in normalized if link['relation'] == 'next_to']
     if adjacency:
         summary += f", 'initial_next_to (undirected)': {adjacency}"
+    summary += f", 'agent_locations': { {a['name']: a.get('location') for a in scene_graph.get('agent') or []} }"
+    inventories = {p['name']: held_objects(p.get('p_holding')) for p in scene_graph.get('person') or []}
+    if scene_graph.get('person'):
+        summary += f", 'person_locations': { {p['name']: p.get('location') for p in scene_graph['person']} }"
+    if inventories:
+        summary += f", 'person_holdings': {inventories}"
     return summary

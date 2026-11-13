@@ -42,6 +42,10 @@ def build_parser() -> argparse.ArgumentParser:
     subparsers = parser.add_subparsers(dest="command", required=True)
     subparsers.add_parser("doctor", help="verify benchmark data, domain, and VAL runtime")
 
+    export_parser = subparsers.add_parser('export-inputs', help='export reference-free inputs and per-task PDDL domains')
+    export_parser.add_argument('--dataset', required=True)
+    export_parser.add_argument('--output', type=Path, required=True)
+
     def common(subparser):
         subparser.add_argument("--dataset", required=True)
         subparser.add_argument("--inference", type=Path, required=True)
@@ -85,6 +89,11 @@ def main(argv: list[str] | None = None) -> int:
     config = load_config(args.config)
     if args.command == "doctor":
         return run_doctor(config, registry_path=args.registry)
+    if args.command == 'export-inputs':
+        from .inference_inputs import export_inputs
+        result = export_inputs(args.dataset, args.output, args.registry)
+        print(f"Exported {len(result['cases'])} cases with {len(result['domains'])} domains")
+        return 0
     args.output_dir.mkdir(parents=True, exist_ok=True)
     val_path = args.output_dir / "val_results.json"
     judge_path = args.output_dir / "judge_results.json"
@@ -196,6 +205,22 @@ def run_doctor(config: dict, registry_path: Path | None = None) -> int:
     else:
         failures += 1
         print("[FAIL] versioned rubric prompt hashes", file=sys.stderr)
+    from .domains import domain_registry, resolve_domain
+    from .judge.prompts import LIQUID_PROMPTS
+    for domain_id in domain_registry():
+        try:
+            resolve_domain(domain_id)
+            print(f'[OK] registered domain: {domain_id}')
+        except Exception as exc:
+            failures += 1
+            print(f'[FAIL] domain {domain_id}: {exc}', file=sys.stderr)
+    if 'judge_profiles' in manifest:
+        expected = manifest['judge_profiles']['ahat-liquid-v1']['prompt_hashes']
+        if {k: digest(v.encode()) for k, v in LIQUID_PROMPTS.items()} != expected:
+            failures += 1
+            print('[FAIL] liquid rubric fingerprints', file=sys.stderr)
+        else:
+            print('[OK] liquid rubric fingerprints')
     print("Doctor passed" if failures == 0 else f"Doctor found {failures} problem(s)")
     return 0 if failures == 0 else 1
 

@@ -11,6 +11,17 @@ paper-derived prompts with an explicit adjacency policy and a pinned Linux VAL r
 [Validation evidence](docs/validation/parity.md) ·
 [TGPO paper version lock](docs/reproducibility/tgpo-paper.md)
 
+## Released versions
+
+| Use | Tag | Tasks (easy / medium / open) |
+| --- | --- | --- |
+| Current benchmark | [`v2.3.0`](https://github.com/liyangg1010/ahat-benchmark/releases/tag/v2.3.0) | 274 (117 / 65 / 92) |
+| TGPO paper reproduction | [`paper-tgpo-v1`](https://github.com/liyangg1010/ahat-benchmark/releases/tag/paper-tgpo-v1) | 348 (146 / 94 / 108) |
+
+For the 274-task snapshot, use `git checkout v2.3.0`. Its dataset, domains and
+rubric have changed since the paper snapshot; aggregate scores are not directly
+comparable. See [v2.3.0 release notes](docs/releases/v2.3.0.md).
+
 ## TGPO paper reproduction
 
 The results reported in the TGPO paper use the immutable
@@ -128,25 +139,49 @@ python scripts/generate_inference.py --dataset ahat-easy --limit 0 --model YOUR_
 
 `--limit 0` covers the entire split. The default one-case run is a connectivity
 example and does not cover the full evaluation set.
+The example selects each task's domain and saves its ID/hash with the plan.
+It generates a complete plan in one request; it is not the historical stepwise
+GPT Direct protocol. See [current readiness and retest notes](docs/benchmark-recap-20261112.md).
 
 ## Data and metric
 
 | Dataset | Cases |
 | --- | ---: |
-| `ahat-easy` | 130 |
-| `ahat-medium` | 74 |
+| `ahat-easy` | 117 |
+| `ahat-medium` | 65 |
 | `ahat-open` | 92 |
-| Total | **296** |
+| Total | **274** |
+
+The current snapshot uses two task-bound domains: 244 ordinary cases and 30
+liquid cases. Seven unsupported cases are archived outside the scored splits.
+See [liquid modeling and migration](docs/liquid-domain.md) for the exact inventory,
+limitations and reference-free inference export. Generation and evaluation must
+use each task's declared domain; liquid results require its ID and SHA-256.
+The current [scene-lighting-v1 repair](docs/scene-lighting.md) preserves multi-item
+deliveries, normalizes lighting and agent room links, repairs coffee placement and
+object names, and strengthens cache binding. Spatial-cycle prevention is deferred.
+The subsequent [bottle-refill-v1 repair](docs/bottle-refill.md) keeps two of four
+water-bottle tasks and requires opening lidded containers before faucet filling
+in the liquid domain. Reference plans include opening before pickup.
+The ordinary domain retains the `ordinary-core-v1` boundary: five filling/dispensing/pouring
+actions are exclusive to the liquid domain. That revision preserved all 287 task
+records and the liquid domain. See [FIX-021](docs/repair-log.md#fix-021普通-domain-移除液体制作与转移动作);
+regenerate ordinary-domain plans against the new fingerprint and use fresh evaluation outputs.
+Both domains now use [type-hierarchy-v1](docs/domain-types.md): the built-in
+`object` root is distinct from `small_object`, with no type inheritance cycles.
+All 274 reference plans and 4,107 replay steps pass. Re-export inference inputs
+and use the new domain hashes for both ordinary and liquid tasks.
 
 Data derive from HF revision
 [`44de8a66c58cfd4cea03923bed9dbb8bd69d8f85`](https://huggingface.co/datasets/SII-liyang2024/AHAT-dataset/tree/44de8a66c58cfd4cea03923bed9dbb8bd69d8f85),
 with documented local sink-cleaning corrections, repeated-instruction pruning
-and 10 locally authored adjacency tasks. [Meal pruning](docs/meal-pruning.md)
+and eight active locally authored adjacency tasks (ten originally added). [Meal pruning](docs/meal-pruning.md)
 removes 16 overlapping open meal variants, retaining seven representatives and
 all four processing references. [Liquid pruning](docs/liquid-pruning.md) removes another 43
 similar variants, keeping six representatives in each of four large liquid
 categories. [Current liquid classes](docs/liquid-tasks.md) list 42 retained tasks.
-Eleven tasks explicitly require
+[Easy pruning](docs/easy-pruning.md) archives 13 overlapping easy variants, yielding
+117/65/92 tasks. Nine tasks explicitly require
 next-to placement. [Adjacency notes](docs/next-to.md) explain scene representation,
 task coverage and required versus optional adjacency.
 `benchmarks/ahat_eval_set.jsonl` retains reference plans and the corrected tasks'
@@ -165,7 +200,7 @@ snapshot used by this release and explain custom registries.
 Scores must be `0`, `0.25`, `0.5`, `0.75` or `1`. D1 critical failure caps the
 weighted total at `0.2`. VAL uses a deterministic full scene; D1 receives the
 exact final state derived from the validated initial PDDL and domain effects.
-The `ahat-rubric-portions-and-order-v6` rubric requires adjacency when the instruction
+The `ahat-rubric-scene-lighting-v7` rubric requires adjacency when the instruction
 requires it. Valid optional adjacency is neither an error nor an automatic bonus.
 The `ahat-v8-group-portions` domain removes old adjacency on pickup and
 uses three appliance-specific heat actions. Cooking, warming and reheating all
@@ -192,13 +227,15 @@ model, usage and attempt history. Repeating the same command resumes successful
 dimensions and retries failed ones.
 
 Checkpoints sign the data, inference, code, domain, native runtime, prompts,
-judge model, endpoint and scoring settings. After an input or evaluator update,
+judge model, endpoint and scoring settings. They also hash result content and bind
+judge checkpoints to actual VAL results. Cached VAL plans must match normalized
+inference actions before reuse. After an input or evaluator update,
 use a new output directory or explicitly recompute with `--no-resume`.
 
 ## Repository layout
 
 ```text
-benchmarks/       pinned 296-case data and manifests
+benchmarks/       pinned 274-case data and manifests
 configs/          public defaults and dataset registry
 docs/             protocol, data and validation evidence
 examples/         offline example and small input fixtures

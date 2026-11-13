@@ -13,6 +13,7 @@ class EvalCase:
     id: str
     instruction: str
     scene_graph: dict[str, Any]
+    domain_id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -21,6 +22,8 @@ class InferenceCase:
     plan: list[str]
     raw_response: str | None = None
     error: str | None = None
+    domain_id: str | None = None
+    domain_sha256: str | None = None
 
 
 def require_string(value: Any, field: str) -> str:

@@ -1,4 +1,4 @@
-"""Full-scene preparation and exact STRIPS simulation from AHAT's audited reviewer."""
+"""Full-scene preparation and exact symbolic simulation from AHAT's audited reviewer."""
 from __future__ import annotations
 
 import copy
@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from .vendor.scene_graph import PDDLDomainParser, SceneGraphManager
-from .pddl_effects import effects, typed_symbols
+from .pddl_effects import compatible_type, effects, typed_symbols
 
 
 def sexpr(text: str) -> list[Any]:
@@ -42,28 +42,7 @@ def full_problem(
     if missing:
         raise ValueError(f'Scene predicates reference undeclared objects: {sorted(missing)}')
     domain = sexpr(domain_path.read_text(encoding='utf-8'))
-    type_tokens = next(x[1:] for x in domain if isinstance(x, list) and x[0] == ':types')
-    parents, pending = {}, []
-    i = 0
-    while i < len(type_tokens):
-        if type_tokens[i] == '-':
-            parents.update({x: type_tokens[i + 1] for x in pending})
-            pending = []
-            i += 2
-        else:
-            pending.append(type_tokens[i])
-            i += 1
-    parents.update({x: 'object' for x in pending})
-
-    def compatible(actual, expected):
-        seen = set()
-        while actual and actual not in seen:
-            if actual == expected:
-                return True
-            seen.add(actual)
-            actual = parents.get(actual)
-        return False
-
+    parents = manager.pddl_parser.types
     types = dict(objects)
     filtered = []
     for fact in facts:
@@ -71,7 +50,7 @@ def full_problem(
         good = (
             all(re.fullmatch(r'[a-zA-Z][a-zA-Z0-9_-]*', v) for v in fact[1:])
             and expected is not None and len(expected) == len(fact) - 1
-            and all(compatible(types[v], t) for v, t in zip(fact[1:], expected.values()))
+            and all(compatible_type(types[v], t, parents) for v, t in zip(fact[1:], expected.values()))
         )
         if good:
             filtered.append(fact)
@@ -103,7 +82,7 @@ def simulate(
         if len(parameters) != len(action) - 1:
             raise ValueError(f'Wrong action arity: {text}')
         grounded = effects(spec['effect'], dict(zip(parameters, action[1:])),
-                           objects=objects, parents=type_parents)
+                           objects=objects, parents=type_parents, state=state)
         state.difference_update(atom for neg, atom in grounded if neg)
         state.update(atom for neg, atom in grounded if not neg)
     return [list(x) for x in sorted(state)]

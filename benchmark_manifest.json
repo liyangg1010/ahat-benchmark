@@ -5,7 +5,8 @@
   "domain": {
     "name": "ahat-v8-group-portions",
     "path": "vendor/pddl/domain_0102_test.pddl",
-    "sha256": "80f559c2786897313e6af5b55e290faa7b3c1856275b2805d02c3bfe8d743746"
+    "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+    "revision": "type-hierarchy-v1"
   },
   "validator": {
     "name": "VAL",
@@ -17,7 +18,7 @@
     "version": "full-scene-val-typed-arguments-v3"
   },
   "judge": {
-    "version": "ahat-rubric-portions-and-order-v6",
+    "version": "ahat-rubric-scene-lighting-v7",
     "dimensions": [
       "D1",
       "D2",
@@ -33,10 +34,10 @@
     "critical_failure_cap": 0.2,
     "paper": "https://arxiv.org/html/2602.12244v2#A3",
     "prompt_hashes": {
-      "D1": "136f6116bc78c4ddb5a99bc10db3077054e4eac841a6e86b508c4c3e38d2b338",
-      "D2": "2b5a53eb4220e4bc6b29fe24176d1e3302998ffaa292730284f0f2e3830f9584",
-      "D3": "965db87409a94425c7aa41db247cd2bff8858943bf110d2d830818ee60a0fc54",
-      "D4": "e0a72f1816828307617b406d75aa15ec36b0f8d080695c9c79f304a84807a4fb"
+      "D1": "e60503dcccc05bcec423087728633f2b9b664948000c2b1cd5d4e9cc55a5c2b0",
+      "D2": "9ef97aec76d91ae5ede146df3432fa5b90d6c8f23968a0097b4fcc5ba4ef24f1",
+      "D3": "64f1e029de4a8ba4e168a52bcfe62577babafee9109f7a8cf97536fc0e3454bc",
+      "D4": "5d6a7ae62df11daf9e95279e1656ae6cc7feae4461faefc9d9ac22241e19ea7c"
     },
     "adjacency_policy": "Required only by instruction; valid optional adjacency is neither an error nor an automatic bonus"
   },
@@ -44,5 +45,41 @@
     "ahat-easy",
     "ahat-medium",
     "ahat-open"
-  ]
+  ],
+  "domains": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+      "revision": "type-hierarchy-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+      "revision": "type-hierarchy-v1"
+    }
+  },
+  "judge_profiles": {
+    "ahat-v8-group-portions": {
+      "version": "ahat-rubric-scene-lighting-v7",
+      "prompt_hashes": {
+        "D1": "e60503dcccc05bcec423087728633f2b9b664948000c2b1cd5d4e9cc55a5c2b0",
+        "D2": "9ef97aec76d91ae5ede146df3432fa5b90d6c8f23968a0097b4fcc5ba4ef24f1",
+        "D3": "64f1e029de4a8ba4e168a52bcfe62577babafee9109f7a8cf97536fc0e3454bc",
+        "D4": "5d6a7ae62df11daf9e95279e1656ae6cc7feae4461faefc9d9ac22241e19ea7c"
+      }
+    },
+    "ahat-liquid-v1": {
+      "version": "ahat-rubric-liquid-lighting-v2",
+      "prompt_hashes": {
+        "D1": "ac65ae8fedda0473646240d70abddd3763deb9f65334d13388c1bdb1b411cb6f",
+        "D2": "4e500e92354db66e55747b7efd0abbbd3d7930fae4383281dd7c47fa0557c49d",
+        "D3": "9dc8030854e25ab327dcb0b9fca3238c45ce4570117feea9db69f245d76e0fd9",
+        "D4": "7362522535f89c4fdb8acf259e7d13a779461a966c4548077b85be6fafc92bad"
+      }
+    }
+  },
+  "active_case_count": 274,
+  "quarantined_case_count": 7
 }

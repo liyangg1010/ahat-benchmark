@@ -6,6 +6,7 @@ from typing import Any
 
 from ..io import write_json_atomic
 from ..schemas import EvalCase
+from ..provenance import canonical, digest
 
 
 def save_stage(
@@ -20,6 +21,7 @@ def save_stage(
     output = {
         "meta": {
             **provenance, "dataset": dataset, "domain_file": str(domain_path.resolve()),
+            "cases_sha256": digest(canonical(ordered).encode()),
             "inference_file": str(inference_path.resolve()), "inference_meta": inference_meta,
             **(extra_meta or {}), "updated_at": datetime.now(timezone.utc).isoformat(),
         },

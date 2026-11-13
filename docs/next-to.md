@@ -9,6 +9,10 @@ preserves this adjacency contract; its current validation is recorded in
 snapshot and is not a fingerprint of the later cooking implementation. The
 current [heated-v2 domain](heated.md) also preserves this adjacency contract.
 
+The subsequent [location/capacity repair](action-invariants.md) makes ordinary
+and adjacent placement obey the same single-item occupancy restriction in both
+domains; unrestricted optional adjacency remains valid.
+
 ## Scene and PDDL contract
 
 Adjacency belongs in `links`, not a boolean in an object's `states`:
@@ -90,8 +94,9 @@ compliance or the size of historical score changes.
 
 ## Explicit task coverage
 
-Ten independent locally authored tasks extend explicit adjacency coverage
-from 1 to 11 of 355 cases. They are focused capability tests, not a claim of
+The original ten locally authored tasks extended explicit adjacency coverage
+from 1 to 11 of the then 355 cases. After [easy pruning](easy-pruning.md), eight
+local tasks and the original laptop task remain active: nine of 274 cases. They are focused capability tests, not a claim of
 natural task-frequency balance. Existing scenes, instructions and reference
 plans are preserved. The original laptop task additionally receives reference
 goals matching its already explicit instruction.
@@ -111,7 +116,10 @@ goals matching its already explicit instruction.
 | Existing laptop setup | easy | `ab270610-f68d-4ccf-8ced-455a237f8dc5` | 32 | Three requested items each beside the laptop |
 
 `scripts/next_to_cases.py` deterministically reproduces the ten local records,
-including initial links, complete plans and goals. They are identified as
+including initial links, complete plans and goals. The book/lamp and towel/soap
+records are now archived in `benchmarks/easy-pruning-v1/removed.jsonl`; the
+other eight remain active. The table above includes these two historical rows.
+They are identified as
 `local_authored` in the JSONL and in `hf_sync.json.local_additions`, under the
 bundled data's CC BY-NC 4.0 license. They are not attributed to the pinned
 upstream HF file. Runtime splits retain only ID, instruction and scene.
@@ -127,15 +135,16 @@ PYTHONPATH=src python -m ahat_benchmark doctor
 python scripts/check_release.py
 ```
 
-The native reference checker verifies all 355 plans, annotated goals for 14
-records, and ordinary-placement controls for all 11 explicit-adjacency tasks.
+The current native reference checker verifies all 274 plans, annotated goals
+for 17 records, and ordinary-placement controls for all nine active explicit-adjacency tasks.
 Those control plans remain action-valid but fail the explicit adjacency goals.
 It also compares scene-to-PDDL round trips against exact simulation after every
-step of the ten new reference plans. Unit tests separately establish that
+step of the eight active local reference plans. Unit tests separately establish that
 ordinary and adjacent placement both satisfy a placement-only goal, and cover
 symmetry, invalid initial claims, pickup cleanup and restoration behavior.
 
-[Offline validation evidence](validation/next_to_v1_checks.json) records input
+[Current validation evidence](validation/easy_pruning_v1_reference_checks.json)
+records the pruned snapshot. [Original validation evidence](validation/next_to_v1_checks.json) records historical input
 hashes and results. Comparing the original 345 reference plans under the old
 and new domains leaves 338 final states identical; 7 differ only by deletion
 of old adjacency facts. This also catches relations left behind after an object
@@ -145,4 +154,4 @@ check alone would miss.
 No LLM scores or new algorithm rankings are inferred from
 these checks. Use current task IDs and a new evaluation output directory after
 the data/domain/rubric upgrade; old 348- and 345-case aggregate scores are not
-directly comparable to the 355-case release.
+directly comparable to the current 274-case snapshot.

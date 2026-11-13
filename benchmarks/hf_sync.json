@@ -16,41 +16,57 @@
   },
   "license": "CC-BY-NC-4.0",
   "synced_at": "2026-10-28T09:21:10+00:00",
-  "case_count": 296,
+  "case_count": 274,
   "split_counts": {
-    "easy": 130,
-    "medium": 74,
+    "easy": 117,
+    "medium": 65,
     "open": 92
   },
-  "transformation": "Apply documented local sink-cleaning corrections, repeated-instruction pruning, explicit-adjacency annotations and locally authored next-to tasks. Runtime splits project id, instruction and scene_graph in bundled JSONL order; plan and optional reference_goal annotations stay in the source JSONL. Annotate explicit cooking capabilities and repair four cooking/heating references (cooking-v1). Audit meal candidates; strengthen two confirmed sufficient reference goals and simplify the oven reheating witness (cooking-goals-v1). Unify thermal processing to heated only, remove initial cooked flags, normalize legacy is_heated flags and migrate references (heated-v2). Declare two-serving egg portions in two scenes, add reference capacity goals and expose the static predicate to D1 (serves-two-v1). Remove 16 approved open meal variants while retaining seven representatives and four processing tasks; preserve surviving records unchanged (meal-pruning-v1). Annotate food capacity in the remaining two-person and family/guest meals without inventing numeric group size; clarify required plan stages and temporal order (group-portions-v1). Remove 43 liquid-task variants from four overrepresented categories, retaining six representatives per category and preserving all surviving records (liquid-pruning-v1).",
+  "transformation": "Apply documented local sink-cleaning corrections, repeated-instruction pruning, explicit-adjacency annotations and locally authored next-to tasks. Runtime splits project id, instruction and scene_graph in bundled JSONL order; plan and optional reference_goal annotations stay in the source JSONL. Annotate explicit cooking capabilities and repair four cooking/heating references (cooking-v1). Audit meal candidates; strengthen two confirmed sufficient reference goals and simplify the oven reheating witness (cooking-goals-v1). Unify thermal processing to heated only, remove initial cooked flags, normalize legacy is_heated flags and migrate references (heated-v2). Declare two-serving egg portions in two scenes, add reference capacity goals and expose the static predicate to D1 (serves-two-v1). Remove 16 approved open meal variants while retaining seven representatives and four processing tasks; preserve surviving records unchanged (meal-pruning-v1). Annotate food capacity in the remaining two-person and family/guest meals without inventing numeric group size; clarify required plan stages and temporal order (group-portions-v1). Remove 43 liquid-task variants from four overrepresented categories, retaining six representatives per category and preserving all surviving records (liquid-pruning-v1). Archive 13 approved easy semantic variants, preserving all survivors (easy-pruning-v1).",
   "artifacts": [
     {
       "path": "ahat_eval_set.jsonl",
-      "sha256": "0df84da9ed81615e0e8d06e364a0e45be08bca44ddfb6407341db489ddc91cef"
+      "sha256": "f7b849950deb3684bd31e7787a110e0b5508eb7811b10ac9c836ebafc309ea78"
     },
     {
       "path": "ahat-easy/cases.json",
-      "sha256": "630253937604f7b7e88b235c153a2431866bc3b38f1a7b1d9d4da6f681a766a0"
+      "sha256": "852b3fcb4b1506539b3b5d4ad8ea52dc463e4df5841186e7212bde1a9ea37305"
     },
     {
       "path": "ahat-easy/manifest.json",
-      "sha256": "e31c5dbca1010352002cca4a02deed5b88fb4543d3f219715e0e5599be04df43"
+      "sha256": "249211d4b09af2f647d3beaa6df1bb79573368631aabdfb7146a223b531b2468"
     },
     {
       "path": "ahat-medium/cases.json",
-      "sha256": "eb6cef4371e9c5ba4a74b10125757f211c610d0c8632881c200b6a272efeb39f"
+      "sha256": "63a47ac182c1f545b2e24a6a68ff215e1cd9d21099b64532c2b89d9babb9b958"
     },
     {
       "path": "ahat-medium/manifest.json",
-      "sha256": "661f43278366af24e7795a604d0ca573cd0df80b216751339fd1fffc23781d47"
+      "sha256": "083937507bb70aaf1fe5192f148db6c871373672a533601dd0cceb2dc585e471"
     },
     {
       "path": "ahat-open/cases.json",
-      "sha256": "2b84c26b2b5e9ada660ff880fc147244131e29a0aabda147b7aea8727245b83a"
+      "sha256": "b0776ed0c47a6c33502e0218acfa59532e6bc92e12125fdee62aa13ad8d0ca38"
     },
     {
       "path": "ahat-open/manifest.json",
-      "sha256": "19e4c7d0553ec6745eb027b7ade8c418525cc5494957ccc55da3dffcb8ec7161"
+      "sha256": "6128757c6ecb8b911e10906c326cf2017080c8ca51ff82a27d7da8f737298c06"
+    },
+    {
+      "path": "liquid-v1/originals.jsonl",
+      "sha256": "79702cf859224c8ea71824216de77aac3ce6de3c682c2d5fe9a9f1288a0fc8da"
+    },
+    {
+      "path": "liquid-v1/quarantined.json",
+      "sha256": "7fbdbdf5338345921ef5f06ac05d7b120d17e4179668dc1b4739692e3c63de3b"
+    },
+    {
+      "path": "bottle-refill-v1/pruned.json",
+      "sha256": "bd05439a1c109bec7b16716612a0bf0e577a811ebea183f422e93ee3616d060a"
+    },
+    {
+      "path": "easy-pruning-v1/removed.jsonl",
+      "sha256": "283108cc9598345b8577d3cb6d2c15184424dce8ec9faefb25fb150985d64c0b"
     }
   ],
   "local_corrections": {
@@ -5001,5 +5017,286 @@
     "script_sha256": "2b7051dc6951cab33560bfd4e2f7949c176a2239128cb9bf953ccbaeec34e2a5",
     "survivor_policy": "Keep original source lines and order, with no field changes.",
     "previous_local_revision_entries_preserved": true
+  },
+  "local_liquid_v1": {
+    "version": "liquid-v1",
+    "base_data_sha256": "0df84da9ed81615e0e8d06e364a0e45be08bca44ddfb6407341db489ddc91cef",
+    "result_data_sha256": "600719d9c53ac423e94e0748b24307c0adef1e093cd8b5e8d3d6e78915b1fc0e",
+    "inventory_path": "docs/validation/liquid_v1_inventory.json",
+    "quarantined_ids": [
+      "c4eaedfe-58a6-4535-8817-5e6c30ef5ba0",
+      "83e9c29c-054d-4269-8bf4-d5ac26b8ccfd",
+      "acba2bf0-ad1e-452e-b3f7-43af06ebfc81",
+      "e78432e1-25fd-4476-8711-7da0d50bc88c",
+      "e2589b66-026b-4075-9525-3acdbf38e1f0",
+      "9c120c15-b00a-4544-bafa-ffeece47d701",
+      "f740c053-35da-470a-8628-e9291a9738cb"
+    ],
+    "domain_counts": {
+      "ahat-v8-group-portions": 257,
+      "ahat-liquid-v1": 32
+    },
+    "script_sha256": "29ed5cfa1145eb5fd1deb7ee0952db60129c2b087f0a2e0eb184432ec6f27ea7",
+    "inventory_sha256": "3bc784d7ffcf719f2ece6bfc14d73e0f1e9a4fb66764b10fd7c169d3ffe2b666",
+    "base_domain_sha256": "80f559c2786897313e6af5b55e290faa7b3c1856275b2805d02c3bfe8d743746",
+    "liquid_domain_sha256": "26d923cf60a6a7c9e3690cbb53d3ba64557bcca4ba3be44b3319cf76f2c9aa4d"
+  },
+  "local_action_invariants": {
+    "revision": "location-capacity-v1",
+    "date": "2026-11-11",
+    "source_sha256": "600719d9c53ac423e94e0748b24307c0adef1e093cd8b5e8d3d6e78915b1fc0e",
+    "domains_before": {
+      "ahat-v8-group-portions": {
+        "name": "ahat-v8-group-portions",
+        "path": "vendor/pddl/domain_0102_test.pddl",
+        "sha256": "80f559c2786897313e6af5b55e290faa7b3c1856275b2805d02c3bfe8d743746"
+      },
+      "ahat-liquid-v1": {
+        "name": "ahat-liquid-v1",
+        "path": "vendor/pddl/domain_liquid_v1.pddl",
+        "sha256": "26d923cf60a6a7c9e3690cbb53d3ba64557bcca4ba3be44b3319cf76f2c9aa4d"
+      }
+    },
+    "domains_after": {
+      "ahat-v8-group-portions": {
+        "name": "ahat-v8-group-portions",
+        "path": "vendor/pddl/domain_0102_test.pddl",
+        "sha256": "668eee6079e8c33e1c89f029cdea4b142f31976f1ec24b6900db61efd10d78df",
+        "revision": "location-capacity-v1"
+      },
+      "ahat-liquid-v1": {
+        "name": "ahat-liquid-v1",
+        "path": "vendor/pddl/domain_liquid_v1.pddl",
+        "sha256": "579020afff9b94f36b8f80d556651e33a1d28572d3c2bed3d7c1bd4e3d5cfb15",
+        "revision": "location-capacity-v1"
+      }
+    },
+    "changed_actions": [
+      "move_furniture_to_room",
+      "move_device_to_room",
+      "place_next_to_surface",
+      "place_next_to_inside",
+      "place_in_receptacle"
+    ],
+    "task_records_changed": 0
+  },
+  "local_scene_lighting": {
+    "revision": "scene-lighting-v1",
+    "base_data_sha256": "600719d9c53ac423e94e0748b24307c0adef1e093cd8b5e8d3d6e78915b1fc0e",
+    "result_data_sha256": "186f7d071a35fe662c85dc1945c2690899373101bd86e636a08b402a7a0fc8b7",
+    "changed_task_count": 235,
+    "inventory_path": "docs/validation/scene_lighting_v1_inventory.json",
+    "inventory_sha256": "4b9b665eec4c10543c712a59bbdf7a63dfcb2f2d8566407f40cc7a188df3413c",
+    "script_sha256": "f81d806674dc098546a66815ef539e31f42793499a3219a2d885f548cac77cdd"
+  },
+  "local_bottle_refill": {
+    "revision": "bottle-refill-v1",
+    "retained_ids": [
+      "6e590abe-0592-4a01-8de9-269cdd94fa89",
+      "44a3890d-31fb-4a53-b9d2-1d7f2e22f686"
+    ],
+    "pruned_ids": [
+      "baebc10b-0942-4ab8-a948-b5ce3630af75",
+      "ca93f23c-c8c5-426f-81f5-4f7e51811dfc"
+    ],
+    "domain_counts": {
+      "ahat-v8-group-portions": 257,
+      "ahat-liquid-v1": 30
+    },
+    "base_data_sha256": "186f7d071a35fe662c85dc1945c2690899373101bd86e636a08b402a7a0fc8b7",
+    "result_data_sha256": "81ef3c42d9abe6b8e568ae68c6243df968ef97cbeaf8941de42957a491317a70",
+    "inventory_path": "docs/validation/bottle_refill_v1_inventory.json",
+    "inventory_sha256": "1b262a722ca0f47e8b77ae173c6aabfa9edc538da605f94561a26fa6999eb795",
+    "archive_path": "benchmarks/bottle-refill-v1/pruned.json",
+    "script_sha256": "cc6288036dbd91d4cce88ed88a350422048217e4e37458373d2ccc2ae4dc331a"
+  },
+  "local_coffee_pod": {
+    "revision": "coffee-pod-v1",
+    "ids": [
+      "05f9fb16-de68-4fb8-8cc7-4ad1714f7f72"
+    ],
+    "base_data_sha256": "81ef3c42d9abe6b8e568ae68c6243df968ef97cbeaf8941de42957a491317a70",
+    "result_data_sha256": "fa42e746754d826145e026800c553b6d9208fb3c0f1593100b7bcb3b1c1d28e0",
+    "report_path": "docs/validation/coffee_pod_v1_checks.json",
+    "report_sha256": "7dd4d15ce271f71be1f1759e7e585e262c7a03e07afdb01436066cb959877895"
+  },
+  "local_ordinary_core": {
+    "revision": "ordinary-core-v1",
+    "removed_actions": [
+      "dispense_from_device",
+      "fill_device_with_water",
+      "fill_from_faucet",
+      "pour",
+      "pour_into"
+    ],
+    "base_domain_sha256": "4b93389a6a3761e70e8712403b0516bc5d94ff9caffe96371cd31eaf08350e8a",
+    "result_domain_sha256": "e0ea026925e40b9e0e80a630d6d369cb50f15e80fa42da1e9b71e408b9be7f25",
+    "liquid_domain_sha256_unchanged": "2faf00bc2e85600600cdc38a66d650a7ce1874854499973e64875d4e496e9c5f",
+    "data_sha256_unchanged": "fa42e746754d826145e026800c553b6d9208fb3c0f1593100b7bcb3b1c1d28e0",
+    "generator_sha256": "300ffb549215240da88e3e1f6a9165f8d35e0235001c715538973279736ab97a",
+    "report_path": "docs/validation/ordinary_core_v1_checks.json",
+    "report_sha256": "3b0fcbe55a9aef0fddc53278d5da006431ba7cfa508c8b514287c85fdac1d01a"
+  },
+  "local_type_hierarchy": {
+    "revision": "type-hierarchy-v1",
+    "domains_before": {
+      "ahat-v8-group-portions": {
+        "name": "ahat-v8-group-portions",
+        "path": "vendor/pddl/domain_0102_test.pddl",
+        "sha256": "e0ea026925e40b9e0e80a630d6d369cb50f15e80fa42da1e9b71e408b9be7f25",
+        "revision": "ordinary-core-v1"
+      },
+      "ahat-liquid-v1": {
+        "name": "ahat-liquid-v1",
+        "path": "vendor/pddl/domain_liquid_v1.pddl",
+        "sha256": "2faf00bc2e85600600cdc38a66d650a7ce1874854499973e64875d4e496e9c5f",
+        "revision": "bottle-refill-v1"
+      }
+    },
+    "domains_after": {
+      "ahat-v8-group-portions": {
+        "name": "ahat-v8-group-portions",
+        "path": "vendor/pddl/domain_0102_test.pddl",
+        "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+        "revision": "type-hierarchy-v1"
+      },
+      "ahat-liquid-v1": {
+        "name": "ahat-liquid-v1",
+        "path": "vendor/pddl/domain_liquid_v1.pddl",
+        "sha256": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+        "revision": "type-hierarchy-v1"
+      }
+    },
+    "data_sha256_unchanged": "fa42e746754d826145e026800c553b6d9208fb3c0f1593100b7bcb3b1c1d28e0",
+    "reports": [
+      {
+        "path": "docs/validation/type_hierarchy_v1_checks.json",
+        "sha256": "6b9322148c99cbbfbc9a9836a7db3e031a5515c10bc1fb4afd7980ce42232334"
+      },
+      {
+        "path": "docs/validation/type_hierarchy_v1_reference_checks.json",
+        "sha256": "a0945d0a8e314cb12e253812d923ef8a99aa70b661108b886336e858dbb6b901"
+      },
+      {
+        "path": "docs/validation/type_hierarchy_v1_liquid_checks.json",
+        "sha256": "37bc104fdc5eec0b63bbb399b3257af0eabf957f3a54c7eb9abdaa4fd9479e17"
+      },
+      {
+        "path": "docs/validation/type_hierarchy_v1_cooking_checks.json",
+        "sha256": "91abaf5a8767329a6ed86b3b3616894e786b1045607614993a2f674fc2bdddf8"
+      }
+    ],
+    "check_script_sha256": "abf3cbb309b947886600ec48e8ed7efce3b3d231194d947619a1efcd271c09d3"
+  },
+  "local_dinner_food": {
+    "revision": "dinner-food-v1",
+    "ids": [
+      "a55dd1af-59ee-4e0c-8139-208e2134ed49",
+      "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+      "4a3dc074-3cd6-4241-a4a5-2c37f31c99a1"
+    ],
+    "added_food_nodes": 8,
+    "base_data_sha256": "fa42e746754d826145e026800c553b6d9208fb3c0f1593100b7bcb3b1c1d28e0",
+    "result_data_sha256": "1deff2defd45ca3074399d49a14a22b2004a0bad751f642b67a0b999e248f295",
+    "report_path": "docs/validation/dinner_food_v1_checks.json",
+    "report_sha256": "600fd322d07ad006b78037adaac7786727f902372b8677a4c242287c77218b22",
+    "script_sha256": "a061d34c6f65910e86a771313022755266dba2c551d24d9d04f29b2e59fc2b5c"
+  },
+  "local_dinner_reference": {
+    "revision": "dinner-reference-v1",
+    "ids": [
+      "a55dd1af-59ee-4e0c-8139-208e2134ed49",
+      "3cf1736a-3b96-4913-b9c5-df4688ee9053",
+      "4a3dc074-3cd6-4241-a4a5-2c37f31c99a1"
+    ],
+    "base_data_sha256": "1deff2defd45ca3074399d49a14a22b2004a0bad751f642b67a0b999e248f295",
+    "result_data_sha256": "5c0509493c84697eebf2b9449d50092b620b82ea59c9b6355c24f472ce765c9a",
+    "report_path": "docs/validation/dinner_reference_v1_adoption.json",
+    "report_sha256": "f8bd3ce9e96acdeb2215526a339696de88ed9369381624f6f3c511e4be38ff86",
+    "changes": "Replace three reference plans with user-accepted dinner/ambiance/cleanup examples. Keep scenes, instructions, domain bindings and reference_goal fields unchanged; stage and outcome evidence stays in offline records."
+  },
+  "local_group_meal_reference": {
+    "revision": "group-meal-reference-v1",
+    "ids": [
+      "f3ee3e87-d782-4870-8ed3-2bc92f344010",
+      "0cf41a97-9f6a-4e13-8542-1def6889483d",
+      "198fd035-6f65-4740-8b01-0643a215ccb4"
+    ],
+    "added_food_nodes": 3,
+    "base_data_sha256": "5c0509493c84697eebf2b9449d50092b620b82ea59c9b6355c24f472ce765c9a",
+    "result_data_sha256": "fdb0de588fc94aa3372246b2d06d894bacedfc0b49afad51ddd5ee8bce140202",
+    "report_path": "docs/validation/group_meal_reference_v1_adoption.json",
+    "report_sha256": "05a9fdcf9eae306728b3b971bdb456b02c2a425ab778ff39fc159da8467600cd",
+    "script_sha256": "0fbd8eda89b0d0a679ed36aaf86e6b66bafc973660a1deaba955093c963c9262"
+  },
+  "local_guest_dinner": {
+    "revision": "guest-dinner-v1",
+    "ids": [
+      "dec162ab-e453-419f-971a-2e32987350f2"
+    ],
+    "added_food_nodes": 3,
+    "base_data_sha256": "fdb0de588fc94aa3372246b2d06d894bacedfc0b49afad51ddd5ee8bce140202",
+    "result_data_sha256": "222bcd1b84c05a7233e676c23beb2d3c099b2fbe470c5625b81a5f1dcaff0e04",
+    "report_path": "docs/validation/guest_dinner_v1_adoption.json",
+    "report_sha256": "0b34cee63c50fe42d45c137b979eca686069ec4886da1bf35e63dba9ce6af327",
+    "script_sha256": "9aaaaefb5de7d2a6c5cd7976983ec2275a3de957ad37aa5b7c8df08befa6afb1"
+  },
+  "local_easy_pruning": {
+    "version": "easy-pruning-v1",
+    "date": "2026-11-13",
+    "base_data_sha256": "222bcd1b84c05a7233e676c23beb2d3c099b2fbe470c5625b81a5f1dcaff0e04",
+    "result_data_sha256": "f7b849950deb3684bd31e7787a110e0b5508eb7811b10ac9c836ebafc309ea78",
+    "before_counts": {
+      "easy": 130,
+      "medium": 65,
+      "open": 92,
+      "total": 287
+    },
+    "after_counts": {
+      "easy": 117,
+      "medium": 65,
+      "open": 92,
+      "total": 274
+    },
+    "removed_ids": [
+      "b6ae2148-fe0f-429a-b252-f09a54138cab",
+      "096a106b-ed8b-42ec-84e9-d0738ba355db",
+      "f8b2055f-df01-4e78-a676-790572bff4ce",
+      "9c18484f-ced1-4879-a08b-74a8504c4d7f",
+      "f6a37c9b-a198-4b28-847e-18a4a39966ae",
+      "2809dc32-76cc-4540-b2a8-7fd687408173",
+      "b256d9cb-97b1-4f60-804c-b822c8f4c458",
+      "5d58f3f9-6e8d-4e5c-b121-b0331d8182fe",
+      "e004c5e5-0b81-4a46-b27a-325af94f67ef",
+      "395a29fe-5348-4464-aab7-005a9037e774",
+      "1760a721-3982-4e25-9035-c03f1b1a0e19",
+      "66405407-b3f4-549d-bec3-dc68b8fa5813",
+      "cc6ac010-2c28-55cb-8a12-5c5b0aa07b75"
+    ],
+    "removed_case_count": 13,
+    "retained_representative_ids": [
+      "913ca94e-5eb2-44ec-8c82-867844780d57",
+      "78ee9f5a-6dc0-4dda-b658-8fae383266d0",
+      "b2e2c3e0-35ac-4dba-82b3-f305e7646b3d",
+      "115f6b16-ddcf-41e9-b507-31503416a844",
+      "4b7617ea-d7bd-4da7-8a03-96f5501fabc0",
+      "131f0114-0163-435e-8285-e1d60f9ecb1f",
+      "1672e84e-cef9-4fcc-a1a1-d335ba5734bf",
+      "5e2ac144-4a4f-47cb-ad75-5e92d971f67c",
+      "acd78938-6360-4a67-8ba8-d43a55699293",
+      "cae29172-36cb-492e-b5a5-432e1a0b5555",
+      "c48dc423-23d1-438f-8068-07dbafd9553b",
+      "b217891c-9036-4098-b6f2-6898cdc14c9d",
+      "0b0da0a5-38b2-4bdd-b2c2-6d4c331e1cd1",
+      "ce1d381a-2c02-5720-bd6f-bb4cbec0bc7e"
+    ],
+    "inventory_path": "docs/validation/easy_pruning_v1_inventory.json",
+    "inventory_sha256": "435a0252299a536a1a513884d3c81938abdfb958ae1a9da81d147046c42f00e9",
+    "archive_path": "benchmarks/easy-pruning-v1/removed.jsonl",
+    "archive_sha256": "283108cc9598345b8577d3cb6d2c15184424dce8ec9faefb25fb150985d64c0b",
+    "script_sha256": "3e7e1ea947dd9fc490340050497879f05dfabcda7f59efc1a15554923a73a05b",
+    "policy": "Reduce semantic coverage overlap; preserve distinct access, intent and adjacency requirements. Selection does not use model scores.",
+    "model_scores_used_for_selection": false,
+    "survivor_policy": "Preserve source lines byte-for-byte and in order."
   }
 }

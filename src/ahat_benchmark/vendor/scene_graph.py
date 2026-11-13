@@ -5,7 +5,7 @@ import pathlib
 from typing import List, Any, Dict, Union, Set, Tuple
 import copy
 
-from ..scene import normalize_links
+from ..scene import held_objects, normalize_links, normalize_person_locations, sync_agent_rooms
 from ..pddl_effects import effects as ground_effects, typed_symbols
 
 
@@ -220,13 +220,25 @@ class SceneGraphManager:
             domain_content = domain_file_path_or_file
         self.scene_graph = copy.deepcopy(scene_graph)
         self.pddl_parser = PDDLDomainParser(domain_content)
+        for person in self.scene_graph.get('person') or []:
+            person['p_holding'] = held_objects(person.get('p_holding'))
         
         # --- 核心修改：在初始化时，自动升级links的格式 ---
         self._upgrade_links_format()
+        normalize_person_locations(self.scene_graph)
+        sync_agent_rooms(self.scene_graph)
         
         # 后续步骤与之前相同，但现在可以安全地处理字典格式的links
         self._build_object_map()
         self.extract_all_predicates()
+        self._validate_liquid()
+
+    def _validate_liquid(self):
+        from ..liquid import FIELDS, validate_liquid_scene
+        if 'is_liquid_container' in self.pddl_parser.predicates:
+            validate_liquid_scene(self.scene_graph)
+        elif any(k in obj['data'].get('states', {}) for obj in self.object_map.values() for k in FIELDS):
+            raise ValueError('Liquid scene attributes require the liquid domain; refusing to drop them')
 
     def _upgrade_links_format(self):
         self.scene_graph['links'] = normalize_links(self.scene_graph)
@@ -251,10 +263,12 @@ class SceneGraphManager:
                         if 'name' in item:
                             self.object_map[item['name']] = {'category': category, 'data': item}
 
-    # ... get_object_pddl_type 方法保持不变 ...
     def get_object_pddl_type(self, object_name: str) -> Union[str, None]:
         if object_name not in self.object_map: return None
         category = self.object_map[object_name]['category']
+        # JSON's objects category denotes small items, not PDDL's universal root.
+        if category == 'objects':
+            return 'small_object'
         return category[:-1] if category.endswith('s') else category
     
     # ... extract_all_predicates 方法保持不变 (因为它依赖于已转换的字典格式) ...
@@ -343,8 +357,7 @@ class SceneGraphManager:
                     location_name = person_info['location']
                     if location_name in self.object_map:
                         self.object_map[location_name]['data']['predicates'].append(['person_at', person_name, location_name])
-                if 'p_holding' in person_info and person_info['p_holding'] is not None:
-                    hold_item = person_info['p_holding']
+                for hold_item in held_objects(person_info.get('p_holding')):
                     self.object_map[person_name]['data']['predicates'].append(['p_holding', person_name, hold_item])
                 
         # 5. 对每个物体的谓词列表进行去重
@@ -567,8 +580,13 @@ class SceneGraphManager:
         self._apply_grounded_effects(action['effect'], param_map)
 
     def _apply_grounded_effects(self, expression, bindings, validate_scene=True):
+        rooms = {name for name in self.object_map if self.get_object_pddl_type(name) == 'room'}
+        previous_rooms = {link['from']: link['to'] for link in self.scene_graph['links']
+                          if link['relation'] == 'in' and link['to'] in rooms
+                          and self.get_object_pddl_type(link['from']) == 'agent'}
         objects = {name: self.get_object_pddl_type(name) for name in self.object_map}
-        grounded = ground_effects(expression, bindings, objects=objects, parents=self.pddl_parser.types)
+        state = {tuple(p) for obj in self.object_map.values() for p in obj['data'].get('predicates', [])}
+        grounded = ground_effects(expression, bindings, objects=objects, parents=self.pddl_parser.types, state=state)
         # Apply deletions before additions, matching PDDL simultaneous effects.
         for negative in (True, False):
             for is_negative, atom in grounded:
@@ -576,8 +594,11 @@ class SceneGraphManager:
                     self._apply_effect(atom[0], list(atom[1:]), is_negative)
         if validate_scene:
             self._upgrade_links_format()
+            sync_agent_rooms(self.scene_graph, previous_rooms)
         self._build_object_map()
         self.extract_all_predicates()
+        if validate_scene:
+            self._validate_liquid()
 
     def apply_predicates(self, predicate_with_param):
         """Apply a grounded expression, including typed forall effects.
@@ -643,7 +664,14 @@ class SceneGraphManager:
         elif pred_name == "p_holding":
             person_name, obj_name = params[0], params[1]
             for person in self.scene_graph['person']:
-                if person['name'] == person_name: person['p_holding'] = obj_name if value_to_set else None; break
+                if person['name'] == person_name:
+                    inventory = held_objects(person.get('p_holding'))
+                    if value_to_set and obj_name not in inventory:
+                        inventory.append(obj_name)
+                    elif not value_to_set and obj_name in inventory:
+                        inventory.remove(obj_name)
+                    person['p_holding'] = inventory
+                    break
         
         else: # 处理一元状态谓词
             if not params: return

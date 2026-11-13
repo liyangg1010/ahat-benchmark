@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from .schemas import EvalCase
+from .domains import domain_binding
 
 
 def digest(data: bytes) -> str:
@@ -15,6 +16,14 @@ def digest(data: bytes) -> str:
 
 def canonical(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def result_digest(output: dict[str, Any]) -> str:
+    """Bind consumers to the actual upstream cases as well as their inputs."""
+    cases_hash = digest(canonical(output.get('cases', [])).encode())
+    if output.get('meta', {}).get('cases_sha256') != cases_hash:
+        raise ValueError('Evaluation result content is missing or corrupt; rerun the stage')
+    return digest(canonical({'signature': output['meta']['signature'], 'cases_sha256': cases_hash}).encode())
 
 
 def file_digest(path: Path) -> str | None:
@@ -34,14 +43,16 @@ def make_provenance(
     inputs = {
         "dataset": dataset,
         "eval_cases_sha256": digest(canonical([
-            {"id": case.id, "instruction": case.instruction, "scene_graph": case.scene_graph}
+            {"id": case.id, "instruction": case.instruction, "scene_graph": case.scene_graph, "domain_id": case.domain_id}
             for case in eval_cases
         ]).encode()),
         "inference_sha256": file_digest(inference_path),
     }
     record = {
         "schema_version": "2.0", "stage": stage, "inputs": inputs,
-        "protocol": {**protocol, "domain_sha256": file_digest(domain_path), "code_sha256": code_digest()},
+        "protocol": {**protocol, "domain_sha256": file_digest(domain_path),
+                     "task_domains": {case.id: domain_binding(case.domain_id, domain_path) for case in eval_cases},
+                     "code_sha256": code_digest()},
         "parent_signature": parent_signature,
     }
     return {**record, "signature": digest(canonical(record).encode())}
@@ -57,6 +68,7 @@ def require_compatible(output: dict[str, Any], expected: dict[str, Any]) -> None
     for key in ("stage", "schema_version", "inputs", "protocol", "parent_signature"):
         if meta.get(key) != expected[key]:
             raise ValueError(f"Checkpoint metadata mismatch: {key}")
+    result_digest(output)
 
 
 def verify_stage_context(

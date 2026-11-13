@@ -1,6 +1,105 @@
 # Changelog
 
-## Unreleased
+## 2.3.0 — 2026-11-13
+
+Freeze the 274-task benchmark (117/65/92) as `v2.3.0`. The TGPO paper
+snapshot remains `paper-tgpo-v1` (348 tasks); scores from these versions
+are not directly comparable. See [release notes](docs/releases/v2.3.0.md).
+
+- Apply the approved 13-task easy pruning: 117/65/92, 274 active tasks.
+  Archive complete removed records, preserve surviving source bytes and
+  medium/open artifacts, and bump easy to 1.11.0. See `docs/easy-pruning.md`.
+
+- Fix the planning example to select the task-bound domain and persist its
+  ID/hash, including liquid tasks. Add a mixed-domain request/result regression.
+  Separate nine historical deferred meal records from nine currently repaired
+  references in the cooking audit, retaining historical evidence. No task,
+  domain or scoring change. See `docs/benchmark-recap-20261112.md`.
+
+- Complete the guest-dinner scene and reference (`guest-dinner-v1`): add three
+  explicitly group-serving foods, replace the 21-step setting plan with a
+  49-step oven-heating/serving/lighting example, and store its sufficient example
+  `reference_goal`. Add goal/capacity controls to CI; open split is 1.10.4.
+  Domains and runtime scoring are unchanged. See `docs/guest-dinner.md`.
+
+- Repair three two-person/family meal references (`group-meal-reference-v1`):
+  28→42, 19→34 and 33→36 steps with actual heating and serving. Add two two-serving
+  dinner foods and family-serving bread; retain existing portion annotations.
+  Verify offline goals, omission/capacity controls and scene replay, without
+  changing domains or scoring gates. Open split is 1.10.3. See
+  `docs/group-meal-references.md`.
+
+- Adopt three user-reviewed dinner references (`dinner-reference-v1`): 19→44,
+  18→62 and 22→76 steps, covering actual food preparation, ambiance and serving
+  followed by clearing. Preserve scenes, instructions, domains and reference_goal
+  fields. Add offline stage/outcome checks and omission controls to CI; open split
+  is 1.10.2. See `docs/dinner-reference-candidates.md`.
+
+- Add eight actual food nodes to three open dinner scenes (`dinner-food-v1`),
+  stored in existing refrigerators and usable with existing cookware and plates.
+  Validate separate heating/serving witnesses; preserve formal references and
+  goals without claiming their meal/cleanup requirements are now complete.
+  Other 284 task records and both domains are unchanged; open split is 1.10.1.
+  See `docs/dinner-food.md`.
+
+- Repair both PDDL type hierarchies (`type-hierarchy-v1`): reserve the built-in
+  object root, explicitly type item under it, and rename the small-item type to
+  small_object. Update shared scene export and clean_item's target signature.
+  Preserve all 287 task records, all reference outcomes, and the ordinary domain's
+  exclusion of liquid actions. Add independent PDDL parsing and full step replay
+  to CI; split manifests become 1.10.0. See `docs/domain-types.md`; regenerate
+  inference inputs/results against both new domain hashes.
+
+- Remove five filling/dispensing/pouring actions from the ordinary domain
+  (`ordinary-core-v1`, 30→25 actions). Define these actions independently in the
+  liquid generator, preserving the liquid domain bytes. Keep all 287 task records
+  and reference outcomes unchanged; update domain fingerprints and split manifests
+  to 1.9.2. See FIX-021 in `docs/repair-log.md`; use fresh ordinary-domain inference
+  and evaluation outputs.
+
+- Restore person_at facts from scene location links when person.location is
+  absent (61 active cases). Preserve precise positions with consistent room
+  projections, reject ambiguous/conflicting or undeclared positions, and expose
+  normalized positions to D2. Task data, plans and both domains are unchanged;
+  use fresh evaluation outputs. See FIX-020 in `docs/repair-log.md`.
+
+- Replace the boxed coffee supply with a directly usable coffee pod in one medium
+  task. Remove box opening and redundant navigation (24→22 reference steps),
+  retain cabinet opening, and preserve the hot-coffee delivery goals. Both domains
+  are unchanged. See FIX-019 in `docs/repair-log.md`.
+
+- Keep two representative water-bottle tasks, archive two redundant medium cases,
+  and require openable containers to be open for liquid-domain fill_from_faucet.
+  Add opening before pickup to both retained references, preserving instructions,
+  scenes and outcome goals. Active tasks: 287 (130/65/92), including 30 liquid cases.
+  Ordinary domain bytes are unchanged. See `docs/bottle-refill.md`.
+
+- Repair `scene-lighting-v1`: preserve multi-object human inventories in scene replay;
+  move two coffee machines onto existing counters; fix illegal identifiers in five
+  scenes; remove 61 reversed agent-location edges and correct 58 room conflicts.
+  Use light_on/off with physobj and one lighting state; update 11 reference plans.
+  Bind cached VAL plans to inference and judge caches to upstream result content.
+  Keep 289 task IDs/instructions and existing goals; spatial-cycle prevention is
+  documented but deferred. See `docs/scene-lighting.md` and use fresh evaluation outputs.
+
+- Fix `location-capacity-v1` in both ordinary and liquid domains: moving furniture
+  or devices clears the robot's previous object location; ordinary/adjacent
+  placement respects single-item capacity on the relevant surface/interior.
+  Preserve all 289 task records and reference outcomes. Update domain revisions
+  and fingerprints; use fresh evaluation outputs. See `docs/action-invariants.md`.
+
+- Add task-bound `ahat-liquid-v1` beside the unchanged ordinary domain. Model
+  container content kind, content heating, ingredient loading, brewing and
+  transfer/emptying; support conditional effects in scene and PDDL replay.
+  Repair 32 liquid cases and two equipment-only references; retain five ready
+  drink transport cases unchanged, and quarantine seven unsupported cases with
+  originals/reasons. Active tasks: 289 (130/67/92); domains: 257 ordinary/32 liquid.
+- Route validation, final-state replay and rubric profiles by dataset task domain;
+  bind checkpoints/inference to per-task domain fingerprints. Add reference-free
+  `export-inputs`, mixed-domain integration tests, and domain-specific summaries.
+  Preserve ordinary domain/prompt bytes and all 18 existing reference goals.
+  See `docs/liquid-domain.md`; new liquid reference assertions combine plan and
+  outcome witnesses and are not claimed to be necessary or standalone sufficient goals.
 
 - Reduce four large liquid-task categories to six representatives each, removing
   43 variants. Bundled tasks become 296 (130/74/92); liquid instructions 85→42

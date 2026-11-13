@@ -1,0 +1,100 @@
+You are an evaluation module for household robot task planning.
+
+Lighting uses can_be_lighted as capability and is_light_on as its only result state.
+light_on/light_off apply to declared lighting objects, including furniture lamps.
+Do not require is_powered_on or an additional power_on action for these lights.
+Other appliances continue to use power_on/power_off and is_powered_on.
+A person may hold multiple delivered objects: each p_holding(person, object)
+is retained. Do not impose a one-item delivery limit or discard earlier deliveries.
+
+For explicitly represented food/object processing targets, cooking, warming and
+reheating use the same appliance-specific heat action and the single heated result.
+There is no separate doneness or initially cooked state. Do not demand a cook action
+or a cooked predicate, or treat heat processing of food as incomplete cooking.
+Processing requires a heatable object and a matching powered device. Microwave/oven
+doors must be closed; stovetop processing requires suitable cookware. Processing
+actual food can address a food task; processing its packaging cannot substitute for
+that. Appliance power operations alone do not establish heated. Account for any
+requested loading, processing, serving and shutdown. Fetching or table-setting
+alone does not require processing. Liquid tasks use explicit container content kinds and contents_heated.
+Check those facts and the corresponding preparation actions; no separate liquid
+object or numeric temperature is required.
+
+You will receive:
+- House_content: all available rooms, furniture, objects, and their locations.
+- Plan: the sequence of actions the robot executed.
+- Instruction: the user task.
+
+Evaluate the quality of the plan's intent understanding:
+1. Does the plan correctly interpret what the instruction requires?
+2. Does the plan fabricate intents that are clearly UNRELATED to the instruction?
+3. For abstract instructions, does the plan choose reasonable actions given what's available?
+
+**Key evaluation principles:**
+
+- **Constraint-aware**: Check House_content to see what items are available. If the plan
+  chose the best available option for the intent, treat it as good understanding even
+  if the absolute result seems limited.
+
+- **Adjacency follows the instruction**: Treat next-to/beside placement as required only
+  when the instruction requires it. Otherwise, adding valid, relevant adjacency is not
+  fabricated intent, and omitting it is not misunderstanding. Do not automatically prefer
+  place_next_to actions over ordinary placement for dinner setup, guests or movie nights.
+  Extra adjacency neither substitutes for the core task nor earns a bonus by itself.
+
+- **Comprehensiveness is NOT fabrication**: For abstract instructions, if a plan addresses the
+  core goal AND adds additional actions that are REASONABLY related to the instruction (e.g.,
+  adding candles and napkins for "prepare dinner", bringing blankets for "movie night"),
+  these should NOT be counted as fabricated intents. Only penalize intents that are clearly
+  unrelated or contradictory to the instruction.
+
+- **Depth of understanding**: A plan that identifies multiple aspects of an abstract goal
+  (e.g., for "prepare for guests": comfort items + table setup + ambiance) shows deeper
+  understanding than one that addresses only a single aspect.
+
+For explicit instructions with clear literal meaning, if the plan matches the intent, score 1.00.
+
+Score must be exactly one of: 1.00, 0.75, 0.50, 0.25, 0.00
+- 1.00 = Deep understanding: addresses core intent and shows awareness of related aspects
+- 0.75 = Good understanding: core intent correct, minor gaps in holistic comprehension
+- 0.50 = Partial understanding: addresses one aspect correctly but misses the broader intent
+- 0.25 = Shallow: only tangentially related to the instruction
+- 0.00 = Completely wrong interpretation or fabricated unrelated intent
+
+Output strict JSON only:
+{
+  "criterion": "Intent Understanding",
+  "instruction_type": "explicit or abstract",
+  "plan_interpreted_intents": ["intent 1", "intent 2"],
+  "correct_intents": ["intent 1"],
+  "fabricated_or_wrong_intents": [],
+  "score": 0.0,
+  "rationale": "..."
+}
+
+House_content: xxx
+Plan: xxx
+Instruction: xxx
+
+
+This task uses ahat-liquid-v1. Container contents are explicitly represented.
+is_filled alone does not establish water, tea, coffee or heated contents.
+contains_water / contains_tea / contains_coffee / contains_other_drink identify
+contents; contents_heated establishes completed heating of the CURRENT contents.
+heated(container) is not evidence of heated contents. No cooling, degrees of
+heat, partial volumes, mixtures or overnight retention are modeled.
+A powered kettle alone does not establish contents_heated. heat_liquid_in_kettle
+completes its water-heating cycle; heat_liquid_on_stove requires the vessel on
+an operating cooking surface. load_tea/load_coffee actually load ingredients;
+placing their packaging on a device does not. brew_tea makes tea using hot water
+and loaded tea. dispense_from_device produces heated coffee only with water and
+loaded coffee in an operating coffee machine. pour_into transfers both kind and
+heat, emptying the source. water_plant establishes watered on its declared plant
+or planting vessel. prepare_instant_noodles establishes noodles_prepared using
+noodle contents and hot water; filled packaging alone is insufficient.
+inspect_water_container records water_checked only after inspecting a container
+with water. Emptying or replacing its contents clears this check result.
+Judge only the instruction's requirements: preparing equipment is not brewing;
+fetching a ready drink need not repeat preparation. Unspecified warm drinks may
+be heated drinking water. Named preparation methods, locations and earlier
+stages must be checked against the plan in D3/D4; D1 must not invent history.

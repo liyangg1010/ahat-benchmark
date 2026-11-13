@@ -1,0 +1,239 @@
+{
+  "revision": "guest-dinner-v1",
+  "base_source_sha256": "fdb0de588fc94aa3372246b2d06d894bacedfc0b49afad51ddd5ee8bce140202",
+  "source_sha256": "222bcd1b84c05a7233e676c23beb2d3c099b2fbe470c5625b81a5f1dcaff0e04",
+  "domains_unchanged": {
+    "ahat-v8-group-portions": {
+      "name": "ahat-v8-group-portions",
+      "path": "vendor/pddl/domain_0102_test.pddl",
+      "sha256": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd",
+      "revision": "type-hierarchy-v1"
+    },
+    "ahat-liquid-v1": {
+      "name": "ahat-liquid-v1",
+      "path": "vendor/pddl/domain_liquid_v1.pddl",
+      "sha256": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+      "revision": "type-hierarchy-v1"
+    }
+  },
+  "other_source_lines_unchanged": 286,
+  "unchanged_files": {
+    "benchmarks/ahat-easy/cases.json": "e5a599a02e5c835dc3f77e9e11a72459368451777cdd7fa2b0c9e958c94cace0",
+    "benchmarks/ahat-medium/cases.json": "63a47ac182c1f545b2e24a6a68ff215e1cd9d21099b64532c2b89d9babb9b958",
+    "vendor/pddl/domain_liquid_v1.pddl": "7e21ef734f6fd599e7d993021a63bdd870aee20f74c9808d827a4b4141986919",
+    "vendor/pddl/domain_0102_test.pddl": "0280dcd8e4469e5071e98214c2c5ab1dcc882c5d4cd9f192f3c6e0d1f5635fdd"
+  },
+  "records": [
+    {
+      "id": "dec162ab-e453-419f-971a-2e32987350f2",
+      "instruction": "Prepare an elegant dinner for guests",
+      "added_nodes": [
+        {
+          "name": "salmon_fillet_107",
+          "type": "seafood",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_group": true
+          }
+        },
+        {
+          "name": "potatoes_108",
+          "type": "potato",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_group": true
+          }
+        },
+        {
+          "name": "vegetables_109",
+          "type": "vegetables",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_group": true
+          }
+        }
+      ],
+      "design": {
+        "foods": [
+          [
+            "salmon_fillet_107",
+            "seafood"
+          ],
+          [
+            "potatoes_108",
+            "potato"
+          ],
+          [
+            "vegetables_109",
+            "vegetables"
+          ]
+        ],
+        "fridge": "refrigerator_33",
+        "oven": "stove_oven_27",
+        "plate": "plate_79",
+        "table": "dining_table_14",
+        "light": "candle_70"
+      },
+      "plan": [
+        "(navigate agent_0 bedroom_6 kitchen_cabinet_set_30)",
+        "(open agent_0 kitchen_cabinet_set_30)",
+        "(navigate agent_0 kitchen_cabinet_set_30 plate_79)",
+        "(pick_from_receptacle agent_0 plate_79 kitchen_cabinet_set_30)",
+        "(navigate agent_0 plate_79 dining_table_14)",
+        "(place_on_surface agent_0 plate_79 dining_table_14)",
+        "(navigate agent_0 dining_table_14 stove_oven_27)",
+        "(open agent_0 stove_oven_27)",
+        "(navigate agent_0 stove_oven_27 refrigerator_33)",
+        "(open agent_0 refrigerator_33)",
+        "(navigate agent_0 refrigerator_33 salmon_fillet_107)",
+        "(pick_from_receptacle agent_0 salmon_fillet_107 refrigerator_33)",
+        "(navigate agent_0 salmon_fillet_107 stove_oven_27)",
+        "(place_in_receptacle agent_0 salmon_fillet_107 stove_oven_27)",
+        "(navigate agent_0 stove_oven_27 potatoes_108)",
+        "(pick_from_receptacle agent_0 potatoes_108 refrigerator_33)",
+        "(navigate agent_0 potatoes_108 stove_oven_27)",
+        "(place_in_receptacle agent_0 potatoes_108 stove_oven_27)",
+        "(navigate agent_0 stove_oven_27 vegetables_109)",
+        "(pick_from_receptacle agent_0 vegetables_109 refrigerator_33)",
+        "(navigate agent_0 vegetables_109 stove_oven_27)",
+        "(place_in_receptacle agent_0 vegetables_109 stove_oven_27)",
+        "(close agent_0 stove_oven_27)",
+        "(power_on agent_0 stove_oven_27)",
+        "(heat_with_oven agent_0 salmon_fillet_107 stove_oven_27)",
+        "(heat_with_oven agent_0 potatoes_108 stove_oven_27)",
+        "(heat_with_oven agent_0 vegetables_109 stove_oven_27)",
+        "(power_off agent_0 stove_oven_27)",
+        "(open agent_0 stove_oven_27)",
+        "(navigate agent_0 stove_oven_27 salmon_fillet_107)",
+        "(pick_from_receptacle agent_0 salmon_fillet_107 stove_oven_27)",
+        "(navigate agent_0 salmon_fillet_107 plate_79)",
+        "(place_on_surface agent_0 salmon_fillet_107 plate_79)",
+        "(navigate agent_0 plate_79 potatoes_108)",
+        "(pick_from_receptacle agent_0 potatoes_108 stove_oven_27)",
+        "(navigate agent_0 potatoes_108 plate_79)",
+        "(place_on_surface agent_0 potatoes_108 plate_79)",
+        "(navigate agent_0 plate_79 vegetables_109)",
+        "(pick_from_receptacle agent_0 vegetables_109 stove_oven_27)",
+        "(navigate agent_0 vegetables_109 plate_79)",
+        "(place_on_surface agent_0 vegetables_109 plate_79)",
+        "(navigate agent_0 plate_79 stove_oven_27)",
+        "(close agent_0 stove_oven_27)",
+        "(navigate agent_0 stove_oven_27 refrigerator_33)",
+        "(close agent_0 refrigerator_33)",
+        "(navigate agent_0 refrigerator_33 kitchen_cabinet_set_30)",
+        "(close agent_0 kitchen_cabinet_set_30)",
+        "(navigate agent_0 kitchen_cabinet_set_30 candle_70)",
+        "(light_on agent_0 candle_70)"
+      ],
+      "final_goals": [
+        "(is_food salmon_fillet_107)",
+        "(serves_group salmon_fillet_107)",
+        "(heated salmon_fillet_107)",
+        "(item_on_surface salmon_fillet_107 plate_79)",
+        "(is_food potatoes_108)",
+        "(serves_group potatoes_108)",
+        "(heated potatoes_108)",
+        "(item_on_surface potatoes_108 plate_79)",
+        "(is_food vegetables_109)",
+        "(serves_group vegetables_109)",
+        "(heated vegetables_109)",
+        "(item_on_surface vegetables_109 plate_79)",
+        "(item_on_surface plate_79 dining_table_14)",
+        "(is_clean plate_79)",
+        "(is_clean dining_table_14)",
+        "(furniture_in_room dining_table_14 dining_room_7)",
+        "(not (is_powered_on stove_oven_27))",
+        "(not (is_open stove_oven_27))",
+        "(not (is_open refrigerator_33))",
+        "(not (is_open kitchen_cabinet_set_30))",
+        "(handempty agent_0)",
+        "(item_on_surface tablecloth_67 dining_table_14)",
+        "(is_clean tablecloth_67)",
+        "(item_on_surface centerpiece_vase_32 dining_table_14)",
+        "(is_clean centerpiece_vase_32)",
+        "(item_on_surface napkin_34 dining_table_14)",
+        "(is_clean napkin_34)",
+        "(item_on_surface napkin_36 dining_table_14)",
+        "(is_clean napkin_36)",
+        "(item_on_surface napkin_69 dining_table_14)",
+        "(is_clean napkin_69)",
+        "(is_light_on candle_70)",
+        "(item_on_surface candle_70 dining_table_14)"
+      ],
+      "stage_goals": [],
+      "reference_goal_written": true,
+      "controls": {
+        "omit_heating": {
+          "action": "heat_with_oven",
+          "valid": true,
+          "final_goal_reached": false
+        },
+        "omit_lighting": {
+          "valid": true,
+          "final_goal_reached": false
+        },
+        "stop_before_serving": {
+          "after_step": 28,
+          "valid": true,
+          "final_goal_reached": false
+        },
+        "missing_capacity": [
+          {
+            "food": "salmon_fillet_107",
+            "predicate": "serves_group"
+          },
+          {
+            "food": "potatoes_108",
+            "predicate": "serves_group"
+          },
+          {
+            "food": "vegetables_109",
+            "predicate": "serves_group"
+          }
+        ]
+      },
+      "native_val_valid": true,
+      "goals_reached": true,
+      "scene_replay_steps": 49,
+      "status": "accepted_reference_example",
+      "plan_before": [
+        "(navigate agent_0 bedroom_6 kitchen_cabinet_set_30)",
+        "(open agent_0 kitchen_cabinet_set_30)",
+        "(navigate agent_0 kitchen_cabinet_set_30 plate_79)",
+        "(pick_from_receptacle agent_0 plate_79 kitchen_cabinet_set_30)",
+        "(navigate agent_0 plate_79 dining_table_14)",
+        "(place_on_surface agent_0 plate_79 dining_table_14)",
+        "(navigate agent_0 dining_table_14 apple_105)",
+        "(navigate agent_0 apple_105 refrigerator_26)",
+        "(open agent_0 refrigerator_26)",
+        "(navigate agent_0 refrigerator_26 apple_105)",
+        "(pick_from_receptacle agent_0 apple_105 refrigerator_26)",
+        "(navigate agent_0 apple_105 dining_table_14)",
+        "(place_next_to_surface agent_0 apple_105 plate_79 dining_table_14)",
+        "(navigate agent_0 dining_table_14 cheese_block_106)",
+        "(pick_from_receptacle agent_0 cheese_block_106 refrigerator_26)",
+        "(navigate agent_0 cheese_block_106 dining_table_14)",
+        "(place_next_to_surface agent_0 cheese_block_106 plate_79 dining_table_14)",
+        "(navigate agent_0 dining_table_14 candle_70)",
+        "(pick_from_surface agent_0 candle_70 dining_table_14)",
+        "(navigate agent_0 candle_70 dining_table_14)",
+        "(place_next_to_surface agent_0 candle_70 plate_79 dining_table_14)"
+      ],
+      "reference_goal_before": null,
+      "source_index": 235
+    }
+  ],
+  "failures": []
+}

@@ -87,7 +87,7 @@ class ValTests(unittest.TestCase):
         cases = [
             ("(navigate agent_0 cup_1 ghost_1)", "unknown_object", 3, "?to", "ghost_1", "location", None),
             ("(navigate agent_0 cup_1 agent_0)", "type_mismatch", 3, "?to", "agent_0", "location", "agent"),
-            ("(navigate cup_1 room_1 table_1)", "type_mismatch", 1, "?ag", "cup_1", "agent", "object"),
+            ("(navigate cup_1 room_1 table_1)", "type_mismatch", 1, "?ag", "cup_1", "agent", "small_object"),
         ]
         for action, kind, position, parameter, argument, expected, actual in cases:
             with self.subTest(action=action), patch("ahat_benchmark.val.validator.subprocess.run") as native:
@@ -113,7 +113,7 @@ class ValTests(unittest.TestCase):
         self.assertNotIn("bad.name -", result["problem_pddl"])
 
     def test_parent_types_and_case_insensitive_arguments_are_accepted(self):
-        # object, furniture and room all inherit physobj -> location.
+        # small_object, furniture and room all inherit physobj -> location.
         plan = ["(NAVIGATE AGENT_0 CUP_1 TABLE_1)", "(navigate agent_0 table_1 room_1)"]
         self.assertEqual(self.validate(scene(), plan)["status"], "valid")
 

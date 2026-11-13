@@ -1,0 +1,78 @@
+{
+  "release_tag": "v2.3.0",
+  "package_version": "2.3.0",
+  "date": "2026-11-13",
+  "python": "3.13.9",
+  "platform": "Linux x86_64",
+  "source_sha256": "f7b849950deb3684bd31e7787a110e0b5508eb7811b10ac9c836ebafc309ea78",
+  "split_counts": {
+    "easy": 117,
+    "medium": 65,
+    "open": 92
+  },
+  "offline_tests": {
+    "run": 117,
+    "failures": 0,
+    "errors": 0
+  },
+  "native_reference_checks": {
+    "valid": 274,
+    "annotated_goals_passed": 17,
+    "adjacency_controls_passed": 9,
+    "cooking_controls_passed": 4,
+    "evidence": "docs/validation/easy_pruning_v1_reference_checks.json"
+  },
+  "full_scene_checks": {
+    "domains_checked": 2,
+    "independently_parsed_problems": 274,
+    "scene_replay_steps": 4107,
+    "initial_facts_dropped": 0,
+    "evidence": "docs/validation/easy_pruning_v1_scene_checks.json"
+  },
+  "liquid_checks": {
+    "reference_outcomes_reached": 32,
+    "scene_replay_steps": 483,
+    "omission_controls": 74
+  },
+  "dinner_checks": {
+    "dinner": {
+      "valid_references_and_final_goals": 3,
+      "omission_controls": 4,
+      "serving_stages_before_cleanup": 1,
+      "final_only_goal_insufficiency_controls": 1
+    },
+    "group_meal": {
+      "valid_references_and_final_goals": 3,
+      "omission_controls": 5,
+      "serving_controls": 3,
+      "capacity_controls": 6
+    },
+    "guest_dinner": {
+      "valid_references_and_final_goals": 1,
+      "omission_controls": 2,
+      "serving_controls": 1,
+      "capacity_controls": 3
+    }
+  },
+  "packaging": {
+    "clean_export_build": [
+      "sdist",
+      "linux_x86_64_wheel"
+    ],
+    "distribution_content_checks": "passed",
+    "installed_in_separate_venv_outside_checkout": true,
+    "installed_doctor": "passed",
+    "installed_offline_demo": "passed",
+    "installed_regression": {
+      "valid": 274,
+      "native_goals": 49,
+      "liquid_replay_steps": 471,
+      "mixed_pipeline": "passed_mock_judge_real_VAL",
+      "reference_free_export": "passed"
+    },
+    "dependency_install": "Official PyPI; default mirror lacked a required dependency wheel."
+  },
+  "remote_model_calls": 0,
+  "paper_tag_preserved": "ef6abc0704a193f93c8b092c29bb2e0f8c3bc55f",
+  "paper_commit_preserved": "fafa4624cf4e99c4af10d1738d51fc9cd97e91fb"
+}

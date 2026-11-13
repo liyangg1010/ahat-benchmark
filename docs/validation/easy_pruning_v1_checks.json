@@ -1,0 +1,30 @@
+{
+  "revision": "easy-pruning-v1",
+  "source_sha256": "f7b849950deb3684bd31e7787a110e0b5508eb7811b10ac9c836ebafc309ea78",
+  "inventory_sha256": "435a0252299a536a1a513884d3c81938abdfb958ae1a9da81d147046c42f00e9",
+  "original_source_reconstructed_sha256": "222bcd1b84c05a7233e676c23beb2d3c099b2fbe470c5625b81a5f1dcaff0e04",
+  "original_source_hash_matches_review": true,
+  "survivor_source_bytes_and_order_preserved": true,
+  "archive_source_bytes_and_order_preserved": true,
+  "removed_count": 13,
+  "split_counts": {
+    "easy": 117,
+    "medium": 65,
+    "open": 92
+  },
+  "domain_counts": {
+    "ahat-v8-group-portions": 244,
+    "ahat-liquid-v1": 30
+  },
+  "annotated_goal_count": 17,
+  "medium_open_unchanged": true,
+  "model_calls": 0,
+  "unit_tests": {
+    "run": 117,
+    "failures": 0,
+    "errors": 0
+  },
+  "reference_checks": "docs/validation/easy_pruning_v1_reference_checks.json",
+  "scene_checks": "docs/validation/easy_pruning_v1_scene_checks.json",
+  "cooking_checks": "docs/validation/easy_pruning_v1_cooking_checks.json"
+}

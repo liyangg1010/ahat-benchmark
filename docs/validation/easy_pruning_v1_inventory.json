@@ -1,0 +1,880 @@
+{
+  "source_sha256": "222bcd1b84c05a7233e676c23beb2d3c099b2fbe470c5625b81a5f1dcaff0e04",
+  "easy_sha256": "e5a599a02e5c835dc3f77e9e11a72459368451777cdd7fa2b0c9e958c94cace0",
+  "current_counts": {
+    "easy": 130,
+    "medium": 65,
+    "open": 92,
+    "total": 287
+  },
+  "model_scores_used_for_selection": false,
+  "groups": [
+    {
+      "key": "single_sink",
+      "label": "清洁单个水槽／洗手盆",
+      "indices": [
+        36,
+        83,
+        86,
+        108,
+        111
+      ],
+      "keep": [
+        36,
+        86
+      ],
+      "remove": [
+        83,
+        108,
+        111
+      ],
+      "reason": "都以拿清洁工具、清洁一个目标为核心；保留工具就在目标水槽上与工具在另一个水槽上两种关系。",
+      "tradeoff": "减少 washbasin/sink 的措辞、工具名称及布局变体。多水槽全清洁的 #047/#062 不属于本组。",
+      "records": [
+        {
+          "easy_index_zero_based": 36,
+          "id": "913ca94e-5eb2-44ec-8c82-867844780d57",
+          "instruction": "Clean the sink in bathroom.",
+          "domain_id": null,
+          "record_sha256": "6d862df09f1bc78cda61341e836785134e4f7bc1d1339f59a9bb9aa109cf3042",
+          "scene_sha256": "fea1b74414a63d058554cb71abc7a9e6e88ebf0692d4d1c9c6427509f9fdcf09",
+          "nodes": 144,
+          "links": 122,
+          "reference_plan": [
+            "(navigate agent_0 bathroom_3 cleaning_sponge_29)",
+            "(pick_from_surface agent_0 cleaning_sponge_29 sink_6)",
+            "(navigate agent_0 cleaning_sponge_29 sink_6)",
+            "(clean_furniture agent_0 cleaning_sponge_29 sink_6)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "clean_furniture"
+          ]
+        },
+        {
+          "easy_index_zero_based": 83,
+          "id": "9c18484f-ced1-4879-a08b-74a8504c4d7f",
+          "instruction": "Go to the bathroom and clean the washbasin.",
+          "domain_id": null,
+          "record_sha256": "6408a7726ada722e780ce05227f54895f676ae28f1c25e3a8c610e40ef892f54",
+          "scene_sha256": "9f535c77fc7875441dda38d89854306113659061e7ce5d583f031c6cb36eb992",
+          "nodes": 175,
+          "links": 166,
+          "reference_plan": [
+            "(navigate agent_0 bedroom_7 bathroom_8)",
+            "(navigate agent_0 bathroom_8 cleaning_cloth_45)",
+            "(pick_from_surface agent_0 cleaning_cloth_45 washbasin_5)",
+            "(navigate agent_0 cleaning_cloth_45 washbasin_5)",
+            "(clean_furniture agent_0 cleaning_cloth_45 washbasin_5)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "clean_furniture"
+          ]
+        },
+        {
+          "easy_index_zero_based": 86,
+          "id": "78ee9f5a-6dc0-4dda-b658-8fae383266d0",
+          "instruction": "Clean the sink in bathroom.",
+          "domain_id": null,
+          "record_sha256": "a6897a967d191a81bcb7a267241cff6a5c28a3e47a1e4f0e4af748f707e40827",
+          "scene_sha256": "b4696bf6df4433bfb386111216eb88183841c0089b66c469e3ac9f635679a9da",
+          "nodes": 139,
+          "links": 126,
+          "reference_plan": [
+            "(navigate agent_0 living_room_10 cleaning_cloth_33)",
+            "(pick_from_surface agent_0 cleaning_cloth_33 sink_62)",
+            "(navigate agent_0 cleaning_cloth_33 sink_63)",
+            "(clean_furniture agent_0 cleaning_cloth_33 sink_63)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "clean_furniture"
+          ]
+        },
+        {
+          "easy_index_zero_based": 108,
+          "id": "e004c5e5-0b81-4a46-b27a-325af94f67ef",
+          "instruction": "Clean the sink in bathroom.",
+          "domain_id": null,
+          "record_sha256": "f07db02387dd06a5af64b3f4a164a63cf6e77d90ca169223c586388a339af4f1",
+          "scene_sha256": "26ed3a3bfbe84c64083316eb42fc4e2fbeb4b8e22360ee96069ebb47a272b7a3",
+          "nodes": 156,
+          "links": 137,
+          "reference_plan": [
+            "(navigate agent_0 bedroom_6 cleaning_cloth_47)",
+            "(pick_from_surface agent_0 cleaning_cloth_47 sink_70)",
+            "(navigate agent_0 cleaning_cloth_47 sink_72)",
+            "(clean_furniture agent_0 cleaning_cloth_47 sink_72)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "clean_furniture"
+          ]
+        },
+        {
+          "easy_index_zero_based": 111,
+          "id": "395a29fe-5348-4464-aab7-005a9037e774",
+          "instruction": "Can you clean the sink in the bathroom?",
+          "domain_id": null,
+          "record_sha256": "769542ca22c53560920f4a988d3d004bfa7dbb59d4967729d071e086b1212832",
+          "scene_sha256": "f364dcea51167472519c446e0e994af43ad228dbc159932a09e106425199efa1",
+          "nodes": 66,
+          "links": 62,
+          "reference_plan": [
+            "(navigate agent_0 bathroom_1 cleaning_sponge_3)",
+            "(pick_from_surface agent_0 cleaning_sponge_3 sink_1)",
+            "(navigate agent_0 cleaning_sponge_3 sink_1)",
+            "(clean_furniture agent_0 cleaning_sponge_3 sink_1)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "clean_furniture"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "cabinet_vegetables",
+      "label": "从厨房柜取得蔬菜",
+      "indices": [
+        41,
+        45,
+        69,
+        87
+      ],
+      "keep": [
+        41,
+        69
+      ],
+      "remove": [
+        45,
+        87
+      ],
+      "reason": "保留 #041 柜面拿取与 #069 打开柜门后从柜内拿取；删除的两题也是柜面拿取。",
+      "tradeoff": "减少蔬菜名称、机器人起点和场景布局变体，保留 on/in 与开柜条件差异。",
+      "records": [
+        {
+          "easy_index_zero_based": 41,
+          "id": "b2e2c3e0-35ac-4dba-82b3-f305e7646b3d",
+          "instruction": "Go to the kitchen and pick up fresh vegetables from the kitchen cabinet.",
+          "domain_id": null,
+          "record_sha256": "dcd00bc59c16e965d9f650ff4f9f52f6acec11dbf02cbb6ae0fb854d0f56dff8",
+          "scene_sha256": "c2160498344049b66763fbad09843b6efb48eb7c69b9516ce081e09be8a98e54",
+          "nodes": 190,
+          "links": 176,
+          "reference_plan": [
+            "(navigate agent_0 kitchen_12 kitchen_3)",
+            "(navigate agent_0 kitchen_3 kitchen_cabinet_12)",
+            "(navigate agent_0 kitchen_cabinet_12 fresh_vegetables_35)",
+            "(pick_from_surface agent_0 fresh_vegetables_35 kitchen_cabinet_12)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "navigate",
+            "pick_from_surface"
+          ]
+        },
+        {
+          "easy_index_zero_based": 45,
+          "id": "b6ae2148-fe0f-429a-b252-f09a54138cab",
+          "instruction": "Go to the kitchen and pick up the vegetables from the kitchen cabinet.",
+          "domain_id": null,
+          "record_sha256": "34a8397252110ee0695e6a8a278736e4cc546a04f9ec6cc8a7b5e6b2fc211df6",
+          "scene_sha256": "f46a7657c7dc19527448c5fdf1300932c4022d87bafc10dd91d31d938512477f",
+          "nodes": 164,
+          "links": 146,
+          "reference_plan": [
+            "(navigate agent_0 kitchen_17 carrots_35)",
+            "(pick_from_surface agent_0 carrots_35 kitchen_cabinet_87)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface"
+          ]
+        },
+        {
+          "easy_index_zero_based": 69,
+          "id": "115f6b16-ddcf-41e9-b507-31503416a844",
+          "instruction": "Go to the kitchen and pick up the vegetables from the kitchen cabinet.",
+          "domain_id": null,
+          "record_sha256": "6dd76efc2234e7bc3d4c3292b8789ad049b2aa121e0f9cc2a9b21da7a726e4bd",
+          "scene_sha256": "e0de956aa0407565e127f9ba1fd08c83a63c465546ffe43673e594c2c57438a8",
+          "nodes": 159,
+          "links": 150,
+          "reference_plan": [
+            "(navigate agent_0 bathroom_2 kitchen_8)",
+            "(navigate agent_0 kitchen_8 kitchen_cabinet_82)",
+            "(open agent_0 kitchen_cabinet_82)",
+            "(navigate agent_0 kitchen_cabinet_82 carrots_36)",
+            "(pick_from_receptacle agent_0 carrots_36 kitchen_cabinet_82)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "open",
+            "navigate",
+            "pick_from_receptacle"
+          ]
+        },
+        {
+          "easy_index_zero_based": 87,
+          "id": "2809dc32-76cc-4540-b2a8-7fd687408173",
+          "instruction": "Go to the kitchen and pick fresh vegetables from the kitchen cabinet.",
+          "domain_id": null,
+          "record_sha256": "d466253b90e6a903fd7e8627abe3ff35fdc71939267c477a9e1d403d69424884",
+          "scene_sha256": "3f525e97829b5059a8b245b168c80f71e2074640abdffae6089a1dd7a6762e9e",
+          "nodes": 153,
+          "links": 141,
+          "reference_plan": [
+            "(navigate agent_0 outdoor_9 kitchen_12)",
+            "(navigate agent_0 kitchen_12 kitchen_cabinet_73)",
+            "(navigate agent_0 kitchen_cabinet_73 fresh_vegetables_22)",
+            "(pick_from_surface agent_0 fresh_vegetables_22 kitchen_cabinet_73)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "navigate",
+            "pick_from_surface"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "fridge_vegetables",
+      "label": "从冰箱取蔬菜交人",
+      "indices": [
+        13,
+        26,
+        84
+      ],
+      "keep": [
+        13,
+        26
+      ],
+      "remove": [
+        84
+      ],
+      "reason": "#013/#084 都是开冰箱、取一个蔬菜对象、交人，动作名序列完全相同；#026 场景有多个独立蔬菜对象，参考为多物交付。",
+      "tradeoff": "减少一个冰箱／收件人位置布局变体；参考拿多种蔬菜不等于形式化证明指令必须取全。",
+      "records": [
+        {
+          "easy_index_zero_based": 13,
+          "id": "4b7617ea-d7bd-4da7-8a03-96f5501fabc0",
+          "instruction": "Can you grab some fresh veggies from the fridge for dinner?",
+          "domain_id": null,
+          "record_sha256": "558048664a00241b96b33857c8a080fb148d118c0dd515e0e973444d8151d8d2",
+          "scene_sha256": "4f5a02940a1506cf8f37f47d1360a357596b3d29fa79271ae0c53155590bceb0",
+          "nodes": 206,
+          "links": 199,
+          "reference_plan": [
+            "(navigate agent_0 hallway_7 refrigerator_148)",
+            "(open agent_0 refrigerator_148)",
+            "(navigate agent_0 refrigerator_148 fresh_vegetables_99)",
+            "(pick_from_receptacle agent_0 fresh_vegetables_99 refrigerator_148)",
+            "(navigate agent_0 fresh_vegetables_99 person_0)",
+            "(hand_over_to_person agent_0 person_0 fresh_vegetables_99)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "open",
+            "navigate",
+            "pick_from_receptacle",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        },
+        {
+          "easy_index_zero_based": 26,
+          "id": "131f0114-0163-435e-8285-e1d60f9ecb1f",
+          "instruction": "Can you grab some vegetables from the fridge for me?",
+          "domain_id": null,
+          "record_sha256": "eb56486e1786670c0eee4a4209f9d6efd2a4778465e5b6dbde06cdbc0852eda9",
+          "scene_sha256": "38a716612593affb585666555f5e0fd99889218f77b044583bef9c726d882f90",
+          "nodes": 165,
+          "links": 150,
+          "reference_plan": [
+            "(navigate agent_0 tv_room_3 kitchen_7)",
+            "(navigate agent_0 kitchen_7 refrigerator_41)",
+            "(open agent_0 refrigerator_41)",
+            "(navigate agent_0 refrigerator_41 carrots_21)",
+            "(pick_from_receptacle agent_0 carrots_21 refrigerator_41)",
+            "(navigate agent_0 carrots_21 bedroom_6)",
+            "(navigate agent_0 bedroom_6 person_0)",
+            "(hand_over_to_person agent_0 person_0 carrots_21)",
+            "(navigate agent_0 person_0 tomatoes_22)",
+            "(pick_from_receptacle agent_0 tomatoes_22 refrigerator_41)",
+            "(navigate agent_0 tomatoes_22 bedroom_6)",
+            "(navigate agent_0 bedroom_6 person_0)",
+            "(hand_over_to_person agent_0 person_0 tomatoes_22)",
+            "(navigate agent_0 person_0 bell_peppers_23)",
+            "(pick_from_receptacle agent_0 bell_peppers_23 refrigerator_41)",
+            "(navigate agent_0 bell_peppers_23 bedroom_6)",
+            "(navigate agent_0 bedroom_6 person_0)",
+            "(hand_over_to_person agent_0 person_0 bell_peppers_23)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "open",
+            "navigate",
+            "pick_from_receptacle",
+            "navigate",
+            "navigate",
+            "hand_over_to_person",
+            "navigate",
+            "pick_from_receptacle",
+            "navigate",
+            "navigate",
+            "hand_over_to_person",
+            "navigate",
+            "pick_from_receptacle",
+            "navigate",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        },
+        {
+          "easy_index_zero_based": 84,
+          "id": "f6a37c9b-a198-4b28-847e-18a4a39966ae",
+          "instruction": "Can you grab some fresh veggies from the fridge?",
+          "domain_id": null,
+          "record_sha256": "fc821996d0066fb43c94003d7b66ef9e998ecb212e3aa9136bd59cf3eba01a16",
+          "scene_sha256": "b2c17e9af095ce78eb6d049739ece1e66676012b66ff671dbb20d9ba90414c3c",
+          "nodes": 226,
+          "links": 214,
+          "reference_plan": [
+            "(navigate agent_0 garage_1 refrigerator_139)",
+            "(open agent_0 refrigerator_139)",
+            "(navigate agent_0 refrigerator_139 fresh_vegetables_75)",
+            "(pick_from_receptacle agent_0 fresh_vegetables_75 refrigerator_139)",
+            "(navigate agent_0 fresh_vegetables_75 person_0)",
+            "(hand_over_to_person agent_0 person_0 fresh_vegetables_75)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "open",
+            "navigate",
+            "pick_from_receptacle",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "stuffed_toy",
+      "label": "取毛绒玩具并交人",
+      "indices": [
+        5,
+        57,
+        102,
+        105
+      ],
+      "keep": [
+        5,
+        102
+      ],
+      "remove": [
+        57,
+        105
+      ],
+      "reason": "四题均为表面拿取一个毛绒玩具并交给人物；保留明确地点的 #005 和根据孩子语境理解的 #102。",
+      "tradeoff": "减少玩具种类、来源表面、收件人位置及语言变体。",
+      "records": [
+        {
+          "easy_index_zero_based": 5,
+          "id": "1672e84e-cef9-4fcc-a1a1-d335ba5734bf",
+          "instruction": "Navigate to bed in the bedroom, pick up the teddy_bear from the bed, go to the kitchen, and hand the teddy_bear to person.",
+          "domain_id": null,
+          "record_sha256": "45085441b8ecab6a7a2aef32bda459a244a26aa18aea1493489f33cc4cd58977",
+          "scene_sha256": "cbcf2e38c84cb305c5dff5efa668f658a97cbd2ac1f9d299a7ff4675000b724e",
+          "nodes": 191,
+          "links": 178,
+          "reference_plan": [
+            "(navigate agent_0 bedroom_3 bed_30)",
+            "(navigate agent_0 bed_30 teddy_bear_28)",
+            "(pick_from_surface agent_0 teddy_bear_28 bed_30)",
+            "(navigate agent_0 teddy_bear_28 kitchen_13)",
+            "(navigate agent_0 kitchen_13 person_0)",
+            "(hand_over_to_person agent_0 person_0 teddy_bear_28)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        },
+        {
+          "easy_index_zero_based": 57,
+          "id": "096a106b-ed8b-42ec-84e9-d0738ba355db",
+          "instruction": "Go to bedroom, pick up the stuffed_bunny from bed, and hand it to person in corridor.",
+          "domain_id": null,
+          "record_sha256": "431fd8322a5f855d9d5a0239afb9c049256159e799a459ed373b6c425d8c9d43",
+          "scene_sha256": "743289b06ce19cfb190f5938152b39e84bc1209b5a7f0eec21b72cf4ab5774ad",
+          "nodes": 118,
+          "links": 105,
+          "reference_plan": [
+            "(navigate agent_0 corridor_6 bedroom_3)",
+            "(navigate agent_0 bedroom_3 stuffed_bunny_20)",
+            "(pick_from_surface agent_0 stuffed_bunny_20 bed_23)",
+            "(navigate agent_0 stuffed_bunny_20 corridor_6)",
+            "(navigate agent_0 corridor_6 person_0)",
+            "(hand_over_to_person agent_0 person_0 stuffed_bunny_20)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        },
+        {
+          "easy_index_zero_based": 102,
+          "id": "5e2ac144-4a4f-47cb-ad75-5e92d971f67c",
+          "instruction": "Retrieve the child's stuffed animal and deliver it to her.",
+          "domain_id": null,
+          "record_sha256": "540b1a829bb70fb495fe855d51b8fdc569355d1ba3d78a604d3e5d022852984c",
+          "scene_sha256": "5173b31367e1912af866b20e6e3391456bd602e69df74495d9a18123eaafcab4",
+          "nodes": 154,
+          "links": 126,
+          "reference_plan": [
+            "(navigate agent_0 corridor_16 childs_room_10)",
+            "(navigate agent_0 childs_room_10 teddy_bear_24)",
+            "(pick_from_surface agent_0 teddy_bear_24 bed_43)",
+            "(navigate agent_0 teddy_bear_24 corridor_14)",
+            "(navigate agent_0 corridor_14 person_0)",
+            "(hand_over_to_person agent_0 person_0 teddy_bear_24)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        },
+        {
+          "easy_index_zero_based": 105,
+          "id": "5d58f3f9-6e8d-4e5c-b121-b0331d8182fe",
+          "instruction": "Retrieve a child's favorite stuffed toy and bring it to the child.",
+          "domain_id": null,
+          "record_sha256": "9cc61b3d335714b303390e318e45896570cb4e2d8493c58a16c58dcf63febaa3",
+          "scene_sha256": "445e84956f338ff6dad14ff9724fdefa7a005a9bdfbf7e78a4b35ad88802ff1e",
+          "nodes": 149,
+          "links": 124,
+          "reference_plan": [
+            "(navigate agent_0 corridor_10 playroom_20)",
+            "(navigate agent_0 playroom_20 kids_stuffed_toy_78)",
+            "(pick_from_surface agent_0 kids_stuffed_toy_78 dining_table_45)",
+            "(navigate agent_0 kids_stuffed_toy_78 living_room_19)",
+            "(navigate agent_0 living_room_19 person_0)",
+            "(hand_over_to_person agent_0 person_0 kids_stuffed_toy_78)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "storybook",
+      "label": "取故事书交人",
+      "indices": [
+        27,
+        66,
+        112
+      ],
+      "keep": [
+        27,
+        66
+      ],
+      "remove": [
+        112
+      ],
+      "reason": "#027/#112 都明确从客厅取故事书交给浴室人物；#066 保留较隐含的 bedtime 请求。",
+      "tradeoff": "减少明确分步措辞和布局变体；送到床上的 #046 仍保留，不能把交人和放床合并。",
+      "records": [
+        {
+          "easy_index_zero_based": 27,
+          "id": "acd78938-6360-4a67-8ba8-d43a55699293",
+          "instruction": "Can you bring my bedtime storybook from the living room to the person in the bathroom?",
+          "domain_id": null,
+          "record_sha256": "c922c6fd30bc3d529c9481de71708225a298c2a6d5e7c3e715147cbe6d61bbbe",
+          "scene_sha256": "751d6a69e263010d83caeabfcc6898d316720825ab534ab05f9936dfacb43506",
+          "nodes": 146,
+          "links": 142,
+          "reference_plan": [
+            "(navigate agent_0 living_room_1 storybook_61)",
+            "(pick_from_surface agent_0 storybook_61 end_table_12)",
+            "(navigate agent_0 storybook_61 bathroom_3)",
+            "(navigate agent_0 bathroom_3 person_0)",
+            "(hand_over_to_person agent_0 person_0 storybook_61)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        },
+        {
+          "easy_index_zero_based": 66,
+          "id": "cae29172-36cb-492e-b5a5-432e1a0b5555",
+          "instruction": "It's bedtime — could you bring her storybook, please?",
+          "domain_id": null,
+          "record_sha256": "2b3da47c2f023cb4284775eac187c8823fed617d90ebc2ea50cf009a5e31c0ba",
+          "scene_sha256": "b2417059a5e85ec0bbd6bc5508de6426e0633c32f3b4e9d5e131912a58db8ec0",
+          "nodes": 129,
+          "links": 115,
+          "reference_plan": [
+            "(navigate agent_0 living_room_12 storybook_red_17)",
+            "(pick_from_surface agent_0 storybook_red_17 couch_18)",
+            "(navigate agent_0 storybook_red_17 person_0)",
+            "(hand_over_to_person agent_0 person_0 storybook_red_17)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        },
+        {
+          "easy_index_zero_based": 112,
+          "id": "1760a721-3982-4e25-9035-c03f1b1a0e19",
+          "instruction": "Go to the living room, pick up the picture_story_book from end_table, navigate to the bathroom, and hand it over to person for story time.",
+          "domain_id": null,
+          "record_sha256": "d6147dcadd53de3027a02b447d941d170d9b9423a15370d269d010f117da303c",
+          "scene_sha256": "347dccc5c3672014d14bae98a8e4d39e45db716b777551d597efb873b2f0f212",
+          "nodes": 121,
+          "links": 116,
+          "reference_plan": [
+            "(navigate agent_0 other_room_3 living_room_1)",
+            "(navigate agent_0 living_room_1 picture_story_book_27)",
+            "(pick_from_surface agent_0 picture_story_book_27 end_table_11)",
+            "(navigate agent_0 picture_story_book_27 bathroom_4)",
+            "(navigate agent_0 bathroom_4 person_0)",
+            "(hand_over_to_person agent_0 person_0 picture_story_book_27)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "pepper",
+      "label": "从厨房柜取得胡椒研磨器",
+      "indices": [
+        30,
+        73
+      ],
+      "keep": [
+        30
+      ],
+      "remove": [
+        73
+      ],
+      "reason": "主要实体、位置和操作目标一致，措辞仅 seafood/food；两题目标都是柜面上的 pepper_mill。#073 参考多做一次 open，不是柜面拿取的必要前置条件。",
+      "tradeoff": "减少相同目标操作下的背景状态、布局与措辞变体；完整场景并不相同，不把参考多余动作误判为独立能力。",
+      "records": [
+        {
+          "easy_index_zero_based": 30,
+          "id": "c48dc423-23d1-438f-8068-07dbafd9553b",
+          "instruction": "Go to the kitchen and pick up the pepper mill from the kitchen cabinet to season the seafood.",
+          "domain_id": null,
+          "record_sha256": "d93dbd07e4fe048db5004cdbf77901b01c3c14eed2b1ec4b3cb2264292ebb8ff",
+          "scene_sha256": "68b738165d97f13ebdc982394e932130d4303fe67ae9c23c968023cf9af8f469",
+          "nodes": 173,
+          "links": 164,
+          "reference_plan": [
+            "(navigate agent_0 bedroom_7 kitchen_9)",
+            "(navigate agent_0 kitchen_9 kitchen_cabinet_102)",
+            "(navigate agent_0 kitchen_cabinet_102 pepper_mill_45)",
+            "(pick_from_surface agent_0 pepper_mill_45 kitchen_cabinet_102)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "navigate",
+            "pick_from_surface"
+          ]
+        },
+        {
+          "easy_index_zero_based": 73,
+          "id": "f8b2055f-df01-4e78-a676-790572bff4ce",
+          "instruction": "Go to the kitchen and pick up the pepper mill from the kitchen cabinet to season the food.",
+          "domain_id": null,
+          "record_sha256": "ca45a6ad2456e88fb685fa274e3a206ddfa824718da5e3da373f10ee8f85cee3",
+          "scene_sha256": "45f60d7cb9f7eb46debf3c1fa56fbb95b0fea22f5fea113b38f495b11a0df8ef",
+          "nodes": 173,
+          "links": 164,
+          "reference_plan": [
+            "(navigate agent_0 bedroom_7 kitchen_9)",
+            "(navigate agent_0 kitchen_9 kitchen_cabinet_102)",
+            "(open agent_0 kitchen_cabinet_102)",
+            "(navigate agent_0 kitchen_cabinet_102 pepper_mill_45)",
+            "(pick_from_surface agent_0 pepper_mill_45 kitchen_cabinet_102)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "open",
+            "navigate",
+            "pick_from_surface"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "towel_handover",
+      "label": "拿毛巾交人",
+      "indices": [
+        0,
+        61,
+        88
+      ],
+      "keep": [
+        0,
+        61
+      ],
+      "remove": [
+        88
+      ],
+      "reason": "#000/#088 都是从床上拿毛巾交给浴室人物的自然语言请求；#061 保留明确指定浴室椅子来源的约束。",
+      "tradeoff": "减少 shower 情境和布局变体；仅拿起 #028、送卧室 #024、先洗净再放床 #037 均保留。",
+      "records": [
+        {
+          "easy_index_zero_based": 0,
+          "id": "b217891c-9036-4098-b6f2-6898cdc14c9d",
+          "instruction": "I'm in the bathroom — can you bring me a towel?",
+          "domain_id": null,
+          "record_sha256": "3b0084d3012e6a808d2ca5bd81364ca40aeb3c7ce98099304d0dc415e85d06d2",
+          "scene_sha256": "f10fc3ed369c6ebe9c3d56491311b35dcc217691010fb15fd473b7a873a01518",
+          "nodes": 198,
+          "links": 169,
+          "reference_plan": [
+            "(navigate agent_0 corridor_19 bed_66)",
+            "(navigate agent_0 bed_66 towel_43)",
+            "(pick_from_surface agent_0 towel_43 bed_66)",
+            "(navigate agent_0 towel_43 bathroom_4)",
+            "(navigate agent_0 bathroom_4 person_0)",
+            "(hand_over_to_person agent_0 person_0 towel_43)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        },
+        {
+          "easy_index_zero_based": 61,
+          "id": "0b0da0a5-38b2-4bdd-b2c2-6d4c331e1cd1",
+          "instruction": "Pick up the bath towel from chair in bathroom and hand it to person.",
+          "domain_id": null,
+          "record_sha256": "07a659259714b9711ed6a61f0727411812d71e05dfb4546fec348e2b1f68684d",
+          "scene_sha256": "40ea29620a1e8b858b40d4bebf341f03541a35469927ce53fb84781bf8015401",
+          "nodes": 147,
+          "links": 126,
+          "reference_plan": [
+            "(navigate agent_0 bathroom_1 bath_towel_64)",
+            "(pick_from_surface agent_0 bath_towel_64 chair_10)",
+            "(navigate agent_0 bath_towel_64 person_0)",
+            "(hand_over_to_person agent_0 person_0 bath_towel_64)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        },
+        {
+          "easy_index_zero_based": 88,
+          "id": "b256d9cb-97b1-4f60-804c-b822c8f4c458",
+          "instruction": "Hey, I'm out of the shower — can you bring me a towel?",
+          "domain_id": null,
+          "record_sha256": "ac25a6fed4edb02c77a1e91fd05a14317ff1b4e2f0ac54db50a146e1129159e3",
+          "scene_sha256": "097e182255612511febb5a8024c84db1635c81a014b9a5325dec67df2ad0819d",
+          "nodes": 173,
+          "links": 148,
+          "reference_plan": [
+            "(navigate agent_0 bedroom_4 towel_35)",
+            "(pick_from_surface agent_0 towel_35 bed_50)",
+            "(navigate agent_0 towel_35 bathroom_3)",
+            "(navigate agent_0 bathroom_3 person_0)",
+            "(hand_over_to_person agent_0 person_0 towel_35)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "navigate",
+            "hand_over_to_person"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "basic_adjacency",
+      "label": "基础跨房间表面邻接摆放",
+      "indices": [
+        124,
+        125,
+        126
+      ],
+      "keep": [
+        124
+      ],
+      "remove": [
+        125,
+        126
+      ],
+      "reason": "按类别与角色对齐名称后，完整 scene、四步参考 plan 和 reference_goal 同构；杯/书/毛巾名称替换不增加当前 PDDL 条件。",
+      "tradeoff": "减少对象语义和措辞多样性。保留柜内邻接并关门 #127、保留已有邻接 #128、移除旧邻接 #129。",
+      "records": [
+        {
+          "easy_index_zero_based": 124,
+          "id": "ce1d381a-2c02-5720-bd6f-bb4cbec0bc7e",
+          "instruction": "Move cup_1 from counter_1 onto dining_table_1, next to plate_1. Leave plate_1 on that table.",
+          "domain_id": null,
+          "record_sha256": "69f07fe14607f63267f23faa8d6287ec49e08e3c648fee77936853837ea778e0",
+          "scene_sha256": "427600fed6ab65316ddb8c600119ba8dfcbe40fdae158503d5856c97121183a9",
+          "nodes": 8,
+          "links": 5,
+          "reference_plan": [
+            "(navigate agent_0 room_1 cup_1)",
+            "(pick_from_surface agent_0 cup_1 counter_1)",
+            "(navigate agent_0 cup_1 dining_table_1)",
+            "(place_next_to_surface agent_0 cup_1 plate_1 dining_table_1)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "place_next_to_surface"
+          ]
+        },
+        {
+          "easy_index_zero_based": 125,
+          "id": "66405407-b3f4-549d-bec3-dc68b8fa5813",
+          "instruction": "Put book_1 on nightstand_1 beside lamp_1, leaving the lamp in place.",
+          "domain_id": null,
+          "record_sha256": "7ae9377260ab796f026c6810016ef6e59d541c0bd787ed43c5bcca3bab0e8c4c",
+          "scene_sha256": "1a3e2076a752064bcf1971d32414e91fb4bc06795ecd2b491fadc2e0caa0e477",
+          "nodes": 8,
+          "links": 5,
+          "reference_plan": [
+            "(navigate agent_0 room_1 book_1)",
+            "(pick_from_surface agent_0 book_1 shelf_1)",
+            "(navigate agent_0 book_1 nightstand_1)",
+            "(place_next_to_surface agent_0 book_1 lamp_1 nightstand_1)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "place_next_to_surface"
+          ]
+        },
+        {
+          "easy_index_zero_based": 126,
+          "id": "cc6ac010-2c28-55cb-8a12-5c5b0aa07b75",
+          "instruction": "Take towel_1 from bench_1 and place it next to soap_1 on bathroom_shelf_1. Keep soap_1 there.",
+          "domain_id": null,
+          "record_sha256": "c6daa7a1809304d619ba17104c8d87d28cafe513b3737d68c30e28e263f89880",
+          "scene_sha256": "0811ef84aefc9bf2a0955e347d3ff4b274221e67d7d7b51db79083d3711dd8c6",
+          "nodes": 8,
+          "links": 5,
+          "reference_plan": [
+            "(navigate agent_0 room_1 towel_1)",
+            "(pick_from_surface agent_0 towel_1 bench_1)",
+            "(navigate agent_0 towel_1 bathroom_shelf_1)",
+            "(place_next_to_surface agent_0 towel_1 soap_1 bathroom_shelf_1)"
+          ],
+          "reference_actions": [
+            "navigate",
+            "pick_from_surface",
+            "navigate",
+            "place_next_to_surface"
+          ]
+        }
+      ]
+    }
+  ],
+  "revision": "easy-pruning-v1",
+  "status": "approved_13_task_proposal",
+  "date": "2026-11-13",
+  "review_inventory_sha256": "c977da28cfdf41237b16cd6d5cfe2cd4c069c6ef2356882df5f01554561b1058",
+  "remove_ids": [
+    "b6ae2148-fe0f-429a-b252-f09a54138cab",
+    "096a106b-ed8b-42ec-84e9-d0738ba355db",
+    "f8b2055f-df01-4e78-a676-790572bff4ce",
+    "9c18484f-ced1-4879-a08b-74a8504c4d7f",
+    "f6a37c9b-a198-4b28-847e-18a4a39966ae",
+    "2809dc32-76cc-4540-b2a8-7fd687408173",
+    "b256d9cb-97b1-4f60-804c-b822c8f4c458",
+    "5d58f3f9-6e8d-4e5c-b121-b0331d8182fe",
+    "e004c5e5-0b81-4a46-b27a-325af94f67ef",
+    "395a29fe-5348-4464-aab7-005a9037e774",
+    "1760a721-3982-4e25-9035-c03f1b1a0e19",
+    "66405407-b3f4-549d-bec3-dc68b8fa5813",
+    "cc6ac010-2c28-55cb-8a12-5c5b0aa07b75"
+  ],
+  "after_counts": {
+    "easy": 117,
+    "medium": 65,
+    "open": 92,
+    "total": 274
+  },
+  "policy": "Reduce semantic coverage overlap; preserve distinct access, intent and adjacency requirements. Selection does not use model scores.",
+  "extended_only_retained_ids": [
+    "0c60c61b-a37b-4b23-9435-a335552b7702",
+    "1672e84e-cef9-4fcc-a1a1-d335ba5734bf",
+    "485e38dd-5cca-4697-960c-13a2be3360de",
+    "775ef1c6-7571-442f-8ae6-b9a80e363a21",
+    "acd78938-6360-4a67-8ba8-d43a55699293",
+    "e8c9fd3c-a5a6-40ae-95c8-7e354503651a",
+    "fcb0d03e-e412-42dd-9091-8bbeb19e2947"
+  ],
+  "unchanged_artifacts": {
+    "benchmarks/ahat-medium/cases.json": "63a47ac182c1f545b2e24a6a68ff215e1cd9d21099b64532c2b89d9babb9b958",
+    "benchmarks/ahat-medium/manifest.json": "083937507bb70aaf1fe5192f148db6c871373672a533601dd0cceb2dc585e471",
+    "benchmarks/ahat-open/cases.json": "b0776ed0c47a6c33502e0218acfa59532e6bc92e12125fdee62aa13ad8d0ca38",
+    "benchmarks/ahat-open/manifest.json": "6128757c6ecb8b911e10906c326cf2017080c8ca51ff82a27d7da8f737298c06"
+  }
+}

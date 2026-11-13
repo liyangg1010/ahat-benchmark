@@ -1,5 +1,6 @@
 [
   {
+    "id": "8296e9b3-dfdc-4e3b-81f4-6b9fc1ef3715",
     "instruction": "Create a classy dinner atmosphere and tidy afterward",
     "scene_graph": {
       "rooms": [
@@ -646,9 +647,7 @@
         {
           "name": "reading_lamp_10",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -747,9 +746,7 @@
         {
           "name": "desk_lamp_23",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -935,9 +932,7 @@
         {
           "name": "bedside_lamp_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -1068,9 +1063,7 @@
         {
           "name": "desk_lamp_62",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -1275,9 +1268,7 @@
         {
           "name": "desk_lamp_87",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -1425,9 +1416,7 @@
         {
           "name": "bedside_lamp_104",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -1435,9 +1424,7 @@
         {
           "name": "desk_lamp_105",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -1656,9 +1643,7 @@
         {
           "name": "bedside_lamp_131",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -1762,9 +1747,7 @@
         {
           "name": "desk_lamp_143",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -2777,10 +2760,10 @@
           "in"
         ]
       ]
-    },
-    "id": "8296e9b3-dfdc-4e3b-81f4-6b9fc1ef3715"
+    }
   },
   {
+    "id": "36bdd71c-6e6d-4bfd-8c4d-4b319c289c4d",
     "instruction": "Create a warm dinner setting tonight",
     "scene_graph": {
       "rooms": [
@@ -3591,10 +3574,8 @@
           "name": "outdoor_lantern_50",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -3678,9 +3659,7 @@
         {
           "name": "bedside_lamp_60",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -4788,10 +4767,10 @@
           "in"
         ]
       ]
-    },
-    "id": "36bdd71c-6e6d-4bfd-8c4d-4b319c289c4d"
+    }
   },
   {
+    "id": "34d192ce-adb7-4811-ba66-c5f6d46bdd22",
     "instruction": "Get ready for a cozy movie marathon.",
     "scene_graph": {
       "rooms": [
@@ -5324,9 +5303,7 @@
         {
           "name": "desk_lamp_20",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -5475,9 +5452,7 @@
         {
           "name": "bedside_lamp_37",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -5538,9 +5513,7 @@
         {
           "name": "desk_lamp_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -5650,8 +5623,6 @@
           "name": "handrail_light_59",
           "states": {
             "is_clean": true,
-            "is_powerable": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "handrail_light"
@@ -5878,9 +5849,7 @@
         {
           "name": "desk_lamp_88",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -6691,10 +6660,10 @@
           "in"
         ]
       ]
-    },
-    "id": "34d192ce-adb7-4811-ba66-c5f6d46bdd22"
+    }
   },
   {
+    "id": "2f24c47d-4f6f-4a50-ba55-76a98bcd53ac",
     "instruction": "Prepare a relaxing evening wind down for our visitor",
     "scene_graph": {
       "rooms": [
@@ -7442,9 +7411,7 @@
         {
           "name": "bedside_lamp_50",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -8349,10 +8316,10 @@
           "in"
         ]
       ]
-    },
-    "id": "2f24c47d-4f6f-4a50-ba55-76a98bcd53ac"
+    }
   },
   {
+    "id": "a55dd1af-59ee-4e0c-8139-208e2134ed49",
     "instruction": "Plan and serve a complete evening meal",
     "scene_graph": {
       "rooms": [
@@ -9060,9 +9027,7 @@
         {
           "name": "nightstand_lamp_12",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "nightstand_lamp"
@@ -9281,9 +9246,7 @@
         {
           "name": "desk_lamp_41",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -9309,9 +9272,7 @@
         {
           "name": "desk_lamp_44",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -9351,9 +9312,7 @@
         {
           "name": "bedside_lamp_49",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -9641,9 +9600,7 @@
         {
           "name": "bedside_lamp_83",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -9779,9 +9736,7 @@
         {
           "name": "desk_lamp_99",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -9977,9 +9932,7 @@
         {
           "name": "desk_lamp_122",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -10113,9 +10066,7 @@
         {
           "name": "table_lamp_139",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -10231,9 +10182,7 @@
         {
           "name": "desk_lamp_153",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -10314,6 +10263,39 @@
             "can_be_heated": true
           },
           "type": "grapes"
+        },
+        {
+          "name": "chicken_breast_162",
+          "type": "meat",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true
+          }
+        },
+        {
+          "name": "potatoes_163",
+          "type": "potato",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true
+          }
+        },
+        {
+          "name": "broccoli_164",
+          "type": "vegetables",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true
+          }
         }
       ],
       "agent": [
@@ -11405,12 +11387,27 @@
           "refrigerator_19",
           "grapes_161",
           "in"
-        ]
+        ],
+        {
+          "relation": "in",
+          "from": "chicken_breast_162",
+          "to": "refrigerator_19"
+        },
+        {
+          "relation": "in",
+          "from": "potatoes_163",
+          "to": "refrigerator_19"
+        },
+        {
+          "relation": "in",
+          "from": "broccoli_164",
+          "to": "refrigerator_19"
+        }
       ]
-    },
-    "id": "a55dd1af-59ee-4e0c-8139-208e2134ed49"
+    }
   },
   {
+    "id": "cdbc4306-be8d-470b-bfe4-b843b092c70b",
     "instruction": "Set up a cozy movie night.",
     "scene_graph": {
       "rooms": [
@@ -11819,9 +11816,7 @@
         {
           "name": "table_lamp_10",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -11865,9 +11860,7 @@
         {
           "name": "bedside_lamp_15",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -12264,9 +12257,7 @@
         {
           "name": "reading_lamp_62",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -12407,9 +12398,7 @@
         {
           "name": "floor_lamp_79",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "floor_lamp"
@@ -12417,9 +12406,7 @@
         {
           "name": "bedside_lamp_80",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -13132,10 +13119,10 @@
           "on"
         ]
       ]
-    },
-    "id": "cdbc4306-be8d-470b-bfe4-b843b092c70b"
+    }
   },
   {
+    "id": "89861d79-f711-4bc4-8bdd-8913c9fd2f64",
     "instruction": "Prepare an evening snack and relax, then reset.",
     "scene_graph": {
       "rooms": [
@@ -13540,9 +13527,7 @@
         {
           "name": "mirror_light_3",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "mirror_light"
@@ -13597,9 +13582,7 @@
         {
           "name": "bedside_lamp_10",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -13680,9 +13663,7 @@
         {
           "name": "desk_lamp_21",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -13846,9 +13827,7 @@
         {
           "name": "bedside_lamp_41",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -13969,9 +13948,7 @@
         {
           "name": "desk_lamp_56",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -14240,9 +14217,7 @@
         {
           "name": "bedside_lamp_89",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -14330,9 +14305,7 @@
         {
           "name": "desk_lamp_101",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -15163,10 +15136,10 @@
           "in"
         ]
       ]
-    },
-    "id": "89861d79-f711-4bc4-8bdd-8913c9fd2f64"
+    }
   },
   {
+    "id": "3cf1736a-3b96-4913-b9c5-df4688ee9053",
     "instruction": "Prepare an elegant dinner and ambiance",
     "scene_graph": {
       "rooms": [
@@ -16072,9 +16045,7 @@
         {
           "name": "table_lamp_8",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -16213,9 +16184,7 @@
         {
           "name": "desk_lamp_25",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -16413,9 +16382,7 @@
         {
           "name": "reading_lamp_48",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -16505,9 +16472,7 @@
         {
           "name": "desk_lamp_59",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -16611,9 +16576,7 @@
         {
           "name": "table_lamp_71",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -16798,9 +16761,7 @@
         {
           "name": "desk_lamp_94",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -16948,9 +16909,7 @@
         {
           "name": "lamp_111",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -17173,9 +17132,7 @@
         {
           "name": "desk_lamp_139",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -17311,9 +17268,7 @@
         {
           "name": "reading_lamp_155",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -17449,9 +17404,7 @@
         {
           "name": "desk_lamp_172",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -17592,9 +17545,7 @@
         {
           "name": "table_lamp_188",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -17851,6 +17802,28 @@
             "can_be_heated": true
           },
           "type": "cucumber"
+        },
+        {
+          "name": "salmon_fillet_220",
+          "type": "seafood",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true
+          }
+        },
+        {
+          "name": "potatoes_221",
+          "type": "potato",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true
+          }
         }
       ],
       "agent": [
@@ -19332,12 +19305,22 @@
           "refrigerator_32",
           "cucumber_219",
           "in"
-        ]
+        ],
+        {
+          "relation": "in",
+          "from": "salmon_fillet_220",
+          "to": "refrigerator_32"
+        },
+        {
+          "relation": "in",
+          "from": "potatoes_221",
+          "to": "refrigerator_32"
+        }
       ]
-    },
-    "id": "3cf1736a-3b96-4913-b9c5-df4688ee9053"
+    }
   },
   {
+    "id": "d95e3a80-3bd3-491c-8c9a-deca28b39962",
     "instruction": "Prepare the home for guests tonight.",
     "scene_graph": {
       "rooms": [
@@ -19511,9 +19494,7 @@
         {
           "name": "lamp_9",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -19775,9 +19756,7 @@
         {
           "name": "reading_lamp_15",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -19803,9 +19782,7 @@
         {
           "name": "light_bulb_18",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "light_bulb"
@@ -19931,9 +19908,7 @@
         {
           "name": "desk_lamp_33",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -20314,9 +20289,7 @@
         {
           "name": "floor_lamp_81",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "floor_lamp"
@@ -20988,10 +20961,10 @@
           "on"
         ]
       ]
-    },
-    "id": "d95e3a80-3bd3-491c-8c9a-deca28b39962"
+    }
   },
   {
+    "id": "14429894-9a2b-4a66-86d6-424d6d0df822",
     "instruction": "Get everything ready for a cozy movie night",
     "scene_graph": {
       "rooms": [
@@ -21359,9 +21332,7 @@
         {
           "name": "desk_lamp_1",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -21506,9 +21477,7 @@
         {
           "name": "reading_lamp_19",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -21629,9 +21598,7 @@
         {
           "name": "desk_lamp_34",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -21737,9 +21704,7 @@
         {
           "name": "bedside_lamp_47",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -21928,9 +21893,7 @@
         {
           "name": "desk_lamp_71",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -22044,9 +22007,7 @@
         {
           "name": "bedside_lamp_84",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -22767,10 +22728,10 @@
           "in"
         ]
       ]
-    },
-    "id": "14429894-9a2b-4a66-86d6-424d6d0df822"
+    }
   },
   {
+    "id": "debd69a5-6812-4043-bb21-6af2621dd09e",
     "instruction": "Prepare for guests arriving soon",
     "scene_graph": {
       "rooms": [
@@ -23783,9 +23744,7 @@
         {
           "name": "table_lamp_84",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -24528,10 +24487,10 @@
           "in"
         ]
       ]
-    },
-    "id": "debd69a5-6812-4043-bb21-6af2621dd09e"
+    }
   },
   {
+    "id": "fd0ca30f-a524-4f12-a62d-da0f5b5400a2",
     "instruction": "Set up an evening self-care routine.",
     "scene_graph": {
       "rooms": [
@@ -24971,10 +24930,8 @@
           "name": "outdoor_lantern_2",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -24989,9 +24946,7 @@
         {
           "name": "bedside_lamp_4",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -25144,9 +25099,7 @@
         {
           "name": "desk_lamp_24",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -25308,10 +25261,8 @@
           "name": "outdoor_lantern_43",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -25320,10 +25271,8 @@
           "name": "outdoor_lantern_44",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -25397,9 +25346,7 @@
         {
           "name": "nightstand_lamp_54",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "nightstand_lamp"
@@ -25586,9 +25533,7 @@
         {
           "name": "desk_lamp_76",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -25659,10 +25604,8 @@
           "name": "outdoor_lantern_85",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -25732,9 +25675,7 @@
         {
           "name": "reading_lamp_94",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -25852,9 +25793,7 @@
         {
           "name": "desk_lamp_108",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -26740,10 +26679,10 @@
           "in"
         ]
       ]
-    },
-    "id": "fd0ca30f-a524-4f12-a62d-da0f5b5400a2"
+    }
   },
   {
+    "id": "5dad8c82-3392-40f1-9f95-5a402577ab85",
     "instruction": "Prepare a cozy evening entertainment setup",
     "scene_graph": {
       "rooms": [
@@ -27276,9 +27215,7 @@
         {
           "name": "desk_lamp_20",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -27427,9 +27364,7 @@
         {
           "name": "bedside_lamp_37",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -27490,9 +27425,7 @@
         {
           "name": "desk_lamp_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -27602,8 +27535,6 @@
           "name": "handrail_light_59",
           "states": {
             "is_clean": true,
-            "is_powerable": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "handrail_light"
@@ -27830,9 +27761,7 @@
         {
           "name": "desk_lamp_88",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -28656,10 +28585,10 @@
           "on"
         ]
       ]
-    },
-    "id": "5dad8c82-3392-40f1-9f95-5a402577ab85"
+    }
   },
   {
+    "id": "dd5c367c-d07b-440b-a422-57c7e90b6a33",
     "instruction": "Prepare tomorrow’s morning routine station.",
     "scene_graph": {
       "rooms": [
@@ -29068,9 +28997,7 @@
         {
           "name": "table_lamp_10",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -29114,9 +29041,7 @@
         {
           "name": "bedside_lamp_15",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -29513,9 +29438,7 @@
         {
           "name": "reading_lamp_62",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -29656,9 +29579,7 @@
         {
           "name": "floor_lamp_79",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "floor_lamp"
@@ -29666,9 +29587,7 @@
         {
           "name": "bedside_lamp_80",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -30380,10 +30299,10 @@
           "in"
         ]
       ]
-    },
-    "id": "dd5c367c-d07b-440b-a422-57c7e90b6a33"
+    }
   },
   {
+    "id": "28b88033-fc74-4845-89fd-145967413af5",
     "instruction": "Get ready for guests tonight",
     "scene_graph": {
       "rooms": [
@@ -30716,9 +30635,7 @@
         {
           "name": "lamp_27",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -31641,9 +31558,7 @@
         {
           "name": "table_lamp_102",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -32448,10 +32363,10 @@
           "in"
         ]
       ]
-    },
-    "id": "28b88033-fc74-4845-89fd-145967413af5"
+    }
   },
   {
+    "id": "1a13d5f2-bfd1-4cbd-a52f-251711540454",
     "instruction": "Arrange an immersive home entertainment evening.",
     "scene_graph": {
       "rooms": [
@@ -33149,9 +33064,7 @@
         {
           "name": "desk_lamp_51",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -33856,10 +33769,10 @@
           "in"
         ]
       ]
-    },
-    "id": "1a13d5f2-bfd1-4cbd-a52f-251711540454"
+    }
   },
   {
+    "id": "88e23374-3886-402e-811e-4fbb3c9c1b36",
     "instruction": "Prepare a cozy game-and-movie night for two.",
     "scene_graph": {
       "rooms": [
@@ -34238,9 +34151,7 @@
         {
           "name": "table_lamp_9",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -34503,9 +34414,7 @@
         {
           "name": "table_lamp_42",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -35347,10 +35256,10 @@
           "in"
         ]
       ]
-    },
-    "id": "88e23374-3886-402e-811e-4fbb3c9c1b36"
+    }
   },
   {
+    "id": "ed9e36b8-03bb-43bb-a260-37bcc20d9f53",
     "instruction": "Set up a calming morning refreshment",
     "scene_graph": {
       "rooms": [
@@ -36098,9 +36007,7 @@
         {
           "name": "bedside_lamp_50",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -36393,7 +36300,15 @@
           "name": "drinking_cup_85",
           "states": {
             "is_clean": false,
-            "can_be_moved": true
+            "can_be_moved": true,
+            "is_liquid_container": true,
+            "is_filled": false,
+            "contents_heated": false,
+            "contains_water": false,
+            "contains_tea": false,
+            "contains_coffee": false,
+            "contains_other_drink": false,
+            "requires_water_to_clean": true
           },
           "type": "drinking_cup"
         }
@@ -36990,9 +36905,10 @@
         ]
       ]
     },
-    "id": "ed9e36b8-03bb-43bb-a260-37bcc20d9f53"
+    "domain_id": "ahat-liquid-v1"
   },
   {
+    "id": "f3ee3e87-d782-4870-8ed3-2bc92f344010",
     "instruction": "Host a cozy dinner for two tonight.",
     "scene_graph": {
       "rooms": [
@@ -38374,6 +38290,30 @@
             "is_clean": true
           },
           "type": "chili_paste"
+        },
+        {
+          "name": "potatoes_122",
+          "type": "potato",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_two": true
+          }
+        },
+        {
+          "name": "vegetables_123",
+          "type": "vegetables",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_two": true
+          }
         }
       ],
       "agent": [
@@ -39165,12 +39105,22 @@
           "wardrobe_12",
           "chili_paste_121",
           "in"
-        ]
+        ],
+        {
+          "relation": "in",
+          "from": "potatoes_122",
+          "to": "refrigerator_32"
+        },
+        {
+          "relation": "in",
+          "from": "vegetables_123",
+          "to": "refrigerator_32"
+        }
       ]
-    },
-    "id": "f3ee3e87-d782-4870-8ed3-2bc92f344010"
+    }
   },
   {
+    "id": "283b9299-0fbf-4d1f-8fe6-b45bbbea13e9",
     "instruction": "Host a competitive tournament evening at home",
     "scene_graph": {
       "rooms": [
@@ -39880,9 +39830,7 @@
         {
           "name": "reading_lamp_5",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -40221,9 +40169,7 @@
         {
           "name": "desk_lamp_46",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -40327,9 +40273,7 @@
         {
           "name": "reading_lamp_58",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -40470,10 +40414,8 @@
           "name": "lantern_75",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -40495,9 +40437,7 @@
         {
           "name": "reading_lamp_78",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -40532,9 +40472,7 @@
         {
           "name": "table_lamp_82",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -40858,9 +40796,7 @@
         {
           "name": "table_lamp_121",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -41021,9 +40957,7 @@
         {
           "name": "night_light_140",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "night_light"
@@ -41089,9 +41023,7 @@
         {
           "name": "reading_lamp_149",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -41166,9 +41098,7 @@
         {
           "name": "desk_lamp_157",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -42561,10 +42491,10 @@
           "in"
         ]
       ]
-    },
-    "id": "283b9299-0fbf-4d1f-8fe6-b45bbbea13e9"
+    }
   },
   {
+    "id": "c8dba5e9-77af-41b5-b0d8-2a79f9716e1e",
     "instruction": "Prepare for overnight visitors arriving tonight",
     "scene_graph": {
       "rooms": [
@@ -42932,9 +42862,7 @@
         {
           "name": "desk_lamp_1",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -43079,9 +43007,7 @@
         {
           "name": "reading_lamp_19",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -43202,9 +43128,7 @@
         {
           "name": "desk_lamp_34",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -43310,9 +43234,7 @@
         {
           "name": "bedside_lamp_47",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -43501,9 +43423,7 @@
         {
           "name": "desk_lamp_71",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -43617,9 +43537,7 @@
         {
           "name": "bedside_lamp_84",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -44344,10 +44262,10 @@
           "on"
         ]
       ]
-    },
-    "id": "c8dba5e9-77af-41b5-b0d8-2a79f9716e1e"
+    }
   },
   {
+    "id": "3a5724ed-a1f5-4869-86ae-b1a21c969c6f",
     "instruction": "Prepare and serve a light evening refreshment.",
     "scene_graph": {
       "rooms": [
@@ -44813,7 +44731,14 @@
         {
           "name": "water_glass_16",
           "states": {
-            "is_clean": false
+            "is_clean": false,
+            "is_liquid_container": true,
+            "is_filled": false,
+            "contents_heated": false,
+            "contains_water": false,
+            "contains_tea": false,
+            "contains_coffee": false,
+            "contains_other_drink": false
           },
           "type": "water_glass"
         },
@@ -44895,9 +44820,7 @@
         {
           "name": "desk_lamp_26",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -45048,9 +44971,7 @@
         {
           "name": "table_lamp_44",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -45058,9 +44979,7 @@
         {
           "name": "reading_light_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_light"
@@ -45352,9 +45271,7 @@
         {
           "name": "reading_lamp_80",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -45407,9 +45324,7 @@
         {
           "name": "desk_lamp_87",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -46046,9 +45961,10 @@
         ]
       ]
     },
-    "id": "3a5724ed-a1f5-4869-86ae-b1a21c969c6f"
+    "domain_id": "ahat-liquid-v1"
   },
   {
+    "id": "d2db41fe-f7ef-47de-ba0a-2e6f41ef3ae6",
     "instruction": "Prepare for a busy remote workday",
     "scene_graph": {
       "rooms": [
@@ -46317,9 +46233,7 @@
         {
           "name": "reading_lamp_5",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -46408,9 +46322,7 @@
         {
           "name": "desk_lamp_15",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -47289,10 +47201,10 @@
           "in"
         ]
       ]
-    },
-    "id": "d2db41fe-f7ef-47de-ba0a-2e6f41ef3ae6"
+    }
   },
   {
+    "id": "e831d7fb-d419-4bbd-ba61-0639a4f1224c",
     "instruction": "Prepare for an epic movie-and-games evening",
     "scene_graph": {
       "rooms": [
@@ -47823,9 +47735,7 @@
         {
           "name": "desk_lamp_1",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -48112,9 +48022,7 @@
         {
           "name": "reading_lamp_38",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -48201,9 +48109,7 @@
         {
           "name": "desk_lamp_48",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -48514,9 +48420,7 @@
         {
           "name": "desk_lamp_85",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -48819,9 +48723,7 @@
         {
           "name": "desk_lamp_124",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -49949,10 +49851,10 @@
           "on"
         ]
       ]
-    },
-    "id": "e831d7fb-d419-4bbd-ba61-0639a4f1224c"
+    }
   },
   {
+    "id": "af97421b-0b29-496f-b4e3-b0b8432f2e0b",
     "instruction": "Set up a cozy movie evening.",
     "scene_graph": {
       "rooms": [
@@ -50452,9 +50354,7 @@
         {
           "name": "desk_lamp_8",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -50831,9 +50731,7 @@
         {
           "name": "reading_lamp_55",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -51210,9 +51108,7 @@
         {
           "name": "table_lamp_102",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -52147,10 +52043,10 @@
           "in"
         ]
       ]
-    },
-    "id": "af97421b-0b29-496f-b4e3-b0b8432f2e0b"
+    }
   },
   {
+    "id": "e7405bbf-e725-4a9c-b606-cb1ba299b545",
     "instruction": "Ready the home for tonight's cozy hangout",
     "scene_graph": {
       "rooms": [
@@ -52556,9 +52452,7 @@
         {
           "name": "reading_lamp_18",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -52688,10 +52582,8 @@
           "name": "lantern_34",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -52793,9 +52685,7 @@
         {
           "name": "bedside_lamp_46",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -52838,9 +52728,7 @@
         {
           "name": "desk_lamp_51",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -52921,10 +52809,8 @@
           "name": "outdoor_lantern_61",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -53476,10 +53362,10 @@
           "on"
         ]
       ]
-    },
-    "id": "e7405bbf-e725-4a9c-b606-cb1ba299b545"
+    }
   },
   {
+    "id": "08777e8d-fcc8-4616-b0cd-30f36d015c63",
     "instruction": "Prepare a cozy evening with snacks and entertainment.",
     "scene_graph": {
       "rooms": [
@@ -55653,10 +55539,10 @@
           "in"
         ]
       ]
-    },
-    "id": "08777e8d-fcc8-4616-b0cd-30f36d015c63"
+    }
   },
   {
+    "id": "4ec4d42e-dd62-4d7b-9807-40d5e5b56366",
     "instruction": "Get everything ready for a relaxed evening.",
     "scene_graph": {
       "rooms": [
@@ -56024,9 +55910,7 @@
         {
           "name": "desk_lamp_1",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -56171,9 +56055,7 @@
         {
           "name": "reading_lamp_19",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -56294,9 +56176,7 @@
         {
           "name": "desk_lamp_34",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -56402,9 +56282,7 @@
         {
           "name": "bedside_lamp_47",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -56593,9 +56471,7 @@
         {
           "name": "desk_lamp_71",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -56709,9 +56585,7 @@
         {
           "name": "bedside_lamp_84",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -57419,10 +57293,10 @@
           "in"
         ]
       ]
-    },
-    "id": "4ec4d42e-dd62-4d7b-9807-40d5e5b56366"
+    }
   },
   {
+    "id": "8aea824c-40a0-40e8-8c1b-a0fc3fb31c3e",
     "instruction": "Prepare the home for overnight guests tonight.",
     "scene_graph": {
       "rooms": [
@@ -57971,9 +57845,7 @@
         {
           "name": "bedside_lamp_25",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -58275,9 +58147,7 @@
         {
           "name": "reading_lamp_62",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -58521,9 +58391,7 @@
         {
           "name": "reading_lamp_91",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -59215,10 +59083,10 @@
           "in"
         ]
       ]
-    },
-    "id": "8aea824c-40a0-40e8-8c1b-a0fc3fb31c3e"
+    }
   },
   {
+    "id": "288f86b3-e509-4155-9eec-2976c1c00a13",
     "instruction": "Arrange a romantic dinner for four",
     "scene_graph": {
       "rooms": [
@@ -59865,9 +59733,7 @@
         {
           "name": "reading_lamp_10",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -59966,9 +59832,7 @@
         {
           "name": "desk_lamp_23",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -60154,9 +60018,7 @@
         {
           "name": "bedside_lamp_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -60287,9 +60149,7 @@
         {
           "name": "desk_lamp_62",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -60494,9 +60354,7 @@
         {
           "name": "desk_lamp_87",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -60644,9 +60502,7 @@
         {
           "name": "bedside_lamp_104",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -60654,9 +60510,7 @@
         {
           "name": "desk_lamp_105",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -60875,9 +60729,7 @@
         {
           "name": "bedside_lamp_131",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -60981,9 +60833,7 @@
         {
           "name": "desk_lamp_143",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -62010,10 +61860,10 @@
           "in"
         ]
       ]
-    },
-    "id": "288f86b3-e509-4155-9eec-2976c1c00a13"
+    }
   },
   {
+    "id": "8aceac12-2ddb-4c2a-b5bf-35bf01ea36bc",
     "instruction": "Prepare for a cozy game night.",
     "scene_graph": {
       "rooms": [
@@ -62723,9 +62573,7 @@
         {
           "name": "reading_lamp_5",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -63064,9 +62912,7 @@
         {
           "name": "desk_lamp_46",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -63170,9 +63016,7 @@
         {
           "name": "reading_lamp_58",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -63313,10 +63157,8 @@
           "name": "lantern_75",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -63338,9 +63180,7 @@
         {
           "name": "reading_lamp_78",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -63375,9 +63215,7 @@
         {
           "name": "table_lamp_82",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -63701,9 +63539,7 @@
         {
           "name": "table_lamp_121",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -63864,9 +63700,7 @@
         {
           "name": "night_light_140",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "night_light"
@@ -63932,9 +63766,7 @@
         {
           "name": "reading_lamp_149",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -64009,9 +63841,7 @@
         {
           "name": "desk_lamp_157",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -65436,10 +65266,10 @@
           "in"
         ]
       ]
-    },
-    "id": "8aceac12-2ddb-4c2a-b5bf-35bf01ea36bc"
+    }
   },
   {
+    "id": "8c717c82-fa1b-4686-905f-1aa1c8eb8608",
     "instruction": "Set up an evening entertainment session.",
     "scene_graph": {
       "rooms": [
@@ -65949,9 +65779,7 @@
         {
           "name": "desk_lamp_18",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -66065,9 +65893,7 @@
         {
           "name": "table_lamp_33",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -66092,9 +65918,7 @@
         {
           "name": "bedside_lamp_36",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -66261,9 +66085,7 @@
         {
           "name": "desk_lamp_57",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -66383,9 +66205,7 @@
         {
           "name": "bedside_lamp_72",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -66557,9 +66377,7 @@
         {
           "name": "reading_lamp_94",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -66567,9 +66385,7 @@
         {
           "name": "desk_lamp_95",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -66631,9 +66447,7 @@
         {
           "name": "bedside_lamp_103",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -67367,10 +67181,10 @@
           "on"
         ]
       ]
-    },
-    "id": "8c717c82-fa1b-4686-905f-1aa1c8eb8608"
+    }
   },
   {
+    "id": "fd73c540-9b92-4c22-9786-f7633bdb9bcd",
     "instruction": "Prepare an elegant dinner setting for guests",
     "scene_graph": {
       "rooms": [
@@ -68181,10 +67995,8 @@
           "name": "outdoor_lantern_50",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -68268,9 +68080,7 @@
         {
           "name": "bedside_lamp_60",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -69379,10 +69189,10 @@
           "in"
         ]
       ]
-    },
-    "id": "fd73c540-9b92-4c22-9786-f7633bdb9bcd"
+    }
   },
   {
+    "id": "68c563ae-1a3b-4246-906b-90992e1c8c84",
     "instruction": "Set up tonight’s family meal",
     "scene_graph": {
       "rooms": [
@@ -69715,9 +69525,7 @@
         {
           "name": "lamp_27",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -70640,9 +70448,7 @@
         {
           "name": "table_lamp_102",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -71447,10 +71253,10 @@
           "in"
         ]
       ]
-    },
-    "id": "68c563ae-1a3b-4246-906b-90992e1c8c84"
+    }
   },
   {
+    "id": "937d7013-4182-44a5-86e7-4da7c8a9f4f2",
     "instruction": "Get everything ready for overnight visitors.",
     "scene_graph": {
       "rooms": [
@@ -71856,9 +71662,7 @@
         {
           "name": "reading_lamp_18",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -71988,10 +71792,8 @@
           "name": "lantern_34",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -72093,9 +71895,7 @@
         {
           "name": "bedside_lamp_46",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -72138,9 +71938,7 @@
         {
           "name": "desk_lamp_51",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -72221,10 +72019,8 @@
           "name": "outdoor_lantern_61",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -72777,10 +72573,10 @@
           "on"
         ]
       ]
-    },
-    "id": "937d7013-4182-44a5-86e7-4da7c8a9f4f2"
+    }
   },
   {
+    "id": "09d86c88-00ab-466a-9c3d-600355ecaec1",
     "instruction": "Set up dinner for a surprise guest.",
     "scene_graph": {
       "rooms": [
@@ -73528,9 +73324,7 @@
         {
           "name": "bedside_lamp_50",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -74421,10 +74215,10 @@
           "in"
         ]
       ]
-    },
-    "id": "09d86c88-00ab-466a-9c3d-600355ecaec1"
+    }
   },
   {
+    "id": "7f214076-3a09-429d-b5ec-dfaf89cf5c68",
     "instruction": "Set up a cozy movie night with snacks",
     "scene_graph": {
       "rooms": [
@@ -74792,9 +74586,7 @@
         {
           "name": "desk_lamp_1",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -74939,9 +74731,7 @@
         {
           "name": "reading_lamp_19",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -75062,9 +74852,7 @@
         {
           "name": "desk_lamp_34",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -75170,9 +74958,7 @@
         {
           "name": "bedside_lamp_47",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -75361,9 +75147,7 @@
         {
           "name": "desk_lamp_71",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -75477,9 +75261,7 @@
         {
           "name": "bedside_lamp_84",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -76186,10 +75968,10 @@
           "on"
         ]
       ]
-    },
-    "id": "7f214076-3a09-429d-b5ec-dfaf89cf5c68"
+    }
   },
   {
+    "id": "9d023619-a393-4515-942a-f7e162bf3d05",
     "instruction": "Create a cozy evening experience",
     "scene_graph": {
       "rooms": [
@@ -76445,7 +76227,7 @@
           "type": "tv_stand"
         },
         {
-          "name": "under‑stair_storage_unit_22",
+          "name": "under_stair_storage_unit_22",
           "states": {
             "is_clean": true,
             "can_be_opened": true,
@@ -76785,9 +76567,7 @@
         {
           "name": "desk_lamp_40",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -77010,9 +76790,7 @@
         {
           "name": "desk_lamp_68",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -77301,7 +77079,7 @@
         ],
         [
           "staircase_11",
-          "under‑stair_storage_unit_22",
+          "under_stair_storage_unit_22",
           "in"
         ],
         [
@@ -77690,7 +77468,7 @@
           "on"
         ],
         [
-          "under‑stair_storage_unit_22",
+          "under_stair_storage_unit_22",
           "broom_76",
           "in"
         ],
@@ -77755,10 +77533,10 @@
           "on"
         ]
       ]
-    },
-    "id": "9d023619-a393-4515-942a-f7e162bf3d05"
+    }
   },
   {
+    "id": "0eaf1724-621f-4b72-b188-5073e3204a60",
     "instruction": "Prepare for a formal dinner gathering.",
     "scene_graph": {
       "rooms": [
@@ -78506,9 +78284,7 @@
         {
           "name": "bedside_lamp_50",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -79398,10 +79174,10 @@
           "on"
         ]
       ]
-    },
-    "id": "0eaf1724-621f-4b72-b188-5073e3204a60"
+    }
   },
   {
+    "id": "a59cd58a-9802-4859-ad7e-b2eed0380616",
     "instruction": "Prepare the home for a cozy movie night.",
     "scene_graph": {
       "rooms": [
@@ -79807,9 +79583,7 @@
         {
           "name": "reading_lamp_18",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -79939,10 +79713,8 @@
           "name": "lantern_34",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -80044,9 +79816,7 @@
         {
           "name": "bedside_lamp_46",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -80089,9 +79859,7 @@
         {
           "name": "desk_lamp_51",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -80172,10 +79940,8 @@
           "name": "outdoor_lantern_61",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -80728,10 +80494,10 @@
           "in"
         ]
       ]
-    },
-    "id": "a59cd58a-9802-4859-ad7e-b2eed0380616"
+    }
   },
   {
+    "id": "8b49c9c3-78f3-4ec3-bb7c-a85f37003656",
     "instruction": "Set up an indulgent movie night",
     "scene_graph": {
       "rooms": [
@@ -81280,9 +81046,7 @@
         {
           "name": "bedside_lamp_25",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -81584,9 +81348,7 @@
         {
           "name": "reading_lamp_62",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -81830,9 +81592,7 @@
         {
           "name": "reading_lamp_91",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -82524,10 +82284,10 @@
           "in"
         ]
       ]
-    },
-    "id": "8b49c9c3-78f3-4ec3-bb7c-a85f37003656"
+    }
   },
   {
+    "id": "c036f584-d49d-42ea-bae7-d165788d04e0",
     "instruction": "Stage a festive meal this evening.",
     "scene_graph": {
       "rooms": [
@@ -83075,9 +82835,7 @@
         {
           "name": "desk_lamp_26",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -83228,9 +82986,7 @@
         {
           "name": "table_lamp_44",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -83238,9 +82994,7 @@
         {
           "name": "reading_light_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_light"
@@ -83532,9 +83286,7 @@
         {
           "name": "reading_lamp_80",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -83587,9 +83339,7 @@
         {
           "name": "desk_lamp_87",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -84227,10 +83977,10 @@
           "in"
         ]
       ]
-    },
-    "id": "c036f584-d49d-42ea-bae7-d165788d04e0"
+    }
   },
   {
+    "id": "03629893-0b5b-407d-a52a-212f91f89a30",
     "instruction": "Set up a cozy movie night",
     "scene_graph": {
       "rooms": [
@@ -84630,9 +84380,7 @@
         {
           "name": "desk_lamp_11",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -84962,9 +84710,7 @@
         {
           "name": "desk_lamp_52",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -85168,9 +84914,7 @@
         {
           "name": "string_lights_76",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "string_lights"
@@ -85178,9 +84922,7 @@
         {
           "name": "desk_lamp_77",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -85764,10 +85506,10 @@
           "on"
         ]
       ]
-    },
-    "id": "03629893-0b5b-407d-a52a-212f91f89a30"
+    }
   },
   {
+    "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563",
     "instruction": "Prepare a warm brunch for two.",
     "scene_graph": {
       "rooms": [
@@ -86422,9 +86164,7 @@
         {
           "name": "bedside_lamp_10",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -86546,9 +86286,7 @@
         {
           "name": "desk_lamp_26",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -86725,9 +86463,7 @@
         {
           "name": "desk_lamp_49",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -86943,9 +86679,7 @@
         {
           "name": "bedside_lamp_74",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -87103,9 +86837,7 @@
         {
           "name": "floor_lamp_95",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "floor_lamp"
@@ -87120,9 +86852,7 @@
         {
           "name": "desk_lamp_97",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -87403,9 +87133,7 @@
         {
           "name": "desk_lamp_133",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -88568,10 +88296,10 @@
           "to": "egg_carton_139"
         }
       ]
-    },
-    "id": "9027ed1b-fcf9-4f17-8b39-c397d4db7563"
+    }
   },
   {
+    "id": "a9c684f9-b6a6-46f4-b621-b6bd3faad840",
     "instruction": "Set up an elegant family dinner.",
     "scene_graph": {
       "rooms": [
@@ -88950,9 +88678,7 @@
         {
           "name": "table_lamp_9",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -89215,9 +88941,7 @@
         {
           "name": "table_lamp_42",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -90072,10 +89796,10 @@
           "in"
         ]
       ]
-    },
-    "id": "a9c684f9-b6a6-46f4-b621-b6bd3faad840"
+    }
   },
   {
+    "id": "722ce524-867b-439f-8ab5-950c10010d7e",
     "instruction": "Create a cozy dinner atmosphere tonight",
     "scene_graph": {
       "rooms": [
@@ -90886,10 +90610,8 @@
           "name": "outdoor_lantern_50",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -90973,9 +90695,7 @@
         {
           "name": "bedside_lamp_60",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -92082,10 +91802,10 @@
           "on"
         ]
       ]
-    },
-    "id": "722ce524-867b-439f-8ab5-950c10010d7e"
+    }
   },
   {
+    "id": "d6a628ee-f009-43b7-9e38-553e93518fc2",
     "instruction": "Set up a cozy movie marathon tonight.",
     "scene_graph": {
       "rooms": [
@@ -92795,9 +92515,7 @@
         {
           "name": "reading_lamp_5",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -93136,9 +92854,7 @@
         {
           "name": "desk_lamp_46",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -93242,9 +92958,7 @@
         {
           "name": "reading_lamp_58",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -93385,10 +93099,8 @@
           "name": "lantern_75",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -93410,9 +93122,7 @@
         {
           "name": "reading_lamp_78",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -93447,9 +93157,7 @@
         {
           "name": "table_lamp_82",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -93773,9 +93481,7 @@
         {
           "name": "table_lamp_121",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -93936,9 +93642,7 @@
         {
           "name": "night_light_140",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "night_light"
@@ -94004,9 +93708,7 @@
         {
           "name": "reading_lamp_149",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -94081,9 +93783,7 @@
         {
           "name": "desk_lamp_157",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -95490,10 +95190,10 @@
           "in"
         ]
       ]
-    },
-    "id": "d6a628ee-f009-43b7-9e38-553e93518fc2"
+    }
   },
   {
+    "id": "a5ad3121-b0c7-4a32-a4ff-3bc00e1970ea",
     "instruction": "Set up a cozy rainy evening.",
     "scene_graph": {
       "rooms": [
@@ -95993,9 +95693,7 @@
         {
           "name": "desk_lamp_8",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -96372,9 +96070,7 @@
         {
           "name": "reading_lamp_55",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -96751,9 +96447,7 @@
         {
           "name": "table_lamp_102",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -97701,10 +97395,10 @@
           "in"
         ]
       ]
-    },
-    "id": "a5ad3121-b0c7-4a32-a4ff-3bc00e1970ea"
+    }
   },
   {
+    "id": "d1039117-4dd5-411f-bca3-525adbcc1b22",
     "instruction": "Create a cozy two-person sunset spot",
     "scene_graph": {
       "rooms": [
@@ -98167,8 +97861,6 @@
           "name": "small_lantern_37",
           "states": {
             "is_clean": true,
-            "is_powerable": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "small_lantern"
@@ -98591,10 +98283,10 @@
           "in"
         ]
       ]
-    },
-    "id": "d1039117-4dd5-411f-bca3-525adbcc1b22"
+    }
   },
   {
+    "id": "8e2eac82-2841-4922-ac45-05702b3f073f",
     "instruction": "Prepare a cozy movie night",
     "scene_graph": {
       "rooms": [
@@ -99315,9 +99007,7 @@
         {
           "name": "reading_lamp_16",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -99357,9 +99047,7 @@
         {
           "name": "night_light_21",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "night_light"
@@ -99610,9 +99298,7 @@
         {
           "name": "reading_lamp_52",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -99707,9 +99393,7 @@
         {
           "name": "desk_lamp_64",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -99802,9 +99486,7 @@
         {
           "name": "nightstand_lamp_75",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "nightstand_lamp"
@@ -99963,9 +99645,7 @@
         {
           "name": "desk_lamp_95",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -100035,9 +99715,7 @@
         {
           "name": "desk_lamp_103",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -100095,9 +99773,7 @@
         {
           "name": "floor_lamp_110",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "floor_lamp"
@@ -100358,9 +100034,7 @@
         {
           "name": "table_lamp_143",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -101518,10 +101192,10 @@
           "in"
         ]
       ]
-    },
-    "id": "8e2eac82-2841-4922-ac45-05702b3f073f"
+    }
   },
   {
+    "id": "dec162ab-e453-419f-971a-2e32987350f2",
     "instruction": "Prepare an elegant dinner for guests",
     "scene_graph": {
       "rooms": [
@@ -102332,10 +102006,8 @@
           "name": "outdoor_lantern_50",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -102419,9 +102091,7 @@
         {
           "name": "bedside_lamp_60",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -102819,6 +102489,42 @@
             "serves_group": true
           },
           "type": "cheese_block"
+        },
+        {
+          "name": "salmon_fillet_107",
+          "type": "seafood",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_group": true
+          }
+        },
+        {
+          "name": "potatoes_108",
+          "type": "potato",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_group": true
+          }
+        },
+        {
+          "name": "vegetables_109",
+          "type": "vegetables",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_group": true
+          }
         }
       ],
       "agent": [
@@ -103545,12 +103251,27 @@
           "refrigerator_26",
           "cheese_block_106",
           "in"
-        ]
+        ],
+        {
+          "relation": "in",
+          "from": "salmon_fillet_107",
+          "to": "refrigerator_33"
+        },
+        {
+          "relation": "in",
+          "from": "potatoes_108",
+          "to": "refrigerator_33"
+        },
+        {
+          "relation": "in",
+          "from": "vegetables_109",
+          "to": "refrigerator_33"
+        }
       ]
-    },
-    "id": "dec162ab-e453-419f-971a-2e32987350f2"
+    }
   },
   {
+    "id": "fd22ff41-4720-497c-bad3-7411b468b6cc",
     "instruction": "Cook a simple breakfast and serve it",
     "scene_graph": {
       "rooms": [
@@ -104248,9 +103969,7 @@
         {
           "name": "desk_lamp_51",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -104956,10 +104675,10 @@
           "to": "egg_carton_46"
         }
       ]
-    },
-    "id": "fd22ff41-4720-497c-bad3-7411b468b6cc"
+    }
   },
   {
+    "id": "0cf41a97-9f6a-4e13-8542-1def6889483d",
     "instruction": "Host a cozy brunch for two.",
     "scene_graph": {
       "rooms": [
@@ -105669,9 +105388,7 @@
         {
           "name": "reading_lamp_5",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -106010,9 +105727,7 @@
         {
           "name": "desk_lamp_46",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -106116,9 +105831,7 @@
         {
           "name": "reading_lamp_58",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -106261,10 +105974,8 @@
           "name": "lantern_75",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -106286,9 +105997,7 @@
         {
           "name": "reading_lamp_78",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -106323,9 +106032,7 @@
         {
           "name": "table_lamp_82",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -106649,9 +106356,7 @@
         {
           "name": "table_lamp_121",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -106812,9 +106517,7 @@
         {
           "name": "night_light_140",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "night_light"
@@ -106880,9 +106583,7 @@
         {
           "name": "reading_lamp_149",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -106957,9 +106658,7 @@
         {
           "name": "desk_lamp_157",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -108367,10 +108066,10 @@
           "in"
         ]
       ]
-    },
-    "id": "0cf41a97-9f6a-4e13-8542-1def6889483d"
+    }
   },
   {
+    "id": "7a510a12-15d6-4b12-b32d-0ec007dc7327",
     "instruction": "Get everything ready for movie night.",
     "scene_graph": {
       "rooms": [
@@ -108749,9 +108448,7 @@
         {
           "name": "table_lamp_9",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -109014,9 +108711,7 @@
         {
           "name": "table_lamp_42",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -109872,10 +109567,10 @@
           "in"
         ]
       ]
-    },
-    "id": "7a510a12-15d6-4b12-b32d-0ec007dc7327"
+    }
   },
   {
+    "id": "8af35be3-cb5b-4910-ac70-1694acf9c798",
     "instruction": "Create a romantic dinner ambiance.",
     "scene_graph": {
       "rooms": [
@@ -110315,9 +110010,7 @@
         {
           "name": "lamp_11",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -110564,10 +110257,8 @@
           "name": "lantern_42",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -110606,9 +110297,7 @@
         {
           "name": "desk_lamp_47",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -110669,9 +110358,7 @@
         {
           "name": "reading_lamp_54",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -110797,10 +110484,8 @@
           "name": "outdoor_lantern_70",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -110891,9 +110576,7 @@
         {
           "name": "desk_lamp_82",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -111712,10 +111395,10 @@
           "in"
         ]
       ]
-    },
-    "id": "8af35be3-cb5b-4910-ac70-1694acf9c798"
+    }
   },
   {
+    "id": "ba7a53fc-b43d-4163-8d0e-65142445e82d",
     "instruction": "Set up a relaxing home spa session",
     "scene_graph": {
       "rooms": [
@@ -112284,9 +111967,7 @@
         {
           "name": "bedside_lamp_7",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -112351,9 +112032,7 @@
         {
           "name": "reading_lamp_15",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -112498,9 +112177,7 @@
         {
           "name": "desk_lamp_33",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -112679,9 +112356,7 @@
         {
           "name": "night_light_55",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "night_light"
@@ -112698,9 +112373,7 @@
         {
           "name": "table_lamp_57",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -112790,9 +112463,7 @@
         {
           "name": "desk_lamp_68",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -112908,9 +112579,7 @@
         {
           "name": "lamp_82",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -112968,9 +112637,7 @@
         {
           "name": "reading_light_89",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_light"
@@ -113193,9 +112860,7 @@
         {
           "name": "lamp_117",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -114192,10 +113857,10 @@
           "in"
         ]
       ]
-    },
-    "id": "ba7a53fc-b43d-4163-8d0e-65142445e82d"
+    }
   },
   {
+    "id": "ec2c760f-258b-4231-bff1-0cbdba52596e",
     "instruction": "Prepare an inviting movie night with snacks and comfort.",
     "scene_graph": {
       "rooms": [
@@ -114728,9 +114393,7 @@
         {
           "name": "desk_lamp_20",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -114879,9 +114542,7 @@
         {
           "name": "bedside_lamp_37",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -114942,9 +114603,7 @@
         {
           "name": "desk_lamp_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -115054,8 +114713,6 @@
           "name": "handrail_light_59",
           "states": {
             "is_clean": true,
-            "is_powerable": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "handrail_light"
@@ -115282,9 +114939,7 @@
         {
           "name": "desk_lamp_88",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -116109,10 +115764,10 @@
           "in"
         ]
       ]
-    },
-    "id": "ec2c760f-258b-4231-bff1-0cbdba52596e"
+    }
   },
   {
+    "id": "4a3dc074-3cd6-4241-a4a5-2c37f31c99a1",
     "instruction": "Host a formal dinner and cleanup",
     "scene_graph": {
       "rooms": [
@@ -116853,9 +116508,7 @@
         {
           "name": "toilet_night_light_41",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "toilet_night_light"
@@ -117333,6 +116986,39 @@
             "is_clean": true
           },
           "type": "video_game_controller"
+        },
+        {
+          "name": "beef_steak_99",
+          "type": "meat",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true
+          }
+        },
+        {
+          "name": "potatoes_100",
+          "type": "potato",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true
+          }
+        },
+        {
+          "name": "green_beans_101",
+          "type": "vegetables",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true
+          }
         }
       ],
       "agent": [
@@ -118009,12 +117695,27 @@
           "rec_game_16",
           "person_0",
           "in"
-        ]
+        ],
+        {
+          "relation": "in",
+          "from": "beef_steak_99",
+          "to": "refrigerator_14"
+        },
+        {
+          "relation": "in",
+          "from": "potatoes_100",
+          "to": "refrigerator_14"
+        },
+        {
+          "relation": "in",
+          "from": "green_beans_101",
+          "to": "refrigerator_14"
+        }
       ]
-    },
-    "id": "4a3dc074-3cd6-4241-a4a5-2c37f31c99a1"
+    }
   },
   {
+    "id": "332cabbc-8ac3-4a05-9054-75b79bc22f11",
     "instruction": "Set up for an evening hangout",
     "scene_graph": {
       "rooms": [
@@ -118188,9 +117889,7 @@
         {
           "name": "lamp_9",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -118452,9 +118151,7 @@
         {
           "name": "reading_lamp_15",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -118480,9 +118177,7 @@
         {
           "name": "light_bulb_18",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "light_bulb"
@@ -118608,9 +118303,7 @@
         {
           "name": "desk_lamp_33",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -118991,9 +118684,7 @@
         {
           "name": "floor_lamp_81",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "floor_lamp"
@@ -119664,10 +119355,10 @@
           "on"
         ]
       ]
-    },
-    "id": "332cabbc-8ac3-4a05-9054-75b79bc22f11"
+    }
   },
   {
+    "id": "2ba07a0c-db0c-4616-bfa4-9d3380eebd0f",
     "instruction": "Create a cozy evening setup with refreshments.",
     "scene_graph": {
       "rooms": [
@@ -119972,9 +119663,7 @@
         {
           "name": "reading_lamp_21",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -120455,10 +120144,10 @@
           "in"
         ]
       ]
-    },
-    "id": "2ba07a0c-db0c-4616-bfa4-9d3380eebd0f"
+    }
   },
   {
+    "id": "a645ed99-3d81-4e86-b545-cf9cd8b575c5",
     "instruction": "Get ready for a movie marathon.",
     "scene_graph": {
       "rooms": [
@@ -121179,9 +120868,7 @@
         {
           "name": "reading_lamp_16",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -121221,9 +120908,7 @@
         {
           "name": "night_light_21",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "night_light"
@@ -121474,9 +121159,7 @@
         {
           "name": "reading_lamp_52",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -121571,9 +121254,7 @@
         {
           "name": "desk_lamp_64",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -121666,9 +121347,7 @@
         {
           "name": "nightstand_lamp_75",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "nightstand_lamp"
@@ -121827,9 +121506,7 @@
         {
           "name": "desk_lamp_95",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -121899,9 +121576,7 @@
         {
           "name": "desk_lamp_103",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -121959,9 +121634,7 @@
         {
           "name": "floor_lamp_110",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "floor_lamp"
@@ -122222,9 +121895,7 @@
         {
           "name": "table_lamp_143",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -123381,10 +123052,10 @@
           "on"
         ]
       ]
-    },
-    "id": "a645ed99-3d81-4e86-b545-cf9cd8b575c5"
+    }
   },
   {
+    "id": "e942665b-fd87-47e1-aa4d-63a55cc54160",
     "instruction": "Stage an elegant dinner for four tonight.",
     "scene_graph": {
       "rooms": [
@@ -123894,9 +123565,7 @@
         {
           "name": "desk_lamp_18",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -124010,9 +123679,7 @@
         {
           "name": "table_lamp_33",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -124037,9 +123704,7 @@
         {
           "name": "bedside_lamp_36",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -124206,9 +123871,7 @@
         {
           "name": "desk_lamp_57",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -124328,9 +123991,7 @@
         {
           "name": "bedside_lamp_72",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -124502,9 +124163,7 @@
         {
           "name": "reading_lamp_94",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -124512,9 +124171,7 @@
         {
           "name": "desk_lamp_95",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -124576,9 +124233,7 @@
         {
           "name": "bedside_lamp_103",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -125341,10 +124996,10 @@
           "on"
         ]
       ]
-    },
-    "id": "e942665b-fd87-47e1-aa4d-63a55cc54160"
+    }
   },
   {
+    "id": "4d712c3d-eb48-48b9-bc63-21dd79c613e6",
     "instruction": "Set up a cozy movie night for two",
     "scene_graph": {
       "rooms": [
@@ -125892,9 +125547,7 @@
         {
           "name": "desk_lamp_26",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -126045,9 +125698,7 @@
         {
           "name": "table_lamp_44",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -126055,9 +125706,7 @@
         {
           "name": "reading_light_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_light"
@@ -126349,9 +125998,7 @@
         {
           "name": "reading_lamp_80",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -126404,9 +126051,7 @@
         {
           "name": "desk_lamp_87",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -127029,10 +126674,10 @@
           "in"
         ]
       ]
-    },
-    "id": "4d712c3d-eb48-48b9-bc63-21dd79c613e6"
+    }
   },
   {
+    "id": "01feff30-40a5-4bcf-aec9-1f79010fc8e5",
     "instruction": "Prepare an immersive movie night experience",
     "scene_graph": {
       "rooms": [
@@ -127432,9 +127077,7 @@
         {
           "name": "desk_lamp_11",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -127764,9 +127407,7 @@
         {
           "name": "desk_lamp_52",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -127970,9 +127611,7 @@
         {
           "name": "string_lights_76",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "string_lights"
@@ -127980,9 +127619,7 @@
         {
           "name": "desk_lamp_77",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -128580,10 +128217,10 @@
           "on"
         ]
       ]
-    },
-    "id": "01feff30-40a5-4bcf-aec9-1f79010fc8e5"
+    }
   },
   {
+    "id": "7ab69c06-0ba4-4301-9cbd-f3bcd305eae3",
     "instruction": "Get everything ready for a relaxing evening.",
     "scene_graph": {
       "rooms": [
@@ -129331,9 +128968,7 @@
         {
           "name": "bedside_lamp_50",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -130252,10 +129887,10 @@
           "in"
         ]
       ]
-    },
-    "id": "7ab69c06-0ba4-4301-9cbd-f3bcd305eae3"
+    }
   },
   {
+    "id": "c16bc3b7-c472-4a2c-a82d-335f17bd9a82",
     "instruction": "Stage a weekend family movie night",
     "scene_graph": {
       "rooms": [
@@ -130965,9 +130600,7 @@
         {
           "name": "reading_lamp_5",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -131306,9 +130939,7 @@
         {
           "name": "desk_lamp_46",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -131412,9 +131043,7 @@
         {
           "name": "reading_lamp_58",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -131555,10 +131184,8 @@
           "name": "lantern_75",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -131580,9 +131207,7 @@
         {
           "name": "reading_lamp_78",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -131617,9 +131242,7 @@
         {
           "name": "table_lamp_82",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -131943,9 +131566,7 @@
         {
           "name": "table_lamp_121",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -132106,9 +131727,7 @@
         {
           "name": "night_light_140",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "night_light"
@@ -132174,9 +131793,7 @@
         {
           "name": "reading_lamp_149",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -132251,9 +131868,7 @@
         {
           "name": "desk_lamp_157",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -133646,10 +133261,10 @@
           "in"
         ]
       ]
-    },
-    "id": "c16bc3b7-c472-4a2c-a82d-335f17bd9a82"
+    }
   },
   {
+    "id": "d1eef1a3-941c-4a96-bba8-2b8df1ade8f2",
     "instruction": "Create an immersive movie night with snacks",
     "scene_graph": {
       "rooms": [
@@ -134055,9 +133670,7 @@
         {
           "name": "reading_lamp_18",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -134187,10 +133800,8 @@
           "name": "lantern_34",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -134292,9 +133903,7 @@
         {
           "name": "bedside_lamp_46",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -134337,9 +133946,7 @@
         {
           "name": "desk_lamp_51",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -134420,10 +134027,8 @@
           "name": "outdoor_lantern_61",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -135002,10 +134607,10 @@
           "in"
         ]
       ]
-    },
-    "id": "d1eef1a3-941c-4a96-bba8-2b8df1ade8f2"
+    }
   },
   {
+    "id": "50282f26-b821-4c48-a7c0-946dc08d14d2",
     "instruction": "Prepare for an early start tomorrow",
     "scene_graph": {
       "rooms": [
@@ -135455,8 +135060,6 @@
           "name": "string_lights_29",
           "states": {
             "is_clean": true,
-            "is_powerable": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "string_lights"
@@ -136062,10 +135665,10 @@
           "in"
         ]
       ]
-    },
-    "id": "50282f26-b821-4c48-a7c0-946dc08d14d2"
+    }
   },
   {
+    "id": "4bddb476-f1ae-44e1-9558-add1571dd936",
     "instruction": "Make a hot breakfast for two.",
     "scene_graph": {
       "rooms": [
@@ -138241,10 +137844,10 @@
           "on"
         ]
       ]
-    },
-    "id": "4bddb476-f1ae-44e1-9558-add1571dd936"
+    }
   },
   {
+    "id": "281de1e9-aa99-43e1-88eb-adc6bd1c820f",
     "instruction": "Arrange an elegant evening gathering",
     "scene_graph": {
       "rooms": [
@@ -139150,9 +138753,7 @@
         {
           "name": "table_lamp_8",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -139291,9 +138892,7 @@
         {
           "name": "desk_lamp_25",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -139491,9 +139090,7 @@
         {
           "name": "reading_lamp_48",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -139583,9 +139180,7 @@
         {
           "name": "desk_lamp_59",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -139689,9 +139284,7 @@
         {
           "name": "table_lamp_71",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -139876,9 +139469,7 @@
         {
           "name": "desk_lamp_94",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -140026,9 +139617,7 @@
         {
           "name": "lamp_111",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -140251,9 +139840,7 @@
         {
           "name": "desk_lamp_139",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -140389,9 +139976,7 @@
         {
           "name": "reading_lamp_155",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -140527,9 +140112,7 @@
         {
           "name": "desk_lamp_172",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -140670,9 +140253,7 @@
         {
           "name": "table_lamp_188",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -142384,10 +141965,10 @@
           "in"
         ]
       ]
-    },
-    "id": "281de1e9-aa99-43e1-88eb-adc6bd1c820f"
+    }
   },
   {
+    "id": "1fb3f5ab-f998-4503-beb7-179612e3df0c",
     "instruction": "Prepare a soothing nighttime routine for me.",
     "scene_graph": {
       "rooms": [
@@ -142793,9 +142374,7 @@
         {
           "name": "reading_lamp_18",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -142925,10 +142504,8 @@
           "name": "lantern_34",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -143030,9 +142607,7 @@
         {
           "name": "bedside_lamp_46",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -143075,9 +142650,7 @@
         {
           "name": "desk_lamp_51",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -143158,10 +142731,8 @@
           "name": "outdoor_lantern_61",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -143731,10 +143302,10 @@
           "on"
         ]
       ]
-    },
-    "id": "1fb3f5ab-f998-4503-beb7-179612e3df0c"
+    }
   },
   {
+    "id": "b49bddeb-ab18-458f-a861-dc7d8946a800",
     "instruction": "Set up an inviting family game evening.",
     "scene_graph": {
       "rooms": [
@@ -143988,9 +143559,7 @@
         {
           "name": "table_lamp_1",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -144085,10 +143654,8 @@
           "name": "lantern_13",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -144176,9 +143743,7 @@
         {
           "name": "bedside_lamp_24",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -144317,9 +143882,7 @@
         {
           "name": "table_lamp_40",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -144525,10 +144088,8 @@
           "name": "lantern_66",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -145047,10 +144608,10 @@
           "on"
         ]
       ]
-    },
-    "id": "b49bddeb-ab18-458f-a861-dc7d8946a800"
+    }
   },
   {
+    "id": "81721c19-9d62-480b-a3c9-961016b56e40",
     "instruction": "Set up an elegant dinner tonight",
     "scene_graph": {
       "rooms": [
@@ -145956,9 +145517,7 @@
         {
           "name": "table_lamp_8",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -146097,9 +145656,7 @@
         {
           "name": "desk_lamp_25",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -146297,9 +145854,7 @@
         {
           "name": "reading_lamp_48",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -146389,9 +145944,7 @@
         {
           "name": "desk_lamp_59",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -146495,9 +146048,7 @@
         {
           "name": "table_lamp_71",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -146682,9 +146233,7 @@
         {
           "name": "desk_lamp_94",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -146832,9 +146381,7 @@
         {
           "name": "lamp_111",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -147057,9 +146604,7 @@
         {
           "name": "desk_lamp_139",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -147195,9 +146740,7 @@
         {
           "name": "reading_lamp_155",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -147333,9 +146876,7 @@
         {
           "name": "desk_lamp_172",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -147476,9 +147017,7 @@
         {
           "name": "table_lamp_188",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -149190,10 +148729,10 @@
           "in"
         ]
       ]
-    },
-    "id": "81721c19-9d62-480b-a3c9-961016b56e40"
+    }
   },
   {
+    "id": "955a94d1-658b-464a-995e-09f4a7082a42",
     "instruction": "Set up a cozy movie night",
     "scene_graph": {
       "rooms": [
@@ -149741,9 +149280,7 @@
         {
           "name": "desk_lamp_26",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -149894,9 +149431,7 @@
         {
           "name": "table_lamp_44",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -149904,9 +149439,7 @@
         {
           "name": "reading_light_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_light"
@@ -150198,9 +149731,7 @@
         {
           "name": "reading_lamp_80",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -150253,9 +149784,7 @@
         {
           "name": "desk_lamp_87",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -150892,10 +150421,10 @@
           "in"
         ]
       ]
-    },
-    "id": "955a94d1-658b-464a-995e-09f4a7082a42"
+    }
   },
   {
+    "id": "26891dae-ec9f-48de-8c91-b487dcc8cd29",
     "instruction": "Set up an elegant dinner tonight.",
     "scene_graph": {
       "rooms": [
@@ -151434,9 +150963,7 @@
         {
           "name": "mirror_light_3",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "mirror_light"
@@ -151503,9 +151030,7 @@
         {
           "name": "led_light_bar_11",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "led_light_bar"
@@ -151791,9 +151316,7 @@
         {
           "name": "reading_lamp_45",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -152010,9 +151533,7 @@
         {
           "name": "reading_lamp_71",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -152127,9 +151648,7 @@
         {
           "name": "floor_lamp_86",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "floor_lamp"
@@ -152301,9 +151820,7 @@
         {
           "name": "bedside_lamp_106",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -153485,10 +153002,10 @@
           "in"
         ]
       ]
-    },
-    "id": "26891dae-ec9f-48de-8c91-b487dcc8cd29"
+    }
   },
   {
+    "id": "afe94673-89bb-4af7-9aa6-1025368027f6",
     "instruction": "Set up a focused work session for two",
     "scene_graph": {
       "rooms": [
@@ -153757,9 +153274,7 @@
         {
           "name": "reading_lamp_5",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -153848,9 +153363,7 @@
         {
           "name": "desk_lamp_15",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -154714,10 +154227,10 @@
           "in"
         ]
       ]
-    },
-    "id": "afe94673-89bb-4af7-9aa6-1025368027f6"
+    }
   },
   {
+    "id": "776429ab-2fc0-486c-b85d-a43fc8e2ba14",
     "instruction": "Stage for a cozy evening tonight",
     "scene_graph": {
       "rooms": [
@@ -154891,9 +154404,7 @@
         {
           "name": "lamp_9",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -155155,9 +154666,7 @@
         {
           "name": "reading_lamp_15",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -155183,9 +154692,7 @@
         {
           "name": "light_bulb_18",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "light_bulb"
@@ -155311,9 +154818,7 @@
         {
           "name": "desk_lamp_33",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -155694,9 +155199,7 @@
         {
           "name": "floor_lamp_81",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "floor_lamp"
@@ -156367,10 +155870,10 @@
           "on"
         ]
       ]
-    },
-    "id": "776429ab-2fc0-486c-b85d-a43fc8e2ba14"
+    }
   },
   {
+    "id": "e6f72f40-9cf5-4fe2-a1d9-f86c1c8e22b0",
     "instruction": "Prepare an elegant evening meal setup.",
     "scene_graph": {
       "rooms": [
@@ -157276,9 +156779,7 @@
         {
           "name": "table_lamp_8",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -157417,9 +156918,7 @@
         {
           "name": "desk_lamp_25",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -157617,9 +157116,7 @@
         {
           "name": "reading_lamp_48",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -157709,9 +157206,7 @@
         {
           "name": "desk_lamp_59",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -157815,9 +157310,7 @@
         {
           "name": "table_lamp_71",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -158002,9 +157495,7 @@
         {
           "name": "desk_lamp_94",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -158152,9 +157643,7 @@
         {
           "name": "lamp_111",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -158377,9 +157866,7 @@
         {
           "name": "desk_lamp_139",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -158515,9 +158002,7 @@
         {
           "name": "reading_lamp_155",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -158653,9 +158138,7 @@
         {
           "name": "desk_lamp_172",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -158796,9 +158279,7 @@
         {
           "name": "table_lamp_188",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -160509,10 +159990,10 @@
           "in"
         ]
       ]
-    },
-    "id": "e6f72f40-9cf5-4fe2-a1d9-f86c1c8e22b0"
+    }
   },
   {
+    "id": "198fd035-6f65-4740-8b01-0643a215ccb4",
     "instruction": "Prepare a full family breakfast service",
     "scene_graph": {
       "rooms": [
@@ -160986,8 +160467,6 @@
           "name": "mirror_light_3",
           "states": {
             "is_clean": true,
-            "is_powerable": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "mirror_light"
@@ -161071,9 +160550,7 @@
         {
           "name": "reading_lamp_13",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -161240,9 +160717,7 @@
         {
           "name": "mirror_light_33",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "mirror_light"
@@ -161364,9 +160839,7 @@
         {
           "name": "desk_lamp_48",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -161618,9 +161091,7 @@
         {
           "name": "desk_lamp_79",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -161811,9 +161282,7 @@
         {
           "name": "desk_lamp_102",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -161920,6 +161389,18 @@
             "is_opened": false
           },
           "type": "milk_carton"
+        },
+        {
+          "name": "bread_115",
+          "type": "bread",
+          "states": {
+            "is_food": true,
+            "can_be_heated": true,
+            "heated": false,
+            "is_clean": true,
+            "can_be_moved": true,
+            "serves_group": true
+          }
         }
       ],
       "agent": [
@@ -162706,12 +162187,17 @@
           "kitchen_13",
           "person_0",
           "in"
-        ]
+        ],
+        {
+          "relation": "in",
+          "from": "bread_115",
+          "to": "refrigerator_35"
+        }
       ]
-    },
-    "id": "198fd035-6f65-4740-8b01-0643a215ccb4"
+    }
   },
   {
+    "id": "11b97e7a-4e83-4cda-bf12-ea6d5fcebf9b",
     "instruction": "Prepare for a cozy film night at home",
     "scene_graph": {
       "rooms": [
@@ -163151,10 +162637,8 @@
           "name": "outdoor_lantern_2",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -163169,9 +162653,7 @@
         {
           "name": "bedside_lamp_4",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -163324,9 +162806,7 @@
         {
           "name": "desk_lamp_24",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -163488,10 +162968,8 @@
           "name": "outdoor_lantern_43",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -163500,10 +162978,8 @@
           "name": "outdoor_lantern_44",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -163577,9 +163053,7 @@
         {
           "name": "nightstand_lamp_54",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "nightstand_lamp"
@@ -163766,9 +163240,7 @@
         {
           "name": "desk_lamp_76",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -163839,10 +163311,8 @@
           "name": "outdoor_lantern_85",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -163912,9 +163382,7 @@
         {
           "name": "reading_lamp_94",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -164032,9 +163500,7 @@
         {
           "name": "desk_lamp_108",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -164906,10 +164372,10 @@
           "in"
         ]
       ]
-    },
-    "id": "11b97e7a-4e83-4cda-bf12-ea6d5fcebf9b"
+    }
   },
   {
+    "id": "b49c7574-ad67-4e70-917c-aff8ad71cc74",
     "instruction": "Set up a cozy movie night for guests.",
     "scene_graph": {
       "rooms": [
@@ -165556,9 +165022,7 @@
         {
           "name": "reading_lamp_10",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -165657,9 +165121,7 @@
         {
           "name": "desk_lamp_23",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -165845,9 +165307,7 @@
         {
           "name": "bedside_lamp_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -165978,9 +165438,7 @@
         {
           "name": "desk_lamp_62",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -166185,9 +165643,7 @@
         {
           "name": "desk_lamp_87",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -166335,9 +165791,7 @@
         {
           "name": "bedside_lamp_104",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -166345,9 +165799,7 @@
         {
           "name": "desk_lamp_105",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -166566,9 +166018,7 @@
         {
           "name": "bedside_lamp_131",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -166672,9 +166122,7 @@
         {
           "name": "desk_lamp_143",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -167700,10 +167148,10 @@
           "on"
         ]
       ]
-    },
-    "id": "b49c7574-ad67-4e70-917c-aff8ad71cc74"
+    }
   },
   {
+    "id": "e2c8037c-8c35-4b37-9da0-e10b47c9ab40",
     "instruction": "Prepare an elegant evening meal setting",
     "scene_graph": {
       "rooms": [
@@ -168609,9 +168057,7 @@
         {
           "name": "table_lamp_8",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -168750,9 +168196,7 @@
         {
           "name": "desk_lamp_25",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -168950,9 +168394,7 @@
         {
           "name": "reading_lamp_48",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -169042,9 +168484,7 @@
         {
           "name": "desk_lamp_59",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -169148,9 +168588,7 @@
         {
           "name": "table_lamp_71",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -169335,9 +168773,7 @@
         {
           "name": "desk_lamp_94",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -169485,9 +168921,7 @@
         {
           "name": "lamp_111",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lamp"
@@ -169710,9 +169144,7 @@
         {
           "name": "desk_lamp_139",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -169848,9 +169280,7 @@
         {
           "name": "reading_lamp_155",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -169986,9 +169416,7 @@
         {
           "name": "desk_lamp_172",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -170129,9 +169557,7 @@
         {
           "name": "table_lamp_188",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -171857,10 +171283,10 @@
           "on"
         ]
       ]
-    },
-    "id": "e2c8037c-8c35-4b37-9da0-e10b47c9ab40"
+    }
   },
   {
+    "id": "0fce72ab-8169-4712-a2db-6d4c22d02f06",
     "instruction": "Help me unwind this evening",
     "scene_graph": {
       "rooms": [
@@ -172300,10 +171726,8 @@
           "name": "outdoor_lantern_2",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -172318,9 +171742,7 @@
         {
           "name": "bedside_lamp_4",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -172473,9 +171895,7 @@
         {
           "name": "desk_lamp_24",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -172637,10 +172057,8 @@
           "name": "outdoor_lantern_43",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -172649,10 +172067,8 @@
           "name": "outdoor_lantern_44",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": false,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -172726,9 +172142,7 @@
         {
           "name": "nightstand_lamp_54",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "nightstand_lamp"
@@ -172915,9 +172329,7 @@
         {
           "name": "desk_lamp_76",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -172988,10 +172400,8 @@
           "name": "outdoor_lantern_85",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "outdoor_lantern"
@@ -173061,9 +172471,7 @@
         {
           "name": "reading_lamp_94",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -173181,9 +172589,7 @@
         {
           "name": "desk_lamp_108",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -174041,10 +173447,10 @@
           "on"
         ]
       ]
-    },
-    "id": "0fce72ab-8169-4712-a2db-6d4c22d02f06"
+    }
   },
   {
+    "id": "85ad190d-103e-4012-87ea-2840f56098c3",
     "instruction": "Set up a weekend movie marathon",
     "scene_graph": {
       "rooms": [
@@ -174444,9 +173850,7 @@
         {
           "name": "desk_lamp_11",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -174776,9 +174180,7 @@
         {
           "name": "desk_lamp_52",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -174982,9 +174384,7 @@
         {
           "name": "string_lights_76",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "string_lights"
@@ -174992,9 +174392,7 @@
         {
           "name": "desk_lamp_77",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -175578,10 +174976,10 @@
           "on"
         ]
       ]
-    },
-    "id": "85ad190d-103e-4012-87ea-2840f56098c3"
+    }
   },
   {
+    "id": "00382bfb-1399-473a-8924-37a1f25b7fc7",
     "instruction": "Set up a cozy movie night",
     "scene_graph": {
       "rooms": [
@@ -175835,9 +175233,7 @@
         {
           "name": "table_lamp_1",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -175932,10 +175328,8 @@
           "name": "lantern_13",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -176023,9 +175417,7 @@
         {
           "name": "bedside_lamp_24",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -176164,9 +175556,7 @@
         {
           "name": "table_lamp_40",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -176372,10 +175762,8 @@
           "name": "lantern_66",
           "states": {
             "can_be_opened": true,
-            "is_powerable": true,
             "is_clean": true,
             "is_opened": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "lantern"
@@ -176880,10 +176268,10 @@
           "in"
         ]
       ]
-    },
-    "id": "00382bfb-1399-473a-8924-37a1f25b7fc7"
+    }
   },
   {
+    "id": "84539106-92e9-423b-8da5-252fa85ca51b",
     "instruction": "Set up tonight’s formal dinner gathering",
     "scene_graph": {
       "rooms": [
@@ -177242,9 +176630,7 @@
         {
           "name": "desk_lamp_8",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -177638,9 +177024,7 @@
         {
           "name": "desk_lamp_57",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -177794,9 +177178,7 @@
         {
           "name": "bedside_lamp_76",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -178538,10 +177920,10 @@
           "in"
         ]
       ]
-    },
-    "id": "84539106-92e9-423b-8da5-252fa85ca51b"
+    }
   },
   {
+    "id": "82dc2c7c-fde6-464b-94f0-550d61319faa",
     "instruction": "Set up a relaxing movie night",
     "scene_graph": {
       "rooms": [
@@ -179089,9 +178471,7 @@
         {
           "name": "desk_lamp_26",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -179242,9 +178622,7 @@
         {
           "name": "table_lamp_44",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -179252,9 +178630,7 @@
         {
           "name": "reading_light_45",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_light"
@@ -179546,9 +178922,7 @@
         {
           "name": "reading_lamp_80",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -179601,9 +178975,7 @@
         {
           "name": "desk_lamp_87",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -180240,10 +179612,10 @@
           "on"
         ]
       ]
-    },
-    "id": "82dc2c7c-fde6-464b-94f0-550d61319faa"
+    }
   },
   {
+    "id": "2cea301d-22c3-4e95-aea9-813e725b01af",
     "instruction": "Welcome a guest with refreshments and entertainment",
     "scene_graph": {
       "rooms": [
@@ -180684,9 +180056,7 @@
         {
           "name": "desk_lamp_20",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -180938,9 +180308,7 @@
         {
           "name": "bedside_lamp_50",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "bedside_lamp"
@@ -180999,7 +180367,7 @@
           "type": "mirror"
         },
         {
-          "name": "t‑shirt_57",
+          "name": "t_shirt_57",
           "states": {
             "is_clean": true
           },
@@ -181076,9 +180444,7 @@
         {
           "name": "desk_lamp_66",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -181553,7 +180919,7 @@
         ],
         [
           "dresser_11",
-          "t‑shirt_57",
+          "t_shirt_57",
           "on"
         ],
         [
@@ -181647,10 +181013,10 @@
           "on"
         ]
       ]
-    },
-    "id": "2cea301d-22c3-4e95-aea9-813e725b01af"
+    }
   },
   {
+    "id": "6ce529ba-b596-4147-a022-df05aa281414",
     "instruction": "Set up a cozy movie night.",
     "scene_graph": {
       "rooms": [
@@ -182150,9 +181516,7 @@
         {
           "name": "desk_lamp_8",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "desk_lamp"
@@ -182529,9 +181893,7 @@
         {
           "name": "reading_lamp_55",
           "states": {
-            "is_powerable": true,
             "is_clean": true,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "reading_lamp"
@@ -182908,9 +182270,7 @@
         {
           "name": "table_lamp_102",
           "states": {
-            "is_powerable": true,
             "is_clean": false,
-            "is_powered_on": false,
             "can_be_lighted": true
           },
           "type": "table_lamp"
@@ -183845,10 +183205,10 @@
           "in"
         ]
       ]
-    },
-    "id": "6ce529ba-b596-4147-a022-df05aa281414"
+    }
   },
   {
+    "id": "784bb815-0e73-4977-a346-29f182d41f2d",
     "instruction": "Get everything ready for an epic movie night.",
     "scene_graph": {
       "rooms": [
@@ -186035,10 +185395,10 @@
           "in"
         ]
       ]
-    },
-    "id": "784bb815-0e73-4977-a346-29f182d41f2d"
+    }
   },
   {
+    "id": "093718db-3b95-4b2a-b155-8b1e93c3ff38",
     "instruction": "Clean up the living room and kitchen.",
     "scene_graph": {
       "furnitures": [
@@ -186625,641 +185985,636 @@
         }
       ],
       "links": [
-        [
-          "bathroom_1",
-          "floor_bathroom_1",
-          "in"
-        ],
-        [
-          "bathroom_1",
-          "toilet_44",
-          "in"
-        ],
-        [
-          "bedroom_1",
-          "bed_49",
-          "in"
-        ],
-        [
-          "bedroom_1",
-          "chair_41",
-          "in"
-        ],
-        [
-          "chair_41",
-          "glass_8",
-          "on"
-        ],
-        [
-          "bedroom_1",
-          "chair_42",
-          "in"
-        ],
-        [
-          "bedroom_1",
-          "chest_of_drawers_72",
-          "in"
-        ],
-        [
-          "bedroom_1",
-          "chest_of_drawers_73",
-          "in"
-        ],
-        [
-          "bedroom_1",
-          "chest_of_drawers_75",
-          "in"
-        ],
-        [
-          "bedroom_1",
-          "chest_of_drawers_87",
-          "in"
-        ],
-        [
-          "bedroom_1",
-          "floor_bedroom_1",
-          "in"
-        ],
-        [
-          "bedroom_1",
-          "table_54",
-          "in"
-        ],
-        [
-          "bedroom_2",
-          "bed_23",
-          "in"
-        ],
-        [
-          "bedroom_2",
-          "chair_46",
-          "in"
-        ],
-        [
-          "bedroom_2",
-          "chair_47",
-          "in"
-        ],
-        [
-          "bedroom_2",
-          "chest_of_drawers_55",
-          "in"
-        ],
-        [
-          "bedroom_2",
-          "chest_of_drawers_58",
-          "in"
-        ],
-        [
-          "bedroom_2",
-          "chest_of_drawers_59",
-          "in"
-        ],
-        [
-          "bedroom_2",
-          "chest_of_drawers_60",
-          "in"
-        ],
-        [
-          "bedroom_2",
-          "chest_of_drawers_61",
-          "in"
-        ],
-        [
-          "bedroom_2",
-          "floor_bedroom_2",
-          "in"
-        ],
-        [
-          "bedroom_2",
-          "table_53",
-          "in"
-        ],
-        [
-          "bedroom_3",
-          "bed_37",
-          "in"
-        ],
-        [
-          "bedroom_3",
-          "chair_40",
-          "in"
-        ],
-        [
-          "bedroom_3",
-          "chest_of_drawers_74",
-          "in"
-        ],
-        [
-          "bedroom_3",
-          "chest_of_drawers_79",
-          "in"
-        ],
-        [
-          "bedroom_3",
-          "chest_of_drawers_80",
-          "in"
-        ],
-        [
-          "bedroom_3",
-          "chest_of_drawers_89",
-          "in"
-        ],
-        [
-          "bedroom_3",
-          "floor_bedroom_3",
-          "in"
-        ],
-        [
-          "bedroom_3",
-          "table_77",
-          "in"
-        ],
-        [
-          "bedroom_3",
-          "wardrobe_92",
-          "in"
-        ],
-        [
-          "bedroom_4",
-          "bed_45",
-          "in"
-        ],
-        [
-          "bedroom_4",
-          "chair_27",
-          "in"
-        ],
-        [
-          "bedroom_4",
-          "chest_of_drawers_82",
-          "in"
-        ],
-        [
-          "bedroom_4",
-          "chest_of_drawers_83",
-          "in"
-        ],
-        [
-          "bedroom_4",
-          "floor_bedroom_4",
-          "in"
-        ],
-        [
-          "bedroom_4",
-          "table_51",
-          "in"
-        ],
-        [
-          "bedroom_4",
-          "table_84",
-          "in"
-        ],
-        [
-          "bedroom_4",
-          "table_86",
-          "in"
-        ],
-        [
-          "bedroom_4",
-          "wardrobe_56",
-          "in"
-        ],
-        [
-          "bedroom_4",
-          "wardrobe_57",
-          "in"
-        ],
-        [
-          "closet_1",
-          "floor_closet_1",
-          "in"
-        ],
-        [
-          "closet_1",
-          "wardrobe_91",
-          "in"
-        ],
-        [
-          "entryway_1",
-          "floor_entryway_1",
-          "in"
-        ],
-        [
-          "entryway_1",
-          "table_85",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "cabinet_62",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "cabinet_63",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "cabinet_64",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "cabinet_65",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "cabinet_66",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "cabinet_70",
-          "in"
-        ],
-        [
-          "cabinet_70",
-          "soap_dispenser_7",
-          "on"
-        ],
-        [
-          "kitchen_1",
-          "cabinet_71",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "cabinet_76",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "cabinet_81",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "chair_33",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "chair_34",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "chair_35",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "chair_36",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "counter_67",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "counter_68",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "counter_69",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "floor_kitchen_1",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "fridge_90",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "shelves_24",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "shelves_25",
-          "in"
-        ],
-        [
-          "kitchen_1",
-          "unknown_88",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_13",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_14",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_15",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_16",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_17",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_18",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_19",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_20",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_21",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_22",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "chair_30",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "couch_26",
-          "in"
-        ],
-        [
-          "couch_26",
-          "box_9",
-          "on"
-        ],
-        [
-          "couch_26",
-          "bottle_10",
-          "on"
-        ],
-        [
-          "living_room_1",
-          "couch_28",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "couch_29",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "counter_78",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "floor_living_room_1",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "stand_52",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "stool_31",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "stool_32",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "table_38",
-          "in"
-        ],
-        [
-          "table_38",
-          "bowl_4",
-          "on"
-        ],
-        [
-          "table_38",
-          "cup_6",
-          "on"
-        ],
-        [
-          "table_38",
-          "plate_1",
-          "on"
-        ],
-        [
-          "table_38",
-          "plate_0",
-          "on"
-        ],
-        [
-          "table_38",
-          "plate_2",
-          "on"
-        ],
-        [
-          "table_38",
-          "bowl_3",
-          "on"
-        ],
-        [
-          "table_38",
-          "cup_5",
-          "on"
-        ],
-        [
-          "living_room_1",
-          "table_39",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "table_48",
-          "in"
-        ],
-        [
-          "living_room_1",
-          "table_50",
-          "in"
-        ],
-        [
-          "other_room_1",
-          "floor_other_room_1",
-          "in"
-        ],
-        [
-          "other_room_2",
-          "floor_other_room_2",
-          "in"
-        ],
-        [
-          "porch_1",
-          "floor_porch_1",
-          "in"
-        ],
-        [
-          "toilet_1",
-          "floor_toilet_1",
-          "in"
-        ],
-        [
-          "toilet_1",
-          "toilet_43",
-          "in"
-        ],
-        [
-          "cabinet_71",
-          "toy_fruits_11",
-          "on"
-        ],
-        [
-          "table_84",
-          "box_12",
-          "on"
-        ],
-        [
-          "toilet_44",
-          "bottle_13",
-          "on"
-        ],
-        [
-          "floor_other_room_1",
-          "mouse_pad_14",
-          "on"
-        ],
-        [
-          "bed_45",
-          "picture_frame_15",
-          "on"
-        ],
-        [
-          "wardrobe_57",
-          "cellphone_16",
-          "on"
-        ],
-        [
-          "floor_bedroom_2",
-          "toy_animal_17",
-          "on"
-        ],
-        [
-          "bed_49",
-          "laptop_cover_18",
-          "on"
-        ],
-        [
-          "chair_46",
-          "candle_holder_19",
-          "on"
-        ],
-        [
-          "counter_67",
-          "ladle_20",
-          "in"
-        ],
-        [
-          "chair_34",
-          "bundt_pan_21",
-          "on"
-        ],
-        [
-          "toilet_44",
-          "spray_bottle_22",
-          "on"
-        ],
-        [
-          "cabinet_66",
-          "lunch_box_23",
-          "on"
-        ],
-        [
-          "floor_bathroom_1",
-          "bath_towel_25",
-          "on"
-        ],
-        [
-          "chest_of_drawers_74",
-          "stuffed_toy_26",
-          "in"
-        ],
-        [
-          "chest_of_drawers_87",
-          "toy_construction_set_27",
-          "in"
-        ],
-        [
-          "cabinet_64",
-          "ramekin_29",
-          "on"
-        ],
-        [
-          "chair_36",
-          "cake_pan_30",
-          "on"
-        ],
-        [
-          "agent_1",
-          "floor_living_room_1",
-          "on"
-        ],
-        [
-          "shelves_24",
-          "toy_block_invented_1",
-          "on"
-        ],
-        [
-          "shelves_25",
-          "toy_car_invented_2",
-          "on"
-        ],
-        [
-          "bedroom_1",
-          "person_0",
-          "in"
-        ],
-        [
-          "bedroom_1",
-          "agent_1",
-          "in"
-        ]
+        {
+          "relation": "in",
+          "from": "floor_bathroom_1",
+          "to": "bathroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "toilet_44",
+          "to": "bathroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "bed_49",
+          "to": "bedroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_41",
+          "to": "bedroom_1"
+        },
+        {
+          "relation": "on",
+          "from": "glass_8",
+          "to": "chair_41"
+        },
+        {
+          "relation": "in",
+          "from": "chair_42",
+          "to": "bedroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_72",
+          "to": "bedroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_73",
+          "to": "bedroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_75",
+          "to": "bedroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_87",
+          "to": "bedroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "floor_bedroom_1",
+          "to": "bedroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "table_54",
+          "to": "bedroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "bed_23",
+          "to": "bedroom_2"
+        },
+        {
+          "relation": "in",
+          "from": "chair_46",
+          "to": "bedroom_2"
+        },
+        {
+          "relation": "in",
+          "from": "chair_47",
+          "to": "bedroom_2"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_55",
+          "to": "bedroom_2"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_58",
+          "to": "bedroom_2"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_59",
+          "to": "bedroom_2"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_60",
+          "to": "bedroom_2"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_61",
+          "to": "bedroom_2"
+        },
+        {
+          "relation": "in",
+          "from": "floor_bedroom_2",
+          "to": "bedroom_2"
+        },
+        {
+          "relation": "in",
+          "from": "table_53",
+          "to": "bedroom_2"
+        },
+        {
+          "relation": "in",
+          "from": "bed_37",
+          "to": "bedroom_3"
+        },
+        {
+          "relation": "in",
+          "from": "chair_40",
+          "to": "bedroom_3"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_74",
+          "to": "bedroom_3"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_79",
+          "to": "bedroom_3"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_80",
+          "to": "bedroom_3"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_89",
+          "to": "bedroom_3"
+        },
+        {
+          "relation": "in",
+          "from": "floor_bedroom_3",
+          "to": "bedroom_3"
+        },
+        {
+          "relation": "in",
+          "from": "table_77",
+          "to": "bedroom_3"
+        },
+        {
+          "relation": "in",
+          "from": "wardrobe_92",
+          "to": "bedroom_3"
+        },
+        {
+          "relation": "in",
+          "from": "bed_45",
+          "to": "bedroom_4"
+        },
+        {
+          "relation": "in",
+          "from": "chair_27",
+          "to": "bedroom_4"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_82",
+          "to": "bedroom_4"
+        },
+        {
+          "relation": "in",
+          "from": "chest_of_drawers_83",
+          "to": "bedroom_4"
+        },
+        {
+          "relation": "in",
+          "from": "floor_bedroom_4",
+          "to": "bedroom_4"
+        },
+        {
+          "relation": "in",
+          "from": "table_51",
+          "to": "bedroom_4"
+        },
+        {
+          "relation": "in",
+          "from": "table_84",
+          "to": "bedroom_4"
+        },
+        {
+          "relation": "in",
+          "from": "table_86",
+          "to": "bedroom_4"
+        },
+        {
+          "relation": "in",
+          "from": "wardrobe_56",
+          "to": "bedroom_4"
+        },
+        {
+          "relation": "in",
+          "from": "wardrobe_57",
+          "to": "bedroom_4"
+        },
+        {
+          "relation": "in",
+          "from": "floor_closet_1",
+          "to": "closet_1"
+        },
+        {
+          "relation": "in",
+          "from": "wardrobe_91",
+          "to": "closet_1"
+        },
+        {
+          "relation": "in",
+          "from": "floor_entryway_1",
+          "to": "entryway_1"
+        },
+        {
+          "relation": "in",
+          "from": "table_85",
+          "to": "entryway_1"
+        },
+        {
+          "relation": "in",
+          "from": "cabinet_62",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "cabinet_63",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "cabinet_64",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "cabinet_65",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "cabinet_66",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "cabinet_70",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "on",
+          "from": "soap_dispenser_7",
+          "to": "cabinet_70"
+        },
+        {
+          "relation": "in",
+          "from": "cabinet_71",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "cabinet_76",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "cabinet_81",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_33",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_34",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_35",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_36",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "counter_67",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "counter_68",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "counter_69",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "floor_kitchen_1",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "fridge_90",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "shelves_24",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "shelves_25",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "unknown_88",
+          "to": "kitchen_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_13",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_14",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_15",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_16",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_17",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_18",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_19",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_20",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_21",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_22",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "chair_30",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "couch_26",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "on",
+          "from": "box_9",
+          "to": "couch_26"
+        },
+        {
+          "relation": "on",
+          "from": "bottle_10",
+          "to": "couch_26"
+        },
+        {
+          "relation": "in",
+          "from": "couch_28",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "couch_29",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "counter_78",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "floor_living_room_1",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "stand_52",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "stool_31",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "stool_32",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "table_38",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "on",
+          "from": "bowl_4",
+          "to": "table_38"
+        },
+        {
+          "relation": "on",
+          "from": "cup_6",
+          "to": "table_38"
+        },
+        {
+          "relation": "on",
+          "from": "plate_1",
+          "to": "table_38"
+        },
+        {
+          "relation": "on",
+          "from": "plate_0",
+          "to": "table_38"
+        },
+        {
+          "relation": "on",
+          "from": "plate_2",
+          "to": "table_38"
+        },
+        {
+          "relation": "on",
+          "from": "bowl_3",
+          "to": "table_38"
+        },
+        {
+          "relation": "on",
+          "from": "cup_5",
+          "to": "table_38"
+        },
+        {
+          "relation": "in",
+          "from": "table_39",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "table_48",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "table_50",
+          "to": "living_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "floor_other_room_1",
+          "to": "other_room_1"
+        },
+        {
+          "relation": "in",
+          "from": "floor_other_room_2",
+          "to": "other_room_2"
+        },
+        {
+          "relation": "in",
+          "from": "floor_porch_1",
+          "to": "porch_1"
+        },
+        {
+          "relation": "in",
+          "from": "floor_toilet_1",
+          "to": "toilet_1"
+        },
+        {
+          "relation": "in",
+          "from": "toilet_43",
+          "to": "toilet_1"
+        },
+        {
+          "relation": "on",
+          "from": "toy_fruits_11",
+          "to": "cabinet_71"
+        },
+        {
+          "relation": "on",
+          "from": "box_12",
+          "to": "table_84"
+        },
+        {
+          "relation": "on",
+          "from": "bottle_13",
+          "to": "toilet_44"
+        },
+        {
+          "relation": "on",
+          "from": "mouse_pad_14",
+          "to": "floor_other_room_1"
+        },
+        {
+          "relation": "on",
+          "from": "picture_frame_15",
+          "to": "bed_45"
+        },
+        {
+          "relation": "on",
+          "from": "cellphone_16",
+          "to": "wardrobe_57"
+        },
+        {
+          "relation": "on",
+          "from": "toy_animal_17",
+          "to": "floor_bedroom_2"
+        },
+        {
+          "relation": "on",
+          "from": "laptop_cover_18",
+          "to": "bed_49"
+        },
+        {
+          "relation": "on",
+          "from": "candle_holder_19",
+          "to": "chair_46"
+        },
+        {
+          "relation": "in",
+          "from": "ladle_20",
+          "to": "counter_67"
+        },
+        {
+          "relation": "on",
+          "from": "bundt_pan_21",
+          "to": "chair_34"
+        },
+        {
+          "relation": "on",
+          "from": "spray_bottle_22",
+          "to": "toilet_44"
+        },
+        {
+          "relation": "on",
+          "from": "lunch_box_23",
+          "to": "cabinet_66"
+        },
+        {
+          "relation": "on",
+          "from": "bath_towel_25",
+          "to": "floor_bathroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "stuffed_toy_26",
+          "to": "chest_of_drawers_74"
+        },
+        {
+          "relation": "in",
+          "from": "toy_construction_set_27",
+          "to": "chest_of_drawers_87"
+        },
+        {
+          "relation": "on",
+          "from": "ramekin_29",
+          "to": "cabinet_64"
+        },
+        {
+          "relation": "on",
+          "from": "cake_pan_30",
+          "to": "chair_36"
+        },
+        {
+          "relation": "on",
+          "from": "toy_block_invented_1",
+          "to": "shelves_24"
+        },
+        {
+          "relation": "on",
+          "from": "toy_car_invented_2",
+          "to": "shelves_25"
+        },
+        {
+          "relation": "in",
+          "from": "person_0",
+          "to": "bedroom_1"
+        },
+        {
+          "relation": "in",
+          "from": "agent_1",
+          "to": "living_room_1"
+        }
       ],
       "objects": [
         {
@@ -187578,10 +186933,10 @@
           "role": "human"
         }
       ]
-    },
-    "id": "093718db-3b95-4b2a-b155-8b1e93c3ff38"
+    }
   },
   {
+    "id": "e0abedd1-c1ab-414b-afb6-587fcfeab5fb",
     "instruction": "Make a suitable environment for studying.",
     "scene_graph": {
       "rooms": [
@@ -187704,7 +187059,6 @@
         {
           "states": {
             "is_clean": true,
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "floor_lamp_21",
@@ -187727,7 +187081,6 @@
         {
           "states": {
             "is_clean": true,
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "pendant_lamp_29",
@@ -187838,7 +187191,6 @@
         {
           "states": {
             "is_clean": true,
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "pendant_lamp_56",
@@ -187861,7 +187213,6 @@
         {
           "states": {
             "is_clean": true,
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "floor_lamp_64",
@@ -187893,7 +187244,6 @@
         {
           "states": {
             "is_clean": true,
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "pendant_lamp_72",
@@ -187916,7 +187266,6 @@
         {
           "states": {
             "is_clean": false,
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "pendant_lamp_85",
@@ -187970,7 +187319,6 @@
         {
           "states": {
             "is_clean": false,
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "pendant_lamp_96",
@@ -187979,7 +187327,6 @@
         {
           "states": {
             "is_clean": true,
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "pendant_lamp_97",
@@ -188236,7 +187583,6 @@
         },
         {
           "states": {
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "candlestick_30",
@@ -188249,7 +187595,6 @@
         },
         {
           "states": {
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "candlestick_32",
@@ -188304,7 +187649,6 @@
         },
         {
           "states": {
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "table_lamp_54",
@@ -188391,7 +187735,6 @@
         },
         {
           "states": {
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "table_lamp_80",
@@ -188399,7 +187742,6 @@
         },
         {
           "states": {
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "table_lamp_81",
@@ -188429,7 +187771,6 @@
         },
         {
           "states": {
-            "is_powerable": true,
             "can_be_lighted": true
           },
           "name": "candlestick_91",
@@ -189760,7 +189101,6 @@
           "location": "closet_7"
         }
       ]
-    },
-    "id": "e0abedd1-c1ab-414b-afb6-587fcfeab5fb"
+    }
   }
 ]

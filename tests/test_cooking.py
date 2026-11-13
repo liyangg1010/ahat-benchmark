@@ -123,6 +123,9 @@ class CookingTests(unittest.TestCase):
         self.assertEqual(repair['repair_cases'](rows), rows)
         self.assertEqual(rows, original)
         cases = {r['id']: r for r in rows}
+        guest_adoption = json.loads((PROJECT / 'docs/validation/guest_dinner_v1_adoption.json').read_text())
+        goal_ids = set(repair['REPAIRED_IDS']) | {
+            r['id'] for r in guest_adoption['records'] if r.get('reference_goal_written')}
         for row in rows:
             for group, nodes in row['scene_graph'].items():
                 if group == 'links' or not isinstance(nodes, list):
@@ -136,8 +139,8 @@ class CookingTests(unittest.TestCase):
                         self.assertFalse(node.get('states', {}).get('is_food'))
                         self.assertFalse(node.get('states', {}).get('is_heating_container'))
             if any(sexpr(goal)[0] == 'heated' for goal in row.get('reference_goal', [])):
-                self.assertIn(row['id'], repair['REPAIRED_IDS'])
-        for case_id in repair['REPAIRED_IDS']:
+                self.assertIn(row['id'], goal_ids)
+        for case_id in goal_ids:
             row = cases[case_id]
             self.assertTrue(native_goal(row['scene_graph'], row['plan'], row['reference_goal']))
             control = [text for text in row['plan'] if not sexpr(text)[0].startswith('heat_')]

@@ -1,0 +1,92 @@
+{
+  "revision": "bottle-refill-v1",
+  "base_data_sha256": "186f7d071a35fe662c85dc1945c2690899373101bd86e636a08b402a7a0fc8b7",
+  "records": [
+    {
+      "id": "6e590abe-0592-4a01-8de9-269cdd94fa89",
+      "source_index_before": 3,
+      "split": "easy",
+      "split_index_before": 3,
+      "instruction": "Could you fill my reusable water bottle and give it to the person on the stairs, please?",
+      "decision": "keep_and_open",
+      "plan_before": [
+        "(navigate agent_0 dining_room_15 reusable_water_bottle_24)",
+        "(pick_from_surface agent_0 reusable_water_bottle_24 dining_table_51)",
+        "(navigate agent_0 reusable_water_bottle_24 sink_67)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_24 sink_67)",
+        "(navigate agent_0 sink_67 person_0)",
+        "(hand_over_to_person agent_0 person_0 reusable_water_bottle_24)"
+      ],
+      "plan_after": [
+        "(navigate agent_0 dining_room_15 reusable_water_bottle_24)",
+        "(open agent_0 reusable_water_bottle_24)",
+        "(pick_from_surface agent_0 reusable_water_bottle_24 dining_table_51)",
+        "(navigate agent_0 reusable_water_bottle_24 sink_67)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_24 sink_67)",
+        "(navigate agent_0 sink_67 person_0)",
+        "(hand_over_to_person agent_0 person_0 reusable_water_bottle_24)"
+      ]
+    },
+    {
+      "id": "44a3890d-31fb-4a53-b9d2-1d7f2e22f686",
+      "source_index_before": 128,
+      "split": "medium",
+      "split_index_before": 4,
+      "instruction": "Pick up the reusable water bottle from desk in the bedroom, take it to the sink at sink_cabinet in the laundryroom, fill it with water from the faucet, then return and place it back on desk.",
+      "decision": "keep_and_open",
+      "plan_before": [
+        "(navigate agent_0 hallway_4 reusable_water_bottle_47)",
+        "(pick_from_surface agent_0 reusable_water_bottle_47 desk_9)",
+        "(navigate agent_0 reusable_water_bottle_47 sink_cabinet_46)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_47 sink_cabinet_46)",
+        "(navigate agent_0 sink_cabinet_46 desk_9)",
+        "(place_on_surface agent_0 reusable_water_bottle_47 desk_9)"
+      ],
+      "plan_after": [
+        "(navigate agent_0 hallway_4 reusable_water_bottle_47)",
+        "(open agent_0 reusable_water_bottle_47)",
+        "(pick_from_surface agent_0 reusable_water_bottle_47 desk_9)",
+        "(navigate agent_0 reusable_water_bottle_47 sink_cabinet_46)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_47 sink_cabinet_46)",
+        "(navigate agent_0 sink_cabinet_46 desk_9)",
+        "(place_on_surface agent_0 reusable_water_bottle_47 desk_9)"
+      ]
+    },
+    {
+      "id": "baebc10b-0942-4ab8-a948-b5ce3630af75",
+      "source_index_before": 137,
+      "split": "medium",
+      "split_index_before": 13,
+      "instruction": "Refill the student's reusable water bottle and place it in her bedroom so it's ready for her study session.",
+      "decision": "prune_duplicate",
+      "plan_before": [
+        "(navigate agent_0 bedroom_5 reusable_water_bottle_25)",
+        "(pick_from_surface agent_0 reusable_water_bottle_25 chair_38)",
+        "(navigate agent_0 reusable_water_bottle_25 sink_66)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_25 sink_66)",
+        "(navigate agent_0 sink_66 bed_55)",
+        "(place_on_surface agent_0 reusable_water_bottle_25 bed_55)"
+      ],
+      "plan_after": null
+    },
+    {
+      "id": "ca93f23c-c8c5-426f-81f5-4f7e51811dfc",
+      "source_index_before": 185,
+      "split": "medium",
+      "split_index_before": 61,
+      "instruction": "Refill a reusable water bottle and make it available in the kitchen.",
+      "decision": "prune_duplicate",
+      "plan_before": [
+        "(navigate agent_0 closet_2 reusable_water_bottle_70)",
+        "(pick_from_surface agent_0 reusable_water_bottle_70 kitchen_cabinet_120)",
+        "(navigate agent_0 reusable_water_bottle_70 shower_stall_55)",
+        "(fill_from_faucet agent_0 reusable_water_bottle_70 shower_stall_55)",
+        "(navigate agent_0 shower_stall_55 kitchen_island_122)",
+        "(place_on_surface agent_0 reusable_water_bottle_70 kitchen_island_122)"
+      ],
+      "plan_after": null
+    }
+  ],
+  "ordinary_domain_sha256": "4b93389a6a3761e70e8712403b0516bc5d94ff9caffe96371cd31eaf08350e8a",
+  "result_data_sha256": "81ef3c42d9abe6b8e568ae68c6243df968ef97cbeaf8941de42957a491317a70"
+}
